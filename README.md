@@ -24,8 +24,8 @@ See the [test design](docs/environment-validation.md) and
 [run commands](docs/run-environment-validation.md).
 
 To start the next stage, use the [complete policy-search goal prompt](docs/policy-search-goal.md).
-It defines a supplied-kit automatic-production benchmark, evaluator setup,
-policy comparisons, gameplay recordings, and bounded unattended work. The prompt
+It requires the Method v3 CLI and a 60-minute total limit, with parallel policy
+search, a supplied-kit production evaluator, and gameplay recordings. The prompt
 is ready; the new benchmark and search have not run.
 
 ## Read the design

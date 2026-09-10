@@ -49,7 +49,8 @@ The [test plan](docs/environment-validation.md) lists the remaining coverage.
 The current work remains environment validation; policy search has not started.
 
 The [policy-search goal prompt](docs/policy-search-goal.md) now specifies the next
-bounded search, including a new automatic-production evaluator, actual gameplay
+60-minute search through the Method v3 CLI, with up to eight game worlds and four
+Astra workers. It requires a new automatic-production evaluator, actual gameplay
 recordings for every attempt, and separate development and final maps. This is a
 written launch procedure. The new evaluator, recorder, and search are not claimed
 as implemented or measured by publishing the prompt.
