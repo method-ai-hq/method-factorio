@@ -47,7 +47,8 @@ class FinalTests(unittest.TestCase):
         with patch("repair_final.check_case", side_effect=check), \
                 patch("repair_final.freeze", return_value={"task_sha256": "task"}), \
                 patch("repair_final.freeze_candidate"), patch("repair_final.trial", side_effect=play), \
-                patch("repair_final.group", return_value={"rows": []}), \
+                patch("repair_final.review", side_effect=lambda output, case, **kw: json.loads((output / "summary.json").read_text())), \
+                patch("repair_final.group", return_value={"rows": [], "recipe_reviewed_attempts": 2}), \
                 patch("repair_final.compare", return_value={"paired_cases": 2}), patch("builtins.print"):
             try:
                 result = run_final(cases, policy, selection, output, count=2)

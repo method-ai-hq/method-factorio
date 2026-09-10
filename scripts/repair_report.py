@@ -1,5 +1,6 @@
 """Report strict scores separately from restored production and run faults."""
 import argparse
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -45,6 +46,20 @@ def valid_time(value):
 
 def summarize(path):
     result = json.loads(path.read_text())
+    review_path = path.parent / "review.json"
+    review = None
+    if review_path.exists():
+        reviewed = json.loads(review_path.read_text())
+        review = reviewed.get("review") or {
+            "contract": reviewed["review_contract"],
+            **{key: reviewed[key] for key in ("raw_summary_sha256", "raw_record_sha256", "save_sha256",
+                                             "source_sha256", "corrections", "legacy_scored_pass")},
+        }
+        if (review["contract"] != "repair-recipe-export/2"
+                or review["raw_summary_sha256"] != hashlib.sha256(path.read_bytes()).hexdigest()
+                or any(reviewed.get(key) != result.get(key) for key in ("case_id", "case_sha256", "task_sha256", "kind"))):
+            raise ValueError("Recipe review does not match the retained original attempt")
+        result = reviewed
     verdict = result.get("verdict", {})
     windows = verdict.get("windows", [])
     production = (len(windows) == 3 and all(w.get("passed") is True for w in windows)
@@ -76,6 +91,9 @@ def summarize(path):
             **{"known_" + key: value for key, value in known_tokens.items()},
             **{"total_" + key: value if complete else None for key, value in known_tokens.items()},
             "case_sha256": result.get("case_sha256"), "task_sha256": result.get("task_sha256"),
+            "recipe_review": review,
+            "original_total_wall_seconds": result.get("original_total_wall_seconds", result.get("total_wall_seconds")),
+            "review_wall_seconds": result.get("review_wall_seconds", 0),
             "evidence": str(path.resolve())}
 
 
@@ -87,6 +105,7 @@ def group(paths, kind=None):
     successful = [r for r in rows if r["strict_pass"]]
     return {"attempts": len(rows), "strict_passes": len(successful),
             "restored_production": sum(r["restored_production"] for r in rows),
+            "recipe_reviewed_attempts": sum(r["recipe_review"] is not None for r in rows),
             "failure_counts": {key: sum(r["failure"] == key for r in rows) for key in
                                ("request_rule", "time_limit", "production_or_completion", "infrastructure")},
             "median_success_seconds": median([r["game_wall_seconds"] for r in successful if valid_time(r["game_wall_seconds"])]),

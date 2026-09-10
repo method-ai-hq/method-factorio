@@ -1,5 +1,6 @@
 """Report checks use synthetic run files, never model or game calls."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -28,6 +29,24 @@ def write_run(root, result):
 
 
 class ReportUsageTests(unittest.TestCase):
+    def test_exact_recipe_review_is_used_and_stale_review_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            path = write_run(root, fixture(passed=False))
+            original = path.read_bytes()
+            reviewed = fixture(passed=True)
+            reviewed.update(review_contract="repair-recipe-export/2",
+                            raw_summary_sha256=hashlib.sha256(original).hexdigest(),
+                            raw_record_sha256="record", save_sha256="save", source_sha256="reader",
+                            corrections=[], legacy_scored_pass=False)
+            (root / "review.json").write_text(json.dumps(reviewed))
+            self.assertTrue(summarize(path)["strict_pass"])
+            self.assertEqual(path.read_bytes(), original)
+            self.assertEqual(group([path])["recipe_reviewed_attempts"], 1)
+            path.write_bytes(original + b"\n")
+            with self.assertRaisesRegex(ValueError, "does not match"):
+                summarize(path)
+
     def test_missing_child_execution_counted_with_unknown_usage(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

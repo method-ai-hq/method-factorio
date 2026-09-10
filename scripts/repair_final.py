@@ -6,6 +6,7 @@ from pathlib import Path
 
 from repair_batch import candidate_hashes, file_hash, freeze, freeze_candidate, validate_resume
 from repair_report import compare, group
+from repair_review import VERSION as REVIEW_VERSION, provenance as review_provenance, review
 from repair_trial import trial
 from repair_verify import check_case
 
@@ -22,6 +23,8 @@ def check_selection(policy, selection, expected_hash, selected):
         raise ValueError("Selection document changed during final tests")
     if selected["candidate_files"] != candidate_hashes(policy):
         raise ValueError("Selected Method changed before or during final tests")
+    if selected.get("review_source_sha256") and selected["review_source_sha256"] != file_hash(Path(__file__).with_name("repair_review.py")):
+        raise ValueError("Independent recipe reader changed during final tests")
 
 
 def check_locked_case(case, expected_hash):
@@ -86,6 +89,15 @@ def run_final(cases_root, policy, selection, output_root, *, count=20):
         result = resume_result(output, case, policy, frozen["task_sha256"])
         if result is None:
             result = trial(case, output, slot=slot, method=policy)
+        if result["status"] in {"pass", "fail"}:
+            reviewed_path = output / "review.json"
+            if reviewed_path.exists():
+                result = json.loads(reviewed_path.read_text())
+                if (result.get("review_contract") != REVIEW_VERSION
+                        or result.get("review_provenance") != review_provenance(output, case)):
+                    raise RuntimeError("Saved recipe review no longer matches the original evidence")
+            else:
+                result = review(output, case, rcon_port=27970+slot, game_port=34970+slot)
         print(json.dumps({"approach": label, **{key: result.get(key) for key in
                            ("case_id", "status", "actions", "game_wall_seconds", "error")}}), flush=True)
         return result
@@ -115,6 +127,8 @@ def run_final(cases_root, policy, selection, output_root, *, count=20):
         check_locked_case(case, manifests[case.name])
     direct = group((args.output / "direct").glob("direct-final-*/summary.json"))
     method = group((args.output / "method").glob("method-final-*/summary.json"))
+    if any(g["recipe_reviewed_attempts"] != len(cases) for g in (direct, method)):
+        raise RuntimeError("Every final attempt must use the same independent recipe reader")
     report = {"direct": direct, "method": method, "comparison": compare(direct, method),
               "selection": selected, "case_manifest_hashes": manifests}
     (args.output / "report.json").write_text(json.dumps(report, indent=2) + "\n")

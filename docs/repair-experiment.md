@@ -8,6 +8,8 @@ The player gets the instructions in `repair-task.md`. The task is to repair auto
 
 The independent checker removes stored materials before it measures three full game minutes of production. It checks native game evidence and reloads the final save. A model statement is never a passing result. The repair rules are fixed in `repair_contract.py`; the production rules remain in `science_contract.py`.
 
+Development exposed a recipe-name export fault in the original reader. The [versioned reader correction](../evidence/repair-search-2026-09-10/checker-note.md) recovers exact recipe objects from the original saved sample history and applies those same production rules. Every approach receives this read, and original verdicts remain available. The reader is frozen before final tests.
+
 ## Cases
 
 There are 10 development cases and 20 final cases. Layouts, machine positions, supply routes, and groups of faults vary. Faults include missing equipment, incorrect directions, wrong or missing recipes, and power faults. Each case must have native saved-game proof of three conditions: the healthy factory passes, the damaged factory fails, and a legal repair passes. A defective generated case is retained and replaced before any player sees it.
