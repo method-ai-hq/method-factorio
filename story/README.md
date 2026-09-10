@@ -4,6 +4,13 @@ A single-page story of the Factorio experiments and the Civ VI pilot setup error
 It uses plain HTML, CSS, and JavaScript. No build framework or network service
 is required to read it. The source template is `story/index.html`.
 
+## Read the complete page
+
+Download [complete.html](complete.html) and open it in a browser. The 43 MB
+file includes all three reviewed demo clips and works offline. A clone of
+this repository includes the complete page. GitHub may show a download
+button instead of a preview because of the file size.
+
 ## Build the complete page
 
 From the repository root:
@@ -18,13 +25,20 @@ reviewed result data. The full file is about 43 MB. External evidence links
 need an internet connection; the story, charts, and media work offline.
 
 The build needs the local media from the [repair demo](../docs/repair-demo/README.md).
-Game media stays outside Git. A fresh source checkout alone does not contain
-these clips. The builder fails if a required clip is absent; it does not
-substitute generated or unrelated footage.
+The reviewed clips are embedded in `complete.html`; raw recordings and game
+saves remain outside Git. Rebuilding requires the original local clip files.
+The builder fails if a required clip is absent; it does not substitute footage.
 
 The builder reads the reviewed repair report and checks that both approaches
 use matching case hashes. It emits a media and report hash manifest beside
-the HTML. No private session logs or parent workspace code are read.
+the HTML. No private session logs or parent workspace code are read. To refresh the
+public copy after an edit, run:
+
+```sh
+python3 scripts/build_project_story.py --output story/complete.html
+```
+
+Commit the source, `complete.html`, and `build-manifest.json` together.
 
 ## Evidence and updates
 

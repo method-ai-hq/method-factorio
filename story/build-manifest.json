@@ -1,0 +1,10 @@
+{
+  "report_sha256": "8a0c984d3e6b6ecdfc16c9da19786955834f9cf361cfb460dabb855eb66dfe89",
+  "assets": {
+    "runs/repair-demo-20260910/presentation/factorio-method-60s.mp4": "f5268e191fd3a9eddd985f533b8119064c5e399a1c9693c9ecee11f4b0759a61",
+    "runs/repair-demo-20260910/presentation/quick-repair-labeled.mp4": "443451359393a88d57bf37efdba02acd49d1c0c6e3ba45c1937093b0033f15fe",
+    "runs/repair-demo-20260910/presentation/furnace-recovery-labeled.mp4": "27787bfb57338e4d7d1f52fcb96247927b3ca320bde8c15d4be34ea95f54a0f7",
+    "runs/repair-demo-20260910/furnace-recovery-2/recording-peer/script-output/frames/frame-000140.jpg": "4afafd57bd1599ab19bb43de1508b66af12d92c05f1d15d868b9cc74a0cc5c76",
+    "runs/repair-demo-20260910/quick-repair-4/recording/initial.jpg": "833eaef108ccd2b198f2ed6693ed6de5f23d7eb3db698b21f78cca83a886bba6"
+  }
+}

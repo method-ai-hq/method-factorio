@@ -1,5 +1,9 @@
 # Method × Factorio
 
+[Download the illustrated experiment story](story/complete.html) and open it
+in a browser. This single HTML file includes the result charts and three
+reviewed game replay videos. See the [story guide](story/README.md).
+
 Can Astra invent and improve executable Methods that finish long tasks when the final result is clear, but the value of each action is uncertain?
 
 Our task is to build a factory and launch a rocket in base Factorio. Astra will design the playing procedure, inspect its results, and test changes. The procedure can use plain-English instructions, agents, model calls, bounded loops, and code. It must choose where reasoning and verification are worth their time and cost.
