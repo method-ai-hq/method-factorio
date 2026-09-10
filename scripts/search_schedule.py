@@ -17,8 +17,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def disk_usage(job):
     roots = [job] + list((ROOT / "runs").glob(job.name + "-*"))
-    total = sum(path.stat().st_size for root in roots for path in root.rglob("*") if path.is_file())
+    total = 0
+    vanished = 0
+    for root in roots:
+        for directory, _, names in os.walk(root):
+            for name in names:
+                try:
+                    total += (Path(directory) / name).stat().st_size
+                except FileNotFoundError:
+                    # Factorio removes its temporary save tree during shutdown.
+                    # A vanished file occupies no space; other errors still fail.
+                    vanished += 1
     return {"new_bytes": total, "free_bytes": shutil.disk_usage(ROOT).free,
+            "vanished_temporary_files": vanished,
             "maximum_new_bytes": 20 * 1024**3, "minimum_free_bytes": 10 * 1024**3}
 
 
@@ -92,12 +103,13 @@ def run_panel(panel, job, scheduling, concurrency, cutoff, deadline, retry_autho
                 row = pending.pop(0)
                 lane = next(i for i in range(1, concurrency+1) if i not in active)
                 status_file = scheduling / f"trial-{row['ordinal']:03d}-attempt-{row['attempt']}.json"
-                row.update(lane=lane, status_file=str(status_file), started_at=time.time())
+                row.update(lane=lane, concurrency=capacity, status_file=str(status_file), started_at=time.time())
                 if worker_command:
                     command = worker_command(row, status_file)
                 else:
                     command = [sys.executable, str(ROOT/'scripts/search_trial.py'),
                                '--job-dir',str(job),'--deadline',str(deadline),'--lane',str(lane),
+                               '--concurrency',str(capacity),
                                '--status-file',str(status_file)]
                     for name in ('policy','case','seed','map_x','map_y','kind'):
                         command += ['--'+name.replace('_','-'),str(row['case'][name])]
@@ -146,9 +158,13 @@ def main():
     parser.add_argument('--search-deadline',type=float,required=True)
     parser.add_argument('--deadline',type=float,required=True)
     parser.add_argument('--final-panel',action='store_true')
+    parser.add_argument('--schedule-name', help='Unique local record name for another panel')
     args = parser.parse_args()
     if not 1<=args.concurrency<=8:
         parser.error('Concurrency must be 1 to 8')
+    if args.schedule_name and (Path(args.schedule_name).name != args.schedule_name
+                              or args.schedule_name in ('.', '..')):
+        parser.error('Schedule name must be a single directory name')
     job = args.job_dir.resolve()
     freeze = read(job/'benchmark-freeze.json')
     if not freeze_valid(freeze):
@@ -169,7 +185,7 @@ def main():
         stopped = True
     signal.signal(signal.SIGINT,cancel)
     signal.signal(signal.SIGTERM,cancel)
-    summary = run_panel(panel,job,job/('final-schedule' if args.final_panel else 'search-schedule'),
+    summary = run_panel(panel,job,job/(args.schedule_name or ('final-schedule' if args.final_panel else 'search-schedule')),
                         args.concurrency,args.deadline-330 if args.final_panel else args.search_deadline,
                         args.deadline,settings.get('startup_recovery')=='one_serial_replacement',
                         final_panel=args.final_panel,cancelled=lambda:stopped,

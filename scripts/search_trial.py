@@ -51,6 +51,29 @@ def headless_evidence_complete(run):
             and read(run/"recording-mode.json",{}).get("graphical_client_started") is False)
 
 
+def runtime_evidence(trial):
+    """Require recorded limits and count model requests from the actual trace."""
+    runtime = trial / "runtime"
+    required = ("runtime-pin.json", "runtime.json", "execution.json", "usage-estimate.json",
+                "method/events.jsonl", "method/manifest.json", "method/summary.json")
+    if not all((runtime / name).is_file() and (runtime / name).stat().st_size for name in required):
+        return {"complete": False, "within_model_limit": False, "model_requests": None}
+    events = [json.loads(line) for line in (runtime / "method/events.jsonl").read_text().splitlines()]
+    requests = sum(event.get("event") == "model.request" for event in events)
+    pin = read(runtime / "runtime-pin.json", {})
+    config = read(runtime / "runtime.json", {})
+    summary = read(runtime / "method/summary.json", {})
+    usage = read(runtime / "usage-estimate.json", {})
+    complete = (pin.get("config_sha256") == sha(runtime / "runtime.json")
+                and bool(pin.get("revision")) and bool(pin.get("cli_sha256"))
+                and summary.get("status") in ("completed", "failed", "needs_input")
+                and summary.get("model_requests") == requests and usage.get("requests") == requests)
+    configured_limit = config.get("limits", {}).get("max_model_requests")
+    return {"complete": complete, "model_requests": requests,
+            "within_model_limit": complete and type(configured_limit) is int
+                and 0 <= requests <= configured_limit <= 60}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--job-dir", type=Path, required=True)
@@ -62,6 +85,7 @@ def main():
     parser.add_argument("--map-x", type=int, required=True)
     parser.add_argument("--map-y", type=int, required=True)
     parser.add_argument("--lane", type=int, required=True)
+    parser.add_argument("--concurrency", type=int, default=1, help="Scheduler capacity for this attempt")
     parser.add_argument("--deadline", type=float, required=True)
     parser.add_argument("--kind", choices=["development", "final", "baseline", "demonstration"], required=True)
     args = parser.parse_args()
@@ -77,11 +101,16 @@ def main():
         write_status(args.status_file, phase="startup", trial=run_name)
     record = {"trial": run_name, "case": args.case, "kind": args.kind, "policy": str(args.policy.resolve()),
               "seed": args.seed, "map_x": args.map_x, "map_y": args.map_y, "lane": args.lane,
+              "concurrency": args.concurrency, "deadline_epoch": args.deadline,
               "started_at": started, "game_run": str(game_run), "trial_dir": str(trial),
               "comparison_eligible": args.kind != "demonstration",
               "scored_pass": False, "failure_penalty_seconds": 330, "errors": []}
     host = policy = None
     freeze = read(job / "benchmark-freeze.json", {})
+    if (job / "benchmark-freeze.json").exists():
+        record["benchmark_sha256"] = sha(job / "benchmark-freeze.json")
+        (trial / "benchmark-freeze.json").write_bytes((job / "benchmark-freeze.json").read_bytes())
+    record["commands"] = {"trial": [sys.executable, *sys.argv]}
     environment = {k: v for k, v in os.environ.items() if k not in ("OPENAI_API_KEY", "CODEX_API_KEY", "OPENAI_BASE_URL")}
     recording_mode = freeze.get("settings", {}).get("recording_mode", "native")
     record["recording_mode"] = recording_mode
@@ -101,6 +130,8 @@ def main():
             raise TimeoutError("Insufficient job time remains for a recorded trial")
         if not 1 <= args.lane <= 8:
             raise ValueError("lane must be 1 to 8")
+        if not 1 <= args.concurrency <= freeze.get("settings", {}).get("validated_concurrent_worlds", 0):
+            raise ValueError("Trial concurrency exceeds the validated capacity")
         before = {str(p.relative_to(args.policy.resolve().parent)): sha(p) for p in args.policy.resolve().parent.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
         before["_runtime_game_helper"] = sha(ROOT / "scripts/method3_game_tool.py")
         before["_runtime_compute_helper"] = sha(ROOT / "scripts/method3_compute.py")
@@ -124,7 +155,9 @@ def main():
             "--seed", str(args.seed), "--map-x", str(args.map_x), "--map-y", str(args.map_y),
             "--job-deadline", str(args.deadline), "--recording-mode",recording_mode,"--port", str(18900+args.lane),
             "--rcon-port", str(27300+args.lane), "--game-port", str(34400+args.lane)]
+        record["commands"]["host"] = host_command
         with (trial / "host-console.log").open("w") as log:
+            record["host_launch_at"] = time.time()
             host = subprocess.Popen(host_command, cwd=ROOT, env=environment, stdout=log, stderr=log)
             (trial / "processes.json").write_text(json.dumps({"trial_pid": os.getpid(), "host_pid": host.pid,
                 "deadline_epoch": args.deadline}, indent=2) + "\n")
@@ -157,6 +190,7 @@ def main():
             command = [sys.executable, str(ROOT / "scripts/method3_run.py"), str(args.policy.resolve()),
                 "--endpoint", ready["endpoint"], "--output", str(trial / "runtime"),
                 "--seconds", str(remaining), "--deadline", datetime.datetime.fromtimestamp(args.deadline, datetime.timezone.utc).isoformat()]
+            record["commands"]["policy"] = command
             with (trial / "policy-console.log").open("w") as policy_log:
                 policy = subprocess.Popen(command, cwd=ROOT, env=environment, stdout=policy_log, stderr=policy_log)
                 (trial / "processes.json").write_text(json.dumps({"trial_pid": os.getpid(), "host_pid": host.pid,
@@ -175,12 +209,21 @@ def main():
             raise RuntimeError("No terminal save was captured")
         inspection_command = [python, str(ROOT / "scripts/search_inspect.py"), str(game_run),
             "--rcon-port", str(27400+args.lane), "--game-port", str(34500+args.lane), "--job-deadline", str(args.deadline)]
+        record["commands"]["inspection"] = inspection_command
         with (trial / "inspection-console.log").open("w") as log:
             subprocess.run(inspection_command, env=environment, stdout=log, stderr=log,
                            timeout=max(.1, min(32, args.deadline-time.time())))
         independent = read(game_run / "save-inspection/result.json", {})
         recording = read(game_run / "recording/recording.json", {})
         action = read(game_run / "action-summary.json", {})
+        action_trace = [json.loads(line) for line in (game_run / "actions.jsonl").read_text().splitlines()]
+        finishes = [item for item in action_trace if isinstance(item.get("request"), dict)
+                    and item["request"].get("action") == "finish"
+                    and item.get("response", {}).get("ok") is True]
+        record["production_verdict_at"] = finishes[0]["ended_at"] if finishes else None
+        record["seconds_to_production_verdict"] = (
+            record["production_verdict_at"] - record["host_launch_at"] if finishes else None)
+        record["save_inspection_seconds"] = independent.get("wall_seconds")
         if read(game_run / "settings.json", {}).get("validation_fault") != "none":
             raise RuntimeError("A validation fault cannot receive a scored verdict")
         after = {str(p.relative_to(args.policy.resolve().parent)): sha(p) for p in args.policy.resolve().parent.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
@@ -213,13 +256,19 @@ def main():
             coverage = {"passed": bool(len(frames)>=2 and actions and frames[0]["wall_requested"]<=min(a["started_at"] for a in actions) and frames[-1]["wall_requested"]>=max(a["ended_at"] for a in actions) and maximum_gap<=gap_limit),
                         "maximum_gap_seconds": maximum_gap, "permitted_gap_seconds": gap_limit}
             evidence = evidence and coverage["passed"]
-        within = action.get("within_deadline") is True and time.time()-started <= 330 and time.time() <= args.deadline
+        runtime_checks = runtime_evidence(trial)
+        evidence = evidence and runtime_checks["complete"]
+        action_count = action.get("count")
+        within = (action.get("within_deadline") is True and type(action_count) is int
+                  and 0 <= action_count <= 200 and runtime_checks["within_model_limit"]
+                  and time.time()-started <= 330 and time.time() <= args.deadline)
         result = verdict(read(game_run / "initial.json", {}), read(game_run / "measurement.json", {}),
             legal_actions=action.get("legal", False), unchanged_bundle=unchanged and freeze_valid(freeze),
             evidence_complete=evidence, independent_save_agrees=independent.get("passed", False), within_limits=within)
         record.update({"verdict": result, "scored_pass": result["scored_pass"], "recording": recording,
                        "save_inspection": independent, "usage": read(trial / "runtime/usage-estimate.json", {}),
                        "runtime_summary": read(trial / "runtime/method/summary.json", {}), "source_unchanged": unchanged,
+                       "runtime_evidence": runtime_checks,
                        "recording_coverage": coverage})
         (trial / "verdict.json").write_text(json.dumps(result, indent=2) + "\n")
     except BaseException as error:
@@ -234,6 +283,12 @@ def main():
             record["infrastructure_failure"] = {"phase":"recording", "code":"incomplete_recording"}
         record["finished_at"] = time.time()
         record["wall_seconds"] = record["finished_at"]-started
+        if record["wall_seconds"] > 330 or record["finished_at"] > args.deadline:
+            record["scored_pass"] = False
+            if "verdict" in record:
+                record["verdict"]["scored_pass"] = False
+                record["verdict"]["trial_cleanup_within_deadline"] = False
+                (trial / "verdict.json").write_text(json.dumps(record["verdict"], indent=2) + "\n")
         record["ranking_seconds"] = record["wall_seconds"] if record["scored_pass"] else 330
         record.setdefault("usage", read(trial / "runtime/usage-estimate.json", {"unknown": True}))
         record.setdefault("recording", read(game_run / "recording/recording.json", {}))

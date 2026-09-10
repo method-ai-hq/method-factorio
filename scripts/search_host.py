@@ -71,7 +71,7 @@ def main():
         p.error("unix transport requires --socket-path")
     host_started = time.monotonic()
     host_wall_started = time.time()
-    absolute_deadline = min(args.job_deadline-30, host_wall_started+300)
+    absolute_deadline = min(args.job_deadline-30, host_wall_started+min(args.seconds, 300))
     if absolute_deadline <= time.time(): p.error("job deadline reached")
     run = ROOT / "runs" / args.run
     run.mkdir(parents=True, exist_ok=False)
@@ -217,11 +217,12 @@ def main():
 
         def dispatch(req):
             nonlocal count, handed_off, illegal
+            count += 1
             if not isinstance(req, dict):
+                illegal = True
                 raise ValueError("request must be an object")
             op = req.get("action")
             allowed = {"observe", "nearest", "move", "place", "insert", "entities", "pickup", "rotate", "finish"}
-            count += 1
             if handed_off:
                 illegal = True
                 raise ValueError("playing access revoked")
@@ -231,6 +232,7 @@ def main():
             if time.monotonic() >= deadline or stop.is_set():
                 raise ValueError("test time limit reached")
             if count > args.actions:
+                illegal = True
                 raise ValueError("action limit reached")
             if op == "finish":
                 handed_off = True
@@ -312,9 +314,9 @@ def main():
             if isinstance(req, dict) and set(req) == {"batch"}:
                 batch = req["batch"]
                 if not isinstance(batch,list) or not 1 <= len(batch) <= 50:
-                    return {"ok":False,"error":"batch requires 1 to 50 actions"}
+                    return execute_request({"action":"invalid_batch", "submitted":req})
                 if any(not isinstance(a,dict) or "action" not in a or "batch" in a for a in batch):
-                    return {"ok":False,"error":"batch entries must be action objects"}
+                    return execute_request({"action":"invalid_batch", "submitted":req})
                 results=[]
                 for a in batch:
                     result=execute_request(a)
@@ -338,7 +340,7 @@ def main():
                     req = json.loads(self.rfile.read(length))
                     response = execute_payload(req)
                 except Exception as error:
-                    response = {"ok": False, "error": str(error)}
+                    response = execute_request({"action":"invalid_request", "error":str(error)})
                 payload = json.dumps(response).encode()
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
@@ -355,7 +357,7 @@ def main():
                         raise ValueError("send one JSON line of at most 65536 bytes")
                     response=execute_payload(json.loads(line))
                 except Exception as error:
-                    response={"ok":False,"error":str(error)}
+                    response=execute_request({"action":"invalid_request", "error":str(error)})
                 self.wfile.write(json.dumps(response).encode()+b"\n")
 
         if args.transport == "unix":

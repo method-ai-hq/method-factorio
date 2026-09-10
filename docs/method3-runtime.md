@@ -31,10 +31,11 @@ The runtime sends `call` and `agent` steps directly to the OpenAI Responses API.
 It runs `run` steps as JSON input/output processes. No helper script makes a
 model call. The game tools receive no API key.
 
-The generic `compute` tool is a prepared integration. It accepts bounded Python
+The generic `compute` tool accepts bounded Python
 code with calculations and permitted game actions. It rejects imports and
-attribute access. It has no model calls. A local calculation passed before the
-final cleanup edit; the complete agent use was not tested. This is a language
+attribute access. It has no model calls. An offline check runs the pinned CLI,
+calls a fake local host through both `observe` and `compute`, and checks that
+the helper has no API key. Complete agent use needs a separate live check. This is a language
 restriction, not an operating-system security boundary or a memory quota.
 
 | Profile | API model | Reasoning effort | Maximum output tokens per request |
@@ -91,9 +92,31 @@ repeated steps. A batch member counts as a game action at the host.
 The `observe` tool takes `{endpoint}`. The `act` tool takes `{endpoint, action}`,
 where `action` is a JSON string. Both return `{response}`, where `response` is
 the full JSON game reply encoded as text. The host checks permitted actions.
-The helper has no game administration connection. The prepared helper accepts
-any loopback HTTP endpoint supplied as input; it does not enforce the operator's
-exact game URL. Stronger endpoint binding remains work for a future setup.
+The helper has no game administration connection. The wrapper binds the exact
+operator endpoint through `METHOD3_GAME_ENDPOINT`. Python and Node helpers
+receive this value through the runtime environment allowlist; they receive no
+API key. The game helper and `compute` reject a different endpoint before
+network access, reject HTTP redirects, and ignore proxy settings. HTTP endpoints
+must use a loopback host, an explicit port, and the `/action` path. Unix socket
+paths must be absolute and match the operator binding exactly.
+
+This restriction applies to the supplied tools. A candidate `run` step executes
+trusted local code. An immutable helper that uses `urllib` directly does not
+pass through this transport check. Such code needs review before use; no
+operating-system file or network isolation is claimed. For example, the initial
+`p05` geometry helper uses the endpoint bound to `environment.game` directly.
+
+Run the offline checks with:
+
+```sh
+python3 -m unittest discover -s scripts -p test_method3_transport.py -v
+```
+
+Eight tests passed on 10 September 2026. They check exact HTTP and Unix endpoint
+binding, missing binding, invalid operator URLs, blocked redirects, compute
+transport, runtime environment settings, and the pinned CLI with a fake host.
+They make no paid calls and start no game worlds. They do not establish a
+production result or complete live host integration.
 
 The `search_trial.py` command starts a fresh host, runs the Method, stops its
 processes, reloads the terminal save in a separate server, and records the

@@ -11,6 +11,8 @@ import signal
 import subprocess
 import time
 
+from method3_game_tool import ENDPOINT_ENV, validate_endpoint
+
 ROOT = Path(__file__).resolve().parents[1]
 REVISION = "eec2cfd1a5f0bd8254fb8213b88be76cff44ad21"
 
@@ -55,6 +57,7 @@ def saved_key():
 
 
 def configuration(endpoint, timeout_ms):
+    validate_endpoint(endpoint)
     text = lambda description: {"type": "text", "description": description}
     tool = lambda operation, inputs, effects: {
         "description": "Read the actual game state." if operation == "observe" else "Send a JSON action or batch to the restricted game host.",
@@ -66,7 +69,7 @@ def configuration(endpoint, timeout_ms):
     return {
         "limits": {"timeout_ms": timeout_ms, "max_model_requests": 60, "max_invocations": 100, "max_tool_calls": 60, "max_output_bytes": 2_000_000, "max_request_bytes": 2_000_000},
         "allow_local_processes": True,
-        "runtimes": {"python": {"command": shutil.which("python3"), "version": subprocess.check_output(["python3", "--version"], text=True).strip()}, "node": {"command": shutil.which("node"), "version": subprocess.check_output(["node", "--version"], text=True).strip()}},
+        "runtimes": {"python": {"command": shutil.which("python3"), "version": subprocess.check_output(["python3", "--version"], text=True).strip(), "env": [ENDPOINT_ENV]}, "node": {"command": shutil.which("node"), "version": subprocess.check_output(["node", "--version"], text=True).strip(), "env": [ENDPOINT_ENV]}},
         "models": {"planner": model("medium"), "fast": model("low")},
         "environment": {"game": endpoint},
         "tools": {
@@ -128,7 +131,7 @@ def main():
     uses_models = subprocess.check_output([node, "--input-type=module", "-e",
         "import {readDocument} from './runs/method3-runtime/src/io.js'; const d=await readDocument(process.argv[1]); console.log(Object.values(d.steps).some(s=>[s.do,s.check].some(x=>x && ['call','agent'].includes(x.kind))));",
         str(policy)], cwd=ROOT, text=True, timeout=min(10, budget)).strip() == "true"
-    environment = {"PATH": os.environ.get("PATH", ""), "LANG": "C.UTF-8"}
+    environment = {"PATH": os.environ.get("PATH", ""), "LANG": "C.UTF-8", ENDPOINT_ENV: args.endpoint}
     if uses_models:
         environment["OPENAI_API_KEY"] = saved_key()
     start = time.time()
