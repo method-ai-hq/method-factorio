@@ -315,3 +315,19 @@ worlds, with no screen recording or paid API backend.
 This is evidence of lower execution time and input use in one generated
 factory family. It is not proof about arbitrary Factorio tasks, a need for
 multiple model agents, or an advantage over deterministic programs.
+
+## One-minute repair demo
+
+The [presentation package](docs/repair-demo/README.md) adds a 142-word narration,
+a 60-second silent video, two native Factorio action replays, and detailed notes
+on the policy search and possible next experiments. Media stays local in
+`runs/repair-demo-20260910/presentation/`. The clips replay retained repairs on
+copies of the original saves. They check action outcomes and final equipment,
+use edited timing, and make no new model calls. They are not footage of the
+headless benchmark or new scored trials.
+
+Additional trace counts support the input-handling explanation: the final
+Method runs used 118 completed shell commands versus 191 for direct Astra,
+while game actions were 213 versus 205. This does not isolate the cause of the
+speed gain. The demo preserves the distinction between full-rule passes and
+actual factory repairs.

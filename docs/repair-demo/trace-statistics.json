@@ -1,0 +1,210 @@
+{
+  "definition": "Count item.completed events whose item.type is command_execution in retained final Codex events.jsonl. Printed characters sum aggregated_output string lengths. These are not model request counts or billing tokens.",
+  "source": "runs/repair-search-20260910/final/{direct,method}/*/codex or method/codex/*/events.jsonl",
+  "rows": {
+    "direct": [
+      {
+        "case": "direct-final-001",
+        "shell_commands": 7,
+        "printed_characters": 87282
+      },
+      {
+        "case": "direct-final-002",
+        "shell_commands": 9,
+        "printed_characters": 86007
+      },
+      {
+        "case": "direct-final-003",
+        "shell_commands": 11,
+        "printed_characters": 45574
+      },
+      {
+        "case": "direct-final-004",
+        "shell_commands": 9,
+        "printed_characters": 86035
+      },
+      {
+        "case": "direct-final-005",
+        "shell_commands": 13,
+        "printed_characters": 284700
+      },
+      {
+        "case": "direct-final-006",
+        "shell_commands": 9,
+        "printed_characters": 280986
+      },
+      {
+        "case": "direct-final-007",
+        "shell_commands": 8,
+        "printed_characters": 92069
+      },
+      {
+        "case": "direct-final-008",
+        "shell_commands": 8,
+        "printed_characters": 282753
+      },
+      {
+        "case": "direct-final-009",
+        "shell_commands": 8,
+        "printed_characters": 66885
+      },
+      {
+        "case": "direct-final-010",
+        "shell_commands": 8,
+        "printed_characters": 111876
+      },
+      {
+        "case": "direct-final-011",
+        "shell_commands": 15,
+        "printed_characters": 295803
+      },
+      {
+        "case": "direct-final-012",
+        "shell_commands": 12,
+        "printed_characters": 83860
+      },
+      {
+        "case": "direct-final-013",
+        "shell_commands": 9,
+        "printed_characters": 73208
+      },
+      {
+        "case": "direct-final-014",
+        "shell_commands": 10,
+        "printed_characters": 39454
+      },
+      {
+        "case": "direct-final-015",
+        "shell_commands": 7,
+        "printed_characters": 67316
+      },
+      {
+        "case": "direct-final-016",
+        "shell_commands": 8,
+        "printed_characters": 292920
+      },
+      {
+        "case": "direct-final-017",
+        "shell_commands": 8,
+        "printed_characters": 72740
+      },
+      {
+        "case": "direct-final-018",
+        "shell_commands": 9,
+        "printed_characters": 150853
+      },
+      {
+        "case": "direct-final-019",
+        "shell_commands": 14,
+        "printed_characters": 88931
+      },
+      {
+        "case": "direct-final-020",
+        "shell_commands": 9,
+        "printed_characters": 43627
+      }
+    ],
+    "method": [
+      {
+        "case": "method-final-001",
+        "shell_commands": 3,
+        "printed_characters": 28716
+      },
+      {
+        "case": "method-final-002",
+        "shell_commands": 4,
+        "printed_characters": 40179
+      },
+      {
+        "case": "method-final-003",
+        "shell_commands": 4,
+        "printed_characters": 31328
+      },
+      {
+        "case": "method-final-004",
+        "shell_commands": 4,
+        "printed_characters": 37515
+      },
+      {
+        "case": "method-final-005",
+        "shell_commands": 9,
+        "printed_characters": 40383
+      },
+      {
+        "case": "method-final-006",
+        "shell_commands": 5,
+        "printed_characters": 44883
+      },
+      {
+        "case": "method-final-007",
+        "shell_commands": 6,
+        "printed_characters": 44434
+      },
+      {
+        "case": "method-final-008",
+        "shell_commands": 6,
+        "printed_characters": 40709
+      },
+      {
+        "case": "method-final-009",
+        "shell_commands": 5,
+        "printed_characters": 45084
+      },
+      {
+        "case": "method-final-010",
+        "shell_commands": 4,
+        "printed_characters": 35335
+      },
+      {
+        "case": "method-final-011",
+        "shell_commands": 12,
+        "printed_characters": 48489
+      },
+      {
+        "case": "method-final-012",
+        "shell_commands": 14,
+        "printed_characters": 43232
+      },
+      {
+        "case": "method-final-013",
+        "shell_commands": 5,
+        "printed_characters": 38590
+      },
+      {
+        "case": "method-final-014",
+        "shell_commands": 5,
+        "printed_characters": 39553
+      },
+      {
+        "case": "method-final-015",
+        "shell_commands": 5,
+        "printed_characters": 33173
+      },
+      {
+        "case": "method-final-016",
+        "shell_commands": 4,
+        "printed_characters": 38651
+      },
+      {
+        "case": "method-final-017",
+        "shell_commands": 5,
+        "printed_characters": 39004
+      },
+      {
+        "case": "method-final-018",
+        "shell_commands": 5,
+        "printed_characters": 41923
+      },
+      {
+        "case": "method-final-019",
+        "shell_commands": 8,
+        "printed_characters": 40901
+      },
+      {
+        "case": "method-final-020",
+        "shell_commands": 5,
+        "printed_characters": 41581
+      }
+    ]
+  }
+}

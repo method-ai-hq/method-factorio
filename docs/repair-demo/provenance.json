@@ -1,0 +1,492 @@
+{
+  "kind": "Presentation evidence; not a scored experiment",
+  "captures": {
+    "quick-repair-4": {
+      "kind": "native visual action replay",
+      "scored": false,
+      "new_model_calls": 0,
+      "timing": "Edited action timing; original benchmark times are not video times.",
+      "observations_replayed": false,
+      "finish_replayed": false,
+      "source_hashes": {
+        "runs/repair-cases-final-private-1/final-003/broken.zip": "33f2f5ba413fcb68b55122c32c3cd864ffe9548a4f6ecf9e0033977c67195f07",
+        "runs/repair-search-20260910/final/method/method-final-003/summary.json": "f825ff45bd837b72121fb71563e0ca4b2c780ebde806742e795e93e0e3a9b7e9",
+        "runs/repair-search-20260910/final/method/method-final-003/review.json": "f058e7c003ee60f9debb3c5b2d83500273d15092a3255b03214b8508937eb947",
+        "runs/repair-search-20260910/final/method/method-final-003/host/actions.jsonl": "134dd6fda7d6b6a18d41a884820b0606f43b2dbb6f24daaf31ec28fea01ffa27",
+        "runs/repair-search-20260910/final/method/method-final-003/host/record.json": "40d49aa8fe73ca0dc43337986a4d59df31b3a07af4df5422ed8ecdabf37ab5b5",
+        "runs/repair-search-20260910/final/method/method-final-003/host/game/world.zip": "84280089b9e5cb38769cccacb184cbe6658efb09a29bbb082866c76a4dff8901"
+      },
+      "actions": [
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-mining-drill",
+            "position": {
+              "x": -80.5,
+              "y": 2.5
+            },
+            "direction": "RIGHT"
+          },
+          "original_elapsed_seconds": 23.28110470797401,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 17,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "rotate",
+            "name": "transport-belt",
+            "position": {
+              "x": -65.5,
+              "y": 2.5
+            },
+            "direction": "RIGHT"
+          },
+          "original_elapsed_seconds": 23.284518624888733,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 29,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "rotate",
+            "name": "fast-inserter",
+            "position": {
+              "x": -34.5,
+              "y": 23.5
+            },
+            "direction": "LEFT"
+          },
+          "original_elapsed_seconds": 23.2861664169468,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 49,
+          "outcome_matches": true
+        }
+      ],
+      "spectator_setup": "Freeplay crash site, intro, and starter items disabled in demo copy before visual client joins.",
+      "initial_equipment_matches": true,
+      "final_equipment_matches": true,
+      "capture": {
+        "mode": "native Factorio visual action replay",
+        "replay": true,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "source_image_format": "jpeg",
+        "jpeg_quality": 92,
+        "playback_fps": 8,
+        "nominal_capture_fps": 8,
+        "frames": 150,
+        "video": "recording/video.mp4",
+        "timestamps": "recording/frames.jsonl",
+        "initial_image": "recording/initial.jpg",
+        "final_image": "recording/final.jpg",
+        "gaps_over_one_second": [],
+        "error": null,
+        "complete": true,
+        "started_at": 1789072544.758732,
+        "closed_at": 1789072588.53041,
+        "deadline_epoch": 1789072844.0782459,
+        "source_sha256": "0645e54bdef97073f1d161d37f04bdff4962de5112df27dbdcd9e9c0a722b62d",
+        "video_sha256": "3684bd49e0510401a7c32711586b3c131d7a5dc873f5033f1f4bc19f5fab4db9"
+      },
+      "source_files_unchanged": true,
+      "complete": true
+    },
+    "furnace-recovery-2": {
+      "kind": "native visual action replay",
+      "scored": false,
+      "new_model_calls": 0,
+      "timing": "Edited action timing; original benchmark times are not video times.",
+      "observations_replayed": false,
+      "finish_replayed": false,
+      "source_hashes": {
+        "runs/repair-cases-final-private-1/final-011/broken.zip": "d7a560bac7745be32010251012bff7e9a120cfbf80b31dd0c12c67400b2e556a",
+        "runs/repair-search-20260910/final/method/method-final-011/summary.json": "c4b67034eaea63f34e06fc51a3bb306a002380e864c5a97c36c32ac003ec2985",
+        "runs/repair-search-20260910/final/method/method-final-011/review.json": "61c93c58c3abf58666ea276175b9b4681a15bcfb60477a6b52696958cc70ec0a",
+        "runs/repair-search-20260910/final/method/method-final-011/host/actions.jsonl": "ee296456875143d640c62e2238ec223f71ba4457c1a880ede729ef4a13228a55",
+        "runs/repair-search-20260910/final/method/method-final-011/host/record.json": "77e3fc42bfa9f52a3d55aee64153a7f0849e98c1d02eb700210234ac5ea03eb8",
+        "runs/repair-search-20260910/final/method/method-final-011/host/game/world.zip": "3a3f972b399507e35046c5f6352c6e308759d8d6bbe3b82cca292759e587bdf6"
+      },
+      "actions": [
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-furnace",
+            "position": {
+              "x": -25.5,
+              "y": -62.5
+            }
+          },
+          "original_elapsed_seconds": 22.362182207987644,
+          "expected_ok": false,
+          "replay_ok": false,
+          "frame_start": 17,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "rotate",
+            "name": "fast-inserter",
+            "position": {
+              "x": -41.5,
+              "y": -5.5
+            },
+            "direction": "LEFT"
+          },
+          "original_elapsed_seconds": 32.03881624992937,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 23,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-furnace",
+            "position": {
+              "x": -25.5,
+              "y": -63.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 42.82596470799763,
+          "expected_ok": false,
+          "replay_ok": false,
+          "frame_start": 29,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-furnace",
+            "position": {
+              "x": -25.5,
+              "y": -61.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 49.76785462500993,
+          "expected_ok": false,
+          "replay_ok": false,
+          "frame_start": 35,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "pickup",
+            "name": "fast-inserter",
+            "position": {
+              "x": -27.5,
+              "y": -62.5
+            }
+          },
+          "original_elapsed_seconds": 60.82880791591015,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 41,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "pickup",
+            "name": "fast-inserter",
+            "position": {
+              "x": -23.5,
+              "y": -62.5
+            }
+          },
+          "original_elapsed_seconds": 60.83216829097364,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 47,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-furnace",
+            "position": {
+              "x": -25.5,
+              "y": -62.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 60.83332558290567,
+          "expected_ok": false,
+          "replay_ok": false,
+          "frame_start": 53,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "electric-furnace",
+            "position": {
+              "x": -25.5,
+              "y": -65.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 66.19692191598006,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 59,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "rotate",
+            "name": "transport-belt",
+            "position": {
+              "x": -28.5,
+              "y": -62.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 78.96510145801585,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 65,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -28.5,
+              "y": -63.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 78.9669499999145,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 71,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -28.5,
+              "y": -64.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 78.9683688749792,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 77,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -28.5,
+              "y": -65.5
+            },
+            "direction": "UP"
+          },
+          "original_elapsed_seconds": 78.9700494579738,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 83,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -22.5,
+              "y": -65.5
+            },
+            "direction": "DOWN"
+          },
+          "original_elapsed_seconds": 78.97173654101789,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 89,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -22.5,
+              "y": -64.5
+            },
+            "direction": "DOWN"
+          },
+          "original_elapsed_seconds": 78.97335295798257,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 95,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "transport-belt",
+            "position": {
+              "x": -22.5,
+              "y": -63.5
+            },
+            "direction": "DOWN"
+          },
+          "original_elapsed_seconds": 78.97509920794982,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 101,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "fast-inserter",
+            "position": {
+              "x": -27.5,
+              "y": -65.5
+            },
+            "direction": "LEFT"
+          },
+          "original_elapsed_seconds": 78.97666683292482,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 107,
+          "outcome_matches": true
+        },
+        {
+          "request": {
+            "action": "place",
+            "item": "fast-inserter",
+            "position": {
+              "x": -23.5,
+              "y": -65.5
+            },
+            "direction": "LEFT"
+          },
+          "original_elapsed_seconds": 78.97834845795296,
+          "expected_ok": true,
+          "replay_ok": true,
+          "frame_start": 113,
+          "outcome_matches": true
+        }
+      ],
+      "spectator_setup": "Freeplay crash site, intro, and starter items disabled in demo copy before visual client joins.",
+      "initial_equipment_matches": true,
+      "uncaptured_preroll_seconds": 22.362182207987644,
+      "uncaptured_preroll_game_speed": 20,
+      "final_equipment_matches": true,
+      "capture": {
+        "mode": "native Factorio visual action replay",
+        "replay": true,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "source_image_format": "jpeg",
+        "jpeg_quality": 92,
+        "playback_fps": 8,
+        "nominal_capture_fps": 8,
+        "frames": 208,
+        "video": "recording/video.mp4",
+        "timestamps": "recording/frames.jsonl",
+        "initial_image": "recording/initial.jpg",
+        "final_image": "recording/final.jpg",
+        "gaps_over_one_second": [],
+        "error": null,
+        "complete": true,
+        "started_at": 1789072763.5946271,
+        "closed_at": 1789072834.029836,
+        "deadline_epoch": 1789073062.653321,
+        "source_sha256": "0645e54bdef97073f1d161d37f04bdff4962de5112df27dbdcd9e9c0a722b62d",
+        "video_sha256": "106a6c8173f7bbd917c59d3b4d882f5d408f51f63c858028ae384ecc78947348"
+      },
+      "source_files_unchanged": true,
+      "complete": true
+    }
+  },
+  "render": {
+    "duration_seconds": 60.0,
+    "audio": "none; record your own narration",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "native_capture_fps": 8,
+    "video_fps": 30,
+    "footage": "Native action replay, game speed 4, edited action timing.",
+    "outputs": {
+      "factorio-method-60s.mp4": {
+        "sha256": "f5268e191fd3a9eddd985f533b8119064c5e399a1c9693c9ecee11f4b0759a61",
+        "seconds": 60.0,
+        "bytes": 12271722
+      },
+      "quick-repair-labeled.mp4": {
+        "sha256": "443451359393a88d57bf37efdba02acd49d1c0c6e3ba45c1937093b0033f15fe",
+        "seconds": 18.766667,
+        "bytes": 7269206
+      },
+      "furnace-recovery-labeled.mp4": {
+        "sha256": "27787bfb57338e4d7d1f52fcb96247927b3ca320bde8c15d4be34ea95f54a0f7",
+        "seconds": 26.0,
+        "bytes": 8444859
+      }
+    }
+  },
+  "trace_statistics_source_sha256": {
+    "runs/repair-search-20260910/final/direct/direct-final-012/codex/events.jsonl": "84ddd7d6650fbce782cd82dd920be72ae91d7dbfe59b453d2f5aa5f4b4af1d92",
+    "runs/repair-search-20260910/final/direct/direct-final-015/codex/events.jsonl": "2c0e333156fd0b39d2fc4fe349e8241519756e3fb15c9d38ef2809038eb1354e",
+    "runs/repair-search-20260910/final/direct/direct-final-014/codex/events.jsonl": "5d91a94cdeeb3131f585f27ee5df958512e882009661b87fdee18b8b042ff564",
+    "runs/repair-search-20260910/final/direct/direct-final-013/codex/events.jsonl": "52038934352dfd120931e560c97b41fdfd3d9fdb2a0473beaf4dddbe49b55773",
+    "runs/repair-search-20260910/final/direct/direct-final-009/codex/events.jsonl": "4c35be930c28cb61ba84bd4fe18a6d399de46431d10f996aac95d32bf7e0a614",
+    "runs/repair-search-20260910/final/direct/direct-final-007/codex/events.jsonl": "22c4adc76ae54393104875db711bbc0d840166c9f6e7e3b7f59d753298650356",
+    "runs/repair-search-20260910/final/direct/direct-final-006/codex/events.jsonl": "1d787876ca9cfc795bf69c2ae78d960b22f952f8f5afd130d4b3e2e55829f59c",
+    "runs/repair-search-20260910/final/direct/direct-final-001/codex/events.jsonl": "2ff7e59f7a9ccb52eede4a5d252292f70321ff1e41e30984f73eb8902b7326c1",
+    "runs/repair-search-20260910/final/direct/direct-final-008/codex/events.jsonl": "181e9893e6492e1db0a4af3d41cc3852f2f3994047a183e95b2ae3764d3cb132",
+    "runs/repair-search-20260910/final/direct/direct-final-016/codex/events.jsonl": "b312a2a0e8f8ff6e9caf0bf66fc5f34762d94e76f1173e381c2a2c8752041dc2",
+    "runs/repair-search-20260910/final/direct/direct-final-011/codex/events.jsonl": "a5c677855dbc2d737cb153ef077398a284dd904fc7aab7c203bc00f4808be603",
+    "runs/repair-search-20260910/final/direct/direct-final-018/codex/events.jsonl": "2e1916d396593470d6aba1d246583fedac0d41b6a45bcba62dd3199c2a9a10bf",
+    "runs/repair-search-20260910/final/direct/direct-final-020/codex/events.jsonl": "20525dd55b492081513fa153a5a8bdb26834f44aa8ae961dc7ea85314fbfd793",
+    "runs/repair-search-20260910/final/direct/direct-final-019/codex/events.jsonl": "3e83fba0c6d588a0325274a4f3a43b535c7605dd2e7177c3ecf71b5523080b50",
+    "runs/repair-search-20260910/final/direct/direct-final-010/codex/events.jsonl": "cf0d1f56191988ab35d33e8475dfb49653e4f63ee1311b81f7e83ed89b2b4c97",
+    "runs/repair-search-20260910/final/direct/direct-final-017/codex/events.jsonl": "e48823f4e367290c4cb8946c43f868abc741584a657078bec59457be8ed7b5d0",
+    "runs/repair-search-20260910/final/direct/direct-final-004/codex/events.jsonl": "f854ca223786a8e0dc53dc9b7e9a50b41c40d23b6eaf1adb222c2e74d8f2f879",
+    "runs/repair-search-20260910/final/direct/direct-final-003/codex/events.jsonl": "82e99f7d9afc8a6a3deec3b22345c1686cf3d2a5b031c9285364bc378fc8a684",
+    "runs/repair-search-20260910/final/direct/direct-final-002/codex/events.jsonl": "7d8af504e82bd10bfbbea00525ea4d86b7a17df2c9a9795c00d419e9be63638e",
+    "runs/repair-search-20260910/final/direct/direct-final-005/codex/events.jsonl": "0f2c40a6af91c684cfbcbe78c3a2de3935c71e4e94f98ee0640240ba8a3381ce",
+    "runs/repair-search-20260910/final/method/method-final-006/method/codex/6ce0bbc2-66fb-4414-b480-4f629dce2985/events.jsonl": "9f717369e64e511903ef4e7f2124dc8b719c0e5f8d31897ba1041cbdc00d1094",
+    "runs/repair-search-20260910/final/method/method-final-001/method/codex/036e005c-f4ee-40d1-b7e8-8b85153ebab4/events.jsonl": "081264d33821e807d391ce6ad11d7dc397ec517c435991bab70631a44b8aaf94",
+    "runs/repair-search-20260910/final/method/method-final-008/method/codex/158fd2f4-5d9b-40b8-a79d-962c4d621068/events.jsonl": "f643bdfc9f87144caaa0b24101320116c7a2a794d02384a31bab3e4775630c07",
+    "runs/repair-search-20260910/final/method/method-final-009/method/codex/2a011583-5457-4fe5-b6f7-e33f94a56040/events.jsonl": "e0ce4ed57697c7f704a863f23a5bac57d08583f3c5e8d60def0e75ad76171a65",
+    "runs/repair-search-20260910/final/method/method-final-007/method/codex/8bb12600-b303-438a-bfa4-e52d8775fb15/events.jsonl": "2da48257e64ec9f33b5bed076a3b23b7942be576e2d92655ec0b8aac663a2353",
+    "runs/repair-search-20260910/final/method/method-final-014/method/codex/5616bbba-9d9b-4cfa-8dd7-1a5739b7ae4f/events.jsonl": "dbf8876fdb28133c0e93bf539237d63f9fbd09daa1ec03dcc4d868642640923c",
+    "runs/repair-search-20260910/final/method/method-final-013/method/codex/ad642da2-d4a5-43e3-a62e-e43208bd7770/events.jsonl": "6ccbe29898d4948ae76798a25b94fee2649f7a729bf00f94cb2916740919f12c",
+    "runs/repair-search-20260910/final/method/method-final-012/method/codex/b232e5d8-1c9a-4611-96e4-a99f00456abc/events.jsonl": "3b09bacaf5c3c22c76df53c1c8c2a0a308e1db928755c8fa77f315ae2ada474a",
+    "runs/repair-search-20260910/final/method/method-final-015/method/codex/b3a42f59-472b-47dd-b3c5-c40341332936/events.jsonl": "b98f0ba7de78dbf1b5f855fcb6b56eb302a5d61a02c6eb9e3949ff7c65f62184",
+    "runs/repair-search-20260910/final/method/method-final-002/method/codex/0b4a6fe6-99d9-49ed-b805-d9fe5d49421f/events.jsonl": "eb0b52b291686394e60200b4ccfe1bcd678dea3e96415fff42be913480a0278a",
+    "runs/repair-search-20260910/final/method/method-final-005/method/codex/6be3c26b-64ed-45ee-98e4-b7a65f969810/events.jsonl": "8337386e0bc70f5ae548adca1d2faa6da1fa5d03b92b1aa1196cdb8b8b7fddd2",
+    "runs/repair-search-20260910/final/method/method-final-004/method/codex/de7ffa08-fff8-4dda-8d81-4e84db7ba2e6/events.jsonl": "47c8b381a720039acbec430ea508f682725f3b2b8783ae2bedb850cc58547bd1",
+    "runs/repair-search-20260910/final/method/method-final-003/method/codex/ee35c0dc-4c65-485b-93ef-9267269f53d9/events.jsonl": "61b669124872caf874b72713d2cede6904f71acdeb48365b037fefca2ba4f375",
+    "runs/repair-search-20260910/final/method/method-final-019/method/codex/dea95579-e024-400c-a114-c7ae9aa36050/events.jsonl": "94303cf84c24c721e9938f250641aec4b0387a5870e053c2ba54c9925ae4d713",
+    "runs/repair-search-20260910/final/method/method-final-010/method/codex/455723f1-f3fb-4b3c-9eb1-5ba0aadccf6e/events.jsonl": "4325b327e02c8225ddfb65c11326a8ca66c29b82e03d47702c1b283054ccd5de",
+    "runs/repair-search-20260910/final/method/method-final-017/method/codex/a5ca6230-e73d-4c65-b416-d89138d1bee5/events.jsonl": "b70a9c6a752b668190ffb6059746d6415350d2d7d8833792af665b93c809cb60",
+    "runs/repair-search-20260910/final/method/method-final-016/method/codex/b5b9728c-d477-40ea-9b02-0a0ef946ad2f/events.jsonl": "68c07e77cb92bee1555ad1334cba72228280f51223a32b14b00b2e09e3596768",
+    "runs/repair-search-20260910/final/method/method-final-011/method/codex/24f44be3-fcc6-4b8e-a485-9821ea424b16/events.jsonl": "b1359a96b72fb47f0bd5eff2101a455e5f529d85fc2019ac0f54929b57bc7614",
+    "runs/repair-search-20260910/final/method/method-final-018/method/codex/e5e5e127-76d8-4b60-a570-6be3c05e0e09/events.jsonl": "406895242e4fe9e9386ac68e5e4e2df8c44d896b514f84fd1f35fd14dabe67ab",
+    "runs/repair-search-20260910/final/method/method-final-020/method/codex/fac7b3bb-36f0-4ba6-8750-0d4cf17914aa/events.jsonl": "d5cc59379d4f7c8b00273690c4315768919fd044addd6911ffd6f75284ba682e"
+  },
+  "original_final_report_sha256": "8a0c984d3e6b6ecdfc16c9da19786955834f9cf361cfb460dabb855eb66dfe89",
+  "source_note": "Capture setup failures are retained locally. Original benchmark evidence is unchanged."
+}
