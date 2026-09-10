@@ -1,5 +1,7 @@
 # Civ economy Method pilot, 10 September 2026
 
+**Correction:** This pilot did not use the Method CLI. The candidates were written strategy prompts supplied to Astra. “Method” below is the original label for that prompt group, not a Method v3 runtime result. Read the [plain-English results](PLAIN_ENGLISH_RESULTS.md) for the corrected account. The original measurements and trial identifiers are retained.
+
 The frozen Method passed both comparison runs. Direct Astra also passed both. The Method used 0.5 fewer game turns on average, with more playing time, game requests, and model tokens. This small pilot does not establish a consistent advantage.
 
 The initial Method v1 remained best in development. V2 took more turns; v3 failed the full hold requirement. The search did not produce a revision that beat v1 in its development trial. All versions and results are retained.

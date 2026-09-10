@@ -334,6 +334,11 @@ actual factory repairs.
 
 ## Civ economy Method pilot, 10 September 2026
 
+**Correction:** The Civ pilot used strategy prompts, not the Method CLI.
+The [plain-English results](evidence/civ6-method-pilot-2026-09-10/PLAIN_ENGLISH_RESULTS.md)
+record what ran and the limits of the comparison. The historical “Method”
+labels in this section refer to those prompts.
+
 The [fixed-map pilot](evidence/civ6-method-pilot-2026-09-10/README.md) tested
 three Method versions and then ran four fresh comparisons in alternating
 direct/Method order. Both direct Astra and frozen Method v1 passed 2/2 trials.
