@@ -1,0 +1,8 @@
+{
+  "policies/iron-plates-v1.method": "68c22d73642c8e709afe59c4d1f9745149daefcfa51475357c3ecb2092918241",
+  "docs/control-api.md": "18dfd81a5c9e1d5d49bf37eaa55c46c05c459db184a467c81fb6474633b0d419",
+  "scripts/control_test.py": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+  "scripts/check_result.py": "ca674aadde095c5ff6d2cae3580083fe23766b46e3bf8274e588f1eb460c5914",
+  "scripts/compare_fle_baseline.py": "ad47965754e80f8c85ae082abb97584f5bfb04bd444edc12e12c49d03815b984",
+  "docs/control-api-unix.md": "3004d529662d13c5237a1acbb39ca5f50fae70741defcc3000084a9cff81a335"
+}

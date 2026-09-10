@@ -1,0 +1,66 @@
+[
+  {
+    "name": "production-http-s1",
+    "local_run": "runs/parallel-d-20260910-http-s1",
+    "actions": 1111,
+    "expected_rejections": 7,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "production-unix-s1",
+    "local_run": "runs/parallel-d-20260910-unix-s1",
+    "actions": 211,
+    "expected_rejections": 7,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "production-http-s5",
+    "local_run": "runs/parallel-d-20260910-http-s5",
+    "actions": 125,
+    "expected_rejections": 0,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "production-unix-s5",
+    "local_run": "runs/parallel-d-20260910-unix-s5",
+    "actions": 125,
+    "expected_rejections": 0,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "production-http-s20",
+    "local_run": "runs/parallel-d-20260910-http-s20",
+    "actions": 125,
+    "expected_rejections": 0,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "production-unix-s20",
+    "local_run": "runs/parallel-d-20260910-unix-s20",
+    "actions": 125,
+    "expected_rejections": 0,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "batch-http-s1",
+    "local_run": "runs/parallel-d-batch-20260910-http-s1",
+    "actions": 607,
+    "expected_rejections": 1,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  },
+  {
+    "name": "batch-unix-s1",
+    "local_run": "runs/parallel-d-batch-20260910-unix-s1",
+    "actions": 607,
+    "expected_rejections": 1,
+    "terminal_save_reload_passed": true,
+    "measured_source_preserved": true
+  }
+]

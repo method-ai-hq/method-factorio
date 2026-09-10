@@ -1,0 +1,52 @@
+{
+  "api_cost_usd": 0,
+  "cases": [
+    {
+      "action": "set iron-gear-wheel recipe and insert 20 iron plates",
+      "fixture": "solar-powered assembler 2, 20 iron plates in character",
+      "id": "recipe_power",
+      "pass": "at least 1 gear produced, at least 2 plates consumed, positive machine energy",
+      "timeout_seconds": 15
+    },
+    {
+      "action": "set processing-unit recipe",
+      "fixture": "assembler 2; processing-unit recipe locked",
+      "id": "locked_recipe",
+      "pass": "locked recipe rejected and not selected",
+      "timeout_seconds": 10
+    },
+    {
+      "action": "select automation and insert 10 science",
+      "fixture": "solar-powered lab; steam-power and automation-science-pack researched; automation unresearched; 10 red science in character",
+      "id": "research",
+      "pass": "automation completes with 10 science consumed",
+      "timeout_seconds": 30
+    },
+    {
+      "action": "select automation-3",
+      "fixture": "no researched technology",
+      "id": "research_prerequisite",
+      "pass": "request rejected; no research or completion granted",
+      "timeout_seconds": 10
+    },
+    {
+      "action": "select basic-oil-processing",
+      "fixture": "solar-powered refinery; oil-processing researched; input fluid 100 crude oil supplied by operator after recipe selection",
+      "id": "oil",
+      "pass": "consume 100 crude oil and produce at least 45 petroleum gas",
+      "timeout_seconds": 15
+    },
+    {
+      "action": "insert normal rocket ingredients, wait for ready state, call FLE launch_rocket at exact silo position",
+      "fixture": "solar-powered silo; rocket-silo researched; 1000 processing units, 1000 low-density structures, 1000 rocket fuel in character; one satellite supplied by operator if payload needed",
+      "id": "rocket",
+      "pass": "trusted on_rocket_launched event count increases by one",
+      "timeout_seconds": 90
+    }
+  ],
+  "mode": "fixed scripted fixtures; operator supplies prerequisites; not fresh-world wins",
+  "model_calls": 0,
+  "script_sha256": "3fd5e57b56b03f0213e49cf4be1e39f4bed9ca1c94a52cfaf363d5634011518e",
+  "seed": 44340,
+  "speed": 20
+}

@@ -1,0 +1,329 @@
+{
+  "scope": "D fixed-script environment validation; not policy search or full game control",
+  "sample_size": "One production episode per connection and speed; one batching episode per connection; all on seed44340",
+  "model_calls": 0,
+  "separate_api_calls": 0,
+  "shared_machine_load": true,
+  "total_recorded_actions": 3036,
+  "expected_rejected_actions": 16,
+  "production": [
+    {
+      "run": "runs/parallel-d-20260910-http-s1",
+      "speed": 1,
+      "transport": "http",
+      "production_passed": true,
+      "production_seconds": 109.29285270802211,
+      "production_game_ticks": 6544,
+      "startup_seconds": 12.229628958972171,
+      "complete_probe_trial_seconds": 172.24415879196022,
+      "observation_n": 1000,
+      "observation_median_ms": 33.36856298847124,
+      "observation_p95_ms": 39.904374978505075,
+      "matched100_observation_median_ms": 33.52606255793944,
+      "matched100_observation_p95_ms": 43.254374992102385,
+      "achieved_ticks_per_second": 59.976156490780646,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": true,
+      "fixed_1x_evaluator_failed_checks": [],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "aae2d1a8dfce033ab4c4c868816aa6d3c2da1f931673b7f13b1b4259c2c7b652",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-http-s1"
+    },
+    {
+      "run": "runs/parallel-d-20260910-unix-s1",
+      "speed": 1,
+      "transport": "unix",
+      "production_passed": true,
+      "production_seconds": 109.25220270897262,
+      "production_game_ticks": 6534,
+      "startup_seconds": 11.810583374928683,
+      "complete_probe_trial_seconds": 139.94004841602873,
+      "observation_n": 100,
+      "observation_median_ms": 33.23089546756819,
+      "observation_p95_ms": 35.83604202140123,
+      "matched100_observation_median_ms": 33.23089546756819,
+      "matched100_observation_p95_ms": 35.83604202140123,
+      "achieved_ticks_per_second": 59.88946130355455,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": true,
+      "fixed_1x_evaluator_failed_checks": [],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "c5344e88e696a49c585125726d458e56f27d5af636b227a8a489775369d6f967",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-unix-s1"
+    },
+    {
+      "run": "runs/parallel-d-20260910-http-s5",
+      "speed": 5,
+      "transport": "http",
+      "production_passed": true,
+      "production_seconds": 22.24330658291001,
+      "production_game_ticks": 6666,
+      "startup_seconds": 9.956280832993798,
+      "complete_probe_trial_seconds": 40.38087233295664,
+      "observation_n": 100,
+      "observation_median_ms": 13.758271001279354,
+      "observation_p95_ms": 19.36000003479421,
+      "matched100_observation_median_ms": 13.758271001279354,
+      "matched100_observation_p95_ms": 19.36000003479421,
+      "achieved_ticks_per_second": 298.94304093383823,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": false,
+      "fixed_1x_evaluator_failed_checks": [
+        "normal_speed"
+      ],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "589a2d498f8285d0f6d1f85dfb64fc13999a0335143d1f98ba618fe158bbbcf5",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-http-s5"
+    },
+    {
+      "run": "runs/parallel-d-20260910-unix-s5",
+      "speed": 5,
+      "transport": "unix",
+      "production_passed": true,
+      "production_seconds": 22.50541250000242,
+      "production_game_ticks": 6684,
+      "startup_seconds": 10.37157829105854,
+      "complete_probe_trial_seconds": 41.03288766602054,
+      "observation_n": 100,
+      "observation_median_ms": 13.619333563838154,
+      "observation_p95_ms": 17.49045809265226,
+      "matched100_observation_median_ms": 13.619333563838154,
+      "matched100_observation_p95_ms": 17.49045809265226,
+      "achieved_ticks_per_second": 300.04568379592945,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": false,
+      "fixed_1x_evaluator_failed_checks": [
+        "normal_speed"
+      ],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "70e3c4019947763f8441bef65e80e875f69bf01c9c0be1d5927c3a8bb12d7d00",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-unix-s5"
+    },
+    {
+      "run": "runs/parallel-d-20260910-http-s20",
+      "speed": 20,
+      "transport": "http",
+      "production_passed": true,
+      "production_seconds": 5.917128707980737,
+      "production_game_ticks": 6898,
+      "startup_seconds": 9.576686916057952,
+      "complete_probe_trial_seconds": 23.37728979100939,
+      "observation_n": 100,
+      "observation_median_ms": 12.833916523959488,
+      "observation_p95_ms": 16.04908297304064,
+      "matched100_observation_median_ms": 12.833916523959488,
+      "matched100_observation_p95_ms": 16.04908297304064,
+      "achieved_ticks_per_second": 1192.1534788538515,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": false,
+      "fixed_1x_evaluator_failed_checks": [
+        "normal_speed"
+      ],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "9e263fcdc439f076abca0ef03ae20c8c116ca2b0ef80c6d8ae59c3e501094b9b",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-http-s20"
+    },
+    {
+      "run": "runs/parallel-d-20260910-unix-s20",
+      "speed": 20,
+      "transport": "unix",
+      "production_passed": true,
+      "production_seconds": 5.912849042098969,
+      "production_game_ticks": 6901,
+      "startup_seconds": 9.773593583959155,
+      "complete_probe_trial_seconds": 23.67495545896236,
+      "observation_n": 100,
+      "observation_median_ms": 12.67343753715977,
+      "observation_p95_ms": 15.482458984479308,
+      "matched100_observation_median_ms": 12.67343753715977,
+      "matched100_observation_p95_ms": 15.482458984479308,
+      "achieved_ticks_per_second": 1199.1627293958402,
+      "saved_game_reload_passed": true,
+      "fixed_1x_evaluator_passed": false,
+      "fixed_1x_evaluator_failed_checks": [
+        "normal_speed"
+      ],
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "90b21e10eb0eaf2801038ca02208d7994cc73bde3916158432f3ffaf0dfa289e",
+      "controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "published_evidence": "production-unix-s20"
+    }
+  ],
+  "batching": [
+    {
+      "run": "runs/parallel-d-batch-20260910-http-s1",
+      "transport": "http",
+      "groups": [
+        {
+          "family": "observe",
+          "batch_size": 1,
+          "actions": 100,
+          "requests": 100,
+          "seconds": 3.3277568749617785,
+          "actions_per_second": 30.050272227639397,
+          "passed": true
+        },
+        {
+          "family": "observe",
+          "batch_size": 10,
+          "actions": 100,
+          "requests": 10,
+          "seconds": 3.3517470830120146,
+          "actions_per_second": 29.83518670213505,
+          "passed": true
+        },
+        {
+          "family": "observe",
+          "batch_size": 50,
+          "actions": 100,
+          "requests": 2,
+          "seconds": 3.366909166914411,
+          "actions_per_second": 29.700830952812595,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 1,
+          "actions": 100,
+          "requests": 100,
+          "seconds": 7.007927541970275,
+          "actions_per_second": 14.269553930331456,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 10,
+          "actions": 100,
+          "requests": 10,
+          "seconds": 6.930220459005795,
+          "actions_per_second": 14.429555393154972,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 50,
+          "actions": 100,
+          "requests": 2,
+          "seconds": 6.942186541971751,
+          "actions_per_second": 14.404683509354037,
+          "passed": true
+        }
+      ],
+      "partial_batch_stop_passed": true,
+      "saved_game_reload_passed": true,
+      "complete_trial_seconds": 45.30730070802383,
+      "controller_sha256": "d4060d15102e6045976d696af7980d30c9208a50e26131a096219d3518f2dd81",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "8afd9be7e7cd67fabefac9be014e7a593a4d6976910619d67913a51a7b9b4214",
+      "published_evidence": "batch-http-s1"
+    },
+    {
+      "run": "runs/parallel-d-batch-20260910-unix-s1",
+      "transport": "unix",
+      "groups": [
+        {
+          "family": "observe",
+          "batch_size": 1,
+          "actions": 100,
+          "requests": 100,
+          "seconds": 3.3821856250287965,
+          "actions_per_second": 29.566679977580645,
+          "passed": true
+        },
+        {
+          "family": "observe",
+          "batch_size": 10,
+          "actions": 100,
+          "requests": 10,
+          "seconds": 3.332289374899119,
+          "actions_per_second": 30.00939856942267,
+          "passed": true
+        },
+        {
+          "family": "observe",
+          "batch_size": 50,
+          "actions": 100,
+          "requests": 2,
+          "seconds": 3.369699624949135,
+          "actions_per_second": 29.67623560854018,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 1,
+          "actions": 100,
+          "requests": 100,
+          "seconds": 7.20248224993702,
+          "actions_per_second": 13.884102248342844,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 10,
+          "actions": 100,
+          "requests": 10,
+          "seconds": 6.9189584160922095,
+          "actions_per_second": 14.453042493710992,
+          "passed": true
+        },
+        {
+          "family": "place_pickup",
+          "batch_size": 50,
+          "actions": 100,
+          "requests": 2,
+          "seconds": 6.9020229580346495,
+          "actions_per_second": 14.488505849374194,
+          "passed": true
+        }
+      ],
+      "partial_batch_stop_passed": true,
+      "saved_game_reload_passed": true,
+      "complete_trial_seconds": 45.4140861670021,
+      "controller_sha256": "d4060d15102e6045976d696af7980d30c9208a50e26131a096219d3518f2dd81",
+      "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+      "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+      "final_save_sha256": "03f906c1a28fcceee99773c2699b460cee42a9330dfc2018e1976f27b43a2efc",
+      "published_evidence": "batch-unix-s1"
+    }
+  ],
+  "unsupported_in_playing_interface": [
+    "raw administration (intentionally denied)",
+    "pause-and-advance mode",
+    "live episode resume",
+    "action IDs and idempotent request replay",
+    "recipe selection",
+    "research selection",
+    "rocket launch",
+    "factory scale beyond coordinate bound1000 and entity radius100"
+  ],
+  "not_tested": [
+    "30-minute larger-factory soak",
+    "1000 mutating actions in one run",
+    "full rocket route",
+    "powered production/research/oil/train/robot/circuit/combat families",
+    "exact matched-tick state equivalence across speeds",
+    "resource-patch decrement through independent observations",
+    "active server restart/resume",
+    "subscription/model/runtime performance (no models used)",
+    "known-fixture reset time separate from cold map creation"
+  ],
+  "notes": [
+    "The unmodified1x evaluator passes both1x episodes; it rejects all accelerated episodes only because normal_speed is false. Those failures are preserved.",
+    "There are no unexpected episode exceptions. Negative tests and failed batch member actions are intentional and preserved.",
+    "Whole probe-run durations differ in probe count and cannot establish connection throughput. Recipe time and matched100 observation measurements are comparable.",
+    "Terminal-save reload is an inspection check, not live FLE resume.",
+    "Final script adds aggregate pass/fail reporting after measured runs; preserved controller copies retain each measured version."
+  ]
+}

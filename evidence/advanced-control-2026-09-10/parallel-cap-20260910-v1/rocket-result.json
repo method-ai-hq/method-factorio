@@ -1,0 +1,27 @@
+{
+  "id": "rocket",
+  "criterion": "trusted on_rocket_launched event count increases by one",
+  "actions": [],
+  "status": "failed",
+  "error": "'NoneType' object has no attribute 'strip'",
+  "final": {
+    "tick": 267,
+    "speed": 20,
+    "paused": true,
+    "entities": {},
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 0.05967070802580565,
+  "reviewed_classification": "setup_error"
+}

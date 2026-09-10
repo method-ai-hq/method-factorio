@@ -1,0 +1,46 @@
+{
+  "tick": 206,
+  "speed": 1,
+  "paused": false,
+  "position": {
+    "y": 0,
+    "x": 0
+  },
+  "inventory": [
+    {
+      "name": "burner-mining-drill",
+      "quality": "normal",
+      "count": 1
+    },
+    {
+      "name": "stone-furnace",
+      "quality": "normal",
+      "count": 1
+    },
+    {
+      "name": "wood",
+      "quality": "normal",
+      "count": 1
+    },
+    {
+      "name": "iron-plate",
+      "quality": "normal",
+      "count": 8
+    },
+    {
+      "name": "pistol",
+      "quality": "normal",
+      "count": 1
+    },
+    {
+      "name": "firearm-magazine",
+      "quality": "normal",
+      "count": 10
+    }
+  ],
+  "furnaces": {},
+  "research": {},
+  "iron_plates_produced": 0,
+  "enemies": 0,
+  "always_day": false
+}

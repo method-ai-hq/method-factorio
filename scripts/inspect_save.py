@@ -14,6 +14,8 @@ from control_test import SNAPSHOT
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("run", type=Path)
+    parser.add_argument("--rcon-port", type=int, default=27118)
+    parser.add_argument("--game-port", type=int, default=34218)
     args = parser.parse_args()
     run = args.run.resolve()
     review = run / "save-inspection"
@@ -26,7 +28,7 @@ def main():
         (review / "server.log").chmod(0o600)
         server = subprocess.Popen([factorio, "--config", str(review / "config.ini"),
             "--mod-directory", str(run / "game/mods"), "--start-server", str(review / "inspection.zip"),
-            "--bind", "127.0.0.1:34218", "--rcon-bind", "127.0.0.1:27118",
+            "--bind", f"127.0.0.1:{args.game_port}", "--rcon-bind", f"127.0.0.1:{args.rcon_port}",
             "--rcon-password", password, "--server-settings", str(run / "game/server.json")],
             stdout=log, stderr=log)
         try:
@@ -34,7 +36,7 @@ def main():
                 if server.poll() is not None:
                     raise RuntimeError("Saved game did not load; inspect the private log")
                 try:
-                    client = RCONClient("127.0.0.1",27118,password,timeout=5)
+                    client = RCONClient("127.0.0.1",args.rcon_port,password,timeout=5)
                     result = client.send_command("/sc " + SNAPSHOT)
                     state = json.loads(result)
                     client.close()

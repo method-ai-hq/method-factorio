@@ -1,0 +1,216 @@
+[
+  {
+    "request": {
+      "action": "observe"
+    },
+    "started_at": 1789054586.3570318,
+    "ended_at": 1789054586.3863301,
+    "duration_seconds": 0.029291916987858713,
+    "action_seconds": 0.015459124930202961,
+    "post_observation_seconds": 0.013832792057655752,
+    "ok": true,
+    "error": null,
+    "game_tick": 1250,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "nearest",
+      "resource": "coal"
+    },
+    "started_at": 1789054597.240735,
+    "ended_at": 1789054597.270219,
+    "duration_seconds": 0.029482791083864868,
+    "action_seconds": 0.012246166006661952,
+    "post_observation_seconds": 0.017236625077202916,
+    "ok": true,
+    "error": null,
+    "game_tick": 1903,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "move",
+      "position": {
+        "x": 80.5,
+        "y": -61.5
+      }
+    },
+    "started_at": 1789054601.510022,
+    "ended_at": 1789054614.926348,
+    "duration_seconds": 13.416295457980596,
+    "action_seconds": 13.395490999915637,
+    "post_observation_seconds": 0.020804458064958453,
+    "ok": true,
+    "error": null,
+    "game_tick": 2962,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "harvest",
+      "position": {
+        "x": 80.5,
+        "y": -61.5
+      },
+      "quantity": 5
+    },
+    "started_at": 1789054618.64732,
+    "ended_at": 1789054623.735861,
+    "duration_seconds": 5.088528124964796,
+    "action_seconds": 5.05805374996271,
+    "post_observation_seconds": 0.030474375002086163,
+    "ok": true,
+    "error": null,
+    "game_tick": 3490,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "nearest",
+      "resource": "iron-ore"
+    },
+    "started_at": 1789054626.988739,
+    "ended_at": 1789054627.022379,
+    "duration_seconds": 0.03363866696599871,
+    "action_seconds": 0.01418529194779694,
+    "post_observation_seconds": 0.01945337501820177,
+    "ok": true,
+    "error": null,
+    "game_tick": 3688,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "move",
+      "position": {
+        "x": 56.5,
+        "y": -85.5
+      }
+    },
+    "started_at": 1789054630.50762,
+    "ended_at": 1789054634.606411,
+    "duration_seconds": 4.098781042033806,
+    "action_seconds": 4.079140916932374,
+    "post_observation_seconds": 0.019640125101432204,
+    "ok": true,
+    "error": null,
+    "game_tick": 4143,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "harvest",
+      "position": {
+        "x": 56.5,
+        "y": -85.5
+      },
+      "quantity": 20
+    },
+    "started_at": 1789054637.897578,
+    "ended_at": 1789054657.9647648,
+    "duration_seconds": 20.067140333005227,
+    "action_seconds": 20.041405917028897,
+    "post_observation_seconds": 0.025734415976330638,
+    "ok": true,
+    "error": null,
+    "game_tick": 5544,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "place",
+      "item": "stone-furnace",
+      "position": {
+        "x": 56.5,
+        "y": -85.5
+      },
+      "exact": false
+    },
+    "started_at": 1789054662.0490701,
+    "ended_at": 1789054662.088382,
+    "duration_seconds": 0.039311249973252416,
+    "action_seconds": 0.01876604207791388,
+    "post_observation_seconds": 0.020545207895338535,
+    "ok": true,
+    "error": null,
+    "game_tick": 5792,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "insert",
+      "item": "coal",
+      "quantity": 5,
+      "target": {
+        "name": "stone-furnace",
+        "position": {
+          "x": 57,
+          "y": -85
+        }
+      }
+    },
+    "started_at": 1789054666.103415,
+    "ended_at": 1789054666.208245,
+    "duration_seconds": 0.10482804197818041,
+    "action_seconds": 0.08104275004006922,
+    "post_observation_seconds": 0.023785291938111186,
+    "ok": true,
+    "error": null,
+    "game_tick": 6039,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "insert",
+      "item": "iron-ore",
+      "quantity": 20,
+      "target": {
+        "name": "stone-furnace",
+        "position": {
+          "x": 57,
+          "y": -85
+        }
+      }
+    },
+    "started_at": 1789054670.6700149,
+    "ended_at": 1789054670.773785,
+    "duration_seconds": 0.10376866697333753,
+    "action_seconds": 0.08106670901179314,
+    "post_observation_seconds": 0.022701957961544394,
+    "ok": true,
+    "error": null,
+    "game_tick": 6313,
+    "produced": 0
+  },
+  {
+    "request": {
+      "action": "wait",
+      "seconds": 30
+    },
+    "started_at": 1789054673.599544,
+    "ended_at": 1789054703.6619048,
+    "duration_seconds": 30.06229337491095,
+    "action_seconds": 30.0348210419761,
+    "post_observation_seconds": 0.027472332934848964,
+    "ok": true,
+    "error": null,
+    "game_tick": 8286,
+    "produced": 10
+  },
+  {
+    "request": {
+      "action": "wait",
+      "seconds": 30
+    },
+    "started_at": 1789054706.716705,
+    "ended_at": 1789054736.774657,
+    "duration_seconds": 30.05787391704507,
+    "action_seconds": 30.03777150006499,
+    "post_observation_seconds": 0.020102416980080307,
+    "ok": true,
+    "error": null,
+    "game_tick": 10273,
+    "produced": 20
+  }
+]

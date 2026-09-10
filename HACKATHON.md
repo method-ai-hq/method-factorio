@@ -12,7 +12,7 @@ This repository starts on 10 September 2026. It contains the new Factorio experi
 | Factorio game | Existing third-party product | Not included. |
 | Factorio Learning Environment | Existing third-party project | Installed locally at a fixed revision for the small test. Its code is not copied into this repository. |
 | Method SDK and existing runtime | Existing Method work | Installed SDK 0.3.0 provides local authoring, execution, and checks. |
-| Game adapter integration | New work here | Native macOS host, fixed HTTP action interface, limits, action records, and terminal game saves. |
+| Game adapter integration | New work here | Native macOS host, restricted HTTP and Unix connections, batched actions, separate server ports, limits, timing records, and terminal game saves. |
 | Additional Method execution support | Existing SDK used | SDK 0.3.0 runs the agent operation and a separate check. No new SDK execution type was needed for the small test. |
 | Policy improvement and evaluation | New work partly implemented | Fixed small-production check and saved-game inspection work. Policy improvement and scored rocket evaluation are not implemented. |
 | Playing Methods and trial results | Created during this event | The same Method produced 20 new iron plates on two fresh maps. Both live game and saved-game checks passed. |
@@ -33,10 +33,20 @@ The [reviewed results](evidence/control-test-2026-09-10/README.md) identify the
 source commit, policy hashes, map settings, measured outcomes, model usage,
 and failed setup attempts.
 
-The [environment validation plan](docs/environment-validation.md) defines
-control coverage, baseline comparisons, speed measurements, and recovery
-tests. It is a new plan, not a new measured result. The current work remains
-environment validation; policy search has not started.
+The first parallel [environment results](evidence/environment-validation-2026-09-10/README.md)
+cover direct-agent, Method, matched FLE connection, and fixed-script tests.
+The fixed script produced 20 plates in about 109, 22, and 6 seconds at game
+speeds 1, 5, and 20. This does not establish full-game speed. All six scripted
+production runs passed material checks and separate save reload checks.
+
+The [advanced fixtures](evidence/advanced-control-2026-09-10/README.md) passed
+selected recipe, research, oil, continuous-production, and prepared-launch
+checks. They also found locked-recipe error handling and wrong-target launch
+defects. These were operator-prepared fixtures, not agent-built factories or
+fresh-world rocket wins. Failed setup and trial records remain saved.
+
+The [test plan](docs/environment-validation.md) lists the remaining coverage.
+The current work remains environment validation; policy search has not started.
 
 ## Demo rules
 

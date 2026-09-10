@@ -1,0 +1,402 @@
+{
+  "id": "rocket",
+  "criterion": "trusted on_rocket_launched event count increases by one",
+  "actions": [
+    {
+      "action": "insert_processing-unit",
+      "ok": true,
+      "wall_seconds": 0.0012363750720396638,
+      "state": {
+        "tick": 7239,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "rocket-silo",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 71081.48148148149,
+            "status": 26,
+            "recipe": "rocket-part",
+            "products": 0,
+            "input": [
+              {
+                "name": "processing-unit",
+                "quality": "normal",
+                "count": 104
+              }
+            ],
+            "output": {},
+            "parts": 0,
+            "silo_status": 0,
+            "ready": false,
+            "fluids": {}
+          }
+        },
+        "inventory": [
+          {
+            "name": "processing-unit",
+            "quality": "normal",
+            "count": 896
+          },
+          {
+            "name": "low-density-structure",
+            "quality": "normal",
+            "count": 1000
+          },
+          {
+            "name": "rocket-fuel",
+            "quality": "normal",
+            "count": 1000
+          }
+        ],
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": true
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    },
+    {
+      "action": "insert_low-density-structure",
+      "ok": true,
+      "wall_seconds": 0.001001916010864079,
+      "state": {
+        "tick": 7241,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "rocket-silo",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 71081.48148148149,
+            "status": 26,
+            "recipe": "rocket-part",
+            "products": 0,
+            "input": [
+              {
+                "name": "processing-unit",
+                "quality": "normal",
+                "count": 104
+              },
+              {
+                "name": "low-density-structure",
+                "quality": "normal",
+                "count": 54
+              }
+            ],
+            "output": {},
+            "parts": 0,
+            "silo_status": 0,
+            "ready": false,
+            "fluids": {}
+          }
+        },
+        "inventory": [
+          {
+            "name": "processing-unit",
+            "quality": "normal",
+            "count": 896
+          },
+          {
+            "name": "low-density-structure",
+            "quality": "normal",
+            "count": 946
+          },
+          {
+            "name": "rocket-fuel",
+            "quality": "normal",
+            "count": 1000
+          }
+        ],
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": true
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    },
+    {
+      "action": "insert_rocket-fuel",
+      "ok": true,
+      "wall_seconds": 0.0010128750000149012,
+      "state": {
+        "tick": 7243,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "rocket-silo",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 71081.48148148149,
+            "status": 1,
+            "recipe": "rocket-part",
+            "products": 0,
+            "input": [
+              {
+                "name": "processing-unit",
+                "quality": "normal",
+                "count": 94
+              },
+              {
+                "name": "low-density-structure",
+                "quality": "normal",
+                "count": 44
+              },
+              {
+                "name": "rocket-fuel",
+                "quality": "normal",
+                "count": 14
+              }
+            ],
+            "output": {},
+            "parts": 0,
+            "silo_status": 0,
+            "ready": false,
+            "fluids": {}
+          }
+        },
+        "inventory": [
+          {
+            "name": "processing-unit",
+            "quality": "normal",
+            "count": 896
+          },
+          {
+            "name": "low-density-structure",
+            "quality": "normal",
+            "count": 946
+          },
+          {
+            "name": "rocket-fuel",
+            "quality": "normal",
+            "count": 976
+          }
+        ],
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": true
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    }
+  ],
+  "status": "failed",
+  "initial": {
+    "tick": 7237,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "rocket-silo",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 54,
+        "recipe": "rocket-part",
+        "products": 0,
+        "input": {},
+        "output": {},
+        "parts": 0,
+        "silo_status": 0,
+        "ready": false,
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "processing-unit",
+        "quality": "normal",
+        "count": 1000
+      },
+      {
+        "name": "low-density-structure",
+        "quality": "normal",
+        "count": 1000
+      },
+      {
+        "name": "rocket-fuel",
+        "quality": "normal",
+        "count": 1000
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": true
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "9ed4344779def032f5a0cc242c27e4dfad3dd927ff46aea22f3fe2f1d2bbd9ae",
+  "prelaunch": {
+    "tick": 110720,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "rocket-silo",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 71081.48148148149,
+        "status": 26,
+        "recipe": "rocket-part",
+        "products": 0,
+        "input": [
+          {
+            "name": "processing-unit",
+            "quality": "normal",
+            "count": 84
+          },
+          {
+            "name": "low-density-structure",
+            "quality": "normal",
+            "count": 34
+          },
+          {
+            "name": "rocket-fuel",
+            "quality": "normal",
+            "count": 4
+          }
+        ],
+        "output": {},
+        "parts": 2,
+        "silo_status": 0,
+        "ready": false,
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "processing-unit",
+        "quality": "normal",
+        "count": 896
+      },
+      {
+        "name": "low-density-structure",
+        "quality": "normal",
+        "count": 946
+      },
+      {
+        "name": "rocket-fuel",
+        "quality": "normal",
+        "count": 976
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": true
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "final": {
+    "tick": 110720,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "rocket-silo",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 71081.48148148149,
+        "status": 26,
+        "recipe": "rocket-part",
+        "products": 0,
+        "input": [
+          {
+            "name": "processing-unit",
+            "quality": "normal",
+            "count": 84
+          },
+          {
+            "name": "low-density-structure",
+            "quality": "normal",
+            "count": 34
+          },
+          {
+            "name": "rocket-fuel",
+            "quality": "normal",
+            "count": 4
+          }
+        ],
+        "output": {},
+        "parts": 2,
+        "silo_status": 0,
+        "ready": false,
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "processing-unit",
+        "quality": "normal",
+        "count": 896
+      },
+      {
+        "name": "low-density-structure",
+        "quality": "normal",
+        "count": 946
+      },
+      {
+        "name": "rocket-fuel",
+        "quality": "normal",
+        "count": 976
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": true
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 90.32688820804469,
+  "reviewed_classification": "failed"
+}

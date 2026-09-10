@@ -1,0 +1,235 @@
+{
+  "terminal_save_reload": {
+    "passed": true,
+    "checks": {
+      "position": true,
+      "inventory": true,
+      "furnaces": true,
+      "research": true,
+      "iron_plates_produced": true,
+      "enemies": true
+    }
+  },
+  "terminal_save_exists": true,
+  "clean_shutdown": true,
+  "host_exit_code": 0,
+  "exception": null,
+  "production": {
+    "passed": true,
+    "checks": {
+      "new_iron_plates_20": true,
+      "furnace_output_20": true,
+      "ore_consumed_20": true,
+      "inventory_ore_empty": true,
+      "furnace_products_finished_20": true,
+      "fuel_consumed": true,
+      "requested_speed": true
+    }
+  },
+  "fixed_1x_evaluator": {
+    "passed": true,
+    "checks": {
+      "declared_inventory": true,
+      "no_starting_factory": true,
+      "no_starting_research": true,
+      "zero_starting_production": true,
+      "enemies_disabled": true,
+      "normal_speed": true,
+      "new_iron_plates": true,
+      "furnace_finished_products": true,
+      "iron_plates_in_furnace_output": true,
+      "action_limit": true,
+      "game_time_limit": true,
+      "inspection_save": true,
+      "clean_shutdown": true
+    },
+    "produced": 20,
+    "furnace_finished": 20,
+    "furnace_output": 20,
+    "requests": 1111,
+    "errors": 7,
+    "game_seconds": 158.78333333333333,
+    "action_window_seconds": 158.3457760810852,
+    "scope": "small production integration test, not complete control or a rocket launch"
+  },
+  "probes": {
+    "observation_soak": {
+      "passed": true,
+      "count": 1000,
+      "seconds": 35.03260183299426,
+      "game_ticks": 2075,
+      "achieved_ticks_per_second": 59.230542164462705
+    },
+    "game_rate": {
+      "seconds": 5.035334334010258,
+      "ticks": 302,
+      "achieved_ticks_per_second": 59.976156490780646,
+      "requested_speed": 1,
+      "paused": false
+    },
+    "deny_raw_lua": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_research_grant": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_speed_change": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_negative_quantity": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_impossible_craft": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_coordinate_limit": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "deny_out_of_reach": {
+      "passed": true,
+      "unchanged_fields": true
+    },
+    "lost_response_recovery": {
+      "passed": true,
+      "repeat_sent": false,
+      "action_id_recovery": "not supported; read state after uncertain response"
+    },
+    "drill_placement_inventory": {
+      "passed": true
+    },
+    "rotations": {
+      "passed": true,
+      "cases": [
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        },
+        {
+          "direction": "LEFT",
+          "passed": true
+        },
+        {
+          "direction": "UP",
+          "passed": true
+        },
+        {
+          "direction": "RIGHT",
+          "passed": true
+        },
+        {
+          "direction": "DOWN",
+          "passed": true
+        }
+      ]
+    },
+    "drill_pickup_inventory": {
+      "passed": true
+    }
+  }
+}

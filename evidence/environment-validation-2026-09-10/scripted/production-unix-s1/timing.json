@@ -1,0 +1,328 @@
+{
+  "startup_seconds": 11.810583374928683,
+  "complete_probe_trial_seconds": 139.94004841602873,
+  "production_seconds": 109.25220270897262,
+  "host_action_timing": {
+    "craft": {
+      "duration_seconds": {
+        "n": 1,
+        "median_ms": 573.9548749988899,
+        "p95_ms": null,
+        "max_ms": 573.9548749988899,
+        "total_seconds": 0.5739548749988899
+      },
+      "action_seconds": {
+        "n": 1,
+        "median_ms": 548.2606660807505,
+        "p95_ms": null,
+        "max_ms": 548.2606660807505,
+        "total_seconds": 0.5482606660807505
+      },
+      "post_observation_seconds": {
+        "n": 1,
+        "median_ms": 25.69420891813934,
+        "p95_ms": null,
+        "max_ms": 25.69420891813934,
+        "total_seconds": 0.02569420891813934
+      }
+    },
+    "entities": {
+      "duration_seconds": {
+        "n": 30,
+        "median_ms": 136.72639551805332,
+        "p95_ms": 153.55695795733482,
+        "max_ms": 183.7681250181049,
+        "total_seconds": 4.203733538975939
+      },
+      "action_seconds": {
+        "n": 30,
+        "median_ms": 112.27464600233361,
+        "p95_ms": 124.73129201680422,
+        "max_ms": 170.69649999029934,
+        "total_seconds": 3.456170292221941
+      },
+      "post_observation_seconds": {
+        "n": 30,
+        "median_ms": 23.758624913170934,
+        "p95_ms": 33.94320805091411,
+        "max_ms": 34.49895791709423,
+        "total_seconds": 0.7475632467539981
+      }
+    },
+    "harvest": {
+      "duration_seconds": {
+        "n": 2,
+        "median_ms": 12563.223896024283,
+        "p95_ms": null,
+        "max_ms": 20065.320042078383,
+        "total_seconds": 25.126447792048566
+      },
+      "action_seconds": {
+        "n": 2,
+        "median_ms": 12542.670020542573,
+        "p95_ms": null,
+        "max_ms": 20043.777958024293,
+        "total_seconds": 25.085340041085146
+      },
+      "post_observation_seconds": {
+        "n": 2,
+        "median_ms": 20.553875481709838,
+        "p95_ms": null,
+        "max_ms": 21.542084054090083,
+        "total_seconds": 0.041107750963419676
+      }
+    },
+    "insert": {
+      "duration_seconds": {
+        "n": 2,
+        "median_ms": 109.30299997562543,
+        "p95_ms": null,
+        "max_ms": 109.37662492506206,
+        "total_seconds": 0.21860599995125085
+      },
+      "action_seconds": {
+        "n": 2,
+        "median_ms": 82.18710403889418,
+        "p95_ms": null,
+        "max_ms": 86.30166703369468,
+        "total_seconds": 0.16437420807778835
+      },
+      "post_observation_seconds": {
+        "n": 2,
+        "median_ms": 27.11589593673125,
+        "p95_ms": null,
+        "max_ms": 31.156833982095122,
+        "total_seconds": 0.0542317918734625
+      }
+    },
+    "move": {
+      "duration_seconds": {
+        "n": 2,
+        "median_ms": 9115.795563033316,
+        "p95_ms": null,
+        "max_ms": 9865.439959103242,
+        "total_seconds": 18.231591126066633
+      },
+      "action_seconds": {
+        "n": 2,
+        "median_ms": 9093.923959007952,
+        "p95_ms": null,
+        "max_ms": 9842.42483403068,
+        "total_seconds": 18.187847918015905
+      },
+      "post_observation_seconds": {
+        "n": 2,
+        "median_ms": 21.871604025363922,
+        "p95_ms": null,
+        "max_ms": 23.015125072561204,
+        "total_seconds": 0.043743208050727844
+      }
+    },
+    "nearest": {
+      "duration_seconds": {
+        "n": 2,
+        "median_ms": 33.348999451845884,
+        "p95_ms": null,
+        "max_ms": 35.44170793611556,
+        "total_seconds": 0.06669799890369177
+      },
+      "action_seconds": {
+        "n": 2,
+        "median_ms": 12.917812506202608,
+        "p95_ms": null,
+        "max_ms": 13.213083031587303,
+        "total_seconds": 0.025835625012405217
+      },
+      "post_observation_seconds": {
+        "n": 2,
+        "median_ms": 20.431186945643276,
+        "p95_ms": null,
+        "max_ms": 22.81916595529765,
+        "total_seconds": 0.04086237389128655
+      }
+    },
+    "observe": {
+      "duration_seconds": {
+        "n": 118,
+        "median_ms": 32.99777046777308,
+        "p95_ms": 35.835874965414405,
+        "max_ms": 40.73204204905778,
+        "total_seconds": 3.8886528791626915
+      },
+      "action_seconds": {
+        "n": 118,
+        "median_ms": 16.584396013058722,
+        "p95_ms": 19.527249969542027,
+        "max_ms": 25.164375081658363,
+        "total_seconds": 1.9744928773725405
+      },
+      "post_observation_seconds": {
+        "n": 118,
+        "median_ms": 16.308895486872643,
+        "p95_ms": 19.307957962155342,
+        "max_ms": 21.034208009950817,
+        "total_seconds": 1.914160001790151
+      }
+    },
+    "pickup": {
+      "duration_seconds": {
+        "n": 1,
+        "median_ms": 106.51537508238107,
+        "p95_ms": null,
+        "max_ms": 106.51537508238107,
+        "total_seconds": 0.10651537508238107
+      },
+      "action_seconds": {
+        "n": 1,
+        "median_ms": 71.59549999050796,
+        "p95_ms": null,
+        "max_ms": 71.59549999050796,
+        "total_seconds": 0.07159549999050796
+      },
+      "post_observation_seconds": {
+        "n": 1,
+        "median_ms": 34.91987509187311,
+        "p95_ms": null,
+        "max_ms": 34.91987509187311,
+        "total_seconds": 0.03491987509187311
+      }
+    },
+    "place": {
+      "duration_seconds": {
+        "n": 2,
+        "median_ms": 31.582374998833984,
+        "p95_ms": null,
+        "max_ms": 31.607958022505045,
+        "total_seconds": 0.06316474999766797
+      },
+      "action_seconds": {
+        "n": 2,
+        "median_ms": 10.902666545007378,
+        "p95_ms": null,
+        "max_ms": 10.953000048175454,
+        "total_seconds": 0.021805333090014756
+      },
+      "post_observation_seconds": {
+        "n": 2,
+        "median_ms": 20.679708453826606,
+        "p95_ms": null,
+        "max_ms": 20.755624980665743,
+        "total_seconds": 0.04135941690765321
+      }
+    },
+    "rotate": {
+      "duration_seconds": {
+        "n": 30,
+        "median_ms": 102.02945850323886,
+        "p95_ms": 118.3545000385493,
+        "max_ms": 124.08712494652718,
+        "total_seconds": 3.162067626370117
+      },
+      "action_seconds": {
+        "n": 30,
+        "median_ms": 79.59687552647665,
+        "p95_ms": 89.13704194128513,
+        "max_ms": 90.81283304840326,
+        "total_seconds": 2.4072821283480152
+      },
+      "post_observation_seconds": {
+        "n": 30,
+        "median_ms": 22.865875565912575,
+        "p95_ms": 35.88212502654642,
+        "max_ms": 36.50916600599885,
+        "total_seconds": 0.7547854980221018
+      }
+    },
+    "wait": {
+      "duration_seconds": {
+        "n": 14,
+        "median_ms": 5035.3528130217455,
+        "p95_ms": null,
+        "max_ms": 5069.766958011314,
+        "total_seconds": 70.5656025010394
+      },
+      "action_seconds": {
+        "n": 14,
+        "median_ms": 5018.596042064019,
+        "p95_ms": null,
+        "max_ms": 5040.877833031118,
+        "total_seconds": 70.30636537517421
+      },
+      "post_observation_seconds": {
+        "n": 14,
+        "median_ms": 18.52383348159492,
+        "p95_ms": null,
+        "max_ms": 28.889124980196357,
+        "total_seconds": 0.25923712586518377
+      }
+    }
+  },
+  "client_group_timing": {
+    "latency": {
+      "n": 100,
+      "median_ms": 33.23089546756819,
+      "p95_ms": 35.83604202140123,
+      "max_ms": 37.00312494765967
+    },
+    "negative": {
+      "n": 7,
+      "median_ms": 18.819165998138487,
+      "p95_ms": 49.18212490156293,
+      "max_ms": 49.18212490156293
+    },
+    "negative-check": {
+      "n": 14,
+      "median_ms": 32.085187442135066,
+      "p95_ms": 34.76758301258087,
+      "max_ms": 34.76758301258087
+    },
+    "pickup": {
+      "n": 1,
+      "median_ms": 106.85933392960578,
+      "p95_ms": 106.85933392960578,
+      "max_ms": 106.85933392960578
+    },
+    "placement": {
+      "n": 1,
+      "median_ms": 31.84862493071705,
+      "p95_ms": 31.84862493071705,
+      "max_ms": 31.84862493071705
+    },
+    "rate": {
+      "n": 2,
+      "median_ms": 2537.7500205067918,
+      "p95_ms": 5042.406291002408,
+      "max_ms": 5042.406291002408
+    },
+    "recipe": {
+      "n": 23,
+      "median_ms": 5034.048000001349,
+      "p95_ms": 9867.44866706431,
+      "max_ms": 20066.267457907088
+    },
+    "recovery": {
+      "n": 3,
+      "median_ms": 32.054707990027964,
+      "p95_ms": 618.7248340575024,
+      "max_ms": 618.7248340575024
+    },
+    "rotation": {
+      "n": 30,
+      "median_ms": 102.25566651206464,
+      "p95_ms": 118.69712499901652,
+      "max_ms": 124.37375006265938
+    },
+    "rotation-check": {
+      "n": 30,
+      "median_ms": 136.97460404364392,
+      "p95_ms": 153.87879207264632,
+      "max_ms": 187.544499989599
+    }
+  },
+  "notes": [
+    "Host action and post-observation intervals are disjoint parts of host duration. Client durations overlap host durations.",
+    "Client group p95 values in the source record are retained, but values from fewer than30 samples are not acceptance evidence.",
+    "Batch member actions are logged separately.",
+    "Trials ran with other game/model tests on the same Mac."
+  ]
+}

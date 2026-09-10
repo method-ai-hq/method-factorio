@@ -1,0 +1,148 @@
+{
+  "id": "oil",
+  "criterion": "consume 100 crude oil and produce at least 45 petroleum gas",
+  "actions": [
+    {
+      "action": "set_recipe",
+      "ok": true,
+      "wall_seconds": 0.0018857079558074474,
+      "state": {
+        "tick": 6750,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "oil-refinery",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 7715.555555555555,
+            "status": 25,
+            "recipe": "basic-oil-processing",
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": true,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    }
+  ],
+  "status": "passed",
+  "initial": {
+    "tick": 6747,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "oil-refinery",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 54,
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": true,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "c273a8ad7d54e9ff38e9598f54c582937f9e8f64f9ea7f997e4dce5a2e2a064f",
+  "operator_input_state": {
+    "tick": 6752,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "oil-refinery",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 7715.555555555555,
+        "status": 1,
+        "recipe": "basic-oil-processing",
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": true,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "final": {
+    "tick": 7235,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "oil-refinery",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 7715.555555555555,
+        "status": 25,
+        "recipe": "basic-oil-processing",
+        "products": 1,
+        "input": {},
+        "output": {},
+        "fluids": {
+          "petroleum-gas": 45
+        }
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": true,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 0.5274734579725191,
+  "reviewed_classification": "passed"
+}

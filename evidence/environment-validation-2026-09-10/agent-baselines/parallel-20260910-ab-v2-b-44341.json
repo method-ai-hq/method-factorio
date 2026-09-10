@@ -1,0 +1,572 @@
+{
+  "run": "parallel-20260910-ab-v2-b-44341",
+  "baseline": "B",
+  "seed": 44341,
+  "clean_comparison": true,
+  "status": "passed",
+  "timing": {
+    "baseline": "B",
+    "seed": 44341,
+    "start_at": 1789053996.308588,
+    "ready_at": 1789054008.393142,
+    "controller_start_at": 1789054008.393575,
+    "controller_end_at": 1789054574.503177,
+    "host_seconds_limit": 900,
+    "host_action_limit": 200,
+    "policy_request_limit": 120,
+    "operation_seconds_limit": 720,
+    "model": "gpt-6-astra",
+    "reasoning_settings": "user configuration, same for A and B",
+    "pilot": false,
+    "controller_returncode": 0,
+    "external_check_returncode": 0,
+    "end_at": 1789054576.1778471,
+    "first_request_at": 1789054025.778707,
+    "first_verified_goal_at": 1789054192.769269,
+    "last_request_at": 1789054560.4389539,
+    "complete_trial_seconds": 579.8692591190338,
+    "ready_to_goal_seconds": 184.3761270046234,
+    "start_to_goal_seconds": 196.4606809616089,
+    "usage": {
+      "input_tokens": 601402,
+      "cached_input_tokens": 467712,
+      "output_tokens": 3396
+    },
+    "completed_model_turns": 3,
+    "subscription_exhausted": false,
+    "cost_usd": null,
+    "api_spend_usd": 0,
+    "concurrent_load": "A and B lanes plus other environment checks on same Mac"
+  },
+  "usage": {
+    "reasoning_output_tokens": 57,
+    "cached_input_tokens": 467712,
+    "output_tokens": 3396,
+    "cache_write_input_tokens": 0,
+    "input_tokens": 601402
+  },
+  "phases": [
+    {
+      "phase": "playing",
+      "event_path": "method/steps/produce/codex-hxIt1d/events.jsonl",
+      "usage": {
+        "cached_input_tokens": 411136,
+        "output_tokens": 2798,
+        "cache_write_input_tokens": 0,
+        "input_tokens": 496430,
+        "reasoning_output_tokens": 57
+      },
+      "transport_errors": [],
+      "artifact_start_at": 1789054033.9566495,
+      "artifact_result_at": 1789054547.693678,
+      "artifact_elapsed_seconds": 513.7370283603668
+    },
+    {
+      "phase": "verification",
+      "event_path": "method/steps/produce/check/codex-OJyVyH/events.jsonl",
+      "usage": {
+        "cached_input_tokens": 36864,
+        "output_tokens": 278,
+        "cache_write_input_tokens": 0,
+        "input_tokens": 42908,
+        "reasoning_output_tokens": 0
+      },
+      "transport_errors": [],
+      "artifact_start_at": 1789054548.473637,
+      "artifact_result_at": 1789054571.4362845,
+      "artifact_elapsed_seconds": 22.962647438049316
+    },
+    {
+      "phase": "preflight",
+      "event_path": "method/environment/game/codex-cVGW0m/events.jsonl",
+      "usage": {
+        "cached_input_tokens": 19712,
+        "output_tokens": 320,
+        "cache_write_input_tokens": 0,
+        "input_tokens": 62064,
+        "reasoning_output_tokens": 0
+      },
+      "transport_errors": [],
+      "artifact_start_at": 1789054008.9665637,
+      "artifact_result_at": 1789054033.336067,
+      "artifact_elapsed_seconds": 24.369503259658813
+    }
+  ],
+  "first_verified_goal_at": 1789054192.769269,
+  "check": {
+    "passed": true,
+    "checks": {
+      "declared_inventory": true,
+      "no_starting_factory": true,
+      "no_starting_research": true,
+      "zero_starting_production": true,
+      "enemies_disabled": true,
+      "normal_speed": true,
+      "new_iron_plates": true,
+      "furnace_finished_products": true,
+      "iron_plates_in_furnace_output": true,
+      "action_limit": true,
+      "game_time_limit": true,
+      "inspection_save": true,
+      "clean_shutdown": true
+    },
+    "produced": 20,
+    "furnace_finished": 20,
+    "furnace_output": 20,
+    "requests": 14,
+    "errors": 0,
+    "game_seconds": 565.4,
+    "action_window_seconds": 534.6602468490601,
+    "scope": "small production integration test, not complete control or a rocket launch"
+  },
+  "save_check": {
+    "passed": true,
+    "checks": {
+      "position": true,
+      "inventory": true,
+      "furnaces": true,
+      "research": true,
+      "iron_plates_produced": true,
+      "enemies": true
+    },
+    "state": {
+      "tick": 34114,
+      "speed": 1,
+      "paused": true,
+      "position": {
+        "y": -80.5,
+        "x": 42.5
+      },
+      "inventory": [
+        {
+          "name": "burner-mining-drill",
+          "quality": "normal",
+          "count": 1
+        },
+        {
+          "name": "wood",
+          "quality": "normal",
+          "count": 1
+        },
+        {
+          "name": "iron-plate",
+          "quality": "normal",
+          "count": 8
+        },
+        {
+          "name": "pistol",
+          "quality": "normal",
+          "count": 1
+        },
+        {
+          "name": "firearm-magazine",
+          "quality": "normal",
+          "count": 10
+        }
+      ],
+      "furnaces": [
+        {
+          "name": "stone-furnace",
+          "position": {
+            "y": -82,
+            "x": 41
+          },
+          "products_finished": 20,
+          "input": {},
+          "output": [
+            {
+              "name": "iron-plate",
+              "quality": "normal",
+              "count": 20
+            }
+          ],
+          "fuel": [
+            {
+              "name": "coal",
+              "quality": "normal",
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "research": {},
+      "iron_plates_produced": 20,
+      "enemies": 0,
+      "always_day": false
+    }
+  },
+  "settings": {
+    "seed": 44341,
+    "inventory": {
+      "iron-plate": 8,
+      "wood": 1,
+      "stone-furnace": 1,
+      "burner-mining-drill": 1,
+      "pistol": 1,
+      "firearm-magazine": 10
+    },
+    "seconds_limit": 900,
+    "action_limit": 200,
+    "fast": true,
+    "speed": 1.0,
+    "thinking_paused": false,
+    "transport": "http",
+    "rcon_port": 27202,
+    "game_port": 34302,
+    "startup_seconds": 11.566940041957423,
+    "billing": "Codex ChatGPT subscription; no separate API calls",
+    "api_spending_cap_usd": 0,
+    "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+    "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+    "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+    "started_at": 1789054007.971285,
+    "mode": "integration; not a scored rocket trial"
+  },
+  "initial": {
+    "tick": 188,
+    "speed": 1,
+    "paused": false,
+    "position": {
+      "y": 0,
+      "x": 0
+    },
+    "inventory": [
+      {
+        "name": "burner-mining-drill",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "stone-furnace",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "iron-plate",
+        "quality": "normal",
+        "count": 8
+      },
+      {
+        "name": "pistol",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "firearm-magazine",
+        "quality": "normal",
+        "count": 10
+      }
+    ],
+    "furnaces": {},
+    "research": {},
+    "iron_plates_produced": 0,
+    "enemies": 0,
+    "always_day": false
+  },
+  "final": {
+    "tick": 34112,
+    "speed": 1,
+    "paused": false,
+    "position": {
+      "y": -80.5,
+      "x": 42.5
+    },
+    "inventory": [
+      {
+        "name": "burner-mining-drill",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "iron-plate",
+        "quality": "normal",
+        "count": 8
+      },
+      {
+        "name": "pistol",
+        "quality": "normal",
+        "count": 1
+      },
+      {
+        "name": "firearm-magazine",
+        "quality": "normal",
+        "count": 10
+      }
+    ],
+    "furnaces": [
+      {
+        "name": "stone-furnace",
+        "position": {
+          "y": -82,
+          "x": 41
+        },
+        "products_finished": 20,
+        "input": {},
+        "output": [
+          {
+            "name": "iron-plate",
+            "quality": "normal",
+            "count": 20
+          }
+        ],
+        "fuel": [
+          {
+            "name": "coal",
+            "quality": "normal",
+            "count": 3
+          }
+        ]
+      }
+    ],
+    "research": {},
+    "iron_plates_produced": 20,
+    "enemies": 0,
+    "always_day": false
+  },
+  "source_hashes": {
+    "policies/iron-plates-v1.method": "68c22d73642c8e709afe59c4d1f9745149daefcfa51475357c3ecb2092918241",
+    "docs/control-api.md": "18dfd81a5c9e1d5d49bf37eaa55c46c05c459db184a467c81fb6474633b0d419",
+    "scripts/control_test.py": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+    "scripts/check_result.py": "ca674aadde095c5ff6d2cae3580083fe23766b46e3bf8274e588f1eb460c5914",
+    "scripts/compare_agent_baselines.py": "cf3f2ef12968aeb5857a59aa9d1aef3fcac25c7d9ad0d4e1b85f8dabc5dd5df9"
+  },
+  "inspector_hash": {
+    "scripts/inspect_save.py": "57e58a172eba6a0bea897b7b1542b28828d81ce2db833002458195cd291b6fe3"
+  },
+  "host_timing": {
+    "total_seconds": 579.7085190420039,
+    "finished_at": 1789054576.051278,
+    "server_exit_code": 0
+  },
+  "supervisor_intervention": null,
+  "action_timeline": [
+    {
+      "request": {
+        "action": "observe"
+      },
+      "started_at": 1789054025.778707,
+      "ended_at": 1789054025.809317,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 1252,
+      "request_seconds": 0.030610084533691406
+    },
+    {
+      "request": {
+        "action": "observe"
+      },
+      "started_at": 1789054044.972457,
+      "ended_at": 1789054045.0108852,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 2402,
+      "request_seconds": 0.038428306579589844
+    },
+    {
+      "request": {
+        "action": "nearest",
+        "resource": "iron-ore"
+      },
+      "started_at": 1789054051.016903,
+      "ended_at": 1789054051.0569139,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 2765,
+      "request_seconds": 0.040010929107666016
+    },
+    {
+      "request": {
+        "action": "move",
+        "position": {
+          "x": 26.5,
+          "y": -51.5
+        }
+      },
+      "started_at": 1789054054.652589,
+      "ended_at": 1789054062.590919,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 3457,
+      "request_seconds": 7.9383299350738525
+    },
+    {
+      "request": {
+        "action": "harvest",
+        "position": {
+          "x": 26.5,
+          "y": -51.5
+        },
+        "quantity": 20
+      },
+      "started_at": 1789054066.924007,
+      "ended_at": 1789054086.995218,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 4921,
+      "request_seconds": 20.071211099624634
+    },
+    {
+      "request": {
+        "action": "nearest",
+        "resource": "coal"
+      },
+      "started_at": 1789054090.3526661,
+      "ended_at": 1789054090.389741,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 5125,
+      "request_seconds": 0.03707480430603027
+    },
+    {
+      "request": {
+        "action": "move",
+        "position": {
+          "x": 40.5,
+          "y": -82.5
+        }
+      },
+      "started_at": 1789054094.223166,
+      "ended_at": 1789054098.647686,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 5620,
+      "request_seconds": 4.424520015716553
+    },
+    {
+      "request": {
+        "action": "harvest",
+        "position": {
+          "x": 40.5,
+          "y": -82.5
+        },
+        "quantity": 5
+      },
+      "started_at": 1789054103.054198,
+      "ended_at": 1789054108.123331,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 6189,
+      "request_seconds": 5.069133043289185
+    },
+    {
+      "request": {
+        "action": "place",
+        "item": "stone-furnace",
+        "position": {
+          "x": 40.5,
+          "y": -82.5
+        },
+        "exact": false
+      },
+      "started_at": 1789054112.0959759,
+      "ended_at": 1789054112.123148,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 6429,
+      "request_seconds": 0.027172088623046875
+    },
+    {
+      "request": {
+        "action": "insert",
+        "item": "iron-ore",
+        "quantity": 20,
+        "target": {
+          "name": "stone-furnace",
+          "position": {
+            "x": 41,
+            "y": -82
+          }
+        }
+      },
+      "started_at": 1789054118.461823,
+      "ended_at": 1789054118.556064,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 6815,
+      "request_seconds": 0.09424090385437012
+    },
+    {
+      "request": {
+        "action": "insert",
+        "item": "coal",
+        "quantity": 5,
+        "target": {
+          "name": "stone-furnace",
+          "position": {
+            "x": 41,
+            "y": -82
+          }
+        }
+      },
+      "started_at": 1789054123.4903722,
+      "ended_at": 1789054123.587321,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 0,
+      "tick": 7117,
+      "request_seconds": 0.09694886207580566
+    },
+    {
+      "request": {
+        "action": "wait",
+        "seconds": 30
+      },
+      "started_at": 1789054127.379765,
+      "ended_at": 1789054157.4061692,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 10,
+      "tick": 9146,
+      "request_seconds": 30.02640414237976
+    },
+    {
+      "request": {
+        "action": "wait",
+        "seconds": 30
+      },
+      "started_at": 1789054162.7004,
+      "ended_at": 1789054192.769269,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 20,
+      "tick": 11266,
+      "request_seconds": 30.06886887550354
+    },
+    {
+      "request": {
+        "action": "observe"
+      },
+      "started_at": 1789054560.408483,
+      "ended_at": 1789054560.4389539,
+      "ok": true,
+      "error": null,
+      "iron_plates_produced": 20,
+      "tick": 33210,
+      "request_seconds": 0.030470848083496094
+    }
+  ],
+  "raw_logs_published": false,
+  "api_spend_usd": 0,
+  "subscription_cost_usd": null,
+  "artifact_phase_note": "Phase times use prompt and result file modification times; they include tool execution and report writing, not model inference alone."
+}

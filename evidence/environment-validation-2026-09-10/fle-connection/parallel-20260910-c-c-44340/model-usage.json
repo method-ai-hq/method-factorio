@@ -1,0 +1,12 @@
+{
+  "model": "gpt-6-astra",
+  "completed_turns": 1,
+  "usage": {
+    "input_tokens": 503416,
+    "cached_input_tokens": 483200,
+    "output_tokens": 2430
+  },
+  "billing": "ChatGPT subscription",
+  "api_spend_usd": 0,
+  "subscription_cost_usd": null
+}

@@ -1,0 +1,106 @@
+{
+  "id": "research_prerequisite",
+  "criterion": "request rejected; no research or completion granted",
+  "actions": [
+    {
+      "action": "set_unavailable_research",
+      "ok": false,
+      "error": "Cannot start research for automation-3. Missing prerequisites: electric-engine, production-science-pack, speed-module",
+      "wall_seconds": 0.0008992910152301192,
+      "state": {
+        "tick": 6745,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "lab",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 1066.6666666666667,
+            "status": 20,
+            "input": {},
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    }
+  ],
+  "status": "passed",
+  "initial": {
+    "tick": 6743,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "lab",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 54,
+        "input": {},
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "259c5d86a0fb15fec90c0c9c4b727f4e2b894fd1c7db7ac8003a8b0e42ea8f2a",
+  "final": {
+    "tick": 6746,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "lab",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 1066.6666666666667,
+        "status": 20,
+        "input": {},
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 0.12149554200004786,
+  "reviewed_classification": "passed"
+}

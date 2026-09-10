@@ -1,0 +1,83 @@
+{
+  "terminal_save_reload": {
+    "passed": true,
+    "checks": {
+      "position": true,
+      "inventory": true,
+      "furnaces": true,
+      "research": true,
+      "iron_plates_produced": true,
+      "enemies": true
+    }
+  },
+  "terminal_save_exists": true,
+  "clean_shutdown": true,
+  "host_exit_code": 0,
+  "exception": null,
+  "batch_groups": [
+    {
+      "family": "observe",
+      "batch_size": 1,
+      "actions": 100,
+      "requests": 100,
+      "seconds": 3.3821856250287965,
+      "actions_per_second": 29.566679977580645,
+      "passed": true
+    },
+    {
+      "family": "observe",
+      "batch_size": 10,
+      "actions": 100,
+      "requests": 10,
+      "seconds": 3.332289374899119,
+      "actions_per_second": 30.00939856942267,
+      "passed": true
+    },
+    {
+      "family": "observe",
+      "batch_size": 50,
+      "actions": 100,
+      "requests": 2,
+      "seconds": 3.369699624949135,
+      "actions_per_second": 29.67623560854018,
+      "passed": true
+    },
+    {
+      "family": "place_pickup",
+      "batch_size": 1,
+      "actions": 100,
+      "requests": 100,
+      "seconds": 7.20248224993702,
+      "actions_per_second": 13.884102248342844,
+      "passed": true
+    },
+    {
+      "family": "place_pickup",
+      "batch_size": 10,
+      "actions": 100,
+      "requests": 10,
+      "seconds": 6.9189584160922095,
+      "actions_per_second": 14.453042493710992,
+      "passed": true
+    },
+    {
+      "family": "place_pickup",
+      "batch_size": 50,
+      "actions": 100,
+      "requests": 2,
+      "seconds": 6.9020229580346495,
+      "actions_per_second": 14.488505849374194,
+      "passed": true
+    }
+  ],
+  "partial_batch_stop": {
+    "passed": true,
+    "repeated_actions": false,
+    "executed": 2,
+    "requested": 3,
+    "member_success": [
+      true,
+      false
+    ]
+  }
+}

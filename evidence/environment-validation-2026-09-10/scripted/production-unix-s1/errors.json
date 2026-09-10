@@ -1,0 +1,87 @@
+{
+  "total_actions": 211,
+  "expected_rejections": 7,
+  "unexpected_episode_exception": null,
+  "errors": [
+    {
+      "sequence_1based": 127,
+      "action": "execute",
+      "request": {
+        "action": "execute",
+        "code": "return game.tick"
+      },
+      "error": "action is not allowed",
+      "expected": true
+    },
+    {
+      "sequence_1based": 130,
+      "action": "grant_research",
+      "request": {
+        "action": "grant_research",
+        "research": "automation"
+      },
+      "error": "action is not allowed",
+      "expected": true
+    },
+    {
+      "sequence_1based": 133,
+      "action": "set_speed",
+      "request": {
+        "action": "set_speed",
+        "speed": 20
+      },
+      "error": "action is not allowed",
+      "expected": true
+    },
+    {
+      "sequence_1based": 136,
+      "action": "craft",
+      "request": {
+        "action": "craft",
+        "item": "iron-gear-wheel",
+        "quantity": -1
+      },
+      "error": "quantity must be an integer from 1 to 100",
+      "expected": true
+    },
+    {
+      "sequence_1based": 139,
+      "action": "craft",
+      "request": {
+        "action": "craft",
+        "item": "rocket-silo"
+      },
+      "error": "Failed to craft 1x rocket-silo because recipe for rocket-silo is not unlocked yet (requires rocket-silo technology). You need to research the technology first",
+      "expected": true
+    },
+    {
+      "sequence_1based": 142,
+      "action": "place",
+      "request": {
+        "action": "place",
+        "item": "burner-mining-drill",
+        "position": {
+          "x": 1001,
+          "y": 0
+        }
+      },
+      "error": "position outside test limits",
+      "expected": true
+    },
+    {
+      "sequence_1based": 145,
+      "action": "place",
+      "request": {
+        "action": "place",
+        "item": "burner-mining-drill",
+        "position": {
+          "x": -900,
+          "y": -900
+        }
+      },
+      "error": "Could not place burner-mining-drill at (-900.0, -900.0), The target position is too far away to place the entity. The player position is 42.5, -80.5 and the target position is -900, -900. The distance is 1248.95 and the max distance is 10. Move closer.",
+      "expected": true
+    }
+  ],
+  "lost_response_note": "HTTP and Unix1x production runs deliberately discarded one craft response. The host applied one craft. A later observation checked state; no craft was repeated."
+}

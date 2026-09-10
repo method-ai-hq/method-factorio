@@ -1,0 +1,27 @@
+{
+  "seed": 44340,
+  "inventory": {
+    "iron-plate": 8,
+    "wood": 1,
+    "stone-furnace": 1,
+    "burner-mining-drill": 1,
+    "pistol": 1,
+    "firearm-magazine": 10
+  },
+  "seconds_limit": 900,
+  "action_limit": 200,
+  "fast": true,
+  "speed": 1.0,
+  "thinking_paused": false,
+  "transport": "unix",
+  "rcon_port": 27203,
+  "game_port": 34303,
+  "startup_seconds": 12.255372166982852,
+  "billing": "Codex ChatGPT subscription; no separate API calls",
+  "api_spending_cap_usd": 0,
+  "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+  "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+  "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+  "started_at": 1789053856.562777,
+  "mode": "integration; not a scored rocket trial"
+}

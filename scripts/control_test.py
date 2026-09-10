@@ -11,6 +11,7 @@ import signal
 import subprocess
 import threading
 import time
+import socketserver
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,8 +62,22 @@ def main():
     p.add_argument("--seconds", type=int, default=1200)
     p.add_argument("--actions", type=int, default=200)
     p.add_argument("--port", type=int, default=18765)
+    p.add_argument("--rcon-port", type=int, default=27117)
+    p.add_argument("--game-port", type=int, default=34217)
+    p.add_argument("--speed", type=float, default=1)
+    p.add_argument("--transport", choices=["http", "unix"], default="http")
+    p.add_argument("--socket-path")
     p.add_argument("--factorio", default="/Applications/factorio.app/Contents/MacOS/factorio")
     args = p.parse_args()
+    if Path(args.run).name != args.run or args.run in (".", ".."):
+        p.error("run must be a new plain folder name")
+    if not math.isfinite(args.speed) or not 0 < args.speed <= 20:
+        p.error("speed must be in (0,20]")
+    if args.seconds <= 0 or args.actions <= 0:
+        p.error("time and action limits must be positive")
+    if args.transport == "unix" and not args.socket_path:
+        p.error("unix transport requires --socket-path")
+    host_started = time.monotonic()
     run = ROOT / "runs" / args.run
     run.mkdir(parents=True, exist_ok=False)
     game = run / "game"
@@ -92,7 +107,7 @@ def main():
     os.chmod(run / "server.log", 0o600)
     shutil.copyfile(game / "fresh.zip", game / "working.zip")
     server = subprocess.Popen(base + ["--start-server", str(game / "working.zip"),
-        "--bind", "127.0.0.1:34217", "--rcon-bind", "127.0.0.1:27117",
+        "--bind", f"127.0.0.1:{args.game_port}", "--rcon-bind", f"127.0.0.1:{args.rcon_port}",
         "--rcon-password", password, "--server-settings", str(game / "server.json")],
         stdout=log, stderr=log)
     instance = None
@@ -107,7 +122,7 @@ def main():
             if server.poll() is not None:
                 raise RuntimeError("Native server stopped; see private server.log")
             try:
-                client = RCONClient("127.0.0.1", 27117, password, timeout=10)
+                client = RCONClient("127.0.0.1", args.rcon_port, password, timeout=10)
                 client.send_command("/sc rcon.print(game.tick)")
                 client.close()
                 break
@@ -132,9 +147,9 @@ def main():
                 super().initialise(*a, **kw)
                 self.rcon_client.send_command('/sc for _,v in pairs(storage.test_ores) do if v.e.valid then v.e.amount=v.amount end end; storage.test_ores=nil; game.forces.player.reset(); for _,t in pairs(game.forces.player.technologies) do t.researched=false end; game.surfaces[1].always_day=false')
 
-        instance = NativeInstance(address="127.0.0.1", tcp_port=27117, fast=True,
+        instance = NativeInstance(address="127.0.0.1", tcp_port=args.rcon_port, fast=True,
             inventory=START_INVENTORY, all_technologies_researched=False,
-            clear_entities=False, peaceful=False, reset_speed=1, reset_paused=False)
+            clear_entities=False, peaceful=False, reset_speed=args.speed, reset_paused=False)
         ns = instance.namespace
         def snapshot():
             return json.loads(instance.rcon_client.send_command("/sc " + SNAPSHOT))
@@ -143,7 +158,9 @@ def main():
         assert not initial["furnaces"] and initial["iron_plates_produced"] == 0
         (run / "initial.json").write_text(json.dumps(initial, indent=2))
         metadata = {"seed": args.seed, "inventory": START_INVENTORY, "seconds_limit": args.seconds,
-            "action_limit": args.actions, "fast": True, "speed": 1, "thinking_paused": False,
+            "action_limit": args.actions, "fast": True, "speed": args.speed, "thinking_paused": False,
+            "transport": args.transport, "rcon_port": args.rcon_port, "game_port": args.game_port,
+            "startup_seconds": time.monotonic()-host_started,
             "billing": "Codex ChatGPT subscription; no separate API calls", "api_spending_cap_usd": 0,
             "fle_commit": subprocess.check_output(["git", "-C", str(ROOT / "local/deps/fle"), "rev-parse", "HEAD"], text=True).strip(),
             "factorio_version": subprocess.check_output([args.factorio,"--version"],text=True).splitlines()[0],
@@ -212,25 +229,63 @@ def main():
             raise TimeoutError("action time limit reached; inspect state before recovery")
         signal.signal(signal.SIGALRM, timed_out)
 
+        def execute_request(req):
+            start = time.time()
+            monotonic_start = time.monotonic()
+            try:
+                signal.setitimer(signal.ITIMER_REAL, min(90, max(0.01, deadline-time.monotonic())))
+                result = serial(dispatch(req))
+                action_end = time.monotonic()
+                state = snapshot()
+                response = {"ok": True, "result": result, "state": state}
+            except Exception as error:
+                action_end = time.monotonic()
+                response = {"ok": False, "error": str(error)}
+                # An error is not proof that the action had no effect.
+                try:
+                    response["state"] = snapshot()
+                except Exception:
+                    response["state"] = None
+            finally:
+                signal.setitimer(signal.ITIMER_REAL, 0)
+            end = time.monotonic()
+            actions.write(json.dumps({"request":req,"started_at":start,"ended_at":time.time(),
+                "monotonic_started":monotonic_start,"duration_seconds":end-monotonic_start,
+                "action_seconds":action_end-monotonic_start,"post_observation_seconds":end-action_end,
+                "response":response})+"\n")
+            return response
+
+        def execute_payload(req):
+            if isinstance(req, dict) and set(req) == {"batch"}:
+                batch = req["batch"]
+                if not isinstance(batch,list) or not 1 <= len(batch) <= 50:
+                    return {"ok":False,"error":"batch requires 1 to 50 actions"}
+                if any(not isinstance(a,dict) or "action" not in a or "batch" in a for a in batch):
+                    return {"ok":False,"error":"batch entries must be action objects"}
+                results=[]
+                for a in batch:
+                    result=execute_request(a)
+                    results.append(result)
+                    if not result["ok"]: break
+                return {"ok":all(r["ok"] for r in results),"results":results,
+                        "executed":len(results),"requested":len(batch)}
+            return execute_request(req)
+
         class Handler(BaseHTTPRequestHandler):
             def log_message(self, *_): pass
+            def setup(self):
+                super().setup()
+                self.connection.settimeout(5)
             def do_POST(self):
                 if self.path != "/action":
                     self.send_error(404); return
-                start = time.time()
-                req = None
                 try:
                     length = int(self.headers.get("Content-Length", "0"))
-                    if not 0 < length <= 4096: raise ValueError("invalid request length")
+                    if not 0 < length <= 65536: raise ValueError("invalid request length")
                     req = json.loads(self.rfile.read(length))
-                    signal.setitimer(signal.ITIMER_REAL, min(90, max(0.01, deadline-time.monotonic())))
-                    result = serial(dispatch(req))
-                    response = {"ok": True, "result": result, "state": snapshot()}
+                    response = execute_payload(req)
                 except Exception as error:
                     response = {"ok": False, "error": str(error)}
-                finally:
-                    signal.setitimer(signal.ITIMER_REAL, 0)
-                actions.write(json.dumps({"request": req,"started_at": start,"ended_at":time.time(),"response":response})+"\n")
                 payload = json.dumps(response).encode()
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
@@ -238,12 +293,32 @@ def main():
                 self.end_headers()
                 self.wfile.write(payload)
 
-        http = HTTPServer(("127.0.0.1", args.port), Handler)
+        class UnixHandler(socketserver.StreamRequestHandler):
+            def handle(self):
+                self.connection.settimeout(5)
+                try:
+                    line=self.rfile.readline(65538)
+                    if not line.endswith(b"\n") or len(line)>65537:
+                        raise ValueError("send one JSON line of at most 65536 bytes")
+                    response=execute_payload(json.loads(line))
+                except Exception as error:
+                    response={"ok":False,"error":str(error)}
+                self.wfile.write(json.dumps(response).encode()+b"\n")
+
+        if args.transport == "unix":
+            http = socketserver.UnixStreamServer(args.socket_path, UnixHandler)
+            os.chmod(args.socket_path, 0o600)
+            endpoint = "unix:"+args.socket_path
+        else:
+            http = HTTPServer(("127.0.0.1", args.port), Handler)
+            endpoint = f"http://127.0.0.1:{args.port}/action"
         http.timeout = 1
-        print(json.dumps({"ready": True,"endpoint":f"http://127.0.0.1:{args.port}/action","run":str(run),"initial":initial}), flush=True)
+        print(json.dumps({"ready": True,"endpoint":endpoint,"run":str(run),"initial":initial}), flush=True)
         while not stop.is_set() and time.monotonic() < deadline:
             http.handle_request()
         http.server_close()
+        if args.transport == "unix":
+            Path(args.socket_path).unlink(missing_ok=True)
         actions.close()
     finally:
         if instance and server.poll() is None:
@@ -260,6 +335,8 @@ def main():
         log.close()
         if server.returncode == 0 and (run / "final.json").exists() and not (run / "shutdown-error.txt").exists():
             shutil.copyfile(game / "working.zip", game / "final.zip")
+        (run / "host-timing.json").write_text(json.dumps({"total_seconds":time.monotonic()-host_started,
+            "finished_at":time.time(),"server_exit_code":server.returncode},indent=2))
 
 
 if __name__ == "__main__":

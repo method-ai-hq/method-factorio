@@ -16,9 +16,12 @@ gives Astra the goal and the allowed tools, without a factory construction recip
 The root design remains the plan for the larger experiment. This small test
 does not replace its rules or establish a scored result.
 
-Next: [validate environment coverage and speed](docs/environment-validation.md)
-with direct-agent, Method, FLE-connection, and no-model scripted tests. This
-series is designed but has not run.
+The first parallel [environment tests](evidence/environment-validation-2026-09-10/README.md)
+now compare direct-agent, Method, FLE-connection, and fixed-script control.
+Small production works, accelerated simulation is fast, and advanced probes
+found control defects. Full games and complete control remain unverified.
+See the [test design](docs/environment-validation.md) and
+[run commands](docs/run-environment-validation.md).
 
 ## Read the design
 

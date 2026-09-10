@@ -1,0 +1,6 @@
+{
+  "script": "scripts/inspect_save.py",
+  "sha256": "57e58a172eba6a0bea897b7b1542b28828d81ce2db833002458195cd291b6fe3",
+  "rcon_port": 27213,
+  "game_port": 34313
+}

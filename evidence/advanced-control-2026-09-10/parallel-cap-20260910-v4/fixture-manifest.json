@@ -1,0 +1,17 @@
+{
+  "api_cost_usd": 0,
+  "cases": [
+    {
+      "action": "run 600 warmup ticks then three 1200-tick windows without item transfer",
+      "fixture": "operator-built burner drill, 5 belts, burner inserter and stone furnace on supplied ore; each burner receives 50 coal; empty ore and plate buffers",
+      "id": "continuous_iron",
+      "pass": "furnace output increases by at least one plate in each window; no operator transfers during windows",
+      "timeout_seconds": 30
+    }
+  ],
+  "mode": "fixed scripted fixtures; operator supplies prerequisites; not fresh-world wins",
+  "model_calls": 0,
+  "script_sha256": "dc31a4c35c644473437b42270b5769e4a6e295fa55275ed4e5504aefcf88c71f",
+  "seed": 44340,
+  "speed": 20
+}

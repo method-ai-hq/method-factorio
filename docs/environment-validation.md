@@ -1,7 +1,9 @@
 # Environment validation: control coverage and speed
 
-Status: proposed test series, 10 September 2026. The new comparisons have not
-run. Existing evidence covers two small Method production runs only.
+Status: first parallel tests run on 10 September 2026. See the
+[results and limits](../evidence/environment-validation-2026-09-10/README.md)
+and [run commands](run-environment-validation.md). This document defines the
+full series; tests not listed as passed in the results remain open.
 
 ## Purpose
 
@@ -45,11 +47,13 @@ their gains cannot all be attributed to removal of HTTP.
 
 ## Current evidence and gaps
 
-The [existing runs](../evidence/control-test-2026-09-10/README.md) used B. Each
+The [earlier runs](../evidence/control-test-2026-09-10/README.md) used B. Each
 needed 12 playing requests to produce 20 new iron plates. Their playing
 request intervals were 153.9 and 147.7 seconds at game speed 1. Those intervals
 exclude connection checks, report writing, and final checks. There is no
-measured A/C comparison and no measured no-model speed floor yet.
+measured A/C comparison or no-model speed floor in those earlier runs. The
+new parallel results supply the first such measurements, with a small sample
+and shared machine load.
 
 The [host](../scripts/control_test.py) exposes a small fixed action list.
 Recipe selection, research selection, and rocket launch are not exposed.

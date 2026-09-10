@@ -1,0 +1,10 @@
+{
+  "measured_controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+  "preserved_controller_sha256": "68d58defb62df13bcec4cfc9fe6218a0f4e6aa0949fc0b2e94115cd2de49417e",
+  "preserved_controller_matches": true,
+  "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+  "fresh_save_sha256": "589416e166f4bc67467b2f19162150231f7e607d9c6f3555cea03b6238723450",
+  "terminal_save_sha256": "90b21e10eb0eaf2801038ca02208d7994cc73bde3916158432f3ffaf0dfa289e",
+  "release_controller_sha256": "4b896b94c4526a0874bfe36bb10b2e2acba8993b0b77e1265ae1c2408736862a",
+  "release_controller_note": "After the measured runs, the runner gained aggregate pass/fail status and a nonzero exit code for failures. The measured controller source copies stay in ignored local storage."
+}

@@ -1,0 +1,442 @@
+{
+  "id": "continuous_iron",
+  "criterion": "furnace output increases by at least one plate in each window; no operator transfers during windows",
+  "actions": [],
+  "status": "failed",
+  "initial": {
+    "tick": 27568,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "stone-furnace",
+        "position": {
+          "y": 4,
+          "x": 0
+        },
+        "energy": 0,
+        "status": 18,
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      },
+      "drill": {
+        "name": "burner-mining-drill",
+        "position": {
+          "y": -4,
+          "x": 0
+        },
+        "energy": 0,
+        "status": 1,
+        "fluids": {}
+      },
+      "inserter": {
+        "name": "burner-inserter",
+        "position": {
+          "y": 2.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 1,
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "467880e855e52e7e7014f3d8a2db02bd29809c9707622d5f4ab9e8b5c9f62943",
+  "windows": [
+    {
+      "start": {
+        "tick": 28169,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "end": {
+        "tick": 29369,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "plates_added": 0,
+      "target_ticks": 1200,
+      "actual_ticks": 1200
+    },
+    {
+      "start": {
+        "tick": 29369,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "end": {
+        "tick": 30569,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "plates_added": 0,
+      "target_ticks": 1200,
+      "actual_ticks": 1200
+    },
+    {
+      "start": {
+        "tick": 30569,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "end": {
+        "tick": 31769,
+        "speed": 20,
+        "paused": true,
+        "entities": {
+          "machine": {
+            "name": "stone-furnace",
+            "position": {
+              "y": 4,
+              "x": 0
+            },
+            "energy": 0,
+            "status": 18,
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          },
+          "drill": {
+            "name": "burner-mining-drill",
+            "position": {
+              "y": -4,
+              "x": 0
+            },
+            "energy": 2666.6666666666665,
+            "status": 1,
+            "fluids": {}
+          },
+          "inserter": {
+            "name": "burner-inserter",
+            "position": {
+              "y": 2.5,
+              "x": 0.5
+            },
+            "energy": 809.9999999999998,
+            "status": 32,
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      },
+      "plates_added": 0,
+      "target_ticks": 1200,
+      "actual_ticks": 1200
+    }
+  ],
+  "final": {
+    "tick": 31769,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "stone-furnace",
+        "position": {
+          "y": 4,
+          "x": 0
+        },
+        "energy": 0,
+        "status": 18,
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      },
+      "drill": {
+        "name": "burner-mining-drill",
+        "position": {
+          "y": -4,
+          "x": 0
+        },
+        "energy": 2666.6666666666665,
+        "status": 1,
+        "fluids": {}
+      },
+      "inserter": {
+        "name": "burner-inserter",
+        "position": {
+          "y": 2.5,
+          "x": 0.5
+        },
+        "energy": 809.9999999999998,
+        "status": 32,
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 3.7994069589767605,
+  "reviewed_classification": "failed"
+}

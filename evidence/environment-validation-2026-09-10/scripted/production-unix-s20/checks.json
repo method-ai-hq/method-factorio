@@ -1,0 +1,71 @@
+{
+  "terminal_save_reload": {
+    "passed": true,
+    "checks": {
+      "position": true,
+      "inventory": true,
+      "furnaces": true,
+      "research": true,
+      "iron_plates_produced": true,
+      "enemies": true
+    }
+  },
+  "terminal_save_exists": true,
+  "clean_shutdown": true,
+  "host_exit_code": 0,
+  "exception": null,
+  "production": {
+    "passed": true,
+    "checks": {
+      "new_iron_plates_20": true,
+      "furnace_output_20": true,
+      "ore_consumed_20": true,
+      "inventory_ore_empty": true,
+      "furnace_products_finished_20": true,
+      "fuel_consumed": true,
+      "requested_speed": true
+    }
+  },
+  "fixed_1x_evaluator": {
+    "passed": false,
+    "checks": {
+      "declared_inventory": true,
+      "no_starting_factory": true,
+      "no_starting_research": true,
+      "zero_starting_production": true,
+      "enemies_disabled": true,
+      "normal_speed": false,
+      "new_iron_plates": true,
+      "furnace_finished_products": true,
+      "iron_plates_in_furnace_output": true,
+      "action_limit": true,
+      "game_time_limit": true,
+      "inspection_save": true,
+      "clean_shutdown": true
+    },
+    "produced": 20,
+    "furnace_finished": 20,
+    "furnace_output": 20,
+    "requests": 125,
+    "errors": 0,
+    "game_seconds": 256.43333333333334,
+    "action_window_seconds": 12.24418592453003,
+    "scope": "small production integration test, not complete control or a rocket launch"
+  },
+  "probes": {
+    "observation_soak": {
+      "passed": true,
+      "count": 100,
+      "seconds": 1.2879247919190675,
+      "game_ticks": 990,
+      "achieved_ticks_per_second": 768.6784245568052
+    },
+    "game_rate": {
+      "seconds": 5.015999790979549,
+      "ticks": 6015,
+      "achieved_ticks_per_second": 1199.1627293958402,
+      "requested_speed": 20,
+      "paused": false
+    }
+  }
+}

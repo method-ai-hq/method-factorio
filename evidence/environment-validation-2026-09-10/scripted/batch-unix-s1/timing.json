@@ -1,0 +1,161 @@
+{
+  "startup_seconds": 11.817286957986653,
+  "complete_probe_trial_seconds": 45.4140861670021,
+  "production_seconds": null,
+  "host_action_timing": {
+    "craft": {
+      "duration_seconds": {
+        "n": 1,
+        "median_ms": 569.0406659850851,
+        "p95_ms": null,
+        "max_ms": 569.0406659850851,
+        "total_seconds": 0.5690406659850851
+      },
+      "action_seconds": {
+        "n": 1,
+        "median_ms": 548.6795409815386,
+        "p95_ms": null,
+        "max_ms": 548.6795409815386,
+        "total_seconds": 0.5486795409815386
+      },
+      "post_observation_seconds": {
+        "n": 1,
+        "median_ms": 20.361125003546476,
+        "p95_ms": null,
+        "max_ms": 20.361125003546476,
+        "total_seconds": 0.020361125003546476
+      }
+    },
+    "observe": {
+      "duration_seconds": {
+        "n": 303,
+        "median_ms": 33.24616595637053,
+        "p95_ms": 35.081292036920786,
+        "max_ms": 73.90525005757809,
+        "total_seconds": 10.127627082867548
+      },
+      "action_seconds": {
+        "n": 303,
+        "median_ms": 16.49762492161244,
+        "p95_ms": 18.790292087942362,
+        "max_ms": 35.14475002884865,
+        "total_seconds": 5.008713235030882
+      },
+      "post_observation_seconds": {
+        "n": 303,
+        "median_ms": 16.69600000604987,
+        "p95_ms": 18.872334039770067,
+        "max_ms": 57.20462498720735,
+        "total_seconds": 5.118913847836666
+      }
+    },
+    "pickup": {
+      "duration_seconds": {
+        "n": 151,
+        "median_ms": 102.2529590409249,
+        "p95_ms": 121.17133301217109,
+        "max_ms": 131.850374978967,
+        "total_seconds": 15.834410671144724
+      },
+      "action_seconds": {
+        "n": 151,
+        "median_ms": 75.98791702184826,
+        "p95_ms": 88.4630000218749,
+        "max_ms": 91.16574993822724,
+        "total_seconds": 11.646819455898367
+      },
+      "post_observation_seconds": {
+        "n": 151,
+        "median_ms": 26.816042023710907,
+        "p95_ms": 35.15833301935345,
+        "max_ms": 47.19874996226281,
+        "total_seconds": 4.187591215246357
+      }
+    },
+    "place": {
+      "duration_seconds": {
+        "n": 151,
+        "median_ms": 33.08845800347626,
+        "p95_ms": 46.70733294915408,
+        "max_ms": 49.350750050507486,
+        "total_seconds": 5.25348162651062
+      },
+      "action_seconds": {
+        "n": 151,
+        "median_ms": 8.58020898886025,
+        "p95_ms": 20.256750052794814,
+        "max_ms": 21.877291961573064,
+        "total_seconds": 1.4013537908904254
+      },
+      "post_observation_seconds": {
+        "n": 151,
+        "median_ms": 25.59054095763713,
+        "p95_ms": 29.75200000219047,
+        "max_ms": 34.941083984449506,
+        "total_seconds": 3.8521278356201947
+      }
+    }
+  },
+  "client_group_timing": {
+    "batch-observe-1": {
+      "n": 100,
+      "median_ms": 33.27914606779814,
+      "p95_ms": 35.4445829289034,
+      "max_ms": 58.74116602353752
+    },
+    "batch-observe-10": {
+      "n": 10,
+      "median_ms": 333.181562484242,
+      "p95_ms": 335.2259580278769,
+      "max_ms": 335.2259580278769
+    },
+    "batch-observe-50": {
+      "n": 2,
+      "median_ms": 1684.5565204275772,
+      "p95_ms": 1698.8460829015821,
+      "max_ms": 1698.8460829015821
+    },
+    "batch-place_pickup-1": {
+      "n": 100,
+      "median_ms": 77.22112449118868,
+      "p95_ms": 118.46645793411881,
+      "max_ms": 124.8516250634566
+    },
+    "batch-place_pickup-10": {
+      "n": 10,
+      "median_ms": 685.9816875075921,
+      "p95_ms": 760.5743750464171,
+      "max_ms": 760.5743750464171
+    },
+    "batch-place_pickup-50": {
+      "n": 2,
+      "median_ms": 3448.930625047069,
+      "p95_ms": 3519.589291070588,
+      "max_ms": 3519.589291070588
+    },
+    "batch-setup": {
+      "n": 3,
+      "median_ms": 34.31649995036423,
+      "p95_ms": 100.08845804259181,
+      "max_ms": 100.08845804259181
+    },
+    "batch-stop": {
+      "n": 1,
+      "median_ms": 582.6235000276938,
+      "p95_ms": 582.6235000276938,
+      "max_ms": 582.6235000276938
+    },
+    "batch-stop-check": {
+      "n": 2,
+      "median_ms": 29.22518749255687,
+      "p95_ms": 33.36395893711597,
+      "max_ms": 33.36395893711597
+    }
+  },
+  "notes": [
+    "Host action and post-observation intervals are disjoint parts of host duration. Client durations overlap host durations.",
+    "Client group p95 values in the source record are retained, but values from fewer than30 samples are not acceptance evidence.",
+    "Batch member actions are logged separately.",
+    "Trials ran with other game/model tests on the same Mac."
+  ]
+}

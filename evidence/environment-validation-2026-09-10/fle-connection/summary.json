@@ -1,0 +1,59 @@
+[
+  {
+    "run": "parallel-20260910-c-c-44340",
+    "seed": 44340,
+    "pilot": true,
+    "external_check_passed": true,
+    "save_check_passed": true,
+    "requests": 12,
+    "errors": 0,
+    "action_window_seconds": 158.7519690990448,
+    "game_seconds": 206.1,
+    "start_to_goal_seconds": null,
+    "ready_to_goal_seconds": null,
+    "complete_trial_seconds": null,
+    "usage": {
+      "input_tokens": 503416,
+      "cached_input_tokens": 483200,
+      "output_tokens": 2430
+    }
+  },
+  {
+    "run": "parallel-20260910-c-v2-c-44341",
+    "seed": 44341,
+    "pilot": false,
+    "external_check_passed": true,
+    "save_check_passed": true,
+    "requests": 12,
+    "errors": 0,
+    "action_window_seconds": 132.6044671535492,
+    "game_seconds": 478.55,
+    "start_to_goal_seconds": 161.94233107566833,
+    "ready_to_goal_seconds": 150.35932803153992,
+    "complete_trial_seconds": 493.06811594963074,
+    "usage": {
+      "input_tokens": 459306,
+      "cached_input_tokens": 414464,
+      "output_tokens": 2455
+    }
+  },
+  {
+    "run": "parallel-20260910-c-v2-c-44342",
+    "seed": 44342,
+    "pilot": false,
+    "external_check_passed": true,
+    "save_check_passed": true,
+    "requests": 12,
+    "errors": 0,
+    "action_window_seconds": 150.41762518882751,
+    "game_seconds": 204.18333333333334,
+    "start_to_goal_seconds": 179.739403963089,
+    "ready_to_goal_seconds": 167.6575779914856,
+    "complete_trial_seconds": 216.5707471370697,
+    "usage": {
+      "input_tokens": 606792,
+      "cached_input_tokens": 589184,
+      "output_tokens": 2646
+    }
+  }
+]

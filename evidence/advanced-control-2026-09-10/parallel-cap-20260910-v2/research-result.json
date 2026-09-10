@@ -1,0 +1,202 @@
+{
+  "id": "research",
+  "criterion": "automation completes with 10 science consumed",
+  "actions": [
+    {
+      "action": "set_research",
+      "ok": true,
+      "wall_seconds": 0.0007641249103471637,
+      "state": {
+        "tick": 517,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "lab",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 1066.6666666666667,
+            "status": 31,
+            "input": {},
+            "fluids": {}
+          }
+        },
+        "inventory": [
+          {
+            "name": "automation-science-pack",
+            "quality": "normal",
+            "count": 10
+          }
+        ],
+        "research": "automation",
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    },
+    {
+      "action": "insert_science",
+      "ok": true,
+      "wall_seconds": 0.0009104589698836207,
+      "state": {
+        "tick": 519,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "lab",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 1066.6666666666667,
+            "status": 1,
+            "input": [
+              {
+                "name": "automation-science-pack",
+                "quality": "normal",
+                "count": 10
+              }
+            ],
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "research": "automation",
+        "progress": 0.0001666666666666667,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    },
+    {
+      "action": "get_research_progress",
+      "ok": true,
+      "wall_seconds": 0.0005734160076826811,
+      "state": {
+        "tick": 521,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "lab",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 1066.6666666666667,
+            "status": 1,
+            "input": [
+              {
+                "name": "automation-science-pack",
+                "quality": "normal",
+                "count": 10
+              }
+            ],
+            "fluids": {}
+          }
+        },
+        "inventory": {},
+        "research": "automation",
+        "progress": 0.0005,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    }
+  ],
+  "status": "passed",
+  "initial": {
+    "tick": 511,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "lab",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 54,
+        "input": {},
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "automation-science-pack",
+        "quality": "normal",
+        "count": 10
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "d730500850eeb5103588694b5627f8452a72ed468c56b1e4dc0a1d49e1020a92",
+  "final": {
+    "tick": 6741,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "lab",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 1066.6666666666667,
+        "status": 20,
+        "input": {},
+        "fluids": {}
+      }
+    },
+    "inventory": {},
+    "progress": 0,
+    "technologies": {
+      "automation": true,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 6.764050125028007,
+  "reviewed_classification": "passed"
+}

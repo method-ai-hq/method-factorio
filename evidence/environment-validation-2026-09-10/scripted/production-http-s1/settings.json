@@ -1,0 +1,28 @@
+{
+  "seed": 44340,
+  "inventory": {
+    "iron-plate": 8,
+    "wood": 1,
+    "stone-furnace": 1,
+    "burner-mining-drill": 1,
+    "pistol": 1,
+    "firearm-magazine": 10
+  },
+  "seconds_limit": 500,
+  "action_limit": 1600,
+  "fast": true,
+  "speed": 1.0,
+  "thinking_paused": false,
+  "transport": "http",
+  "rcon_port": 27204,
+  "game_port": 34304,
+  "startup_seconds": 12.136808624956757,
+  "billing": "Codex ChatGPT subscription; no separate API calls",
+  "api_spending_cap_usd": 0,
+  "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+  "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+  "host_sha256": "eaed140da476befb4366df6ed835f7f285a312c915a7e15e80c8f457e8292940",
+  "started_at": 1789053806.535174,
+  "mode": "integration; not a scored rocket trial",
+  "controller_billing_note": "No model calls or separate API calls in this scripted lane. The host billing field is shared host metadata."
+}

@@ -1,0 +1,131 @@
+{
+  "id": "locked_recipe",
+  "criterion": "locked recipe rejected and not selected",
+  "actions": [
+    {
+      "action": "set_locked_recipe",
+      "ok": true,
+      "wall_seconds": 0.001935834065079689,
+      "state": {
+        "tick": 498,
+        "speed": 20,
+        "paused": false,
+        "entities": {
+          "machine": {
+            "name": "assembling-machine-2",
+            "position": {
+              "y": 0.5,
+              "x": 0.5
+            },
+            "energy": 2755.5555555555557,
+            "status": 66,
+            "recipe": "processing-unit",
+            "products": 0,
+            "input": {},
+            "output": {},
+            "fluids": {}
+          }
+        },
+        "inventory": [
+          {
+            "name": "iron-plate",
+            "quality": "normal",
+            "count": 20
+          }
+        ],
+        "progress": 0,
+        "technologies": {
+          "automation": false,
+          "automation-3": false,
+          "processing-unit": false,
+          "oil-processing": false,
+          "rocket-silo": false
+        },
+        "processing_unit_enabled": false,
+        "launch_events": 0,
+        "iron_gear_production": 0
+      }
+    }
+  ],
+  "status": "failed",
+  "initial": {
+    "tick": 495,
+    "speed": 20,
+    "paused": true,
+    "entities": {
+      "machine": {
+        "name": "assembling-machine-2",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 0,
+        "status": 54,
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "iron-plate",
+        "quality": "normal",
+        "count": 20
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "initial_sha256": "a3a64f60c631bed8a983b65128953deba28abe9e05b0ac0bb871f8c4e8d02918",
+  "final": {
+    "tick": 499,
+    "speed": 20,
+    "paused": false,
+    "entities": {
+      "machine": {
+        "name": "assembling-machine-2",
+        "position": {
+          "y": 0.5,
+          "x": 0.5
+        },
+        "energy": 2755.5555555555557,
+        "status": 66,
+        "recipe": "processing-unit",
+        "products": 0,
+        "input": {},
+        "output": {},
+        "fluids": {}
+      }
+    },
+    "inventory": [
+      {
+        "name": "iron-plate",
+        "quality": "normal",
+        "count": 20
+      }
+    ],
+    "progress": 0,
+    "technologies": {
+      "automation": false,
+      "automation-3": false,
+      "processing-unit": false,
+      "oil-processing": false,
+      "rocket-silo": false
+    },
+    "processing_unit_enabled": false,
+    "launch_events": 0,
+    "iron_gear_production": 0
+  },
+  "wall_seconds": 0.12012324994429946,
+  "reviewed_classification": "failed"
+}

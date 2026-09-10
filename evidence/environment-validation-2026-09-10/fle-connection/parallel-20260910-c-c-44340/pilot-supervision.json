@@ -1,0 +1,9 @@
+{
+  "reason": "Original runner used unsafe process-group shutdown. Runner stopped before teardown; game and playing agent continue unchanged under operator supervision. Exclude pilot from complete-time comparison.",
+  "runner_pid": 99517,
+  "host_pid": 99519,
+  "controller_pid": 99565,
+  "supervisor_started_at": 1789054035.432365,
+  "finished_at": 1789054063.919829,
+  "external_check_returncode": 0
+}
