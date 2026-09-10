@@ -1,0 +1,262 @@
+{
+  "date": "2026-09-10",
+  "source_commit": "71cae21376589810eb480c22a1b2dbc023440ab6",
+  "policy": "policies/iron-plates-v1.method",
+  "model": "gpt-6-astra",
+  "method_sdk": "0.3.0",
+  "codex_cli": "0.153.0",
+  "python": "3.12.11",
+  "separate_api_calls": 0,
+  "subscription_dollar_cost": null,
+  "runs": [
+    {
+      "name": "method-001",
+      "seed": 44340,
+      "result": {
+        "passed": true,
+        "checks": {
+          "declared_inventory": true,
+          "no_starting_factory": true,
+          "no_starting_research": true,
+          "zero_starting_production": true,
+          "enemies_disabled": true,
+          "normal_speed": true,
+          "new_iron_plates": true,
+          "furnace_finished_products": true,
+          "iron_plates_in_furnace_output": true,
+          "action_limit": true,
+          "game_time_limit": true,
+          "inspection_save": true,
+          "clean_shutdown": true
+        },
+        "produced": 20,
+        "furnace_finished": 20,
+        "furnace_output": 20,
+        "requests": 15,
+        "errors": 0,
+        "game_seconds": 330.15,
+        "action_window_seconds": 288.85048508644104,
+        "scope": "small production integration test, not complete control or a rocket launch"
+      },
+      "saved_game_check": {
+        "passed": true,
+        "checks": {
+          "position": true,
+          "inventory": true,
+          "furnaces": true,
+          "research": true,
+          "iron_plates_produced": true,
+          "enemies": true
+        }
+      },
+      "method_status": "succeeded",
+      "playing_requests": 12,
+      "playing_request_window_seconds": 153.93301796913147,
+      "playing_game_seconds": 153.91666666666666,
+      "game_seconds_to_goal_from_host_ready": 242.1,
+      "wall_seconds_to_goal_from_host_ready": 242.1389729976654,
+      "model_calls": [
+        {
+          "attempt": "method",
+          "phase": "game",
+          "usage": {
+            "input_tokens": 82847,
+            "cached_input_tokens": 31104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 392,
+            "reasoning_output_tokens": 53
+          }
+        },
+        {
+          "attempt": "method-attempt-002",
+          "phase": "game",
+          "usage": {
+            "input_tokens": 62065,
+            "cached_input_tokens": 40320,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 357,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "attempt": "method-attempt-002",
+          "phase": "check",
+          "usage": {
+            "input_tokens": 43219,
+            "cached_input_tokens": 37120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 298,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "attempt": "method-attempt-002",
+          "phase": "produce",
+          "usage": {
+            "input_tokens": 497100,
+            "cached_input_tokens": 416384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2930,
+            "reasoning_output_tokens": 76
+          }
+        }
+      ],
+      "total_usage_including_failed_preflight": {
+        "input_tokens": 685231,
+        "cached_input_tokens": 524928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3977,
+        "reasoning_output_tokens": 129
+      },
+      "settings": {
+        "seed": 44340,
+        "inventory": {
+          "iron-plate": 8,
+          "wood": 1,
+          "stone-furnace": 1,
+          "burner-mining-drill": 1,
+          "pistol": 1,
+          "firearm-magazine": 10
+        },
+        "seconds_limit": 1200,
+        "action_limit": 200,
+        "fast": true,
+        "speed": 1,
+        "thinking_paused": false,
+        "billing": "Codex ChatGPT subscription; no separate API calls",
+        "api_spending_cap_usd": 0,
+        "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+        "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+        "host_sha256": "7a39c93a4f062142618c5b3076e9d0e64b52aa15551a1da429c8be3d2b47f54a",
+        "started_at": 1789052079.073257,
+        "mode": "integration; not a scored rocket trial"
+      },
+      "source_hashes": {
+        "policies/iron-plates-v1.method": "68c22d73642c8e709afe59c4d1f9745149daefcfa51475357c3ecb2092918241",
+        "docs/control-api.md": "18dfd81a5c9e1d5d49bf37eaa55c46c05c459db184a467c81fb6474633b0d419",
+        "scripts/control_test.py": "7a39c93a4f062142618c5b3076e9d0e64b52aa15551a1da429c8be3d2b47f54a",
+        "scripts/check_result.py": "ca674aadde095c5ff6d2cae3580083fe23766b46e3bf8274e588f1eb460c5914"
+      },
+      "save_sha256": "d9688a32ab1510021824c114a8519db156bc7a77253f17bad55cb3d156c7e87f"
+    },
+    {
+      "name": "method-002",
+      "seed": 44341,
+      "result": {
+        "passed": true,
+        "checks": {
+          "declared_inventory": true,
+          "no_starting_factory": true,
+          "no_starting_research": true,
+          "zero_starting_production": true,
+          "enemies_disabled": true,
+          "normal_speed": true,
+          "new_iron_plates": true,
+          "furnace_finished_products": true,
+          "iron_plates_in_furnace_output": true,
+          "action_limit": true,
+          "game_time_limit": true,
+          "inspection_save": true,
+          "clean_shutdown": true
+        },
+        "produced": 20,
+        "furnace_finished": 20,
+        "furnace_output": 20,
+        "requests": 14,
+        "errors": 0,
+        "game_seconds": 242.43333333333334,
+        "action_window_seconds": 221.6751003265381,
+        "scope": "small production integration test, not complete control or a rocket launch"
+      },
+      "saved_game_check": {
+        "passed": true,
+        "checks": {
+          "position": true,
+          "inventory": true,
+          "furnaces": true,
+          "research": true,
+          "iron_plates_produced": true,
+          "enemies": true
+        }
+      },
+      "method_status": "succeeded",
+      "playing_requests": 12,
+      "playing_request_window_seconds": 147.7415759563446,
+      "playing_game_seconds": 147.73333333333332,
+      "game_seconds_to_goal_from_host_ready": 178.8,
+      "wall_seconds_to_goal_from_host_ready": 178.74261903762817,
+      "model_calls": [
+        {
+          "attempt": "method",
+          "phase": "game",
+          "usage": {
+            "input_tokens": 61944,
+            "cached_input_tokens": 40192,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 342,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "attempt": "method",
+          "phase": "check",
+          "usage": {
+            "input_tokens": 42493,
+            "cached_input_tokens": 20736,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 304,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "attempt": "method",
+          "phase": "produce",
+          "usage": {
+            "input_tokens": 526980,
+            "cached_input_tokens": 502272,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2750,
+            "reasoning_output_tokens": 133
+          }
+        }
+      ],
+      "total_usage_including_failed_preflight": {
+        "input_tokens": 631417,
+        "cached_input_tokens": 563200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3396,
+        "reasoning_output_tokens": 133
+      },
+      "settings": {
+        "seed": 44341,
+        "inventory": {
+          "iron-plate": 8,
+          "wood": 1,
+          "stone-furnace": 1,
+          "burner-mining-drill": 1,
+          "pistol": 1,
+          "firearm-magazine": 10
+        },
+        "seconds_limit": 1200,
+        "action_limit": 200,
+        "fast": true,
+        "speed": 1,
+        "thinking_paused": false,
+        "billing": "Codex ChatGPT subscription; no separate API calls",
+        "api_spending_cap_usd": 0,
+        "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+        "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+        "host_sha256": "7a39c93a4f062142618c5b3076e9d0e64b52aa15551a1da429c8be3d2b47f54a",
+        "started_at": 1789052430.332602,
+        "mode": "integration; not a scored rocket trial"
+      },
+      "source_hashes": {
+        "policies/iron-plates-v1.method": "68c22d73642c8e709afe59c4d1f9745149daefcfa51475357c3ecb2092918241",
+        "docs/control-api.md": "18dfd81a5c9e1d5d49bf37eaa55c46c05c459db184a467c81fb6474633b0d419",
+        "scripts/control_test.py": "7a39c93a4f062142618c5b3076e9d0e64b52aa15551a1da429c8be3d2b47f54a",
+        "scripts/check_result.py": "ca674aadde095c5ff6d2cae3580083fe23766b46e3bf8274e588f1eb460c5914"
+      },
+      "save_sha256": "5f6326e47b2bd30f1e357ec3fb5a2d8a017984d4931c3cbf1dade962ed1b97c7"
+    }
+  ]
+}

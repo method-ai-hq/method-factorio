@@ -15,7 +15,7 @@ This repository starts on 10 September 2026. It contains the new Factorio experi
 | Game adapter integration | New work here | Native macOS host, fixed HTTP action interface, limits, action records, and terminal game saves. |
 | Additional Method execution support | Existing SDK used | SDK 0.3.0 runs the agent operation and a separate check. No new SDK execution type was needed for the small test. |
 | Policy improvement and evaluation | New work partly implemented | Fixed small-production check and saved-game inspection work. Policy improvement and scored rocket evaluation are not implemented. |
-| Playing Methods and trial results | Created during this event | The first Method produced 20 new iron plates. Live game and saved-game checks passed. |
+| Playing Methods and trial results | Created during this event | The same Method produced 20 new iron plates on two fresh maps. Both live game and saved-game checks passed. |
 
 Update this table as work completes. For each result, identify the code commit, policy version, run settings, and evidence.
 
@@ -29,6 +29,9 @@ runtime still has local shell access; stronger process isolation is not claimed.
 See [run instructions](docs/run-control-test.md) for setup and limits. The
 small test establishes basic control and production, not complete control,
 normal keyboard-and-mouse timing, a rocket launch, or improved performance.
+The [reviewed results](evidence/control-test-2026-09-10/README.md) identify the
+source commit, policy hashes, map settings, measured outcomes, model usage,
+and failed setup attempts.
 
 ## Demo rules
 

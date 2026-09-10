@@ -66,6 +66,15 @@ playing process from it. Failed setup and gameplay records must be kept.
 Method also makes an independent read of the live game after the playing step.
 A model's claim alone does not pass the test.
 
+To load the terminal save in a separate server and compare its game state:
+
+```sh
+.venv/bin/python scripts/inspect_save.py runs/my-first-test
+```
+
+The inspection uses local ports 27118 and 34218 and creates a new
+`save-inspection/` folder. It does not overwrite the original save.
+
 The HTTP interface rejects undeclared actions and never accepts raw code or
 administrative commands. The current Method runtime still gives its Codex
 processes shell access under the same macOS account. This is an API boundary,
