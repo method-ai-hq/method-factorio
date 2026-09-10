@@ -16,6 +16,10 @@ gives Astra the goal and the allowed tools, without a factory construction recip
 The root design remains the plan for the larger experiment. This small test
 does not replace its rules or establish a scored result.
 
+Next: [validate environment coverage and speed](docs/environment-validation.md)
+with direct-agent, Method, FLE-connection, and no-model scripted tests. This
+series is designed but has not run.
+
 ## Read the design
 
 | File | Purpose |

@@ -33,6 +33,11 @@ The [reviewed results](evidence/control-test-2026-09-10/README.md) identify the
 source commit, policy hashes, map settings, measured outcomes, model usage,
 and failed setup attempts.
 
+The [environment validation plan](docs/environment-validation.md) defines
+control coverage, baseline comparisons, speed measurements, and recovery
+tests. It is a new plan, not a new measured result. The current work remains
+environment validation; policy search has not started.
+
 ## Demo rules
 
 The demo must identify features, code, and results created during the event. Explain dependencies as prior work. Do not present Factorio, FLE, or existing Method features as new inventions.
