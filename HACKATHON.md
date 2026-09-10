@@ -282,3 +282,9 @@ runner reports it. The final cases remain outside policy development.
 
 No Method advantage is claimed yet. Reports will distinguish a failed repair
 from a request-rule failure even when both fail the strict task score.
+
+The direct development baseline is complete: ten restored factories and eight
+strict passes. Two attempts failed only the allowed-request rule. Median time
+among strict passes was 79.74 seconds. The [baseline evidence](evidence/repair-search-2026-09-10/README.md)
+keeps these outcomes separate. Method search and final comparison remain in
+progress.

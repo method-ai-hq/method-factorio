@@ -44,6 +44,8 @@ Method against fresh direct Astra runs on varied damaged factories. It uses
 10 development cases and 20 separate final cases, a fixed native game checker,
 and the real Method v3 runtime. See the [run guide](docs/run-repair-search.md).
 The comparison is in progress; no Method advantage is claimed yet.
+The [development baseline](evidence/repair-search-2026-09-10/README.md) restored
+all ten factories and passed the full rules in eight attempts.
 
 | File | Purpose |
 | --- | --- |
