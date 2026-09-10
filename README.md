@@ -23,6 +23,11 @@ found control defects. Full games and complete control remain unverified.
 See the [test design](docs/environment-validation.md) and
 [run commands](docs/run-environment-validation.md).
 
+To start the next stage, use the [complete policy-search goal prompt](docs/policy-search-goal.md).
+It defines a supplied-kit automatic-production benchmark, evaluator setup,
+policy comparisons, gameplay recordings, and bounded unattended work. The prompt
+is ready; the new benchmark and search have not run.
+
 ## Read the design
 
 | File | Purpose |

@@ -48,6 +48,12 @@ fresh-world rocket wins. Failed setup and trial records remain saved.
 The [test plan](docs/environment-validation.md) lists the remaining coverage.
 The current work remains environment validation; policy search has not started.
 
+The [policy-search goal prompt](docs/policy-search-goal.md) now specifies the next
+bounded search, including a new automatic-production evaluator, actual gameplay
+recordings for every attempt, and separate development and final maps. This is a
+written launch procedure. The new evaluator, recorder, and search are not claimed
+as implemented or measured by publishing the prompt.
+
 ## Demo rules
 
 The demo must identify features, code, and results created during the event. Explain dependencies as prior work. Do not present Factorio, FLE, or existing Method features as new inventions.
