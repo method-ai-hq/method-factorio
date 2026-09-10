@@ -1,0 +1,12 @@
+{
+  "status": "finished",
+  "owner_confirmed": true,
+  "closed_at": "2026-09-10T18:27:44.150923+00:00",
+  "search_stop_utc": "2026-09-10T18:20:26Z",
+  "reason": "Existing search time limit reached; owner requested final closure and report.",
+  "new_trials_after_closure": 0,
+  "new_paid_calls_for_report": 0,
+  "report": "evidence/policy-search-final-2026-09-10/README.md",
+  "metrics": "evidence/policy-search-final-2026-09-10/metrics.json",
+  "historical_records_preserved": true
+}

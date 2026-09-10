@@ -1,5 +1,7 @@
 # Continuous Method v3 policy search
 
+Final status: this search is finished. See the [combined final report](../policy-search-final-2026-09-10/README.md) for direct Astra and deterministic-script comparisons.
+
 The search stopped at the existing 18:20:26 UTC limit. It created **16 new Method versions** from game feedback and completed **57 attempts: 52 passes and five failures**. Every trial closed before the search stop. The job used 78 of 120 trial slots and 29 of 32 frozen policy slots. No limit was extended.
 
 The paired development recheck found a material and action reduction, but **no speed gain**:

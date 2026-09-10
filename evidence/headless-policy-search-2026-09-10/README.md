@@ -1,5 +1,7 @@
 # Headless Method v3 policy search
 
+Final status: this search is finished. See the [combined final report](../policy-search-final-2026-09-10/README.md) for direct Astra and deterministic-script comparisons.
+
 The comparison is complete. The selected Method, `p10-direction-retry`, passed
 all three development maps and both unseen final maps. The frozen initial
 Method also passed all five maps. The direct agent passed two of three

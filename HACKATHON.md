@@ -229,3 +229,18 @@ Battle.net is installed, but sign-in and the StarCraft II game install remain
 open. No live StarCraft II game test, Method integration, policy search, match
 win, or parallel capacity result is claimed. PySC2, Blizzard's API, the maps,
 and the game are prior work. Only setup code and checks are new work here.
+
+## Final closure of the supplied-kit search
+
+The owner marked this search finished. The [final report](evidence/policy-search-final-2026-09-10/README.md)
+compares the direct Astra agent, initial and selected Methods, the 16-version
+hill climb, and the deterministic reference checks. The headless job retained
+78 attempt records; these are not pooled into a general success-rate estimate.
+
+The report separates the earlier 5.71-fold full-time difference on two unseen
+maps from the later hill climb, which did not show a speed gain. It identifies
+the direct agent's restricted Python interface and the absence of a matched
+scored reference-script comparison. The 93.1% reduction was in coal loaded,
+not a measured reduction in coal burned. No new game or paid call was needed
+for this final report. The original validator, Methods, and results remain
+unchanged.

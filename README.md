@@ -4,7 +4,7 @@ Can Astra invent and improve executable Methods that finish long tasks when the 
 
 Our task is to build a factory and launch a rocket in base Factorio. Astra will design the playing procedure, inspect its results, and test changes. The procedure can use plain-English instructions, agents, model calls, bounded loops, and code. It must choose where reasoning and verification are worth their time and cost.
 
-**Status: a headless supplied-kit comparison is complete.** The selected Method and the frozen initial Method each passed three development maps and two unseen final maps. The direct agent passed two of three development maps. Mean full final time was 9.06 seconds for the selected Method and 51.78 seconds for the initial Method. See the [reviewed comparison](evidence/headless-policy-search-2026-09-10/README.md), including failures, source versions, and known cost. This is a small production test, not a rocket launch or a fresh-world win.
+**Status: the supplied-kit policy search is finished.** The [final report](evidence/policy-search-final-2026-09-10/README.md) covers direct Astra, deterministic scripting, and 16 new Methods made from game feedback. The earlier selected code Method completed two unseen maps in a mean 9.06 seconds, versus 51.78 seconds for the initial agent Method. The later hill climb reduced actions from 13 to 10 and coal loaded from 130 to 9, but did not show a further speed gain. No advantage over the deterministic reference script was established. This is a small production test, not a rocket launch or a fresh-world win.
 
 ## Harder task: automatic science
 
@@ -32,10 +32,10 @@ found control defects. Full games and complete control remain unverified.
 See the [test design](docs/environment-validation.md) and
 [run commands](docs/run-environment-validation.md).
 
-To start the next stage, use the [complete policy-search goal prompt](docs/policy-search-goal.md).
-It requires the Method v3 CLI and a 60-minute total limit, with parallel policy
-search, a supplied-kit production evaluator, and gameplay recordings. The prompt
-is ready; the new benchmark and search have not run.
+The original [policy-search goal prompt](docs/policy-search-goal.md) is retained as
+history. The search is now finished. Its [closure record](evidence/policy-search-final-2026-09-10/closure.json)
+preserves the stop, and its [final report](evidence/policy-search-final-2026-09-10/README.md)
+links the Methods, measurements, failures, and limits.
 
 ## Read the design
 

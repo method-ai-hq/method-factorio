@@ -1,0 +1,249 @@
+{
+  "status": "finished",
+  "closed_at": "2026-09-10T18:27:44.150923+00:00",
+  "closure_reason": "Owner confirmed that the search is finished. Live search had already stopped at its existing time limit. This closure uses saved data only.",
+  "source_files": {
+    "first": {
+      "path": "evidence/headless-policy-search-2026-09-10/summary.json",
+      "sha256": "77d8f434625d4c503493141f5d1b42e815c020a9a9b84f315b1584daddef4ab1"
+    },
+    "climb": {
+      "path": "evidence/continuous-policy-search-2026-09-10/summary.json",
+      "sha256": "ec1d7f0be56b12075865d372fdecc8e10e7eeacd79be630068980ef9c2ecfa3e"
+    },
+    "reference": {
+      "path": "evidence/headless-control-2026-09-10/summary.json",
+      "sha256": "fba9f6164c83185cfdaf46a09ebe2ff237e268b775dce66309c2212952fbb869"
+    }
+  },
+  "validator_commit": "b25d4303cbe7e29a4c21fbab3e8a237fbe97e341",
+  "hill_climb_release_commit": "921349ebd2170fdc04940722f538715f1a18ebb5",
+  "counts": {
+    "setup_episodes": 18,
+    "earlier_v1_attempts": 2,
+    "v2_initial_development_attempts": 15,
+    "v2_initial_final_attempts": 4,
+    "hill_climb_attempts": 57,
+    "hill_climb_passes": 52,
+    "total_attempts": 78,
+    "total_passes_for_record_inventory_only": 71,
+    "initial_frozen_versions": 13,
+    "new_frozen_versions": 16,
+    "total_frozen_versions": 29,
+    "rejected_draft_versions": 1
+  },
+  "initial_matched_panels": [
+    {
+      "policy": "b01-direct-code-access.method",
+      "phase": "development",
+      "trials": 3,
+      "passes": 2,
+      "mean_ranked_seconds": 138.86015939712524,
+      "mean_full_success_seconds": 43.290239095687866,
+      "model_requests": 25,
+      "known_api_cost_usd": 0.42156,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-b01-direct-code-access-dev1-82daab",
+        "headless-search-20260910T174026Z-b01-direct-code-access-dev2-fa5101",
+        "headless-search-20260910T174026Z-b01-direct-code-access-dev3-577a50"
+      ]
+    },
+    {
+      "policy": "p05-observed-geometry.method",
+      "phase": "development",
+      "trials": 3,
+      "passes": 3,
+      "mean_ranked_seconds": 8.736838340759277,
+      "mean_full_success_seconds": 8.736838340759277,
+      "model_requests": 0,
+      "known_api_cost_usd": 0,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p05-observed-geometry-dev1-8e50d9",
+        "headless-search-20260910T174026Z-p05-observed-geometry-dev2-8f7eda",
+        "headless-search-20260910T174026Z-p05-observed-geometry-dev3-963518"
+      ]
+    },
+    {
+      "policy": "p08-code-agent-repair.method",
+      "phase": "development",
+      "trials": 3,
+      "passes": 3,
+      "mean_ranked_seconds": 19.822768608729046,
+      "mean_full_success_seconds": 19.822768608729046,
+      "model_requests": 12,
+      "known_api_cost_usd": 0.216908,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p08-code-agent-repair-dev1-ef3249",
+        "headless-search-20260910T174026Z-p08-code-agent-repair-dev2-8f1ac4",
+        "headless-search-20260910T174026Z-p08-code-agent-repair-dev3-cced1f"
+      ]
+    },
+    {
+      "policy": "p01-initial.method",
+      "phase": "development",
+      "trials": 3,
+      "passes": 3,
+      "mean_ranked_seconds": 51.33234930038452,
+      "mean_full_success_seconds": 51.33234930038452,
+      "model_requests": 44,
+      "known_api_cost_usd": 0.670193,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p01-initial-dev1-8e23ab",
+        "headless-search-20260910T174026Z-p01-initial-dev2-301d6d",
+        "headless-search-20260910T174026Z-p01-initial-dev3-15ae20"
+      ]
+    },
+    {
+      "policy": "p10-direction-retry.method",
+      "phase": "development",
+      "trials": 3,
+      "passes": 3,
+      "mean_ranked_seconds": 8.614752610524496,
+      "mean_full_success_seconds": 8.614752610524496,
+      "model_requests": 0,
+      "known_api_cost_usd": 0,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p10-direction-retry-dev1-b1c063",
+        "headless-search-20260910T174026Z-p10-direction-retry-dev2-c57959",
+        "headless-search-20260910T174026Z-p10-direction-retry-dev3-34a8bf"
+      ]
+    },
+    {
+      "policy": "p10-direction-retry.method",
+      "phase": "final",
+      "trials": 2,
+      "passes": 2,
+      "mean_ranked_seconds": 9.062936067581177,
+      "mean_full_success_seconds": 9.062936067581177,
+      "model_requests": 0,
+      "known_api_cost_usd": 0,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p10-direction-retry-final1-ea68a7",
+        "headless-search-20260910T174026Z-p10-direction-retry-final2-003db5"
+      ]
+    },
+    {
+      "policy": "p01-initial.method",
+      "phase": "final",
+      "trials": 2,
+      "passes": 2,
+      "mean_ranked_seconds": 51.782891035079956,
+      "mean_full_success_seconds": 51.782891035079956,
+      "model_requests": 28,
+      "known_api_cost_usd": 0.41809399999999997,
+      "trial_ids": [
+        "headless-search-20260910T174026Z-p01-initial-final1-2a83df",
+        "headless-search-20260910T174026Z-p01-initial-final2-667e9c"
+      ]
+    }
+  ],
+  "direct_vs_p10_common_successful_maps": [
+    {
+      "seed": 63012,
+      "direct_seconds": 49.57034111022949,
+      "p10_seconds": 8.249173879623413
+    },
+    {
+      "seed": 63013,
+      "direct_seconds": 37.01013708114624,
+      "p10_seconds": 8.670634984970093
+    }
+  ],
+  "p01_vs_p10_final_time_ratio": 5.713699252531568,
+  "hill_climb_paired": {
+    "kind": "paired development recheck, not unseen final evaluation",
+    "selection": "p20 had the lowest mean time among fully passing new three-map panels completed before this panel was declared. It was selected for this paired recheck.",
+    "panel_declared_before_execution": true,
+    "groups": [
+      {
+        "policy": "p10-direction-retry",
+        "passes": 3,
+        "trials": 3,
+        "mean_full_seconds": 9.824992736180624,
+        "mean_actions": 13,
+        "mean_loaded_coal": 130
+      },
+      {
+        "policy": "p20-fuel-reserve-check",
+        "passes": 3,
+        "trials": 3,
+        "mean_full_seconds": 10.110024372736612,
+        "mean_actions": 10,
+        "mean_loaded_coal": 9
+      }
+    ],
+    "trial_ids": [
+      "headless-search-20260910T174026Z-loop-p10-direction-retry-dev2-r2-a229a8",
+      "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev2-r2-a91275",
+      "headless-search-20260910T174026Z-loop-p10-direction-retry-dev3-r2-e9e288",
+      "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev3-r2-796e57",
+      "headless-search-20260910T174026Z-loop-p10-direction-retry-dev1-r2-248cb6",
+      "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev1-r2-d091a1"
+    ],
+    "speed_gain_established": false,
+    "note": "Both policies passed all three maps. The p20 mean time was higher in the paired recheck. Other Factorio work was active during part of this search, so wall-time comparisons are limited."
+  },
+  "changes_in_paired_recheck": {
+    "actions_reduction_percent": 23.076923076923073,
+    "coal_loaded_reduction_percent": 93.07692307692308,
+    "p20_time_increase_percent": 2.9010875041806106,
+    "lower_fuel_consumption_established": false
+  },
+  "deterministic_reference": {
+    "kind": "unscored headless host repair checks",
+    "runs": 2,
+    "passes": 2,
+    "mean_full_seconds": 8.57861840724945,
+    "range_full_seconds": [
+      8.570894956588745,
+      8.586341857910156
+    ],
+    "api_requests": 0,
+    "matched_scored_comparison": false
+  },
+  "known_api_cost_usd": 2.497554,
+  "api_requests": 161,
+  "api_responses_with_known_usage": 160,
+  "hill_climb_additional_api_cost_usd": 0,
+  "subscription_authoring_cost": "unknown",
+  "phase_costs": {
+    "setup": {
+      "records": 3,
+      "records_without_usage": 0,
+      "requests": 26,
+      "known_responses": 26,
+      "input_tokens": 112303,
+      "cached_input_tokens": 91401,
+      "output_tokens": 1692,
+      "requests_with_unknown_usage": 0,
+      "estimated_known_cost_usd": 0.385021,
+      "complete_token_usage": true
+    },
+    "development": {
+      "records": 17,
+      "records_without_usage": 0,
+      "requests": 107,
+      "known_responses": 106,
+      "input_tokens": 460660,
+      "cached_input_tokens": 362379,
+      "output_tokens": 6985,
+      "requests_with_unknown_usage": 1,
+      "estimated_known_cost_usd": 1.694439,
+      "complete_token_usage": false
+    },
+    "final": {
+      "records": 4,
+      "records_without_usage": 0,
+      "requests": 28,
+      "known_responses": 28,
+      "input_tokens": 128448,
+      "cached_input_tokens": 106404,
+      "output_tokens": 1825,
+      "requests_with_unknown_usage": 0,
+      "estimated_known_cost_usd": 0.41809399999999997,
+      "complete_token_usage": true
+    }
+  },
+  "new_game_launches_for_this_report": 0,
+  "new_model_api_requests_for_this_report": 0
+}
