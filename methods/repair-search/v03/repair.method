@@ -1,0 +1,31 @@
+format: method/3
+name: Compact complete factory and targeted repair v03
+goal: Repair an unseen factory from compact public observations in one model context.
+inputs:
+  task: {type: text, description: The public repair task and allowed game controls.}
+environment:
+  game: {type: service, description: The restricted game endpoint.}
+files: [compact.py, prompt.txt]
+steps:
+  inspect:
+    purpose: Observe all permitted equipment once and compress geometry without changing the factory.
+    in: {task: inputs.task}
+    do: {kind: run, runtime: python, entrypoint: observe.py}
+    out:
+      factory: {type: text, description: A compact public observation with exact machine positions and belt runs.}
+    changes: [environment.game]
+    check: {present: factory}
+    limits: {timeout_ms: 35000}
+  repair:
+    purpose: Diagnose supply breaks from the compact state and repair and verify them in one context.
+    in: {task: inputs.task, factory: factory}
+    do: {kind: run, runtime: python, entrypoint: repair.py}
+    out:
+      report: {type: text, description: Factual final report. Completion needs external game evidence.}
+      execution_status: {type: text, description: Codex process status.}
+      evidence: {type: text, description: Codex trace path.}
+      remaining_seconds: {type: number, description: Remaining wall time under the common runner.}
+    changes: [environment.game]
+    check: {present: execution_status}
+    limits: {timeout_ms: 300000}
+result: {report: report, execution_status: execution_status, evidence: evidence}
