@@ -194,3 +194,16 @@ authoring cost is unknown. No screen recording was made.
 See the [continuous search report](evidence/continuous-policy-search-2026-09-10/README.md)
 and the [new Method index](policies/continuous-v3/README.md) for hypotheses,
 source hashes, exact commands, failures, checks, costs, and limits.
+
+## StarCraft II environment setup, 10 September 2026
+
+A separate [StarCraft II setup](environments/sc2/README.md) now fixes PySC2
+and its dependencies in an isolated Python environment. The setup script checks
+the official mini-game archive hash. Offline observation, step, reset, and
+protocol action checks passed on macOS with Apple Silicon. The new bounded
+live-control script retains actions, game loops, wall time, errors, and replays.
+
+Battle.net is installed, but sign-in and the StarCraft II game install remain
+open. No live StarCraft II game test, Method integration, policy search, match
+win, or parallel capacity result is claimed. PySC2, Blizzard's API, the maps,
+and the game are prior work. Only setup code and checks are new work here.
