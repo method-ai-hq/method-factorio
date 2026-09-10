@@ -35,12 +35,62 @@ Use a separate port slot for each active player. A Method code step calls the fi
 
 After a batch, give the author only development evidence. Save changes as a new version. Run the same cases again. The batch stores file hashes and refuses changed candidates or mismatched resumed records. A completed case is not replayed when a batch resumes. An incomplete run must be inspected; it is never silently overwritten.
 
+## Read saved recipes before selecting a Method
+
+The original game reader can export an idle furnace recipe as `null`. Use the
+separate `repair_review.review` function on every completed attempt, with its
+original case folder. It reads the exact recipe objects retained in the original
+save and applies the same success rules. It writes `review.json` and keeps the
+original evidence. See the [reader note](../evidence/repair-search-2026-09-10/checker-note.md).
+Do not review only failed attempts. Use one fixed reader version for both
+approaches and all cases. Include this read in full processing time.
+
+```python
+from pathlib import Path
+from repair_review import review
+review(Path("runs/repair-comparison/direct-development-001"),
+       Path("runs/repair-development/development-001"))
+```
+
+Run this example with `scripts` on the Python import path. Give simultaneous
+reviews separate RCON and game ports. The final runner assigns its own ports.
+
 ## Final comparison
 
 Select and freeze one Method using development results before running any final case. Run direct Astra and that frozen Method on separate copies of each final save. Keep the same task, limits, model, and checker. Use no case builder during the final comparison. Do not feed final results back to the author.
 
+Create a selection JSON file before the first final attempt. It must contain
+`candidate_files` from `repair_batch.candidate_hashes(policy_path)` and
+`review_source_sha256` from `repair_batch.file_hash(Path("scripts/repair_review.py"))`.
+Also record the selection rule, development scores, chosen version, and time.
+Use all ten development results for each eligible version. Do not change this
+file, the chosen Method, the reader, or the final case set after tests start.
+
 ```sh
-.venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -q
+.venv/bin/python scripts/repair_final.py --cases runs/repair-final-private --policy methods/repair-search/v04/repair.method --selection runs/repair-comparison/selection.json --output runs/repair-comparison/final
 ```
+
+For each of the twenty cases, this command starts one direct player and one
+Method player on separate worlds. It waits for both, verifies both saves, and
+applies the same recipe read before moving to the next case. It retains failed
+attempts and stops on an infrastructure fault. A safe resume accepts completed
+matching records and refuses changed or incomplete records. The final output
+is `report.json`. Audit the complete result before publication:
+
+```sh
+.venv/bin/python scripts/repair_audit.py runs/repair-comparison/final --cases runs/repair-final-private --policy methods/repair-search/v04/repair.method --selection runs/repair-comparison/selection.json
+```
+
+This audit checks saved evidence hashes, fixed-rule decisions, selected policy
+files, model records, full time, and report totals. It reads files only. Native
+saved-game proof comes from each attempt's independent review.
+
+```sh
+.venv/bin/python -m unittest discover -s scripts -p 'test_repair*.py' -q
+```
+
+The completed experiment's selection record is published with its evidence.
+For a later policy search, use new final cases. Do not reuse exposed final
+results as evidence of performance on unseen cases.
 
 All raw runs and saves stay in ignored local folders. Publish reviewed summaries only. Count production failures, request-rule failures, timeouts, and infrastructure faults separately.
