@@ -88,3 +88,19 @@ is a setup result, not a policy win. JPEG capture was added to reduce storage
 but did not pass a live check before the stop. The known setup API estimate is
 $0.00657; Codex authoring cost is unknown. See the
 [reviewed setup report](evidence/policy-search-v3-2026-09-10/README.md).
+
+## Headless optimization support
+
+After the setup stop, the owner removed screen recording from optimization.
+The host and trial runner now support a separate headless evidence contract.
+Two simultaneous operator-reference worlds started in about 3.4 seconds each,
+passed all three production windows, and passed separate save reload checks.
+No graphical client or model call was used. These are code repair checks,
+not scored policy results. See the [headless check report](evidence/headless-control-2026-09-10/README.md).
+
+The scheduler now starts native graphics one client at a time, checks the tested
+concurrency limit, preserves pending work, and permits one serial replacement
+only when the fixed run settings authorize it. Eleven control tests passed.
+Recorded demonstrations can link to an original headless trial; they remain
+new executions with separate results. Higher headless capacity and full policy
+integration remain unverified.

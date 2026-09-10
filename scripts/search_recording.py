@@ -16,10 +16,12 @@ import subprocess
 import threading
 import time
 
+from search_startup import StartupFailure, client_stage, write_status
+
 
 class Recorder:
     def __init__(self, run_dir, factorio, game_port, rcon_port, rcon_password,
-                 deadline_epoch, fps=2):
+                 deadline_epoch, fps=2, startup_seconds=120):
         if fps != 2:
             raise ValueError("The fixed recording rate is 2 frames per second")
         self.run = Path(run_dir).resolve()
@@ -27,6 +29,9 @@ class Recorder:
         self.game_port, self.rcon_port = game_port, rcon_port
         self._password = rcon_password
         self.deadline = float(deadline_epoch)
+        if not 0 < startup_seconds <= 120:
+            raise ValueError("Client startup allowance must be in (0,120]")
+        self.startup_seconds = startup_seconds
         self.peer_dir = self.run / "recording-peer"
         self.output = self.run / "recording"
         self.output.mkdir(parents=True, exist_ok=False)
@@ -84,10 +89,17 @@ class Recorder:
             "pid": self.peer.pid, "command": command, "deadline_epoch": self.deadline}, indent=2))
         self.client = RCONClient("127.0.0.1", self.rcon_port, self._password,
                                  timeout=min(5, self._remaining(5)))
-        join_deadline = time.time() + self._remaining(60)
+        join_started = time.time()
+        join_deadline = join_started + self._remaining(self.startup_seconds)
+        stage = None
         while time.time() < join_deadline and not self.stop.is_set():
+            observed = client_stage((self.output / "peer.log").read_text(errors="replace"))
+            if observed != stage:
+                stage = observed
+                write_status(self.output / "startup.json", stage=stage,
+                             started_at=join_started, deadline=join_deadline)
             if self.peer.poll() is not None:
-                raise RuntimeError("The recording peer stopped; inspect recording/peer.log")
+                raise StartupFailure("client_exited", "The recording peer stopped; inspect recording/peer.log")
             raw = self.client.send_command("/sc rcon.print(#game.connected_players)")
             if raw and raw.strip().isdigit() and int(raw.strip()) >= 1:
                 # This is setup before the initial state is frozen. A spectator
@@ -95,9 +107,14 @@ class Recorder:
                 self.client.send_command('/sc for _,p in pairs(game.connected_players) do '
                     'local c=p.character; p.set_controller{type=defines.controllers.spectator}; '
                     'if c and c.valid then c.destroy() end end; rcon.print("spectator-ready")')
+                write_status(self.output / "startup.json", stage="connected",
+                             started_at=join_started, elapsed_seconds=time.time()-join_started)
                 return
             self.stop.wait(.25)
-        raise TimeoutError("The recording peer did not join within its time limit")
+        code = "graphics_loading_timeout" if stage == "loading_graphics" else "client_join_timeout"
+        write_status(self.output / "startup.json", stage=stage, failure_code=code,
+                     started_at=join_started, elapsed_seconds=time.time()-join_started)
+        raise StartupFailure(code, "The client startup allowance expired during " + str(stage))
 
     def start(self):
         """Capture and verify the initial game image, then record continuously."""

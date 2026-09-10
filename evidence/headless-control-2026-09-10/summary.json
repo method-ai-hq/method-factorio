@@ -1,0 +1,56 @@
+[
+  {
+    "run": "headless-check-133345-1",
+    "lane": 1,
+    "started_at": 1789061625.550129,
+    "api_calls": 0,
+    "kind": "code repair verification; not a scored policy trial",
+    "ready_seconds": 3.4109349250793457,
+    "inspection_passed": true,
+    "production_success": true,
+    "window_deltas": [
+      {
+        "ore": 5,
+        "plates": 5
+      },
+      {
+        "ore": 5,
+        "plates": 5
+      },
+      {
+        "ore": 5,
+        "plates": 5
+      }
+    ],
+    "headless_evidence_complete": true,
+    "graphical_client_started": false,
+    "seconds": 8.570894956588745
+  },
+  {
+    "run": "headless-check-133345-2",
+    "lane": 2,
+    "started_at": 1789061625.5502322,
+    "api_calls": 0,
+    "kind": "code repair verification; not a scored policy trial",
+    "ready_seconds": 3.4225096702575684,
+    "inspection_passed": true,
+    "production_success": true,
+    "window_deltas": [
+      {
+        "ore": 5,
+        "plates": 5
+      },
+      {
+        "ore": 5,
+        "plates": 5
+      },
+      {
+        "ore": 5,
+        "plates": 5
+      }
+    ],
+    "headless_evidence_complete": true,
+    "graphical_client_started": false,
+    "seconds": 8.586341857910156
+  }
+]

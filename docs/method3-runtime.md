@@ -122,3 +122,18 @@ within 30 seconds or at the job deadline.
 Raw game files, model records, and recordings stay in ignored `runs/` folders.
 Review evidence before public release. Model execution uses the paid API;
 policy author work in Codex uses the subscription and is reported separately.
+
+## Headless trials and recovery
+
+The owner now permits optimization without video. The trial runner reads
+`recording_mode` from the approved fixed manifest. Mode `none` requires
+contract `automatic-production/headless-1`; it still requires action/state
+records and a matching terminal save inspection. See
+[the current contract and commands](headless-policy-search.md).
+
+`search_schedule.py` defaults to two worlds and rejects concurrency above the
+validated level in the manifest. It starts native clients one at a time.
+It keeps pending work when it stops launching and can perform one recorded
+serial replacement for a declared graphics-loading fault when the fixed
+settings authorize it. See [the proposed next goal](headless-search-goal.md)
+for the supervisor's repair procedure and explicit next-job limits.

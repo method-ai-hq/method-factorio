@@ -16,6 +16,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 ROOT = Path(__file__).resolve().parents[1]
 from automatic_evaluator import KIT as START_INVENTORY, SNAPSHOT, SNAPSHOT_FUNCTION, measure
+from search_startup import StartupGate, write_status
 
 
 def prepare_final_save(instance):
@@ -48,6 +49,7 @@ def main():
     p.add_argument("--job-deadline", type=float, required=True)
     p.add_argument("--map-x", type=int, default=16)
     p.add_argument("--map-y", type=int, default=0)
+    p.add_argument("--recording-mode", choices=["native","none"], default="native")
     p.add_argument("--validation-fault", choices=["none","two_windows","stored_only"],default="none")
     p.add_argument("--seconds", type=int, default=300)
     p.add_argument("--actions", type=int, default=200)
@@ -105,6 +107,8 @@ def main():
         stdout=log, stderr=log)
     instance = None
     recorder = None
+    host_ready = False
+    startup_gate = StartupGate(ROOT / "runs/graphics-startup.lock")
     stop = threading.Event()
     def request_stop(*_):
         stop.set()
@@ -124,11 +128,19 @@ def main():
                 time.sleep(0.5)
         else:
             raise RuntimeError("RCON startup timed out")
-        from search_recording import Recorder
-        recorder = Recorder(run_dir=run, factorio=args.factorio, game_port=args.game_port,
-                            rcon_port=args.rcon_port, rcon_password=password,
-                            deadline_epoch=absolute_deadline+30)
-        recorder.start_peer()
+        if args.recording_mode == "native":
+            from search_recording import Recorder
+            recorder = Recorder(run_dir=run, factorio=args.factorio, game_port=args.game_port,
+                                rcon_port=args.rcon_port, rcon_password=password,
+                                deadline_epoch=absolute_deadline+30)
+            write_status(run / "startup.json", stage="waiting_for_startup_slot", started_at=host_wall_started)
+            startup_gate.acquire(absolute_deadline-40, cancelled=stop.is_set)
+            write_status(run / "startup.json", stage="starting_client", started_at=host_wall_started)
+            recorder.start_peer()
+        else:
+            write_status(run / "recording-mode.json", mode="none", reason="headless optimization",
+                         video_required=False, graphical_client_started=False)
+        write_status(run / "startup.json", stage="initializing_game", started_at=host_wall_started)
         import fle.env.instance as fle_instance
         from fle.env import Position, Direction
         from fle.env.game_types import Prototype, Resource
@@ -162,7 +174,9 @@ def main():
         illegal = False
         def snapshot():
             return json.loads(instance.rcon_client.send_command("/sc " + SNAPSHOT))
-        recorder.start()
+        if recorder:
+            write_status(run / "startup.json", stage="capturing_initial_frame", started_at=host_wall_started)
+            recorder.start()
         initial = snapshot()
         assert not initial["research"] and initial["enemies"] == 0
         assert not initial["furnaces"] and initial["iron_plates_produced"] == 0
@@ -171,6 +185,8 @@ def main():
             "action_limit": args.actions, "fast": True, "speed": args.speed, "thinking_paused": False,
             "transport": args.transport, "rcon_port": args.rcon_port, "game_port": args.game_port,
             "startup_seconds": time.monotonic()-host_started,
+            "recording_mode":args.recording_mode,
+            "client_startup_limit_seconds":120 if recorder else None, "serialized_graphics_startup":bool(recorder),
             "billing": "Paid OpenAI API authorized for one-hour job", "api_spending_cap_usd": None,
             "job_deadline_epoch": args.job_deadline, "validation_fault":args.validation_fault, "map_patch": {"x":args.map_x,"y":args.map_y,"size":9,"amount_per_tile":1000},
             "terrain": "Operator cleared area -64..64, grass-1; 9x9 iron patch; natural terrain outside",
@@ -350,9 +366,12 @@ def main():
             http = HTTPServer(("127.0.0.1", args.port), Handler)
             endpoint = f"http://127.0.0.1:{args.port}/action"
         http.timeout = 1
+        host_ready = True
+        write_status(run / "startup.json", stage="ready", started_at=host_wall_started)
+        startup_gate.close()
         print(json.dumps({"ready": True,"endpoint":endpoint,"run":str(run),"initial":initial}), flush=True)
         while not stop.is_set() and time.monotonic() < deadline:
-            if recorder.error:
+            if recorder and recorder.error:
                 raise RuntimeError("Game recording failed: " + recorder.error)
             http.handle_request()
         http.server_close()
@@ -360,7 +379,13 @@ def main():
             Path(args.socket_path).unlink(missing_ok=True)
         actions.close()
         (run / "action-summary.json").write_text(json.dumps({"count":count,"legal":not illegal,"handed_off":handed_off,"within_deadline":time.time()<=absolute_deadline},indent=2))
+    except BaseException as error:
+        write_status(run / "failure.json", phase="gameplay" if host_ready else "startup",
+                     code=getattr(error,"code","host_failure"), error=str(error))
+        raise
     finally:
+        # Retain the gate through cleanup if startup failed, so the next loader
+        # cannot overlap with a peer that is still shutting down.
         if instance and server.poll() is None:
             try:
                 instance.rcon_client.send_command("/sc game.tick_paused=true")
@@ -379,6 +404,7 @@ def main():
         except subprocess.TimeoutExpired:
             server.kill(); server.wait()
         log.close()
+        startup_gate.close()
         if server.returncode == 0 and (run / "final.json").exists() and not (run / "shutdown-error.txt").exists():
             shutil.copyfile(game / "working.zip", game / "final.zip")
         (run / "host-timing.json").write_text(json.dumps({"total_seconds":time.monotonic()-host_started,

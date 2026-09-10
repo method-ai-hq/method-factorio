@@ -33,3 +33,11 @@
 - Keep secrets in an ignored env file with restricted permissions. Never print or commit them.
 - Keep game installations, saves, local runs, caches, and raw recordings out of Git by default.
 - Publish only reviewed evidence with clear provenance and appropriate rights.
+
+## Search recovery and recording
+
+- Use `docs/headless-policy-search.md` for the owner's current capture rule: optimization may be headless; recorded demonstrations are separate attempts.
+- On an infrastructure failure, preserve evidence, pause new trials, diagnose the cause, and continue authorized repair work within the remaining limits. A scheduler `repair_required` result is a handoff to the supervisor, not proof that the whole task is complete.
+- Do not start a batch at untested concurrency. The fixed settings must name the validated level. Native graphical clients must start one at a time.
+- Keep game-launch limits separate from permitted offline repairs. Never exceed a hard limit, restart the job clock, or silently replace failed results.
+- `docs/headless-search-goal.md` is a proposed next-job prompt. Its new budgets and paid-call permission apply only when the owner adopts it.

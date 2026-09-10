@@ -1,4 +1,4 @@
-"""Run an operator-approved panel with separate lanes and fixed job limits."""
+"""Run a fixed panel with serial startup and bounded, explicit fault recovery."""
 import argparse
 import json
 import os
@@ -8,6 +8,9 @@ import signal
 import subprocess
 import sys
 import time
+
+from search_startup import recovery_decision, write_status
+from search_trial import freeze_valid
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,102 +22,162 @@ def disk_usage(job):
             "maximum_new_bytes": 20 * 1024**3, "minimum_free_bytes": 10 * 1024**3}
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--job-dir", type=Path, required=True)
-    parser.add_argument("--panel", type=Path, required=True, help="JSON array of trial objects")
-    parser.add_argument("--concurrency", type=int, default=8)
-    parser.add_argument("--search-deadline", type=float, required=True)
-    parser.add_argument("--deadline", type=float, required=True)
-    parser.add_argument("--final-panel", action="store_true")
-    args = parser.parse_args()
-    if not 1 <= args.concurrency <= 8:
-        raise SystemExit("Concurrency must be 1 to 8")
-    panel = json.loads(args.panel.read_text())
-    if not isinstance(panel, list):
-        raise SystemExit("The panel must be a JSON array")
-    if args.final_panel and (len(panel) != 4 or any(p["kind"] != "final" for p in panel)):
-        raise SystemExit("The final panel must contain the four reserved final trials")
-    if not args.final_panel and any(p["kind"] == "final" for p in panel):
-        raise SystemExit("Use --final-panel for hidden final trials")
-    job = args.job_dir.resolve()
-    scheduling = job / ("final-schedule" if args.final_panel else "search-schedule")
+def read(path):
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def run_panel(panel, job, scheduling, concurrency, cutoff, deadline, retry_authorized,
+              final_panel=False, cancelled=lambda: False, worker_command=None,
+              storage_check=disk_usage, recording_mode="native"):
+    """worker_command is a test seam; the CLI always uses the real trial runner."""
     scheduling.mkdir(parents=True, exist_ok=False)
-    stopped = False
-    def stop_signal(signum, frame):
-        nonlocal stopped
-        stopped = True
-    signal.signal(signal.SIGTERM, stop_signal)
-    signal.signal(signal.SIGINT, stop_signal)
-    pending = list(enumerate(panel))
-    active = {}
-    results = []
-    environment = {k: v for k, v in os.environ.items() if k not in ("OPENAI_API_KEY", "CODEX_API_KEY", "OPENAI_BASE_URL")}
+    pending = [{'ordinal': i, 'case': case, 'attempt': 1} for i, case in enumerate(panel)]
+    active, results, events = {}, [], []
+    capacity = concurrency
     stop_reason = None
+    environment = {k: v for k, v in os.environ.items()
+                   if k not in ('OPENAI_API_KEY', 'CODEX_API_KEY', 'OPENAI_BASE_URL')}
+    def save_pending():
+        write_status(scheduling / 'pending.json', pending=pending)
+        write_status(scheduling / 'active.json', active=[row for _,_,row in active.values()])
     try:
         while pending or active:
-            now = time.time()
-            if stopped or now >= args.deadline - 3:
-                stop_reason = "supervisor_stop" if stopped else "job_deadline"
-                for process, log, row in active.values():
-                    if process.poll() is None:
-                        process.terminate()
-                pending.clear()
-            for lane, (process, log, row) in list(active.items()):
-                if process.poll() is not None:
-                    log.close()
-                    results.append({**row, "returncode": process.returncode, "finished_at": time.time()})
-                    del active[lane]
-            cutoff = args.deadline - 60 if args.final_panel else args.search_deadline
-            while pending and len(active) < args.concurrency and stop_reason is None:
-                if time.time() >= cutoff:
-                    stop_reason = "new_trial_deadline"
-                    pending.clear()
-                    break
-                usage = disk_usage(job)
-                (scheduling / "storage.json").write_text(json.dumps(usage, indent=2) + "\n")
-                if usage["new_bytes"] >= usage["maximum_new_bytes"] or usage["free_bytes"] < usage["minimum_free_bytes"]:
-                    stop_reason = "storage_limit"
-                    pending.clear()
-                    break
-                index_path = job / "index.jsonl"
-                count = len(index_path.read_text().splitlines()) if index_path.exists() else 0
-                limit = 120 if args.final_panel else 116
-                if count + len(active) >= limit:
-                    stop_reason = "reserved_trial_cap"
-                    pending.clear()
-                    break
-                ordinal, case = pending.pop(0)
-                lane = next(lane for lane in range(1, args.concurrency+1) if lane not in active)
-                command = [sys.executable, str(ROOT / "scripts/search_trial.py"), "--job-dir", str(job),
-                           "--deadline", str(args.deadline), "--lane", str(lane)]
-                for name in ("policy", "case", "seed", "map_x", "map_y", "kind"):
-                    command += ["--" + name.replace("_", "-"), str(case[name])]
-                log = (scheduling / f"trial-{ordinal:03d}.log").open("w")
-                process = subprocess.Popen(command, cwd=ROOT, env=environment, stdout=log, stderr=log)
-                row = {"ordinal": ordinal, "case": case, "lane": lane, "pid": process.pid, "started_at": time.time()}
-                active[lane] = (process, log, row)
-                (scheduling / "active.json").write_text(json.dumps([r for _,_,r in active.values()], indent=2) + "\n")
-            (scheduling / "completed.json").write_text(json.dumps(results, indent=2) + "\n")
-            if active:
-                time.sleep(.2)
-            elif stop_reason:
+            if cancelled() or time.time() >= deadline-3:
+                stop_reason = 'supervisor_stop' if cancelled() else 'job_deadline'
                 break
+            for lane, (process, log, row) in list(active.items()):
+                if process.poll() is None:
+                    continue
+                log.close()
+                status = read(Path(row['status_file']))
+                record = status.get('record', {'infrastructure_failure': {
+                    'phase':'runner', 'code':'missing_trial_result'}})
+                results.append({**row, 'returncode':process.returncode, 'record':record})
+                del active[lane]
+                decision = recovery_decision(record, row['attempt'], retry_authorized and capacity>1)
+                if decision == 'retry_serial' and stop_reason is None:
+                    capacity = 1
+                    replacement = {key:row[key] for key in ('ordinal','case')}
+                    replacement.update(attempt=2, replacement_for=row['status_file'])
+                    pending.insert(0, replacement)
+                elif decision == 'repair_required':
+                    stop_reason = 'repair_required'
+                if decision != 'continue':
+                    events.append({'decision':decision, 'ordinal':row['ordinal'],
+                                   'attempt':row['attempt'], 'capacity':capacity,
+                                   'failure':record['infrastructure_failure'], 'at':time.time()})
+                    write_status(scheduling / 'recovery.json', events=events)
+            write_status(scheduling / 'completed.json', results=results)
+            if not active and (stop_reason or not pending):
+                break
+            # Do not start another world until the previous world has an initial
+            # frame and is accepting policy actions. No batches of cold starts.
+            starting = recording_mode == 'native' and any(read(Path(row['status_file'])).get('phase') not in ('playing','finished')
+                           for _,_,row in active.values())
+            if pending and len(active)<capacity and not starting and stop_reason is None:
+                if time.time() >= cutoff or deadline-time.time()<330:
+                    stop_reason = 'new_trial_deadline'
+                    continue
+                usage = storage_check(job)
+                write_status(scheduling / 'storage.json', **usage)
+                if usage['new_bytes']>=usage['maximum_new_bytes'] or usage['free_bytes']<usage['minimum_free_bytes']:
+                    stop_reason = 'storage_limit'
+                    continue
+                index = job / 'index.jsonl'
+                count = sum(1 for line in index.read_text().splitlines()
+                            if json.loads(line).get('kind') in ('development','baseline','final','demonstration')) if index.exists() else 0
+                if count+len(active) >= (120 if final_panel else 116):
+                    stop_reason = 'reserved_trial_cap'
+                    continue
+                row = pending.pop(0)
+                lane = next(i for i in range(1, concurrency+1) if i not in active)
+                status_file = scheduling / f"trial-{row['ordinal']:03d}-attempt-{row['attempt']}.json"
+                row.update(lane=lane, status_file=str(status_file), started_at=time.time())
+                if worker_command:
+                    command = worker_command(row, status_file)
+                else:
+                    command = [sys.executable, str(ROOT/'scripts/search_trial.py'),
+                               '--job-dir',str(job),'--deadline',str(deadline),'--lane',str(lane),
+                               '--status-file',str(status_file)]
+                    for name in ('policy','case','seed','map_x','map_y','kind'):
+                        command += ['--'+name.replace('_','-'),str(row['case'][name])]
+                    if row['case'].get('source_trial'):
+                        command += ['--source-trial',str(row['case']['source_trial'])]
+                log = status_file.with_suffix('.log').open('w')
+                try:
+                    process = subprocess.Popen(command,cwd=ROOT,env=environment,stdout=log,stderr=log)
+                except BaseException:
+                    log.close()
+                    pending.insert(0,row)
+                    raise
+                row['pid'] = process.pid
+                active[lane] = process, log, row
+                save_pending()
+            save_pending()
+            if active:
+                time.sleep(.05)
     finally:
         for process, log, row in active.values():
             if process.poll() is None:
                 process.terminate()
                 try:
-                    process.wait(timeout=max(.1, min(25, args.deadline-time.time())))
+                    process.wait(timeout=max(.1,min(25,deadline-time.time())))
                 except subprocess.TimeoutExpired:
                     process.kill()
-                    process.wait(timeout=1)
+                    process.wait(timeout=2)
             log.close()
-        summary = {"started": len(results)+len(active), "completed": len(results),
-                   "stop_reason": stop_reason, "results": results, "deadline_epoch": args.deadline}
-        (scheduling / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    print(json.dumps(summary))
+            results.append({**row,'returncode':process.returncode,
+                            'record':read(Path(row['status_file'])).get('record'),
+                            'interrupted':True})
+        active.clear()
+        save_pending()
+        summary = {'started':len(results),'completed':sum(not r.get('interrupted') for r in results),
+                   'stop_reason':stop_reason,'results':results,'pending':pending,
+                   'recovery_events':events,'final_concurrency':capacity,'deadline_epoch':deadline}
+        write_status(scheduling/'summary.json',**summary)
+    return summary
 
 
-if __name__ == "__main__":
-    main()
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--job-dir',type=Path,required=True)
+    parser.add_argument('--panel',type=Path,required=True)
+    parser.add_argument('--concurrency',type=int,default=2)
+    parser.add_argument('--search-deadline',type=float,required=True)
+    parser.add_argument('--deadline',type=float,required=True)
+    parser.add_argument('--final-panel',action='store_true')
+    args = parser.parse_args()
+    if not 1<=args.concurrency<=8:
+        parser.error('Concurrency must be 1 to 8')
+    job = args.job_dir.resolve()
+    freeze = read(job/'benchmark-freeze.json')
+    if not freeze_valid(freeze):
+        parser.error('The tested benchmark must be approved and its source hashes unchanged')
+    settings = freeze.get('settings',{})
+    if args.concurrency > settings.get('validated_concurrent_worlds',0):
+        parser.error('Requested concurrency exceeds the tested level in the fixed settings')
+    panel = json.loads(args.panel.read_text())
+    if not isinstance(panel,list):
+        parser.error('The panel must be an array')
+    if args.final_panel and (len(panel)!=4 or any(p['kind']!='final' for p in panel)):
+        parser.error('Final panel must contain the four reserved final trials')
+    if not args.final_panel and any(p['kind']=='final' for p in panel):
+        parser.error('Use --final-panel for final trials')
+    stopped = False
+    def cancel(*_):
+        nonlocal stopped
+        stopped = True
+    signal.signal(signal.SIGINT,cancel)
+    signal.signal(signal.SIGTERM,cancel)
+    summary = run_panel(panel,job,job/('final-schedule' if args.final_panel else 'search-schedule'),
+                        args.concurrency,args.deadline-330 if args.final_panel else args.search_deadline,
+                        args.deadline,settings.get('startup_recovery')=='one_serial_replacement',
+                        final_panel=args.final_panel,cancelled=lambda:stopped,
+                        recording_mode=settings.get("recording_mode","native"))
+    print(json.dumps({'started':summary['started'],'stop_reason':summary['stop_reason'],
+                      'pending':len(summary['pending'])}))
+    return 1 if summary['pending'] or summary['stop_reason'] else 0
+
+
+if __name__=='__main__':
+    raise SystemExit(main())

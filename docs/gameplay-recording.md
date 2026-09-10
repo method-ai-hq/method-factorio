@@ -55,3 +55,13 @@ Factorio documents native JPEG capture and the quality setting in the
 The early capture checks used PNG files. JPEG capture was not validated in a
 live game. It must pass a new setup check before scored use. Earlier PNG
 evidence remains unchanged.
+
+## Later change: headless optimization
+
+The owner later removed video capture from optimization. Use
+`search_host.py --recording-mode none` under the
+[headless contract](headless-policy-search.md). Native recording remains
+available for later demonstrations. The recorder now allows up to 120 seconds
+for client startup and writes graphics-loading and connection stages separately.
+Native host launches share a startup lock. These controls do not extend a
+trial's total deadline. The earlier failed records remain unchanged.
