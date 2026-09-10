@@ -377,3 +377,8 @@ The Factorio repair experiment did use the Method v3 runtime.
 The complete story is now published as `story/complete.html`, with the three
 reviewed demo clips embedded. Its media hash manifest is included. Raw
 recordings, game saves, private logs, and secrets remain excluded.
+
+The [public story page](https://method-ai-hq.github.io/method-factorio/)
+serves that complete HTML file through GitHub Pages. The publish workflow
+copies only the reviewed page into the website. It runs when the complete
+page changes on `main`, and it can also be started manually.

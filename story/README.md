@@ -6,6 +6,12 @@ is required to read it. The source template is `story/index.html`.
 
 ## Read the complete page
 
+Read the [public story](https://method-ai-hq.github.io/method-factorio/)
+in your browser. GitHub Pages serves the reviewed `complete.html` file,
+including its charts and three video clips. Changes to that file on `main`
+publish through `.github/workflows/publish-story.yml`. The workflow can also
+be run manually.
+
 Download [complete.html](complete.html) and open it in a browser. The 43 MB
 file includes all three reviewed demo clips and works offline. A clone of
 this repository includes the complete page. GitHub may show a download

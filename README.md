@@ -1,5 +1,7 @@
 # Method × Factorio
 
+[Read the experiment story online](https://method-ai-hq.github.io/method-factorio/).
+
 [Download the illustrated experiment story](story/complete.html) and open it
 in a browser. This single HTML file includes the result charts and three
 reviewed game replay videos. See the [story guide](story/README.md).
