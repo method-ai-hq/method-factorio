@@ -1,0 +1,1 @@
+Inspect the current game state. Find what prevents the supplied production goal. Use the allowed game controls to repair the factory and check the result. Stop when you have completed the task or cannot make more progress within the time limit. Report the actions taken and the evidence you observed.

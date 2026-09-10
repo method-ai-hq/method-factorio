@@ -1,0 +1,22 @@
+format: method/3
+name: Initial direct repair procedure
+goal: Complete the supplied repair task through one fresh Astra execution.
+inputs:
+  task: {type: text, description: The public task and allowed game controls.}
+environment:
+  game: {type: service, description: The restricted game endpoint.}
+files: [prompt.txt]
+steps:
+  repair:
+    purpose: Observe the factory and complete the public repair task.
+    in: {task: inputs.task}
+    do: {kind: run, runtime: python, entrypoint: repair.py}
+    out:
+      report: {type: text, description: "The model's factual report, not an external game score."}
+      execution_status: {type: text, description: The Codex process result.}
+      evidence: {type: text, description: The saved Codex trace folder.}
+      remaining_seconds: {type: number, description: Wall time left before the trial deadline.}
+    changes: [environment.game]
+    check: {present: execution_status}
+    limits: {timeout_ms: 300000}
+result: {report: report, execution_status: execution_status, evidence: evidence}

@@ -39,6 +39,12 @@ links the Methods, measurements, failures, and limits.
 
 ## Read the design
 
+The new [factory repair comparison](docs/repair-experiment.md) tests a searched
+Method against fresh direct Astra runs on varied damaged factories. It uses
+10 development cases and 20 separate final cases, a fixed native game checker,
+and the real Method v3 runtime. See the [run guide](docs/run-repair-search.md).
+The comparison is in progress; no Method advantage is claimed yet.
+
 | File | Purpose |
 | --- | --- |
 | [GOALS.md](GOALS.md) | The research question, task, and success conditions. |

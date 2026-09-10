@@ -1,0 +1,40 @@
+format: method/3
+name: Diagnose repair and verify material flow v01
+goal: Repair an unseen factory with a short diagnosis, focused work, and a fresh final check.
+inputs:
+  task: {type: text, description: The public repair task and allowed game controls.}
+environment:
+  game: {type: service, description: The restricted game endpoint.}
+files: [stage.py, diagnose.txt, repair.txt, verify.txt]
+steps:
+  diagnose:
+    purpose: Inspect the factory and retain a compact material flow diagnosis.
+    in: {task: inputs.task}
+    do: {kind: run, runtime: python, entrypoint: diagnose.py}
+    out:
+      diagnosis: {type: text, description: "Observed facts, likely faults, proposed repairs, and action count."}
+    changes: [environment.game]
+    check: {present: diagnosis}
+    limits: {timeout_ms: 75000}
+  repair:
+    purpose: Use the diagnosis to fix the earliest breaks in the required supply chains.
+    in: {task: inputs.task, diagnosis: diagnosis}
+    do: {kind: run, runtime: python, entrypoint: repair.py}
+    out:
+      repair_report: {type: text, description: "Repairs made, current production evidence, unresolved faults, and action count."}
+    changes: [environment.game]
+    check: {present: repair_report}
+    limits: {timeout_ms: 155000}
+  verify:
+    purpose: Independently check sustained supply and retained science, fix remaining faults, and finish.
+    in: {task: inputs.task, diagnosis: diagnosis, repair_report: repair_report}
+    do: {kind: run, runtime: python, entrypoint: verify.py}
+    out:
+      report: {type: text, description: Factual final report. Completion still needs external game evidence.}
+      execution_status: {type: text, description: Final Codex process status.}
+      evidence: {type: text, description: Final Codex trace path.}
+      remaining_seconds: {type: number, description: Remaining wall time under the common runner.}
+    changes: [environment.game]
+    check: {present: execution_status}
+    limits: {timeout_ms: 290000}
+result: {report: report, execution_status: execution_status, evidence: evidence}

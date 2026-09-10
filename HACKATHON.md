@@ -264,3 +264,21 @@ No legal winning Method, full playing broker, map-feasibility result, native
 headless mode, or 5x/20x simulation clock is claimed. No playing-model call or
 paid API call was made. The [evidence report](evidence/civ6-economy-setup-2026-09-10/README.md)
 separates observed checks from the remaining calibration work.
+
+## Factory repair policy search, 10 September 2026
+
+The [repair comparison](docs/repair-experiment.md) now has ten certified
+development factories, a separate final-case builder, fresh subscription
+Codex runs, and Method v3 execution with shared time and action limits.
+Each case has native proof that it works before damage, fails after damage,
+and works after a legal repair. The game checker removes stored materials
+and checks three production windows plus an independent save reload.
+
+The first direct and Method development runs have started. A three-world
+capacity check passed in 15.34 seconds for 18,000 measurement ticks. All 95
+current tests passed before Method scoring began. Search uses no screen
+recording and no paid API backend. Subscription use is recorded where the
+runner reports it. The final cases remain outside policy development.
+
+No Method advantage is claimed yet. Reports will distinguish a failed repair
+from a request-rule failure even when both fail the strict task score.
