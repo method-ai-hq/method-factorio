@@ -195,6 +195,28 @@ See the [continuous search report](evidence/continuous-policy-search-2026-09-10/
 and the [new Method index](policies/continuous-v3/README.md) for hypotheses,
 source hashes, exact commands, failures, checks, costs, and limits.
 
+## Harder automatic-science task
+
+The new [science task](docs/science-task.md) requires automatic red and green
+science production from mined iron and copper. It adds multiple assembly
+stages, ingredient routing, and power. Equipment is supplied; this task does
+not include research or building equipment from raw materials.
+
+New original code provides a separate headless host, restricted playing
+actions, exact-tick measurements, material-buffer clearing, a fixed validator,
+and independent terminal-save verification. The old iron-plate evaluator and
+its trial records are unchanged. No policy-search result on the science task
+is claimed.
+
+All ten real-game checker cases passed: the complete reference factory was
+accepted, and nine incomplete or invalid attempts were rejected. Every
+terminal save matched a separate reload. All 46 offline test methods passed.
+The reference used the HTTP playing interface and made 15 red packs and
+12–13 green packs per measured game minute. See the
+[reviewed checker evidence](evidence/science-validator-2026-09-10/README.md)
+for source hashes, exact measurements, earlier setup faults, and limits.
+No paid model API calls or screen recordings were used for these checks.
+
 ## StarCraft II environment setup, 10 September 2026
 
 A separate [StarCraft II setup](environments/sc2/README.md) now fixes PySC2

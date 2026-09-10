@@ -6,6 +6,15 @@ Our task is to build a factory and launch a rocket in base Factorio. Astra will 
 
 **Status: a headless supplied-kit comparison is complete.** The selected Method and the frozen initial Method each passed three development maps and two unseen final maps. The direct agent passed two of three development maps. Mean full final time was 9.06 seconds for the selected Method and 51.78 seconds for the initial Method. See the [reviewed comparison](evidence/headless-policy-search-2026-09-10/README.md), including failures, source versions, and known cost. This is a small production test, not a rocket launch or a fresh-world win.
 
+## Harder task: automatic science
+
+The [red-and-green science task](docs/science-task.md) requires an automatic
+factory to mine two resources, make intermediate parts, supply power, and
+produce at least 10 of each science pack per game minute for three minutes.
+Its separate host and fixed checker remove stored materials before measuring
+and independently reload the final save. See [run commands](docs/run-science-task.md)
+and [checker validation](evidence/science-validator-2026-09-10/README.md).
+
 ## Run the small test
 
 Read [the setup and run instructions](docs/run-control-test.md). The test uses

@@ -1,0 +1,1728 @@
+{
+  "task": "automatic-science/1",
+  "kind": "operator checker validation; no policy search",
+  "factorio_version": "2.0.77",
+  "source_hashes": {
+    "science_contract.py": "254b1d67f73f1fff9648e36f84675a7c2c19b52e0db081bca0d59f7b93e2edd8",
+    "science_runtime.lua": "02bd60e0af56db6a442ecf1b9447d3b5ef52ded04103c9bdd1e163d435635dcd",
+    "science_server.py": "bc69689aa1cdf78d558a08e3be25d868615efe74ebebfe3f9597415533e09857",
+    "science_host.py": "8ee1abdc0ef900f97e2badf28a58ca1ca06ac10c2aa42fde1abfd5a857a5ac71",
+    "science_verify.py": "e222240ec45410ef2952dc90cd2c56daeba4a420d275258653df5a2d39b8ccc1"
+  },
+  "offline_test_methods_passed": 46,
+  "paid_api_calls": 0,
+  "screen_recording": false,
+  "authoring_cost": "not measured",
+  "cases": [
+    {
+      "case": "working_http",
+      "expected_accept": true,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": true,
+        "production_pass": true,
+        "save_sha256": "6dcf7284843eaa7a3ecbb5c94de477b5312e1007517ac1563b6251785e613532",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": true
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 90,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 90,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 90,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2-http-host",
+      "action_count": 1606,
+      "elapsed_seconds": 22.423403042019345
+    },
+    {
+      "case": "empty",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "ad22ac870138ac3e4418d1c6669def7557fdbc0a2e84878639f3a5da98b31db6",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/empty",
+      "action_count": 1,
+      "elapsed_seconds": 17.082842042087577
+    },
+    {
+      "case": "red_only",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "8d8b43a3120edac575b76b71b8824043675a517348f525d96b6d0989ca3ee0a1",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 150,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 150,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 150,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/red_only",
+      "action_count": 1607,
+      "elapsed_seconds": 20.322979958960786
+    },
+    {
+      "case": "no_power",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "fbc084796dfd6396ec9d062d7cd3b400ed144d43cb4f1c3e96a2ce89767634ed",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/no_power",
+      "action_count": 1686,
+      "elapsed_seconds": 20.543156792060472
+    },
+    {
+      "case": "copper_disconnected",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "b3842179d5b85365e6c17d5da09756f42618a2c3f5526f34f4561bbd0504a651",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 0,
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 30,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 15,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 0,
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 30,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 45,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 15,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 0,
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 38,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 30,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 0,
+              "iron-gear-wheel": 38,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 15,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/copper_disconnected",
+      "action_count": 1608,
+      "elapsed_seconds": 19.58520691690501
+    },
+    {
+      "case": "wrong_recipe",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "016637b455fbdf826dfacb47fb7beca2e8f7625899c775ff1ee5774b5e364775",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 120,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 120,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 120,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/wrong_recipe",
+      "action_count": 1607,
+      "elapsed_seconds": 23.566572083043866
+    },
+    {
+      "case": "stored_material",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "0de792db04f56b252f0385c885fc0a1b8135c855eb10a8abf27a3784e1452fc7",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          },
+          {
+            "produced": {
+              "iron-ore": 0,
+              "copper-ore": 0,
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 0,
+              "copper-ore": 0
+            },
+            "machine_products": {
+              "iron-plate": 0,
+              "copper-plate": 0,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": false,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/stored_material",
+      "action_count": 1614,
+      "elapsed_seconds": 22.221124417032115
+    },
+    {
+      "case": "two_windows",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "918d41cb0deec13e75455682e228def178c9ca21d7e6105883661df11d10e34b",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": true,
+          "within_limits": true,
+          "three_passing_minutes": false
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 0,
+              "copper-cable": 0,
+              "electronic-circuit": 0,
+              "transport-belt": 0,
+              "inserter": 0,
+              "automation-science-pack": 0,
+              "logistic-science-pack": 0
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": false,
+              "retained_packs": false,
+              "machine_made_packs": false,
+              "mining": true,
+              "all_stages_active": false
+            },
+            "passed": false
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/two_windows",
+      "action_count": 1606,
+      "elapsed_seconds": 21.89274249994196
+    },
+    {
+      "case": "forbidden_transfer",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "bcbff7db20ab94f0213ab644c6d455c8dbc681e8044772f867a9a7af0ef9e3dd",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": false,
+          "within_limits": true,
+          "three_passing_minutes": true
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": true
+        }
+      },
+      "local_run": "runs/science-validation-v2/forbidden_transfer",
+      "action_count": 1607,
+      "elapsed_seconds": 20.353196374955587
+    },
+    {
+      "case": "post_finish",
+      "expected_accept": false,
+      "test_passed": true,
+      "verdict": {
+        "scored_pass": false,
+        "production_pass": false,
+        "save_sha256": "1d00ece8e857e2084a571e84b01fd795a023818053fd5397a7af4d06021574d4",
+        "checks": {
+          "contract": true,
+          "base_game_version": true,
+          "initial_kit": true,
+          "empty_start": true,
+          "initial_settings": true,
+          "materials_removed": true,
+          "exact_boundaries": true,
+          "completed": true,
+          "fixed_settings": true,
+          "no_play_after_finish": false,
+          "within_limits": true,
+          "three_passing_minutes": true
+        },
+        "windows": [
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 12
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          },
+          {
+            "produced": {
+              "iron-ore": 180,
+              "copper-ore": 60,
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 60,
+              "electronic-circuit": 20,
+              "transport-belt": 30,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "pack_stock_gain": {
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "ore_depletion": {
+              "iron-ore": 180,
+              "copper-ore": 60
+            },
+            "machine_products": {
+              "iron-plate": 180,
+              "copper-plate": 60,
+              "iron-gear-wheel": 45,
+              "copper-cable": 30,
+              "electronic-circuit": 20,
+              "transport-belt": 15,
+              "inserter": 15,
+              "automation-science-pack": 15,
+              "logistic-science-pack": 13
+            },
+            "checks": {
+              "exact_minute": true,
+              "stable_factory": true,
+              "new_packs": true,
+              "retained_packs": true,
+              "machine_made_packs": true,
+              "mining": true,
+              "all_stages_active": true
+            },
+            "passed": true
+          }
+        ],
+        "verification": {
+          "saved_record_matches": true,
+          "saved_state_matches": true,
+          "paused_save": true,
+          "source_matches": true,
+          "host_completed": true,
+          "complete_action_trace": true,
+          "action_trace_hash": true,
+          "finish_is_last_action": false
+        }
+      },
+      "local_run": "runs/science-validation-v2/post_finish",
+      "action_count": 1607,
+      "elapsed_seconds": 19.8614465839928
+    }
+  ]
+}
