@@ -1,0 +1,31 @@
+# Credentials and machine settings
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Dependencies and generated output
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.tsbuildinfo
+
+# Local game data and unreviewed experiment records
+factorio/
+game/
+saves/
+runs/
+recordings/
+local/
+.tmp/
+*.log
+
+# Sensitive outputs are never published
+sensitive/
