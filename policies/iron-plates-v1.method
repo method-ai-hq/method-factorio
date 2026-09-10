@@ -1,0 +1,63 @@
+format: method/2
+name: Produce and check the first iron plates
+goal: Build a small production system in a fresh Factorio world and produce 20 new iron plates.
+inputs:
+  endpoint:
+    type: text
+    description: Local HTTP action endpoint for this test world.
+  tool_documentation:
+    type: text
+    description: Absolute path to the allowed game action documentation.
+environment:
+  game:
+    type: service
+    description: A local Factorio test host with the fixed action API.
+steps:
+  produce:
+    in:
+      endpoint: inputs.endpoint
+      tool_documentation: inputs.tool_documentation
+      game: environment.game
+    changes: [environment.game]
+    do: |
+      You are the playing agent. Read tool_documentation. Use only HTTP POSTs
+      to endpoint for game observations and actions. Do not inspect game
+      host code, host process arguments, credentials, run directories, saves,
+      evaluator files, parent workspace files, or other game interfaces.
+      Do not change repository files or commit anything. You may save the
+      assigned output file and your own temporary action client in this step.
+
+      Observe the starting world. Design your own plan to produce at least
+      20 new iron plates in a furnace. Do not count initial inventory as new
+      production. Execute the plan through the allowed actions, inspect the
+      effects, and adapt when evidence shows a problem. Never assume that a
+      failed request had no effect. Inspect before retrying an uncertain action.
+      Use at most 120 requests and 12 minutes, including model thinking.
+      Stop on timeout, loss of connection, or a host limit. Do not reset.
+
+      Stop successfully when the game records at least 20 new iron plates,
+      furnace products_finished confirms production, and furnace output holds
+      at least 20 iron plates. Leave them there for the independent check.
+      Save a short report with your initial plan, changes to it, actual actions,
+      errors, starting and final observations, and the reason you stopped.
+      Return an honest result even if you did not reach the goal.
+    out:
+      report:
+        type: file
+        format: markdown
+        description: Plan, actions, errors, game observations, and stop reason.
+      completed:
+        type: boolean
+        description: Whether the game evidence shows the production goal was met.
+    check: |
+      Read report. Do not play or repair the game. Make one observe request to
+      endpoint. Confirm that completed is true, the game's iron_plates_produced
+      is at least 20, furnace products_finished sums to at least 20, and furnace
+      output contains at least 20 iron plates. Confirm the report supplies a
+      starting observation with zero iron plate production. An agent's claim
+      alone is not proof. Return fail for missing production or ambiguous if
+      the game cannot be inspected. Use only the supplied HTTP endpoint and
+      report; do not inspect host files or other interfaces.
+result:
+  completed: completed
+  report: report

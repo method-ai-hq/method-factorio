@@ -10,14 +10,25 @@ This repository starts on 10 September 2026. It contains the new Factorio experi
 | --- | --- | --- |
 | Goals, plan, design, and experiment rules | Created for this hackathon | Written; implementation settings remain open. |
 | Factorio game | Existing third-party product | Not included. |
-| Factorio Learning Environment | Existing third-party project | Proposed dependency; not installed or selected at a fixed revision. |
-| Method SDK and existing runtime | Existing Method work | Proposed foundation; exact version and capabilities require a check. |
-| Game adapter integration | New work planned here | Not implemented. |
-| Additional Method execution support | New work if needed | Scope depends on SDK inspection. |
-| Policy improvement and evaluation | New work planned here | Not implemented. |
-| Playing Methods and trial results | To be generated during this event | None yet. |
+| Factorio Learning Environment | Existing third-party project | Installed locally at a fixed revision for the small test. Its code is not copied into this repository. |
+| Method SDK and existing runtime | Existing Method work | Installed SDK 0.3.0 provides local authoring, execution, and checks. |
+| Game adapter integration | New work here | Native macOS host, fixed HTTP action interface, limits, action records, and terminal game saves. |
+| Additional Method execution support | Existing SDK used | SDK 0.3.0 runs the agent operation and a separate check. No new SDK execution type was needed for the small test. |
+| Policy improvement and evaluation | New work partly implemented | Fixed small-production check and saved-game inspection work. Policy improvement and scored rocket evaluation are not implemented. |
+| Playing Methods and trial results | Created during this event | The first Method produced 20 new iron plates. Live game and saved-game checks passed. |
 
 Update this table as work completes. For each result, identify the code commit, policy version, run settings, and evidence.
+
+The first integration uses Factorio 2.0.77, FLE 0.4.8 at
+`e2a829d22a635a9a111d21bf5523e09e903ae145`, Method SDK 0.3.0, and
+`gpt-6-astra` through the user's Codex subscription. It uses FLE fast mode
+with game speed 1 and a running simulation during model thinking. The action
+interface rejects raw code and administrative commands. The existing Method
+runtime still has local shell access; stronger process isolation is not claimed.
+
+See [run instructions](docs/run-control-test.md) for setup and limits. The
+small test establishes basic control and production, not complete control,
+normal keyboard-and-mouse timing, a rocket launch, or improved performance.
 
 ## Demo rules
 

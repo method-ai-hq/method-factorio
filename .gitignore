@@ -29,3 +29,8 @@ local/
 
 # Sensitive outputs are never published
 sensitive/
+
+# Method working data and online document sidecars
+.method-runs/
+.method/
+*.method.json

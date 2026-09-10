@@ -4,7 +4,17 @@ Can Astra invent and improve executable Methods that finish long tasks when the 
 
 Our task is to build a factory and launch a rocket in base Factorio. Astra will design the playing procedure, inspect its results, and test changes. The procedure can use plain-English instructions, agents, model calls, bounded loops, and code. It must choose where reasoning and verification are worth their time and cost.
 
-**Status: design only.** No game run, performance result, agent integration, or supported game version is claimed yet.
+**Status: the first local control test works.** An Astra Method produced 20 new iron plates in a native Factorio 2.0.77 server. The result passed live checks and inspection after loading the saved game. Full game control, policy improvement, and a rocket launch are not established.
+
+## Run the small test
+
+Read [the setup and run instructions](docs/run-control-test.md). The test uses
+the installed Method SDK, Codex signed in through ChatGPT, and a pinned FLE
+revision. Docker is not required. The [initial Method](policies/iron-plates-v1.method)
+gives Astra the goal and the allowed tools, without a factory construction recipe.
+
+The root design remains the plan for the larger experiment. This small test
+does not replace its rules or establish a scored result.
 
 ## Read the design
 
@@ -17,11 +27,11 @@ Our task is to build a factory and launch a rocket in base Factorio. Astra will 
 | [DECISIONS.md](DECISIONS.md) | Accepted direction, initial choices, and open decisions. |
 | [HACKATHON.md](HACKATHON.md) | What is new, what is prior work, and what the demo may claim. |
 
-These files describe the experiment. Playing agents must not edit them. Candidate Methods and run records will live separately.
+These files describe the experiment. Playing agents must not edit them. Candidate Methods live in `policies/`. Local run records stay in ignored `runs/` folders.
 
 ## Foundation
 
-[Method](https://withmethod.ai) provides the procedure format and execution foundation. [Factorio Learning Environment](https://github.com/JackHopkins/factorio-learning-environment) is the proposed game interface. We will check compatibility before selecting exact versions.
+[Method](https://withmethod.ai) provides the procedure format and execution foundation. [Factorio Learning Environment](https://github.com/JackHopkins/factorio-learning-environment) provides the game controls. The small test uses Method SDK 0.3.0 and FLE 0.4.8 at the revision in the run instructions. Compatibility beyond this tested setup remains open.
 
 This is a separate repository created for the hackathon on 10 September 2026. The Method product and FLE are prior work. Factorio is a separate commercial game; its files and assets are not part of this repository.
 
