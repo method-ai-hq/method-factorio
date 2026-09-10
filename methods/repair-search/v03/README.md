@@ -10,7 +10,7 @@ v03 groups power equipment by name, direction, status, and energy. It stores eve
 
 An offline check used the actual complete public observation from v02 development-001. v03 stored it in 17,908 characters, including 4,985 for power. The check reconstructed every belt position and direction and every power position, direction, status, and energy value. It also matched the count of each equipment type. Python syntax and pinned Method runtime validation passed. No v03 game or model call ran during these checks.
 
-The repair step inserts the compact JSON directly in the task text. It no longer encodes that JSON inside another JSON string. The prompt names `/opt/homebrew/bin/python3`, which the owner confirmed is available inside the player's permitted paths. It asks for small observation outputs and permits the model's production check to call finish in the same program when the check passes. None of these checks replaces the external game evaluation.
+The repair step inserts the compact JSON directly in the task text. It no longer encodes that JSON inside another JSON string. The prompt names the available Python interpreter, asks for small observation outputs, and permits the model's production check to call finish in the same program when the check passes. None of these checks replaces the external game evaluation.
 
 The initial observation is still taken near the start of the attempt. The prompt explains that an early ingredient shortage can be temporary. No extra wait was added without measured evidence that it helps.
 
