@@ -68,5 +68,17 @@ class BaselineEvidence(unittest.TestCase):
         self.f.records[-1]['execution']['status']='infrastructure_failure'
         with self.assertRaises(Invalid): self.f.run_trace()
 
+    def test_reference_replay_is_separate_from_astra(self):
+        f=self.f
+        f.profile.update(schema='civ6-economy-profile/3',phase='legal_reference_replay')
+        f.records[0]['profile_sha256']=digest(f.profile)
+        finish=f.records[-1]
+        finish['execution'].update(model=None,auth=None)
+        finish['usage'].update(model=None,auth=None,model_calls=0,model_cost_usd=0,
+                               execution_sha256=digest(finish['execution']))
+        self.assertTrue(f.run_trace()['goal_met'])
+        finish['usage']['model_calls']=1
+        with self.assertRaises(Invalid):f.run_trace()
+
 
 if __name__=='__main__': unittest.main()

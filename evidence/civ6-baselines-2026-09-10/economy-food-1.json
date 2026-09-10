@@ -1,0 +1,73 @@
+{
+  "run_id": "civ6-economy-food-baseline-1",
+  "task": "economy",
+  "case": "economy-nearby-food-1",
+  "phase": "direct_baseline",
+  "result": {
+    "actions": 150,
+    "completed_turns": 35,
+    "goal_met": true,
+    "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+    "longest_hold_rounds": 5,
+    "qualifying_pairs": [
+      [
+        "28:12",
+        "32:16"
+      ]
+    ],
+    "status": "calibration_goal_met",
+    "terminal": {
+      "capital_food_surplus": 4,
+      "gold": 80.37890625,
+      "net_gold": 11.5,
+      "new_self_founded_cities": [
+        {
+          "food_surplus": 6,
+          "key": "28:12",
+          "population": 5
+        },
+        {
+          "food_surplus": 4,
+          "key": "32:16",
+          "population": 5
+        }
+      ],
+      "science": 24.234375
+    },
+    "verified_pass": false,
+    "wall_seconds": 377.21119200007524
+  },
+  "play_seconds": 331.1799372500973,
+  "requests": 253,
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "auth": "chatgpt",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 1526912,
+    "completed_turns": 1,
+    "errors": [],
+    "input_tokens": 1679355,
+    "output_tokens": 5728,
+    "reasoning_output_tokens": 2115,
+    "thread_id": "01a08cd7-23de-7840-8565-0a8124a1f58a",
+    "usage_known": true
+  },
+  "subscription_cost_usd": null,
+  "api_calls": 0,
+  "budget": {
+    "play_seconds": 1200,
+    "requests": 1500,
+    "completed_turns": 35
+  },
+  "sha256": {
+    "profile.json": "97c6a26ce15fb648b5cce2bc5bfb2402359b3705b775655de34aaac2b6c358ce",
+    "trace.jsonl": "8d0b489dddb96c04148f136ec348d90ca6f59077df9232fac1750b4441397a1f",
+    "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+    "reload.json": "3b8d5ae7b994a593056d9defe14cd712cb587830376bbf6cc22669cdb6cbfff7",
+    "source-hashes.json": "fc1613be9b7cef335781ae1235203b82b8a15f06e6a6858f7f1e9350c00a9aad"
+  },
+  "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+  "terminal_save_sha256": "e455e09eb17df43dcdd489c335d462cfd03984fd493a2475ef6838e8eed79c9f",
+  "reloaded_state_matched": true
+}

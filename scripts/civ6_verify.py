@@ -128,8 +128,13 @@ def read_signed(path, key):
 
 def check_baseline_records(records, finish, profile):
     usage=finish['usage']
-    require(usage['model']=='gpt-6-astra' and usage['auth']=='chatgpt', 'Wrong baseline model or access mode')
-    require(usage['model_cost_usd'] is None and usage['api_calls']==0, 'Misstated subscription cost or API use')
+    reference=profile.get('schema')=='civ6-economy-profile/3' and profile.get('phase')=='legal_reference_replay'
+    if reference:
+        require(usage['model'] is None and usage['auth'] is None and usage['model_calls']==0, 'Reference replay must not call a model')
+        require(usage['model_cost_usd']==0 and usage['api_calls']==0,'Unexpected replay model use')
+    else:
+        require(usage['model']=='gpt-6-astra' and usage['auth']=='chatgpt', 'Wrong baseline model or access mode')
+        require(usage['model_cost_usd'] is None and usage['api_calls']==0, 'Misstated subscription cost or API use')
     require(usage['execution_sha256']==digest(finish['execution']), 'Unbound model execution evidence')
     require(finish['execution']['model']==usage['model'] and finish['execution']['auth']==usage['auth'], 'Execution model mismatch')
     require(finish['execution']['status'] in {'completed','timeout'}, 'Model execution infrastructure failed')
@@ -183,7 +188,7 @@ def verify(records, start, reloaded, profile, terminal_save_sha256):
     require(len(header['method_sha256']) == 64, 'Missing Method hash')
     require(finish['terminal_save_sha256'] == terminal_save_sha256, 'Wrong final save')
     require(finish['state'] == reloaded, 'Independent reload differs')
-    baseline = profile.get('schema') == 'civ6-economy-profile/2'
+    baseline = profile.get('schema') in {'civ6-economy-profile/2','civ6-economy-profile/3'}
     if baseline:
         records=check_baseline_records(records,finish,profile)
     else:

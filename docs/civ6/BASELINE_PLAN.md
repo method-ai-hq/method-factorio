@@ -49,3 +49,11 @@ attempt; it never erases or converts the old attempt.
 The task does not require Astra to fail. If it succeeds reliably, report that
 and still complete the requested combat baseline work. Continuous search and
 runtime-LLM ablation follow after this baseline stage, as the owner requested.
+
+## Current evidence
+
+The first full-budget nearby-food baseline passed the complete task trace and
+independent save check in 35 turns and 331.18 seconds of play. It supplies a
+legal completion witness for that starting case. See the
+[baseline report](../../evidence/civ6-baselines-2026-09-10/README.md).
+The other five economy baselines and the combat baseline work remain.
