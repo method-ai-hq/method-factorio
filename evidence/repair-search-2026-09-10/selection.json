@@ -1,0 +1,231 @@
+{
+  "selected_version": "v04",
+  "selected_at_utc": "2026-09-10T19:45:06.625088+00:00",
+  "policy": "methods/repair-search/v04/repair.method",
+  "criteria": [
+    "Highest strict passes on all ten development cases",
+    "Lowest median full successful trial time, including independent save review",
+    "Lowest reported input token use if time ties"
+  ],
+  "eligible_versions": [
+    "v01",
+    "v02",
+    "v04"
+  ],
+  "excluded_versions": {
+    "v03": "Only one completed trial; candidate file changed before the second trial. Retained separately."
+  },
+  "candidate_files": {
+    "README.md": "0d55d70ed3b2917617c9e6a83cca8d8671f6e20a55e16cfeaa22ec1be854c7c5",
+    "compact.py": "b18aa9e4f85ac3d899743f2007056b2aeef816be4f812e31d7a39938f7c4d8f6",
+    "observe.py": "bea77a9c6c0abd7bfe43f2338f88625da3422463a9dff0b1a88e09e19fd45bed",
+    "prompt.txt": "024870b8ce89ccdb72b9f72d236060fc1e0d27f5eb13e10d7705180c3a5cfda0",
+    "repair.method": "90b9c1ebd4e60ba3e7f25ffbbb68e2b3c714aa9cba3de1f605485357863009aa",
+    "repair.py": "4d036c59d71998d4f04e2185b4aa8541cb44b6fc1fd40893c92208dbe4efe01a"
+  },
+  "review_contract": "repair-recipe-export/2",
+  "review_source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+  "development": {
+    "v01": {
+      "attempts": 10,
+      "strict_passes": 9,
+      "restored_production": 10,
+      "recipe_reviewed_attempts": 10,
+      "failure_counts": {
+        "request_rule": 1,
+        "time_limit": 0,
+        "production_or_completion": 0,
+        "infrastructure": 0
+      },
+      "median_success_seconds": 204.2328001249116,
+      "median_success_total_seconds": 215.488661875017,
+      "successful_attempts_missing_total_time": 0,
+      "time_scope": {
+        "median_success_seconds": "Game host activation through completed measurement",
+        "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+      },
+      "total_game_wall_seconds": 2146.675761999795,
+      "agent_sessions": 30,
+      "sessions_without_final_usage": 10,
+      "sessions_missing_execution": 0,
+      "sessions_with_known_usage": 20,
+      "usage_complete": false,
+      "known_input_tokens": 4237498,
+      "known_cached_input_tokens": 3518848,
+      "known_output_tokens": 26154,
+      "total_input_tokens": null,
+      "total_cached_input_tokens": null,
+      "total_output_tokens": null
+    },
+    "v02": {
+      "attempts": 10,
+      "strict_passes": 10,
+      "restored_production": 10,
+      "recipe_reviewed_attempts": 10,
+      "failure_counts": {
+        "request_rule": 0,
+        "time_limit": 0,
+        "production_or_completion": 0,
+        "infrastructure": 0
+      },
+      "median_success_seconds": 80.88049758347915,
+      "median_success_total_seconds": 91.82766110345256,
+      "successful_attempts_missing_total_time": 0,
+      "time_scope": {
+        "median_success_seconds": "Game host activation through completed measurement",
+        "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+      },
+      "total_game_wall_seconds": 895.5356987068662,
+      "agent_sessions": 10,
+      "sessions_without_final_usage": 0,
+      "sessions_missing_execution": 0,
+      "sessions_with_known_usage": 10,
+      "usage_complete": true,
+      "known_input_tokens": 2721782,
+      "known_cached_input_tokens": 2355712,
+      "known_output_tokens": 15002,
+      "total_input_tokens": 2721782,
+      "total_cached_input_tokens": 2355712,
+      "total_output_tokens": 15002
+    },
+    "v03": {
+      "attempts": 1,
+      "strict_passes": 1,
+      "restored_production": 1,
+      "recipe_reviewed_attempts": 1,
+      "failure_counts": {
+        "request_rule": 0,
+        "time_limit": 0,
+        "production_or_completion": 0,
+        "infrastructure": 0
+      },
+      "median_success_seconds": 60.58117112505715,
+      "median_success_total_seconds": 70.81107562500983,
+      "successful_attempts_missing_total_time": 0,
+      "time_scope": {
+        "median_success_seconds": "Game host activation through completed measurement",
+        "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+      },
+      "total_game_wall_seconds": 60.58117112505715,
+      "agent_sessions": 1,
+      "sessions_without_final_usage": 0,
+      "sessions_missing_execution": 0,
+      "sessions_with_known_usage": 1,
+      "usage_complete": true,
+      "known_input_tokens": 111177,
+      "known_cached_input_tokens": 89600,
+      "known_output_tokens": 923,
+      "total_input_tokens": 111177,
+      "total_cached_input_tokens": 89600,
+      "total_output_tokens": 923
+    },
+    "v04": {
+      "attempts": 10,
+      "strict_passes": 10,
+      "restored_production": 10,
+      "recipe_reviewed_attempts": 10,
+      "failure_counts": {
+        "request_rule": 0,
+        "time_limit": 0,
+        "production_or_completion": 0,
+        "infrastructure": 0
+      },
+      "median_success_seconds": 61.33803522953531,
+      "median_success_total_seconds": 73.17897439596709,
+      "successful_attempts_missing_total_time": 0,
+      "time_scope": {
+        "median_success_seconds": "Game host activation through completed measurement",
+        "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+      },
+      "total_game_wall_seconds": 764.4422056248877,
+      "agent_sessions": 10,
+      "sessions_without_final_usage": 0,
+      "sessions_missing_execution": 0,
+      "sessions_with_known_usage": 10,
+      "usage_complete": true,
+      "known_input_tokens": 1504423,
+      "known_cached_input_tokens": 1241984,
+      "known_output_tokens": 13707,
+      "total_input_tokens": 1504423,
+      "total_cached_input_tokens": 1241984,
+      "total_output_tokens": 13707
+    }
+  },
+  "direct_development": {
+    "attempts": 10,
+    "strict_passes": 8,
+    "restored_production": 10,
+    "recipe_reviewed_attempts": 10,
+    "failure_counts": {
+      "request_rule": 2,
+      "time_limit": 0,
+      "production_or_completion": 0,
+      "infrastructure": 0
+    },
+    "median_success_seconds": 79.73673952108948,
+    "median_success_total_seconds": 92.24861391697777,
+    "successful_attempts_missing_total_time": 0,
+    "time_scope": {
+      "median_success_seconds": "Game host activation through completed measurement",
+      "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+    },
+    "total_game_wall_seconds": 884.7792188782478,
+    "agent_sessions": 10,
+    "sessions_without_final_usage": 0,
+    "sessions_missing_execution": 0,
+    "sessions_with_known_usage": 10,
+    "usage_complete": true,
+    "known_input_tokens": 3371030,
+    "known_cached_input_tokens": 2902272,
+    "known_output_tokens": 15137,
+    "total_input_tokens": 3371030,
+    "total_cached_input_tokens": 2902272,
+    "total_output_tokens": 15137
+  },
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "final_cases_seen_by_policy_author": false,
+  "development_review_hashes": {
+    "direct-development-010/review.json": "33cd6b0a16fb7c47ff53b0bd8f455b36c21d0d98e3424c1889808791d66e16e1",
+    "direct-development-003/review.json": "5d4a58afc0cabb77be5a95eb378f557c3e789637077339183c4e75a2eff7a4e0",
+    "direct-development-004/review.json": "58503e31fc2ff8b49397fb025814ccf3daf55102d7e89206a0aa2dcbe3dcd600",
+    "direct-development-005/review.json": "40b1e7717bd1eef5ffb0435ed55af0931c2a8ae2b5f7e8e1474c8193ee217535",
+    "direct-development-002/review.json": "8dfb1a25d6370fffe86f647acf99c4387b3fb680cabaa918113b5472b12dc333",
+    "direct-development-009/review.json": "1c98bf66f3beb87be8245a16ff6f15bf1e4e8cf5cb33ecfde28b580755676b62",
+    "direct-development-007/review.json": "17d1fed5912cf716e576adfd99ea0006fe65b9d9fc564a5bece30383c79bd2f8",
+    "direct-development-001/review.json": "8a9d2ae1d091865f4b58a0495fd8663144f1b67d712b3fe4ccc66e84ec4dbeb1",
+    "direct-development-006/review.json": "450036612998f714434612c3079837647310e4c5155aa9353a37ae3aa446bda3",
+    "direct-development-008/review.json": "a6d13692b4a9e38cfc1a5ab300c2024b8966e40afe68094ee2f212d36233abb0",
+    "v01/repair.method-development-004/review.json": "eba48f13d19cd8520505d51302b54082d3ace14c1e163807724e05a289e75497",
+    "v01/repair.method-development-003/review.json": "52c8885c84f74fd7349c77911165e75be3f7c6a4d37807e60832faec65aad894",
+    "v01/repair.method-development-002/review.json": "575d461b7e1cf1508c00a1089f62a7828376f336dda2b2b1a0548fec650bb136",
+    "v01/repair.method-development-005/review.json": "6b70fa0ef3a5246e49c6380e0e5e37452bf4c926481aa663c49be00493ee4fd1",
+    "v01/repair.method-development-010/review.json": "f8ca5c8ad56ad0c313b7166688606cb7dc9c2fc1349296b7f335e6285f6405a2",
+    "v01/repair.method-development-009/review.json": "326ebbda2629b82e71c0ae388353ba6eee5d88937c69db9dd23439fd4ea4acab",
+    "v01/repair.method-development-007/review.json": "4ccec84664da3670a4fd96eab3b0b5ed1b00170cf0ec84f00eb6c02c74fd11fc",
+    "v01/repair.method-development-006/review.json": "da20774a759184d07e5fec7179925741cb14d4abf46b4d2c076b9e30bb644c31",
+    "v01/repair.method-development-001/review.json": "a65c602666929c2c7f40f79e0bde1dcf0e1198c3b20708fedf1186cbb576db72",
+    "v01/repair.method-development-008/review.json": "9e314740802eb33990ebdc96c47d5e1cd4fae7ad4418c5363b4081433de432a3",
+    "v04/repair.method-development-004/review.json": "1ce01540d324fdf1f1f6da29ad76e1dbf1811bf0d93fe75e75cdf8ac6bedd115",
+    "v04/repair.method-development-003/review.json": "d2aef8218c169a25f1cc1cd44fe417319f73fafcc126f94a19d8effce0c47a32",
+    "v04/repair.method-development-002/review.json": "968ebdbaa61a205906af559117e33d3e1981cc2cf09b270aa6c4489f534aa766",
+    "v04/repair.method-development-005/review.json": "11f9fa5e8ba80273e2d33ae2eca9072979fa09caba44cc71630358ab0afa39ba",
+    "v04/repair.method-development-010/review.json": "040af6472d7e34c57918ffaad11400f8383ca12bb7c01c439845261e6192acaf",
+    "v04/repair.method-development-009/review.json": "6aee39170e9352a90da72a081dc38194bf511719c154a678332e573b64fbc57b",
+    "v04/repair.method-development-007/review.json": "d0a0b19c0c37263fc08898f352917c95e106646581541a16c3e6111f72df100e",
+    "v04/repair.method-development-006/review.json": "64ec1e55eba192179979fc5015879fc4bae73ad1da50aa4f439fd160cfbefe19",
+    "v04/repair.method-development-001/review.json": "7f71348ac1753da267d07d671ee6c3b5af62d1bae2a4b4d63ff1b6adf7b0a380",
+    "v04/repair.method-development-008/review.json": "20993721badd9e9b5df0305e3d401a6c0f26158bbac1092e0824c304cce430d3",
+    "v03/repair.method-development-001/review.json": "6a75c21a56f1aa8b277e172259bce5ac8cf8ff5635af24a5f5d8c91e74829b96",
+    "v02/repair.method-development-004/review.json": "06864231bc4bdd50cb1770efafeeb6c66849c2b936613085fbcf78ad2c704b61",
+    "v02/repair.method-development-003/review.json": "5c937e985e8250288db4215b4160ba886bb0c4378341d9275344bfd793cdaef0",
+    "v02/repair.method-development-002/review.json": "7374304467d97fd28b13c04d45033855bd1ea23893f3f4423a7157f739cff751",
+    "v02/repair.method-development-005/review.json": "e5b76b5f84647370b0813a182c031f9026967dee6528a9c53f6a4dd010cc228b",
+    "v02/repair.method-development-010/review.json": "6acd881054e0688ab49fc314fa9875cdc689f402a557fca0eba27d31d3008f82",
+    "v02/repair.method-development-009/review.json": "a8b13c0d53c910158613835198cfef86fe4b983619b32ae8dacfe174dfcfce62",
+    "v02/repair.method-development-007/review.json": "3d82ee1c82c79bd0510df518976c3cd105afe1131b40c4a6551ab5b2a25fc4bf",
+    "v02/repair.method-development-006/review.json": "1bb317af6bdc432d2b315b3d7b5213bf374ec9252b7bd408395782229b3de61c",
+    "v02/repair.method-development-001/review.json": "f42801fb7402927b724e07bb28e1c01daeade77fc1cd2092e1a08f966dbe6bb9",
+    "v02/repair.method-development-008/review.json": "568e6eafabed2662570e477588512d229ff9ea82cace39f51f725ca35a3f3a9f"
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "split": "development",
   "direct": {
     "attempts": 10,
     "strict_passes": 8,
     "restored_production": 10,
+    "recipe_reviewed_attempts": 10,
     "failure_counts": {
       "request_rule": 2,
       "time_limit": 0,
@@ -11,7 +11,7 @@
       "infrastructure": 0
     },
     "median_success_seconds": 79.73673952108948,
-    "median_success_total_seconds": 85.29352162498981,
+    "median_success_total_seconds": 92.24861391697777,
     "successful_attempts_missing_total_time": 0,
     "time_scope": {
       "median_success_seconds": "Game host activation through completed measurement",
@@ -39,7 +39,7 @@
         "failed_rules": [],
         "actions": 5,
         "game_wall_seconds": 64.8905642919708,
-        "total_wall_seconds": 70.48946916591376,
+        "total_wall_seconds": 76.21150812483393,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -53,6 +53,162 @@
         "total_output_tokens": 1026,
         "case_sha256": "54d58bc0de7fccd3069053bea622f032dc7eef49e5db3184e6003ffebe0a3e33",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "9ba5d1ba7fd0939cb2c373f98774b42dae1736bfb229d02a514e71cb49e6c501",
+          "raw_record_sha256": "28bf22c4d9c2d1e1aa2300cd48d3b18e27470aa391aee8e78f987fe8dd1c76d4",
+          "save_sha256": "a6efd79bf9c9c8db73b701ed5cbabcfe0ecf901885c3fcf9c73049daa51cb539",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 84815,
+              "entity_id": 18,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 84815,
+              "entity_id": 25,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 84815,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 84815,
+              "entity_id": 37,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 88415,
+              "entity_id": 18,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 88415,
+              "entity_id": 25,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 88415,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 88415,
+              "entity_id": 37,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 92015,
+              "entity_id": 18,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 92015,
+              "entity_id": 25,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 92015,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 92015,
+              "entity_id": 37,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 95615,
+              "entity_id": 18,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 95615,
+              "entity_id": 25,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 95615,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 95615,
+              "entity_id": 37,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 70.48946916591376,
+        "review_wall_seconds": 5.722038958920166,
         "evidence": "runs/repair-search-20260910/direct-development-001/summary.json"
       },
       {
@@ -66,7 +222,7 @@
         ],
         "actions": 21,
         "game_wall_seconds": 110.56051716697402,
-        "total_wall_seconds": 115.66228708298877,
+        "total_wall_seconds": 121.41555229097139,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -80,6 +236,17 @@
         "total_output_tokens": 2013,
         "case_sha256": "ce1377ea3728b64f762232aa95687e981dbc9afcffbcb43afb5a75bf367b2406",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "15850cab12ca5882fdcf1249a47c6f585ac8f7a6dfa8156ad829de8dec9d3a62",
+          "raw_record_sha256": "ccf399c205f2e7f4f51fea92916746b8fdadcd1513089ffa4048d67ef680269b",
+          "save_sha256": "56bc984e61ecb06667db33770e7ec819361bd753255c7461da407e9b16d8ee59",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [],
+          "legacy_scored_pass": false
+        },
+        "original_total_wall_seconds": 115.66228708298877,
+        "review_wall_seconds": 5.753265207982622,
         "evidence": "runs/repair-search-20260910/direct-development-002/summary.json"
       },
       {
@@ -91,7 +258,7 @@
         "failed_rules": [],
         "actions": 7,
         "game_wall_seconds": 81.52781566698104,
-        "total_wall_seconds": 86.9716530420119,
+        "total_wall_seconds": 93.42554379208013,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -105,6 +272,126 @@
         "total_output_tokens": 1317,
         "case_sha256": "6ad0d486495c77579cc6e21b83a16e24af66f9b0f45734e6b8f09b57c8ece447",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "f12e33acb78283ac2b8c8d3377ce4db757cb4f9a413e3ac398f36b4d9099df2f",
+          "raw_record_sha256": "2eccba218b5b33a0c5b309eb6ce349a5b5f6329d80a9588ecdf4b1b75bbe3932",
+          "save_sha256": "289800ade76c14f7397410a45919f51c8b1dd9a33debab20ea2ba2bcd641aba3",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 103490,
+              "entity_id": 17,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 103490,
+              "entity_id": 29,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 103490,
+              "entity_id": 31,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 107090,
+              "entity_id": 17,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 107090,
+              "entity_id": 29,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 107090,
+              "entity_id": 31,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 110690,
+              "entity_id": 17,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 110690,
+              "entity_id": 29,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 110690,
+              "entity_id": 31,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 114290,
+              "entity_id": 17,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 114290,
+              "entity_id": 29,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 114290,
+              "entity_id": 31,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 86.9716530420119,
+        "review_wall_seconds": 6.45389075006824,
         "evidence": "runs/repair-search-20260910/direct-development-003/summary.json"
       },
       {
@@ -116,7 +403,7 @@
         "failed_rules": [],
         "actions": 9,
         "game_wall_seconds": 94.26232091709971,
-        "total_wall_seconds": 99.61896004201844,
+        "total_wall_seconds": 107.20724658400286,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -130,6 +417,17 @@
         "total_output_tokens": 1666,
         "case_sha256": "d223dac4407d76e42d592ac519b378defafce107acc4c08c85d5b73474692a82",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "819b8e4ad91e6fa7b08992a2bf9ebe854aedab1879f2c2f94c28d7139f1fb33a",
+          "raw_record_sha256": "8be860fa810b34e9c9833a78aff72155af599b96959c93ca5ca091db23f473c5",
+          "save_sha256": "89df56383b052c3b78d9580f00b1eca5968bfae89a856e52a58a190588833eb6",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 99.61896004201844,
+        "review_wall_seconds": 7.5882865419844165,
         "evidence": "runs/repair-search-20260910/direct-development-004/summary.json"
       },
       {
@@ -141,7 +439,7 @@
         "failed_rules": [],
         "actions": 6,
         "game_wall_seconds": 79.43103875010274,
-        "total_wall_seconds": 84.77508483303245,
+        "total_wall_seconds": 91.8579696250381,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -155,6 +453,54 @@
         "total_output_tokens": 1349,
         "case_sha256": "072d90be658c955ad362f7eb9d3c7efa9c38dc83283b4d144e092006ff3a9328",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "159b9bcea2d392b28b3d0a486e8be1e5a406b0038d2c6de4a89552e98ad08e75",
+          "raw_record_sha256": "61fa22c8ceac569f9e041734500bfa6dbc5dbc2ce525d8caa42275f9af15f0b3",
+          "save_sha256": "b3d5ee6cd4c207e8ae6c0029add674bdea7ba657faaf31ca95adcd671cd56e7d",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 100216,
+              "entity_id": 27,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 103816,
+              "entity_id": 27,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 107416,
+              "entity_id": 27,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 111016,
+              "entity_id": 27,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 84.77508483303245,
+        "review_wall_seconds": 7.082884792005643,
         "evidence": "runs/repair-search-20260910/direct-development-005/summary.json"
       },
       {
@@ -166,7 +512,7 @@
         "failed_rules": [],
         "actions": 6,
         "game_wall_seconds": 80.04244029207621,
-        "total_wall_seconds": 85.81195841694716,
+        "total_wall_seconds": 92.63925820891745,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -180,6 +526,90 @@
         "total_output_tokens": 1306,
         "case_sha256": "43cb94d860195abbd7dbdb3e9e98ae4f65f3cbb40afa7eb2955232f7cfaf9078",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "9ad6a65334a1b2b120a07bdeca80e35c61c641c9028dedcbda9d4f6f30dc0abe",
+          "raw_record_sha256": "785ef5cb694e007c9336ebaadf3a50a26a7e54aa8af5efe1670c438b7298c832",
+          "save_sha256": "222465eff6cbcc2cf6eb13d84668dd5db799d0d055a44b9e1cc2010c4f6e2eb5",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 102969,
+              "entity_id": 5,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 0,
+              "tick": 102969,
+              "entity_id": 20,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 106569,
+              "entity_id": 5,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 106569,
+              "entity_id": 20,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 110169,
+              "entity_id": 5,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 110169,
+              "entity_id": 20,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 113769,
+              "entity_id": 5,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 113769,
+              "entity_id": 20,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 85.81195841694716,
+        "review_wall_seconds": 6.82729979197029,
         "evidence": "runs/repair-search-20260910/direct-development-006/summary.json"
       },
       {
@@ -193,7 +623,7 @@
         ],
         "actions": 22,
         "game_wall_seconds": 139.20295225002337,
-        "total_wall_seconds": 144.71545608399902,
+        "total_wall_seconds": 150.113527626032,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -207,6 +637,54 @@
         "total_output_tokens": 2663,
         "case_sha256": "9aca41a4ccec7bb2fc319be34dea7fac91a577e5bb36c3a48e0dd64911feff62",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "65613c65c0606d281ec8845bd31cdaa03d61ac9d5b65c0204f936dd42ab15ada",
+          "raw_record_sha256": "156bf26cd49f0092f9f85b0cb0238a2ee752a4103f83602bbc0dbae40617095e",
+          "save_sha256": "3349ca0a07f464204268ff02d8786f732bccb304a82462b2ead9c65f5c3ddb76",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 173787,
+              "entity_id": 24,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 177387,
+              "entity_id": 24,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 180987,
+              "entity_id": 24,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 184587,
+              "entity_id": 24,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": false
+        },
+        "original_total_wall_seconds": 144.71545608399902,
+        "review_wall_seconds": 5.398071542032994,
         "evidence": "runs/repair-search-20260910/direct-development-007/summary.json"
       },
       {
@@ -218,7 +696,7 @@
         "failed_rules": [],
         "actions": 89,
         "game_wall_seconds": 104.9715309169842,
-        "total_wall_seconds": 110.1129877079511,
+        "total_wall_seconds": 116.0281622488983,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -232,6 +710,54 @@
         "total_output_tokens": 1885,
         "case_sha256": "6cd3496d7ca1c2fa2f1848cc8942182fb39f5d6771feca03e2aa72e7a810a90b",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "893b740effe287ce5c9613adf011f06264331604aa694be64d9520af32d1b0a4",
+          "raw_record_sha256": "580eba7632c76f10c97a081d0015915c3104c93c006915bf56212930d5802638",
+          "save_sha256": "1431f5b68814863b200b5236475da39cdac036f6629c93b415cc35df2a9d05ff",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 132365,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 135965,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 139565,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 143165,
+              "entity_id": 32,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "iron-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 110.1129877079511,
+        "review_wall_seconds": 5.915174540947191,
         "evidence": "runs/repair-search-20260910/direct-development-008/summary.json"
       },
       {
@@ -243,7 +769,7 @@
         "failed_rules": [],
         "actions": 5,
         "game_wall_seconds": 64.57410145900212,
-        "total_wall_seconds": 69.66430991701782,
+        "total_wall_seconds": 75.48830395808909,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -257,6 +783,54 @@
         "total_output_tokens": 928,
         "case_sha256": "fa26b00d44b02df7488607f20bca8b16d46cb09ea50dabbd07505c028dca309f",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "b65478dfb93e6039fc8d599b1ae3e8b4cae4d9c106d4ab09bc3313fe4632ed71",
+          "raw_record_sha256": "0fab9968c2f37716b0157afa53bf2e645af31e82a631b7952d38806c53653034",
+          "save_sha256": "15fb41ae3cebc63a8c6bf4dbda79803bb6aaa8a644fa96560fadffc9f62ec549",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [
+            {
+              "sample_index": 0,
+              "tick": 83339,
+              "entity_id": 3,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 1,
+              "tick": 86939,
+              "entity_id": 3,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 2,
+              "tick": 90539,
+              "entity_id": 3,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            },
+            {
+              "sample_index": 3,
+              "tick": 94139,
+              "entity_id": 3,
+              "field": "recipe",
+              "exported_value": null,
+              "native_value": "copper-plate",
+              "native_type": "LuaRecipePrototype"
+            }
+          ],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 69.66430991701782,
+        "review_wall_seconds": 5.823994041071273,
         "evidence": "runs/repair-search-20260910/direct-development-009/summary.json"
       },
       {
@@ -268,7 +842,7 @@
         "failed_rules": [],
         "actions": 6,
         "game_wall_seconds": 65.31593716703355,
-        "total_wall_seconds": 71.89828737499192,
+        "total_wall_seconds": 77.18591412506066,
         "agent_sessions": 1,
         "sessions_with_known_usage": 1,
         "sessions_without_final_usage": 0,
@@ -282,9 +856,20 @@
         "total_output_tokens": 984,
         "case_sha256": "a3880fd6aed724e2082c0c8898ca348d710f365e92879a76b4cb6eabe677a758",
         "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774",
+        "recipe_review": {
+          "contract": "repair-recipe-export/2",
+          "raw_summary_sha256": "731d78db3fb8e6f640820d34a554c222eee1f9f6906d23942a11a2ce55695fc4",
+          "raw_record_sha256": "207a5356280f0624922c6fadbbd305b238adae51435d6f3e36bb7c3c8fb52cc4",
+          "save_sha256": "e1dc3f56445d93d3740bd965c5f836deee7cbff6bf5cab30d42b755de264e444",
+          "source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+          "corrections": [],
+          "legacy_scored_pass": true
+        },
+        "original_total_wall_seconds": 71.89828737499192,
+        "review_wall_seconds": 5.287626750068739,
         "evidence": "runs/repair-search-20260910/direct-development-010/summary.json"
       }
     ]
   },
-  "cost_note": "Subscription dollar cost unknown. Known token subtotals include reported partial usage. Total tokens are unknown when final session usage is missing. Agent sessions are not model request counts."
+  "scope": "Ten development cases; includes independent recipe review processing."
 }

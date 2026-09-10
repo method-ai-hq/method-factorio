@@ -1,0 +1,47 @@
+{
+  "original_report_sha256": "1158613a3c175c944c6d85f9c14f7efcc590c7199f00d7e0e8b42809eab904fe",
+  "public_report_sha256": "8a0c984d3e6b6ecdfc16c9da19786955834f9cf361cfb460dabb855eb66dfe89",
+  "publication_note": "Public report paths are relative. Measurements and outcomes are unchanged from the audited local report.",
+  "benchmark": {
+    "sources": {
+      "science_contract.py": "254b1d67f73f1fff9648e36f84675a7c2c19b52e0db081bca0d59f7b93e2edd8",
+      "science_runtime.lua": "02bd60e0af56db6a442ecf1b9447d3b5ef52ded04103c9bdd1e163d435635dcd",
+      "science_server.py": "bc69689aa1cdf78d558a08e3be25d868615efe74ebebfe3f9597415533e09857",
+      "science_host.py": "8ee1abdc0ef900f97e2badf28a58ca1ca06ac10c2aa42fde1abfd5a857a5ac71",
+      "repair_contract.py": "69ee07ff71a4593075c2331645d8612a249cdbac66020ad21b1632dbd752ab36",
+      "repair_runtime.lua": "f3cdaed4a251f3283c1472c669088edf0d1d74d82de4826490a1df168c128c46",
+      "repair_host.py": "30124cb2363ad490099c256aa95d685f9b7850ff7b780eebd81b3ddb61a48ff6",
+      "repair_verify.py": "cb10d3055c0a734a6b4023ee8f3a8445b066eaf5f71f64187b66883ad2acc92a"
+    },
+    "task_sha256": "7fa8d59dc4de8ed9576f2454eb45a6563325edef13e7229f2ee8904f381f0774"
+  },
+  "runner_freeze": {
+    "sources": {
+      "repair_codex.py": "6d16766087ba8b90bdd093af306a8a102b71b376d7c8ede7656ac58fa118bfb8",
+      "repair_trial.py": "2f837149bf8b0965b3b90e967530dde74459d47077e2c05006c595275277c8b8",
+      "repair_batch.py": "56c4e7a5b35f7b28c2276efdd9389b0b4d56175c791139ca89d3484c6e15531b",
+      "repair_method.py": "c094931517e548ac17d60225f961622d1b2a940f96e70562437f1504611d8afb"
+    },
+    "accepted_legacy_execution_sources": {},
+    "migration": "Runner classification and freeze checks added after initial direct attempts; original execution hashes retained."
+  },
+  "method_runtime_commit": "eec2cfd1a5f0bd8254fb8213b88be76cff44ad21",
+  "audit_source_sha256": "52f70ec57ac77d4c39a090bdd8f056dbe4c1d93bf28bf2a58dbb913cac1ab2be",
+  "review_source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+  "selection_sha256": "3962682e70768e22463daa2fe8a91c1ac7dabd668d108bbc905941cfff0bfcf9",
+  "focused_tests": {
+    "command": ".venv/bin/python -m unittest discover -s scripts -p 'test_repair*.py' -q",
+    "passed": 54
+  },
+  "game_attempts": {
+    "direct_development": 10,
+    "method_development": 31,
+    "direct_final": 20,
+    "method_final": 20
+  },
+  "native_case_controls": {
+    "certified_cases": 30,
+    "controls_per_case": 3
+  },
+  "model_calls_note": "Fresh Codex sessions are not single API request counts. Authoring, setup, and operator work are separate and not fully costed."
+}

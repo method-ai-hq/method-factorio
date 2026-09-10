@@ -279,24 +279,39 @@ separates observed checks from the remaining calibration work.
 
 ## Factory repair policy search, 10 September 2026
 
-The [repair comparison](docs/repair-experiment.md) now has ten certified
-development factories, a separate final-case builder, fresh subscription
-Codex runs, and Method v3 execution with shared time and action limits.
-Each case has native proof that it works before damage, fails after damage,
-and works after a legal repair. The game checker removes stored materials
-and checks three production windows plus an independent save reload.
+The [repair comparison](docs/repair-experiment.md) is complete. Thirty factories
+have native proof that the healthy factory passes, damage causes failure, and
+a legal repair passes. Ten cases supported policy search; twenty new cases
+were kept outside policy development.
 
-The first direct and Method development runs have started. A three-world
-capacity check passed in 15.34 seconds for 18,000 measurement ticks. All 95
-current tests passed before Method scoring began. Search uses no screen
-recording and no paid API backend. Subscription use is recorded where the
-runner reports it. The final cases remain outside policy development.
+Fresh direct Astra Codex sessions ran all thirty cases. Four Method versions
+were tested in 31 development game attempts. v03 has one retained attempt;
+the other three have ten each. v04 was selected and frozen before final tests.
+It uses code to make a compact public observation, then one fresh Astra session
+to diagnose, repair, check production, and finish. The Method uses the actual
+Method v3 runtime. Both approaches use the same fixed subscription model runner.
 
-No Method advantage is claimed yet. Reports will distinguish a failed repair
-from a request-rule failure even when both fail the strict task score.
+Final scores: Method 20/20, direct Astra 18/20. Both restored production in all
+20 factories. Direct Astra's two strict failures were unsupported tool
+requests. This does not show that the Method could repair a factory that
+direct Astra could not repair. The small paired success difference has
+p=0.5 and does not establish a reliable success-rate difference.
 
-The direct development baseline is complete: ten restored factories and eight
-strict passes. Two attempts failed only the allowed-request rule. Median time
-among strict passes was 79.74 seconds. The [baseline evidence](evidence/repair-search-2026-09-10/README.md)
-keeps these outcomes separate. Method search and final comparison remain in
-progress.
+On the same 18 successful pairs, median full processing time was 71.22 seconds
+for the Method and 92.83 seconds for direct Astra, about 23% less. Full time
+includes startup, player completion, production checks, and independent save
+reads. Across all twenty attempts, reported input tokens were 2,939,690 for
+the Method and 6,642,107 for direct Astra, about 56% less; these counts include
+cached input. Search and authoring costs are separate. Subscription dollar
+cost is unknown.
+
+The [evidence report](evidence/repair-search-2026-09-10/README.md) keeps every
+version and final outcome. All 40 final evidence audits and 54 focused repair
+tests passed. A versioned reader fixes an exact saved recipe-name export fault
+without changing production rules or replaying players. All attempts received
+the same read, frozen before final tests. Search and final tests used headless
+worlds, with no screen recording or paid API backend.
+
+This is evidence of lower execution time and input use in one generated
+factory family. It is not proof about arbitrary Factorio tasks, a need for
+multiple model agents, or an advantage over deterministic programs.

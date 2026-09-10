@@ -1,0 +1,331 @@
+{
+  "audit_pass": true,
+  "paired_cases": 20,
+  "attempts": 40,
+  "review_source_sha256": "6452a7f5a0b93beb1ca0ed4774275b569e158c0f846c3d11d65d3c50800b33b3",
+  "selection_sha256": "3962682e70768e22463daa2fe8a91c1ac7dabd668d108bbc905941cfff0bfcf9",
+  "report_sha256": "1158613a3c175c944c6d85f9c14f7efcc590c7199f00d7e0e8b42809eab904fe",
+  "rows": [
+    {
+      "case_id": "final-001",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "c189dc732a631c7cef7e74120295e815cae850a777fc5c398458445323225f39",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-001",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "5afe46a61cc388d9015fd6b92dd32268eb2131531cc74e3db12a87086e1952fd",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-002",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "ff800f1100824fd2ff21fe47a8c6b45b69b2aa73c7026c1ceb6dbc675e2b1453",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-002",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "7a7ce1a5eff85dbc4f31976175877eb28cc05d1a511a3348708c067fb78c6c2e",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-003",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "bc879da69cb24f245108788401a2f03d6d8ace93f5361996819f69fe6d0656ae",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-003",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "f058e7c003ee60f9debb3c5b2d83500273d15092a3255b03214b8508937eb947",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-004",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "9af83dcd7b84bd0dca84fe6f5c9bc1b96ed57ef51b0b667b350cc7d9e435e497",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-004",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "6be4ce09b787f15b32a4688892a1b540e091f3c51c4376da000bbfb453bcb5c5",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-005",
+      "kind": "direct",
+      "status": "fail",
+      "review_sha256": "a4957259dc53dcb8e62eb648abd5bbcda964dc33a092441b9b54958235a649be",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-005",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "d918d029e551f70279d07333b6d0a02bb500eb6150cf4bab04e3e36a678a0b8e",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-006",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "3843f1c4cba014adb54f25812058b820ff3893bc55bd9c7cbb750dcf0148b4a7",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-006",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "9d0ba94b3fc9283602542e3c4552fdc3520f639112f2fd7a5c06482ddc8cbe28",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-007",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "c93c957ff168573f985242ffe9783568d7acd21aadf0db74f3751052c5b6c6de",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-007",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "bc11b387c09f4b09f96a4dc759141acc44772e6654855005a4c3b249a0bd73ed",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-008",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "800a0e0cf81fb792eafa44dfd28a356402260f75646d7ca086a0ed3482502498",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-008",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "802a1575af8b0e72659c4425c119be7af25e80b0e1c3e7d01695374f2dcd2c4f",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-009",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "d23bdceecb86ffaec26c771b5af895f4fbfae90e4d2896e2101c3918f60901c5",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-009",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "b9d85f64042c50217f35a802534227d12f8169968edd7f998cbef6e2e3aa2d1e",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-010",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "95df480ade67ee7b9cbc6e6b8c017762ed9a7603eea3d6f0c51171bfa9177153",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-010",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "9c8176a99dcfc388fe488c05de5ab6480971c4d3f5d038ea8bf5c62af9bc6984",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-011",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "911ac03620e6ce023d9fc4519a9776c8690ce24f4712050fbc91cb1517f9842f",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-011",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "61c93c58c3abf58666ea276175b9b4681a15bcfb60477a6b52696958cc70ec0a",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-012",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "cfb453fd7ba528ec840f95906949ba55694807e436d303ed3326dbdbb8d48a29",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-012",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "447a28f8a6b3f90540559af50304f4010b165559e2024bb72121cbeca525ca35",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-013",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "a29fc00659782559c51b3a019735385eea8b3d241c8d24b57e4bb60a3872602d",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-013",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "a46d946aff036460f0223ff780d8130af849f9996f0cf7e0e20945e8372d80ea",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-014",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "e9c91ee36c6b894d86c2237e743f01cdd9cd5b035512f95b2712ac7acbe3723f",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-014",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "65db8f18eaf218100f6a4ec5b5e6a387952bcdc5277823e5503d84b8b1493598",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-015",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "a2805e5241113511efd8fd7dd488367332479f3a18bdfdab9361bd7ef3c360ea",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-015",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "def13c481f58e7e617973e89bcc18d19027e0ef3ea4ae14e4286a903f030bd4c",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-016",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "516bd6f4183360718836a00aa8ef2b3c31bef78a70a9a56acfd6f31528ecc3a5",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-016",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "d9476c30469f09b8efc8ba28075880d22bf904427d563848c9ca07030a70b42e",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-017",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "fe6701b226fd1b39db768893e4f9c5431c9b1852da5b57fa747cac28c5e93078",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-017",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "ba5753a8bc170b53b45407abc6755bc9f889b3265b21af14875c9f04189682c3",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-018",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "f1cabc71f8568590266bc932352c0a7a9db74870a39e25f7c8407a72a3830239",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-018",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "5586971e51c18c29265eaf186fa2e34a9adf20e63c49add97187eecf487190c7",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-019",
+      "kind": "direct",
+      "status": "fail",
+      "review_sha256": "f958a7ed36ee38cc506bf579cc2e8e93a1b916b2025a052ee880def0e1c709ef",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-019",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "6bd226c483f322a1c6ed43fdbe40cef0f1c51c3dc09e1d65b9f87aad233754f3",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-020",
+      "kind": "direct",
+      "status": "pass",
+      "review_sha256": "35c3ae3bab799b4f87b5d8b284e9d15d18b8268fa38d30ea2896338ffa358191",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    },
+    {
+      "case_id": "final-020",
+      "kind": "method",
+      "status": "pass",
+      "review_sha256": "87b29390163c044b1cc0b0ab3ac2a49faf36467b2311ae01bbbf174f9756755c",
+      "agent_sessions": 1,
+      "sessions_missing_execution": 0
+    }
+  ],
+  "scope": "Read-only file provenance and fixed-rule recomputation; native save reload evidence comes from frozen reviews."
+}

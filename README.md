@@ -43,9 +43,13 @@ The new [factory repair comparison](docs/repair-experiment.md) tests a searched
 Method against fresh direct Astra runs on varied damaged factories. It uses
 10 development cases and 20 separate final cases, a fixed native game checker,
 and the real Method v3 runtime. See the [run guide](docs/run-repair-search.md).
-The comparison is in progress; no Method advantage is claimed yet.
-The [development baseline](evidence/repair-search-2026-09-10/README.md) restored
-all ten factories and passed the full rules in eight attempts.
+The [completed comparison](evidence/repair-search-2026-09-10/README.md) has
+20/20 final passes for the Method and 18/20 for direct Astra. Both repaired all
+20 factories; direct Astra's two failures were tool request errors. On the same
+18 successful pairs, median full time was 71.22 seconds for the Method and
+92.83 seconds for direct Astra. The Method used 56% fewer reported input tokens
+across all 20 attempts. This shows an execution benefit on this task family,
+not a repair ability that direct Astra lacked.
 
 | File | Purpose |
 | --- | --- |
