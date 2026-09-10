@@ -126,6 +126,43 @@ def read_signed(path, key):
     return records
 
 
+def check_baseline_records(records, finish, profile):
+    usage=finish['usage']
+    require(usage['model']=='gpt-6-astra' and usage['auth']=='chatgpt', 'Wrong baseline model or access mode')
+    require(usage['model_cost_usd'] is None and usage['api_calls']==0, 'Misstated subscription cost or API use')
+    require(usage['execution_sha256']==digest(finish['execution']), 'Unbound model execution evidence')
+    require(finish['execution']['model']==usage['model'] and finish['execution']['auth']==usage['auth'], 'Execution model mismatch')
+    require(finish['execution']['status'] in {'completed','timeout'}, 'Model execution infrastructure failed')
+    require(finish['play_seconds'] <= profile['max_play_seconds']+5, 'Playing clock exceeded')
+    request_records=[r for r in records if r['kind']=='request']
+    response_records=[r for r in records if r['kind']=='response']
+    require(len(request_records)==len(response_records)<=profile['max_requests'], 'Request count or responses invalid')
+    require([r['request_id'] for r in request_records]==list(range(1,len(request_records)+1)), 'Missing request')
+    require([r['request_id'] for r in response_records]==list(range(1,len(request_records)+1)), 'Missing response')
+    require(all(r['wall_seconds']<=profile['max_play_seconds']+5 for r in request_records), 'Late request')
+    require(not any(r['response'].get('infrastructure_failure') for r in response_records), 'Infrastructure failure in trace')
+    active_request=None
+    engine_sequence=0
+    for r in records:
+        if 'engine_sequence' in r:
+            engine_sequence+=1
+            require(r['engine_sequence']==engine_sequence,'Missing engine event')
+        if r['kind']=='request':
+            require(active_request is None,'Overlapping requests')
+            active_request=r
+        elif r['kind']=='response':
+            require(active_request is not None and active_request['request_id']==r['request_id'],'Response order mismatch')
+            active_request=None
+        elif r['kind']=='begin':
+            require(active_request is not None and active_request['request'].get('action')==r['name'],'Action lacks matching request')
+        elif r['kind']=='turn_end':
+            require(active_request is not None and active_request['request'].get('action')=='end_turn','Turn lacks matching request')
+    require(active_request is None,'Unfinished request')
+    require(all(r['screen'] in {'TechCivicCompletedPopup','BoostUnlockedPopup','NaturalWonderPopup'} for r in records if r['kind']=='information_closed'), 'Unapproved screen closure')
+    records=[r for r in records if r['kind'] not in {'request','response','information_closed'}]
+    return records
+
+
 def verify(records, start, reloaded, profile, terminal_save_sha256):
     """Input must come from the protected recorder and independent save reader.
 
@@ -146,7 +183,11 @@ def verify(records, start, reloaded, profile, terminal_save_sha256):
     require(len(header['method_sha256']) == 64, 'Missing Method hash')
     require(finish['terminal_save_sha256'] == terminal_save_sha256, 'Wrong final save')
     require(finish['state'] == reloaded, 'Independent reload differs')
-    require(integer(finish['usage']['model_calls']) == 0 and number(finish['usage']['model_cost_usd']) == 0, 'This calibration profile permits no model calls')
+    baseline = profile.get('schema') == 'civ6-economy-profile/2'
+    if baseline:
+        records=check_baseline_records(records,finish,profile)
+    else:
+        require(integer(finish['usage']['model_calls']) == 0 and number(finish['usage']['model_cost_usd']) == 0, 'This calibration profile permits no model calls')
     require(profile['status'] == 'calibration', 'Unreviewed profile status')
     births, streaks = {}, {}
     initial_turn = start['turn']
@@ -159,7 +200,7 @@ def verify(records, start, reloaded, profile, terminal_save_sha256):
         require(last_wall <= wall <= profile['max_wall_seconds'], 'Wall clock order or limit')
         last_wall = wall
         kind = rec['kind']
-        require(kind in {'start','begin','after_action','turn_end','boundary','founded','removed','finish'}, 'Unknown trace record')
+        require(kind in {'start','begin','after_action','turn_end','turn_blocked','boundary','founded','removed','finish'}, 'Unknown trace record')
         if kind == 'begin':
             require(action is None and not ended, 'Overlapping or post-turn action')
             action = integer(rec['action_id'])
@@ -189,9 +230,14 @@ def verify(records, start, reloaded, profile, terminal_save_sha256):
             turn += 1
             boundaries += 1
             require(turn-initial_turn <= 35, 'Turn limit exceeded')
+        elif kind == 'turn_blocked':
+            require(baseline and action is None and ended, 'Blocked turn lacks an end-turn request')
+            require(rec['blocking']['processing'] is False and rec['blocking']['sent'] is False, 'Blocked turn is still in flight')
+            require(rec['blocking']['blocking'] not in ('NO_ENDTURN_BLOCKING','UNKNOWN'), 'Missing known turn blocker')
+            ended=False
         elif kind == 'finish':
             require(action is None and not ended, 'Unfinished action or turn')
-        if kind in {'start','after_action','turn_end','boundary','finish'}:
+        if kind in {'start','after_action','turn_end','turn_blocked','boundary','finish'}:
             state = rec['state']
             rows = cities(state)
             require(state['turn'] == turn and state['player'] == start['player'], 'Missing boundary or wrong player')

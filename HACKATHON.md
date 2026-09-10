@@ -247,6 +247,13 @@ unchanged.
 
 ## Civ 6 economy setup, 10 September 2026
 
+Update: the [restricted Civ interface checks](evidence/civ6-interface-2026-09-10/README.md)
+now include fresh direct Astra processes. One five-minute attempt reached the
+economy target in 34 turns and 253.53 seconds. Its terminal save matched, but
+the strict verifier rejected a late boundary record. This is not a verified
+pass or a demonstrated direct-Astra failure. The fixed-budget baseline panel
+and combat work remain in progress. Method search has not started for Civ.
+
 The [Civ 6 economy setup](docs/civ6/RUN_ECONOMY_TASK.md) now has a real starting
 save, exact state reader, live event monitor, and trace verifier. The installed
 game lacks a Gathering Storm entitlement, so the case is explicitly base-game

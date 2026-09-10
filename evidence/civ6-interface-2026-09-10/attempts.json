@@ -1,0 +1,136 @@
+[
+  {
+    "run": "civ6-api-astra-20260910a",
+    "phase": "interface_integration",
+    "playing_budget_seconds": 300,
+    "status": "infrastructure_failure",
+    "result": {
+      "status": "infrastructure_failure",
+      "verified_pass": false,
+      "reason": "Turn did not advance exactly once",
+      "completed_turns": 2
+    },
+    "play_seconds": 58.010812333086506,
+    "requests": 14,
+    "completed_turns": 2,
+    "terminal_save_sha256": "2bb0c15a5e649d0ceeb7bd5bbad762451ed0e541c388037ccf86844d96b1186e",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 107392,
+      "completed_turns": 1,
+      "errors": [],
+      "input_tokens": 119548,
+      "output_tokens": 596,
+      "reasoning_output_tokens": 20,
+      "thread_id": "01a08cc1-8b81-70a3-8295-beaf5b438fcb",
+      "usage_known": true
+    },
+    "auth": "chatgpt",
+    "subscription_cost_usd": null,
+    "api_calls": 0
+  },
+  {
+    "run": "civ6-api-astra-20260910b",
+    "phase": "interface_integration",
+    "playing_budget_seconds": 300,
+    "status": "infrastructure_failure",
+    "result": {
+      "completed_turns": 0,
+      "reason": "['CIVERR|[string \"local ok,err=pcall(function()...\"]:2: function expected instead of nil\\nstack traceback:\\n\\t[string \"local ok,err=pcall(function()...\"]:2: in function \\'(anonymous)\\'\\n\\t[C]: in function \\'pcall\\'\\n\\t[string \"local ok,err=pcall(function()...\"]:1: in function \\'(main chunk)\\'']",
+      "reload_matches": true,
+      "status": "infrastructure_failure",
+      "verified_pass": false
+    },
+    "play_seconds": 26.817981416010298,
+    "requests": 11,
+    "completed_turns": 0,
+    "terminal_save_sha256": "da4393f5fd0117e04f7d64d8ad2a02e0a749e0421647ac1d0c6a215f68cd6b96",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 55936,
+      "completed_turns": 1,
+      "errors": [],
+      "input_tokens": 64709,
+      "output_tokens": 412,
+      "reasoning_output_tokens": 0,
+      "thread_id": "01a08cc5-a2f1-7271-97bf-461a71856048",
+      "usage_known": true
+    },
+    "auth": "chatgpt",
+    "subscription_cost_usd": null,
+    "api_calls": 0
+  },
+  {
+    "run": "civ6-api-astra-20260910c",
+    "phase": "interface_integration",
+    "playing_budget_seconds": 300,
+    "status": "infrastructure_failure",
+    "result": {
+      "completed_turns": 2,
+      "reason": "Turn did not advance exactly once",
+      "status": "infrastructure_failure",
+      "verified_pass": false
+    },
+    "play_seconds": 77.15646729199216,
+    "requests": 17,
+    "completed_turns": 2,
+    "terminal_save_sha256": "8eff15142d82dc31d7b829765c6fec6282ad90f3830b79364f05b9ff9c6127b9",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 141184,
+      "completed_turns": 1,
+      "errors": [],
+      "input_tokens": 153608,
+      "output_tokens": 798,
+      "reasoning_output_tokens": 22,
+      "thread_id": "01a08cc9-0abc-7703-b45a-356a941ca8f4",
+      "usage_known": true
+    },
+    "auth": "chatgpt",
+    "subscription_cost_usd": null,
+    "api_calls": 0
+  },
+  {
+    "run": "civ6-api-astra-20260910d",
+    "phase": "interface_integration",
+    "playing_budget_seconds": 300,
+    "status": "invalid_evidence",
+    "result": {
+      "reason": "Missing boundary or wrong player",
+      "recorded_task": {
+        "completed_turns": 34,
+        "goal_met": true,
+        "hold_rounds": 5
+      },
+      "reload_matches": true,
+      "status": "invalid_evidence",
+      "verified_pass": false
+    },
+    "play_seconds": 253.53047520807013,
+    "requests": 124,
+    "completed_turns": 34,
+    "terminal_save_sha256": "3ce93bef40a04108e191271280f1e4d4ecbba5a95d5f175f681031ec0f75bd4c",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 933632,
+      "completed_turns": 1,
+      "errors": [],
+      "input_tokens": 1060033,
+      "output_tokens": 4262,
+      "reasoning_output_tokens": 945,
+      "thread_id": "01a08ccf-7444-78a2-a471-a7721b82633a",
+      "usage_known": true
+    },
+    "auth": "chatgpt",
+    "subscription_cost_usd": null,
+    "api_calls": 0
+  }
+]

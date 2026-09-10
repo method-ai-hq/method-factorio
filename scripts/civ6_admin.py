@@ -53,7 +53,10 @@ class Connection:
         return await self.game.execute_read(code)
 
     async def snapshot(self):
-        lines = await self.execute((ROOT / 'civ6_snapshot.lua').read_text(), 'ingame')
+        code = getattr(self, 'snapshot_code', None)
+        if code is None:
+            code = (ROOT / 'civ6_snapshot.lua').read_text()
+        lines = await self.execute(code, 'ingame')
         rows = [line[8:] for line in lines if line.startswith('CIVTASK|')]
         if len(rows) != 1:
             raise RuntimeError('Expected one complete state snapshot: ' + repr(lines))
@@ -93,7 +96,7 @@ class Connection:
         UI.QuerySaveGameList(SaveLocations.LOCAL_STORAGE,SaveTypes.SINGLE_PLAYER,
           SaveLocationOptions.NORMAL + SaveLocationOptions.LOAD_METADATA)
         print('LOAD_REQUESTED')'''.replace('NAME', json.dumps(name))
-        await self.execute(code, 'ingame')
+        await self.execute(code, 'ingame' if self.game.ingame_index is not None else 'main')
         return {'requested': name, 'sha256': sha256(path),
                 'next': 'Close the load screen, then inspect in a new process.'}
 
