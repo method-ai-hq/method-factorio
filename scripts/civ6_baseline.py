@@ -13,6 +13,33 @@ from civ6_verify import canonical,digest,read_signed,write_signed,verify,Invalid
 from civ6_admin import sha256
 
 
+def pilot_inputs(profile, lock_path, phase, method_path):
+    """Bind operator-selected Method bytes without changing game limits."""
+    lock=json.loads(lock_path.read_text())
+    if digest(profile)!=lock['base_profile_sha256']:
+        raise ValueError('Pilot base profile changed')
+    if phase not in ('search','comparison'):
+        raise ValueError('Unknown pilot phase')
+    method=method_path.read_text() if method_path else None
+    if method is not None and (not method.strip() or len(method.encode())>32000):
+        raise ValueError('Method must contain 1 to 32000 bytes')
+    task=task_text(profile)
+    if method is not None:
+        task+='\n# Supplied Method\n\nFollow this Method while using your own reasoning for decisions during play.\n\n'+method
+    profile=dict(profile,pilot={'lock_sha256':digest(lock),'phase':phase,
+        'arm':'method' if method is not None else 'direct',
+        'method_sha256':hashlib.sha256(method.encode()).hexdigest() if method is not None else None,
+        'task_sha256':hashlib.sha256(task.encode()).hexdigest(),
+        'stop_unix':lock['stop_unix']})
+    if phase=='comparison':
+        frozen=json.loads((lock_path.parent/'frozen.json').read_text())
+        if frozen['lock_sha256']!=digest(lock):
+            raise ValueError('Comparison freeze belongs to a different pilot')
+        if method is not None and profile['pilot']['method_sha256']!=frozen['method_sha256']:
+            raise ValueError('Comparison Method differs from the frozen winner')
+    return profile,task,method
+
+
 def task_text(profile):
     return f'''# Civ 6 economy task
 
@@ -39,6 +66,7 @@ other files, processes, or network endpoints. No external models or agents.
 async def run(args):
     profile=json.loads(args.profile.read_text())
     if args.finish:
+        profile=json.loads((args.output/'profile.json').read_text())
         terminal=json.loads((args.output/'terminal.json').read_text())
         async with StrictConnection() as conn:
             state=await conn.snapshot()
@@ -49,11 +77,20 @@ async def run(args):
             (args.output/'result.json').write_bytes(canonical(result))
             print(json.dumps(result,indent=2)); return
         if state != terminal['state']:
-            raise RuntimeError('Independent reload differs from terminal capture')
+            (args.output/'reload.json').write_bytes(canonical(state))
+            result={'status':'invalid_evidence','verified_pass':False,'reason':'Independent reload differs from terminal capture','recorded_task':terminal['task']}
+            (args.output/'result.json').write_bytes(canonical(result))
+            print(json.dumps(result,indent=2)); return
         if sha256(terminal['save']['path']) != terminal['save']['sha256']:
             raise RuntimeError('Terminal save changed')
         records=read_signed(args.output/'trace.partial.jsonl',(args.output/'key').read_bytes())
         execution=terminal['execution']
+        if 'pilot' in profile:
+            policy=profile['pilot']
+            if sha256(args.output/'astra/task.md')!=policy['task_sha256']:
+                raise RuntimeError('Recorded task changed')
+            if policy['arm']=='method' and sha256(args.output/'method.md')!=policy['method_sha256']:
+                raise RuntimeError('Recorded Method changed')
         records.append({'kind':'finish','state':state,'terminal_save_sha256':terminal['save']['sha256'],
             'wall_seconds':time.monotonic()-terminal['started_monotonic'],
             'play_seconds':terminal['play_seconds'],'execution':execution,
@@ -69,11 +106,26 @@ async def run(args):
         (args.output/'result.json').write_bytes(canonical(result))
         print(json.dumps(result,indent=2)); return
     task=task_text(profile)
+    method=None
+    if args.pilot:
+        profile,task,method=pilot_inputs(profile,args.pilot,args.phase,args.method)
+        if time.time()>=profile['pilot']['stop_unix']-60:
+            raise RuntimeError('Pilot stop reached; no new run started')
+    elif args.method:
+        raise ValueError('Method runs require a fixed pilot lock')
     broker=await Broker(args.output,profile,hashlib.sha256(task.encode()).hexdigest()).start()
+    if method is not None:
+        (args.output/'method.md').write_text(method)
     print(json.dumps({'endpoint':broker.endpoint,'run':str(args.output)}),flush=True)
     execution=None
     try:
-        execution=await asyncio.to_thread(run_codex,task,args.output/'astra',broker.endpoint,profile['max_play_seconds'])
+        available=profile['max_play_seconds']
+        if 'pilot' in profile:
+            available=min(available,max(.001,profile['pilot']['stop_unix']-time.time()-45))
+        execution=await asyncio.to_thread(run_codex,task,args.output/'astra',broker.endpoint,available)
+        if available<profile['max_play_seconds'] and execution['status']=='timeout':
+            execution['status']='operator_cutoff'
+            (args.output/'astra/execution.json').write_bytes(canonical(execution))
     finally:
         terminal=await broker.stop(execution)
         terminal['started_monotonic']=broker.started
@@ -92,4 +144,7 @@ if __name__=='__main__':
     parser.add_argument('--profile',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--finish',action='store_true')
+    parser.add_argument('--pilot',type=Path)
+    parser.add_argument('--phase',choices=['search','comparison'],default='search')
+    parser.add_argument('--method',type=Path)
     asyncio.run(run(parser.parse_args()))

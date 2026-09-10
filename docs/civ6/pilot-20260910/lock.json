@@ -1,0 +1,42 @@
+{
+  "id": "civ6-economy-pilot-20260910",
+  "status": "calibration_pilot",
+  "started_unix": 1789070970.0,
+  "stop_unix": 1789074270.0,
+  "base_profile_sha256": "97c6a26ce15fb648b5cce2bc5bfb2402359b3705b775655de34aaac2b6c358ce",
+  "base_profile": "docs/civ6/profiles/economy-nearby-food-1.json",
+  "search_versions": 3,
+  "search_trials_per_version": 1,
+  "comparison_order": [
+    "direct",
+    "method",
+    "direct",
+    "method"
+  ],
+  "maximum_play_trials": 7,
+  "maximum_authoring_calls": 3,
+  "authoring_seconds_per_call": 90,
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "api_spending_cap_usd": 0,
+  "concurrency": 1,
+  "selection_order": [
+    "task_success",
+    "fewer_completed_turns",
+    "fewer_requests",
+    "shorter_play_seconds"
+  ],
+  "comparison_metrics": [
+    "success_count",
+    "completed_turns",
+    "play_seconds",
+    "requests",
+    "input_tokens",
+    "cached_input_tokens",
+    "output_tokens",
+    "reasoning_output_tokens"
+  ],
+  "scope": "same_map_pilot_no_generalization_claim",
+  "operator_cutoff": "Incomplete; not a gameplay failure or a full-budget comparison",
+  "initial_data": "Two valid direct baseline aggregate results; no previous successful action script supplied to the first author"
+}

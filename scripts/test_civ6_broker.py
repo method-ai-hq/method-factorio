@@ -68,6 +68,24 @@ class BaselineEvidence(unittest.TestCase):
         self.f.records[-1]['execution']['status']='infrastructure_failure'
         with self.assertRaises(Invalid): self.f.run_trace()
 
+    def test_pilot_binds_actual_task(self):
+        f=self.f; task_hash=f.records[0]['method_sha256']
+        f.profile['pilot']={'arm':'method','phase':'search','task_sha256':task_hash,'method_sha256':'b'*64}
+        f.records[0]['profile_sha256']=digest(f.profile)
+        finish=f.records[-1]
+        finish['execution']['source_sha256']={'task':task_hash}
+        finish['usage']['execution_sha256']=digest(finish['execution'])
+        self.assertTrue(f.run_trace()['goal_met'])
+        finish['execution']['source_sha256']['task']='c'*64
+        finish['usage']['execution_sha256']=digest(finish['execution'])
+        with self.assertRaisesRegex(Invalid,'not bound'): f.run_trace()
+
+    def test_operator_cutoff_is_not_full_trial(self):
+        finish=self.f.records[-1]
+        finish['execution']['status']='operator_cutoff'
+        finish['usage']['execution_sha256']=digest(finish['execution'])
+        with self.assertRaisesRegex(Invalid,'infrastructure failed'): self.f.run_trace()
+
     def test_reference_replay_is_separate_from_astra(self):
         f=self.f
         f.profile.update(schema='civ6-economy-profile/3',phase='legal_reference_replay')

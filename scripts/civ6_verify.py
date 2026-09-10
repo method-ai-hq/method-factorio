@@ -128,6 +128,12 @@ def read_signed(path, key):
 
 def check_baseline_records(records, finish, profile):
     usage=finish['usage']
+    if 'pilot' in profile:
+        pilot=profile['pilot']; header=records[0]
+        require(pilot['arm'] in ('direct','method') and pilot['phase'] in ('search','comparison'),'Unknown pilot arm or phase')
+        require(pilot['task_sha256']==header['method_sha256']==finish['execution']['source_sha256']['task'],'Pilot task is not bound to execution')
+        require((pilot['arm']=='direct' and pilot['method_sha256'] is None) or
+                (pilot['arm']=='method' and isinstance(pilot['method_sha256'],str) and len(pilot['method_sha256'])==64),'Missing pilot Method identity')
     reference=profile.get('schema')=='civ6-economy-profile/3' and profile.get('phase')=='legal_reference_replay'
     if reference:
         require(usage['model'] is None and usage['auth'] is None and usage['model_calls']==0, 'Reference replay must not call a model')
