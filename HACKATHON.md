@@ -347,3 +347,18 @@ and all 49 unit controls passed. No infrastructure failure or replacement
 trial occurred. The actor used Astra during execution. No fixed-rule
 ablation or unseen-map evaluation was run. The wider Civ map and combat
 work remains pending.
+
+## Project story page
+
+The [HTML story source](story/README.md) brings the full experiment history
+into one page: project aims, first control tests, failed recorded setup,
+headless candidate selection, continuous policy revisions, unseen repair
+results, native action replays, and a dated Civ VI development snapshot.
+It explains Methods as saved procedures that can be tested and changed.
+
+The local build at `runs/method-story/index.html` contains all three demo
+videos and interactive charts in one offline HTML file. The source and
+builder are public; game media remains outside Git. The page keeps the
+20/20 physical repair result for both approaches separate from strict
+request-rule scores, and it states the limits of the measured speed and
+input reductions. No new model or game trial was run to make this page.
