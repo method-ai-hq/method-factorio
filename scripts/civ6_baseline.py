@@ -24,6 +24,10 @@ def pilot_inputs(profile, lock_path, phase, method_path):
     if method is not None and (not method.strip() or len(method.encode())>32000):
         raise ValueError('Method must contain 1 to 32000 bytes')
     task=task_text(profile)
+    # The held-fixed comparison objective is visible to BOTH arms. Search
+    # actors already receive these priorities through their supplied Method.
+    if phase=='comparison':
+        task+='\n# Comparison objective\n\nMeet every task condition first. Among successful runs, aim to finish in fewer completed game turns, then use fewer total game requests, then less playing time. Keep model use efficient. Do not sacrifice task success or the five complete hold rounds to improve these measures.\n'
     if method is not None:
         task+='\n# Supplied Method\n\nFollow this Method while using your own reasoning for decisions during play.\n\n'+method
     profile=dict(profile,pilot={'lock_sha256':digest(lock),'phase':phase,

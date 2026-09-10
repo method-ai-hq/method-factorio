@@ -39,6 +39,13 @@ the same starting save each time. Do not revise the frozen Method after
 seeing a comparison result. The old direct baselines are context and are
 not substituted for new comparison trials.
 
+Both comparison arms receive the same explicit efficiency goal: meet every
+task condition first, then minimize completed turns, requests, and playing
+time in that order. They also receive a request to keep model use efficient.
+This common instruction was set before the first comparison trial. Search
+actors receive these priorities through their Method. Search results are
+used for selection and are not pooled with final comparison results.
+
 Report success counts first. For successful runs, show game turns, playing
 time, total game requests, input tokens, cached input tokens, output tokens,
 and reported reasoning tokens. Do not add reasoning tokens to output tokens
