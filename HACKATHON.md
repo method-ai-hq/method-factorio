@@ -104,3 +104,14 @@ only when the fixed run settings authorize it. Eleven control tests passed.
 Recorded demonstrations can link to an original headless trial; they remain
 new executions with separate results. Higher headless capacity and full policy
 integration remain unverified.
+
+## Civ 6 experiment design
+
+A separate [Civ 6 design](docs/civ6/EXPERIMENT.md) now specifies two competing
+Method design groups, fixed paired hill-climbing gates, and held-out final
+games. Its [validator contract](docs/civ6/VALIDATOR.md) specifies trusted game
+evidence, independent save inspection, access boundaries, and negative tests.
+The execution-lock template is blocked pending tested components and operator
+budgets. This is design work; no Civ 6 policy search, live game validator, or
+fair direct agent-versus-agent match is claimed. The installed upstream MCP
+and Civilization VI are prior work. Factorio's experiment is unchanged.
