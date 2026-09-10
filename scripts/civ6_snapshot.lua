@@ -47,10 +47,13 @@ function CivTaskSnapshot()
       science=c:GetYield(YieldTypes.SCIENCE),production=c:GetYield(YieldTypes.PRODUCTION),
       buildings=buildings,districts=districts,queue_size=c:GetBuildQueue():GetSize(),stored_production={}}
     local q=c:GetBuildQueue()
-    for _,entry in ipairs({{GameInfo.Units,q.GetUnitProgress},{GameInfo.Buildings,q.GetBuildingProgress},{GameInfo.Districts,q.GetDistrictProgress},{GameInfo.Projects,q.GetProjectProgress}}) do
+    for _,entry in ipairs({{GameInfo.Units,q.GetUnitProgress},{GameInfo.Buildings,q.GetBuildingProgress,true},{GameInfo.Districts,q.GetDistrictProgress},{GameInfo.Projects,q.GetProjectProgress}}) do
       for item in entry[1]() do local progress=entry[2](q,item.Index)
         assert(type(progress)=='number','Missing production value')
-        if progress~=0 then table.insert(row.stored_production,{hash=item.Hash,progress=progress}) end
+        -- InGame can retain the final production value of a completed building
+        -- until reload. It is not stored work available for another build.
+        local completedBuilding=entry[3]==true and c:GetBuildings():HasBuilding(item.Index) and not c:GetBuildings():IsPillaged(item.Index)
+        if progress~=0 and not completedBuilding then table.insert(row.stored_production,{hash=item.Hash,progress=progress}) end
       end
     end
     table.insert(result.cities,row)

@@ -56,4 +56,8 @@ The first full-budget nearby-food baseline passed the complete task trace and
 independent save check in 35 turns and 331.18 seconds of play. It supplies a
 legal completion witness for that starting case. See the
 [baseline report](../../evidence/civ6-baselines-2026-09-10/README.md).
-The other five economy baselines and the combat baseline work remain.
+The second valid run passed in 33 turns and 335.96 seconds of play. Both
+valid runs passed the independent save check. One intervening attempt remains
+invalid because its cached production state did not match the reload; it is
+not counted as a gameplay failure. Four economy baselines on two other maps
+and the combat baseline work remain.

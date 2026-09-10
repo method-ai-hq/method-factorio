@@ -1,0 +1,74 @@
+{
+  "run_id": "civ6-economy-food-baseline-2b",
+  "task": "economy",
+  "case": "economy-nearby-food-1",
+  "phase": "direct_baseline",
+  "replaces_invalid_attempt": "civ6-economy-food-baseline-2",
+  "result": {
+    "actions": 84,
+    "completed_turns": 33,
+    "goal_met": true,
+    "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+    "longest_hold_rounds": 5,
+    "qualifying_pairs": [
+      [
+        "28:12",
+        "36:13"
+      ]
+    ],
+    "status": "calibration_goal_met",
+    "terminal": {
+      "capital_food_surplus": 4,
+      "gold": 60.84375,
+      "net_gold": 6.3515625,
+      "new_self_founded_cities": [
+        {
+          "food_surplus": 5,
+          "key": "28:12",
+          "population": 5
+        },
+        {
+          "food_surplus": 4,
+          "key": "36:13",
+          "population": 4
+        }
+      ],
+      "science": 23.05078125
+    },
+    "verified_pass": false,
+    "wall_seconds": 488.58618237497285
+  },
+  "play_seconds": 335.9649305000203,
+  "requests": 135,
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "auth": "chatgpt",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 1379584,
+    "completed_turns": 1,
+    "errors": [],
+    "input_tokens": 1525923,
+    "output_tokens": 6288,
+    "reasoning_output_tokens": 2173,
+    "thread_id": "01a08ce6-8154-7dc3-943e-4859b57416ec",
+    "usage_known": true
+  },
+  "subscription_cost_usd": null,
+  "api_calls": 0,
+  "budget": {
+    "play_seconds": 1200,
+    "requests": 1500,
+    "completed_turns": 35
+  },
+  "sha256": {
+    "profile.json": "97c6a26ce15fb648b5cce2bc5bfb2402359b3705b775655de34aaac2b6c358ce",
+    "trace.jsonl": "9c4b14af7b250d6202634c2209655e1aa578106c670bf2474721cf3684c320d8",
+    "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+    "reload.json": "2092f4190ecac6bc76946b4e874e3a6ee64a21c2fa5da1ca873fa9aa2f3737f0",
+    "source-hashes.json": "b5f70aba6e58e2d0f9f50d662b0211df31d7cb4ded910034ad10937e86db483f"
+  },
+  "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+  "terminal_save_sha256": "51d093426ab4abaab4c168baa1b58b5ff725d49e5a79caf9b6bfe562d2b581bf",
+  "reloaded_state_matched": true
+}

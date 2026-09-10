@@ -1,0 +1,12 @@
+{
+  "run_id": "civ6-economy-food-baseline-2",
+  "status": "invalid_evidence",
+  "verified_pass": false,
+  "reason": "Independent reload cleared stale stored production for a completed Granary. Task fields matched; exact state did not.",
+  "recorded_task": {
+    "completed_turns": 31,
+    "goal_met": true,
+    "hold_rounds": 5
+  },
+  "replacement": "civ6-economy-food-baseline-2b"
+}
