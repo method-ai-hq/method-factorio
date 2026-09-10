@@ -151,3 +151,13 @@ The execution-lock template is blocked pending tested components and operator
 budgets. This is design work; no Civ 6 policy search, live game validator, or
 fair direct agent-versus-agent match is claimed. The installed upstream MCP
 and Civilization VI are prior work. Factorio's experiment is unchanged.
+
+## Short Civ 6 task options
+
+The owner selected continuous single-player search as the direction. The new
+[task options](docs/civ6/SHORT_TASK_OPTIONS.md) compare economic expansion, city
+capture, industry, and recovery tasks. They propose a three-city research
+economy, an exact state-and-history verifier, and calibration for a 5–10 minute
+trial target. This is design work. No task difficulty, runtime, live verifier,
+or Civ policy improvement has been measured. The earlier full-game competition
+proposal is retained as history.

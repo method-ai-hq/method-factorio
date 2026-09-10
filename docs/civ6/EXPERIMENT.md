@@ -1,5 +1,10 @@
 # Civ 6: competing Method searches
 
+**Earlier proposal, not run.** The owner now prefers continuous single-player
+search on a shorter task. See [short-task options](SHORT_TASK_OPTIONS.md).
+The old full-game rules below are retained as design history, not current run
+authorization.
+
 Status: design v1, 10 September 2026. This specifies a new experiment. It does
 not authorize spending, start agents, or establish a working game validator.
 The Factorio experiment and its results remain unchanged.
