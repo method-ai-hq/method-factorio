@@ -1,0 +1,44 @@
+{
+  "format": "method/3",
+  "name": "Geometry with direction recovery",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "Try downstream directions and recover the kit after blocked placements.",
+      "in": {
+        "endpoint": "environment.game"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "geometry_retry.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "geometry_retry.py"
+  ]
+}

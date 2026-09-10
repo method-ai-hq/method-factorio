@@ -1,0 +1,52 @@
+{
+  "format": "method/3",
+  "name": "p05-observed-geometry",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "Build a compact chain from observed machine geometry.",
+      "in": {
+        "endpoint": "environment.game",
+        "mode": "inputs.mode"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "geometry.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Controller result and action trace."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "geometry.py"
+  ],
+  "inputs": {
+    "mode": {
+      "type": "text",
+      "description": "Frozen route mode.",
+      "default": "short"
+    }
+  }
+}

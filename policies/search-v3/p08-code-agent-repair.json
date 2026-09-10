@@ -1,0 +1,13 @@
+{
+  "id": "p08-code-agent-repair",
+  "parent": "p05-observed-geometry",
+  "hypothesis": "Fast code can handle a normal layout while a model is reserved for observed build errors.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:22:30.001207+00:00",
+  "format": "method/3",
+  "policy_sha256": "93d6fbe1f366416da9924c2a20be1f60d66fe2a14c10584656191d495eac7ac6",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "geometry_seed.py": "1b8a2849dde2eb86259c70256b6c3e307d3c749cfcd8d9a12f9e59cd6e770392"
+  }
+}

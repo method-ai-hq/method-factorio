@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T16:23:10.250661+00:00",
+  "sha256": {
+    "metadata.json": "4e94315f7184173b0e7be450e1942b30522f1974d3c9d1a53342b8cb9b4d0fae",
+    "p05-observed-geometry.method": "94cce245c087c31584f6af7c22426152b231a441e9fae83b3ec2b37ae6fc23d8",
+    "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37"
+  }
+}

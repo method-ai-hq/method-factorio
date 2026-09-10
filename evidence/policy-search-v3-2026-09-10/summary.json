@@ -1,0 +1,170 @@
+{
+  "status": "setup stopped; scoring not approved",
+  "job_started_utc": "2026-09-10T16:17:12Z",
+  "setup_stopped_utc": "2026-09-10T16:30:28Z",
+  "hard_deadline_utc": "2026-09-10T17:17:12Z",
+  "stop_reason": "All 12 allowed setup episodes were used. The six negative reference attempts failed graphical peer startup.",
+  "candidate_policies": 11,
+  "baseline_policies": 2,
+  "validated_method_documents": 13,
+  "scored_trials": 0,
+  "development_trials": 0,
+  "final_trials": 0,
+  "winning_policy": null,
+  "measured_policy_improvement": false,
+  "setup_episodes": 12,
+  "recording_complete_episodes": 3,
+  "videos_including_incomplete": 4,
+  "native_frames": 144,
+  "maximum_concurrent_reference_worlds_attempted": 6,
+  "concurrent_recording_worlds_validated": 2,
+  "jpeg_live_validated": false,
+  "working_reference": {
+    "kind": "operator-authored fixture, not a candidate policy",
+    "ore_per_window": [
+      5,
+      5,
+      5
+    ],
+    "plates_per_window": [
+      5,
+      5,
+      5
+    ],
+    "warmup_ticks": 600,
+    "window_ticks": 1200,
+    "save_reload_passed": true,
+    "recording_complete": true,
+    "speed": 20,
+    "thinking_paused": false
+  },
+  "validation": {
+    "public_runtime_tests_passed": 40,
+    "evaluator_predicate_tests_passed": 8,
+    "negative_live_checks_completed": 0,
+    "evaluator_approved": false
+  },
+  "cost": {
+    "policy_execution_api_requests": 0,
+    "policy_execution_api_cost_usd": 0,
+    "setup_api_requests": 3,
+    "setup_api_input_tokens": 442,
+    "setup_api_output_tokens": 43,
+    "setup_api_known_estimate_usd": 0.00657,
+    "policy_design_and_supervision": "Codex subscription; metered token and dollar cost unknown",
+    "search_execution_cost": "No policy search trial ran",
+    "basis": "Standard public API rates; estimate, not invoice"
+  },
+  "maps": {
+    "development_proposal": [
+      {
+        "seed": 61001,
+        "patch": [
+          16,
+          0
+        ]
+      },
+      {
+        "seed": 61002,
+        "patch": [
+          -18,
+          8
+        ]
+      },
+      {
+        "seed": 61003,
+        "patch": [
+          6,
+          -20
+        ]
+      }
+    ],
+    "development_maps_frozen": false,
+    "final_maps_opened": false,
+    "final_maps_frozen": false,
+    "terrain": "Declared grass area from -64 to64, 9x9 iron patch with 1000 ore per tile, natural terrain outside. Only first development setup was exercised."
+  },
+  "limits": {
+    "total_job_minutes": 60,
+    "setup_minutes": 15,
+    "setup_episode_cap": 12,
+    "scored_trial_cap": 120,
+    "policy_cap": 32,
+    "data_cap_gib": 20,
+    "free_disk_minimum_gib": 10
+  },
+  "setup_outcomes": [
+    {
+      "episode": 1,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 2,
+      "outcome": "native PNG capture check passed; video evidence incomplete",
+      "recording_complete": false,
+      "frames": 10
+    },
+    {
+      "episode": 3,
+      "outcome": "PNG recording passed",
+      "recording_complete": true,
+      "frames": 18
+    },
+    {
+      "episode": 4,
+      "outcome": "PNG recording passed",
+      "recording_complete": true,
+      "frames": 17
+    },
+    {
+      "episode": 5,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 1
+    },
+    {
+      "episode": 6,
+      "outcome": "working reference production passed; not scored",
+      "recording_complete": true,
+      "frames": 98
+    },
+    {
+      "episode": 7,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 8,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 9,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 10,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 11,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    },
+    {
+      "episode": 12,
+      "outcome": "infrastructure failure",
+      "recording_complete": false,
+      "frames": 0
+    }
+  ]
+}

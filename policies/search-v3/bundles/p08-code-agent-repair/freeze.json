@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T16:23:10.256003+00:00",
+  "sha256": {
+    "metadata.json": "8d641051e3cf3fe81fb9ee136aaa58d99f9334928d2f8ff208aff0cf4869db55",
+    "geometry_seed.py": "1b8a2849dde2eb86259c70256b6c3e307d3c749cfcd8d9a12f9e59cd6e770392",
+    "p08-code-agent-repair.method": "93d6fbe1f366416da9924c2a20be1f60d66fe2a14c10584656191d495eac7ac6"
+  }
+}

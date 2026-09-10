@@ -1,0 +1,11 @@
+{
+  "id": "p09-bounded-memory-loop",
+  "parent": "p01-initial",
+  "hypothesis": "Several short adaptive cycles can avoid a long, repetitive agent conversation while preserving actual geometry.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:22:30.001695+00:00",
+  "format": "method/3",
+  "policy_sha256": "16b07743592a0bb1c59b4d2fa35d748497eb73448d264644a79e2676be45c720",
+  "gameplay_feedback_seen": false,
+  "files": {}
+}

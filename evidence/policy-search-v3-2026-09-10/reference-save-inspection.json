@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "save_sha256": "e18e849aef45b5ef1360705ae70f68f99aaa91bbcd3a69c90e79977bda0f13c7",
+  "checks": {
+    "tick": true,
+    "paused": true,
+    "speed": true,
+    "position": true,
+    "inventory": true,
+    "entities": true,
+    "furnaces": true,
+    "research": true,
+    "iron_plates_produced": true,
+    "iron_ore_remaining": true,
+    "enemies": true,
+    "paused_before_reload": true,
+    "paused_after_reload": true
+  },
+  "wall_seconds": 0.6669321060180664
+}

@@ -1,0 +1,13 @@
+{
+  "id": "p10-direction-retry",
+  "parent": "p05-observed-geometry",
+  "hypothesis": "Recovering downstream machines and trying another output direction may fix blocked terrain without a model call.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:24:33.204071+00:00",
+  "format": "method/3",
+  "policy_sha256": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "geometry_retry.py": "bf2c3f713c9c226bb55629cdef8c95824622dacdfa1d345bf94fc4fd0e5b0ebb"
+  }
+}

@@ -66,3 +66,25 @@ Show measured gameplay. Label replay, speed changes, partial runs, and human hel
 Release our original source, Methods, documentation, and reviewed evidence under the repository license. Include exact dependency instructions when implementation exists. Do not copy game binaries, unlicensed assets, private application code, account files, credentials, or unrestricted local run logs.
 
 The hackathon requires a public repository and a team of at most four people. These notes are based on the rules supplied by the project owner. They are not an organizer approval or a claim of eligibility beyond those rules.
+
+## Method v3 setup attempt, 10 September 2026
+
+The one-hour policy-search job stopped during setup. All 12 allowed setup
+episodes were used. Six concurrent graphical clients failed to join within
+60 seconds, so negative live evaluator checks remained incomplete. No policy
+trial was scored. No winner, final comparison, or policy improvement is claimed.
+
+New code adds a restricted supplied-kit host, exact game-tick evaluator,
+separate save inspection, native game recording, a trial runner, and local
+evidence indexing. These form an unapproved benchmark draft. The old evaluator
+is unchanged. The public Method v3 runtime is prior work; its pinned CLI and
+real model backend passed integration checks. Thirteen new Method documents
+(11 candidates and 2 baselines) passed validation and remain untested in scored
+play. The initial Method was frozen before gameplay feedback.
+
+One operator reference produced 5 new plates and 5 new ore in each of three
+fixed windows. Its native PNG footage and independent save reload passed. This
+is a setup result, not a policy win. JPEG capture was added to reduce storage
+but did not pass a live check before the stop. The known setup API estimate is
+$0.00657; Codex authoring cost is unknown. See the
+[reviewed setup report](evidence/policy-search-v3-2026-09-10/README.md).

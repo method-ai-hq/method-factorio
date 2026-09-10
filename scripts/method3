@@ -1,0 +1,5 @@
+#!/bin/sh
+# The public Method 3 CLI. Never substitute an earlier Method runtime.
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+exec node "$root/runs/method3-runtime/src/cli.js" "$@"

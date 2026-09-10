@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T16:23:10.251902+00:00",
+  "sha256": {
+    "metadata.json": "c502787165345696e5dfd5b3fea5a5b1e24132673978bd63dd79251d13afc6e3",
+    "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37",
+    "p06-long-geometry.method": "8f044a36f511c0cba47c5231e4797caf439cee677e17688cd2b07c2506782441"
+  }
+}

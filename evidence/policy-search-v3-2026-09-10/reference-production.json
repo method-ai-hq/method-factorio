@@ -1,0 +1,97 @@
+{
+  "production_success": true,
+  "scored_pass": false,
+  "checks": {
+    "initial_kit": true,
+    "initial_empty": true,
+    "fixed_settings": true,
+    "exact_boundaries": true,
+    "three_windows": true,
+    "legal_actions": true,
+    "unchanged_bundle": true,
+    "within_limits": true
+  },
+  "windows": [
+    {
+      "from_tick": 55376,
+      "to_tick": 56576,
+      "output_delta": 5,
+      "products_delta": 5,
+      "game_plates_delta": 5,
+      "ore_depletion": 5,
+      "route": {
+        "connected": true,
+        "drill": 15,
+        "belts": [
+          16
+        ],
+        "inserter": 17,
+        "furnace": 18
+      },
+      "checks": {
+        "exact_1200_ticks": true,
+        "route": true,
+        "five_output": true,
+        "five_products": true,
+        "five_game_plates": true,
+        "five_new_ore": true
+      },
+      "passed": true
+    },
+    {
+      "from_tick": 56576,
+      "to_tick": 57776,
+      "output_delta": 5,
+      "products_delta": 5,
+      "game_plates_delta": 5,
+      "ore_depletion": 5,
+      "route": {
+        "connected": true,
+        "drill": 15,
+        "belts": [
+          16
+        ],
+        "inserter": 17,
+        "furnace": 18
+      },
+      "checks": {
+        "exact_1200_ticks": true,
+        "route": true,
+        "five_output": true,
+        "five_products": true,
+        "five_game_plates": true,
+        "five_new_ore": true
+      },
+      "passed": true
+    },
+    {
+      "from_tick": 57776,
+      "to_tick": 58976,
+      "output_delta": 5,
+      "products_delta": 5,
+      "game_plates_delta": 5,
+      "ore_depletion": 5,
+      "route": {
+        "connected": true,
+        "drill": 15,
+        "belts": [
+          16
+        ],
+        "inserter": 17,
+        "furnace": 18
+      },
+      "checks": {
+        "exact_1200_ticks": true,
+        "route": true,
+        "five_output": true,
+        "five_products": true,
+        "five_game_plates": true,
+        "five_new_ore": true
+      },
+      "passed": true
+    }
+  ],
+  "evidence_complete": false,
+  "independent_save_agrees": false,
+  "failure_penalty_seconds": 330
+}

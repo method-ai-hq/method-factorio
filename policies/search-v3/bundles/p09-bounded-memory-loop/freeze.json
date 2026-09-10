@@ -1,0 +1,7 @@
+{
+  "frozen_at": "2026-09-10T16:23:10.257120+00:00",
+  "sha256": {
+    "metadata.json": "e5893fa8c79e673458f493247a8946156a04236cd04dd2b2a0fd11996f525538",
+    "p09-bounded-memory-loop.method": "16b07743592a0bb1c59b4d2fa35d748497eb73448d264644a79e2676be45c720"
+  }
+}

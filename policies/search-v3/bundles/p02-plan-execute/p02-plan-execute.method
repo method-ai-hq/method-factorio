@@ -1,0 +1,79 @@
+{
+  "format": "method/3",
+  "name": "Plan then execute",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "plan": {
+      "purpose": "Choose a compact factory and checks before spending game actions.",
+      "in": {
+        "endpoint": "environment.game"
+      },
+      "do": {
+        "kind": "agent",
+        "model": "planner",
+        "prompt": "Build automatic iron production from the supplied kit. You have one burner-mining-drill, one stone-furnace, one burner-inserter, ten transport-belt and 150 coal. Discover the world with the tools. Build a connected drill \u2192 at least one transport belt \u2192 inserter \u2192 furnace path. Fuel machines with coal. The fixed checker requires at least 5 newly mined iron ore and 5 new iron plates in EACH of three consecutive 1200-tick windows after a 600-tick warmup. No actions are permitted after finish. Game speed is 20 and game time passes while you think. The total trial limit is 300 wall-clock seconds, including launch and checking. There are at most 200 actions, with each batch member and rejected action counted. Do not use harvest, craft, extract, wait, raw code, game administration or any other endpoint.\n\nobserve takes {endpoint}. act takes {endpoint, action}, where action is a JSON string. Allowed action objects: {action:\"observe\"}; {action:\"nearest\",resource:\"iron-ore\"}; {action:\"move\",position:{x,y}}; {action:\"place\",item,position:{x,y},exact:true,direction:\"UP\"|\"RIGHT\"|\"DOWN\"|\"LEFT\"}; {action:\"insert\",item:\"coal\",quantity:1..100,target:{name,position:{x,y}}}; {action:\"entities\"}; {action:\"pickup\",target:{name,position:{x,y}}}; {action:\"rotate\",target:{name,position:{x,y}},direction:\"UP\"|\"RIGHT\"|\"DOWN\"|\"LEFT\"}; {action:\"finish\"}. Use only observed actual positions for placed machines. Placement may not be where you requested; inspect its result. Snapshot data includes machine direction, drop_position, pickup_position, belt connections/contents, mining target and ore remaining, furnace status/products/fuel. Coal insertion is only for fuel. pickup preserves contents. Treat action errors as potentially partial operations: observe before retry. You may batch 1 to 50 allowed operations if the endpoint documents its batch shape. Never fabricate state or claim that your report proves success. Return a concise report with observations, actions and remaining defects. Call finish when ready or unable to improve within the budget.\nOnly observe and inspect nearest iron in this stage. Do not place, move, fuel or finish. Select a compact plan from the observed resource and kit. Return positions to try, direction relationships, fuel allocation and one failure fallback as plan.",
+        "tools": [
+          "observe",
+          "act"
+        ]
+      },
+      "out": {
+        "plan": {
+          "type": "text",
+          "description": "Observation-backed layout proposal and fallback."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "plan"
+      },
+      "limits": {
+        "timeout_ms": 60000,
+        "max_agent_turns": 8,
+        "max_model_requests": 8
+      }
+    },
+    "execute": {
+      "purpose": "Build and inspect automatic production using restricted game tools.",
+      "in": {
+        "endpoint": "environment.game",
+        "plan": "plan"
+      },
+      "do": {
+        "kind": "agent",
+        "model": "planner",
+        "prompt": "Build automatic iron production from the supplied kit. You have one burner-mining-drill, one stone-furnace, one burner-inserter, ten transport-belt and 150 coal. Discover the world with the tools. Build a connected drill \u2192 at least one transport belt \u2192 inserter \u2192 furnace path. Fuel machines with coal. The fixed checker requires at least 5 newly mined iron ore and 5 new iron plates in EACH of three consecutive 1200-tick windows after a 600-tick warmup. No actions are permitted after finish. Game speed is 20 and game time passes while you think. The total trial limit is 300 wall-clock seconds, including launch and checking. There are at most 200 actions, with each batch member and rejected action counted. Do not use harvest, craft, extract, wait, raw code, game administration or any other endpoint.\n\nobserve takes {endpoint}. act takes {endpoint, action}, where action is a JSON string. Allowed action objects: {action:\"observe\"}; {action:\"nearest\",resource:\"iron-ore\"}; {action:\"move\",position:{x,y}}; {action:\"place\",item,position:{x,y},exact:true,direction:\"UP\"|\"RIGHT\"|\"DOWN\"|\"LEFT\"}; {action:\"insert\",item:\"coal\",quantity:1..100,target:{name,position:{x,y}}}; {action:\"entities\"}; {action:\"pickup\",target:{name,position:{x,y}}}; {action:\"rotate\",target:{name,position:{x,y}},direction:\"UP\"|\"RIGHT\"|\"DOWN\"|\"LEFT\"}; {action:\"finish\"}. Use only observed actual positions for placed machines. Placement may not be where you requested; inspect its result. Snapshot data includes machine direction, drop_position, pickup_position, belt connections/contents, mining target and ore remaining, furnace status/products/fuel. Coal insertion is only for fuel. pickup preserves contents. Treat action errors as potentially partial operations: observe before retry. You may batch 1 to 50 allowed operations if the endpoint documents its batch shape. Never fabricate state or claim that your report proves success. Return a concise report with observations, actions and remaining defects. Call finish when ready or unable to improve within the budget.\n\nUse the upstream plan as a starting hypothesis, then build it. Correct coordinates from actual place responses and drop/pickup positions. Execute independent actions in batches when safe. Finish as soon as a continuous chain is visibly working.",
+        "tools": [
+          "observe",
+          "act"
+        ]
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed factory state and actions."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 170000,
+        "max_agent_turns": 42,
+        "max_model_requests": 42
+      }
+    }
+  },
+  "result": "report"
+}

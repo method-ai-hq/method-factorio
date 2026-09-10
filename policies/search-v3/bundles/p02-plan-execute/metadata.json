@@ -1,0 +1,11 @@
+{
+  "id": "p02-plan-execute",
+  "parent": "p01-initial",
+  "hypothesis": "A small observation-led planning agent can reduce layout revisions by handing an explicit plan to a fresh build agent.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:20:18.703526+00:00",
+  "format": "method/3",
+  "policy_sha256": "a8055b1bed6f9ae6ef571bf484803ad4216d9fe3935c250cbc632db76b1481e0",
+  "gameplay_feedback_seen": false,
+  "files": {}
+}

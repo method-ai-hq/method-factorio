@@ -1,0 +1,24 @@
+{
+  "approved_for_scoring": false,
+  "reason": "All 12 allowed setup episodes were used. The six negative reference attempts failed graphical peer startup.",
+  "sha256": {
+    "scripts/search_host.py": "316eeedea7c339237e1152a44aa69c26208e477bfeea317f1cb15b58ff36fef9",
+    "scripts/automatic_evaluator.py": "791117c87bf778eaddfcf3b0da18ca87a33038901a4438a7d2e173b6c6f9214b",
+    "scripts/search_recording.py": "ab91f28a5efd8804b770691c17ed51d3ef5fa7c0e64f1656828127c05331fb0d",
+    "scripts/search_inspect.py": "43bf772df17701174233f59a3a0d3817c9de3e7c6a93f8c828943a318b0b5b78",
+    "scripts/search_validation_faults.py": "8bc9d3db00d0f39b794fd8ef76ceec70d0e793dc34ef1f7cb6d52e4e2c6668c7",
+    "docs/automatic-production-evaluator.md": "9dbe46d62520d2cd4d0baa86af01673cea69267cfaaf040557b355bc42634a38",
+    "scripts/method3_run.py": "e6cbed4ac007d1dc0ac8e432edb28f1be75c47a91929204f49665bfa1466c263",
+    "scripts/method3_game_tool.py": "b4c060af75ea686a9f74b6bc75ea3ae4e783a1285cc0dfafe82e9f474ca373c9",
+    "scripts/method3_compute.py": "0d6c2ed4dff0a189e4d8deefb6530c400076099e5b5b988d9c7c5f4de3d39ba1"
+  },
+  "settings": {
+    "maximum_recording_gap_seconds": 1,
+    "speed": 20,
+    "trial_seconds": 300,
+    "close_seconds": 30,
+    "actions": 200,
+    "model_requests": 60
+  },
+  "validation": "/Users/ryanprendergast/Documents/workflow-corp/factorio/evidence/policy-search-v3-2026-09-10/summary.json"
+}

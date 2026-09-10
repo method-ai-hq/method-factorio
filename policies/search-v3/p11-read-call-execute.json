@@ -1,0 +1,13 @@
+{
+  "id": "p11-read-call-execute",
+  "parent": "p02-plan-execute",
+  "hypothesis": "Fixed read code and one planning call may reduce model requests while giving the acting agent a clear layout.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:25:10.915813+00:00",
+  "format": "method/3",
+  "policy_sha256": "b2a9ac5677ccd2da97a85beec205bcad8183ceb6364e83dd50de944505db26bc",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "observe_plan.py": "7de3c736438c670d8ce1220e8a744e33c0e0863eb64d1c0cba83f0133e0e4129"
+  }
+}

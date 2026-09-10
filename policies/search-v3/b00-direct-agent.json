@@ -1,0 +1,12 @@
+{
+  "id": "b00-direct-agent",
+  "parent": null,
+  "hypothesis": "An agent given the objective and tools, without a multi-stage Method policy, provides the matched baseline.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:19:19.417120+00:00",
+  "format": "method/3",
+  "policy_sha256": "c7c2344592ddc85d7f7158d787f54e6484d5f7fd3cde4b0da2551aad98dbf2d7",
+  "gameplay_feedback_seen": false,
+  "files": {},
+  "prevalidation_correction": "Added required environment type before validation and before gameplay."
+}

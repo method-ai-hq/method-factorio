@@ -1,0 +1,11 @@
+{
+  "id": "p03-build-repair",
+  "parent": "p01-initial",
+  "hypothesis": "A fresh diagnostic agent may find geometry errors that the builder overlooks.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:20:18.703992+00:00",
+  "format": "method/3",
+  "policy_sha256": "26d7c96e0abad25f49b03aa8143b201523270d33aff038df4969577869f93b87",
+  "gameplay_feedback_seen": false,
+  "files": {}
+}

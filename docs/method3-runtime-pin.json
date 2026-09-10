@@ -1,0 +1,21 @@
+{
+  "source": "https://github.com/method-ai-hq/method-spec.git",
+  "revision": "eec2cfd1a5f0bd8254fb8213b88be76cff44ad21",
+  "version": "0.1.0 (method/3)",
+  "tested_node_version": "22.22.2",
+  "cli_sha256": "d751d5cad03507f143dcb700479d416941ce448d4993978b71adaa5d2900dcb3",
+  "package_lock_sha256": "78a5c11a055821574fe8e3badf5d3b5050677bb9446832335643ddfda4af8945",
+  "profiles": {
+    "planner": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 4096
+    },
+    "fast": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "low",
+      "max_output_tokens": 4096
+    }
+  },
+  "model_verified_at": "2026-09-10T16:18:38.779445+00:00"
+}

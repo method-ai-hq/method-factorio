@@ -1,0 +1,80 @@
+[
+  {
+    "policy": "b00-direct-agent",
+    "bundle": "policies/search-v3/bundles/b00-direct-agent",
+    "method": "policies/search-v3/bundles/b00-direct-agent/b00-direct-agent.method",
+    "sha256": "c7c2344592ddc85d7f7158d787f54e6484d5f7fd3cde4b0da2551aad98dbf2d7"
+  },
+  {
+    "policy": "p01-initial",
+    "bundle": "policies/search-v3/bundles/p01-initial",
+    "method": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "sha256": "3b8db816992195b121c1a03f058661c3927e38ee75f55287226002c0ee828a8f"
+  },
+  {
+    "policy": "p02-plan-execute",
+    "bundle": "policies/search-v3/bundles/p02-plan-execute",
+    "method": "policies/search-v3/bundles/p02-plan-execute/p02-plan-execute.method",
+    "sha256": "a8055b1bed6f9ae6ef571bf484803ad4216d9fe3935c250cbc632db76b1481e0"
+  },
+  {
+    "policy": "p03-build-repair",
+    "bundle": "policies/search-v3/bundles/p03-build-repair",
+    "method": "policies/search-v3/bundles/p03-build-repair/p03-build-repair.method",
+    "sha256": "26d7c96e0abad25f49b03aa8143b201523270d33aff038df4969577869f93b87"
+  },
+  {
+    "policy": "p04-fast-geometry",
+    "bundle": "policies/search-v3/bundles/p04-fast-geometry",
+    "method": "policies/search-v3/bundles/p04-fast-geometry/p04-fast-geometry.method",
+    "sha256": "d9c833047542ccffd27d088bedfac35807f05aae813f7c2be8038599b6dc2230"
+  },
+  {
+    "policy": "p05-observed-geometry",
+    "bundle": "policies/search-v3/bundles/p05-observed-geometry",
+    "method": "policies/search-v3/bundles/p05-observed-geometry/p05-observed-geometry.method",
+    "sha256": "94cce245c087c31584f6af7c22426152b231a441e9fae83b3ec2b37ae6fc23d8"
+  },
+  {
+    "policy": "p06-long-geometry",
+    "bundle": "policies/search-v3/bundles/p06-long-geometry",
+    "method": "policies/search-v3/bundles/p06-long-geometry/p06-long-geometry.method",
+    "sha256": "8f044a36f511c0cba47c5231e4797caf439cee677e17688cd2b07c2506782441"
+  },
+  {
+    "policy": "p07-elbow-geometry",
+    "bundle": "policies/search-v3/bundles/p07-elbow-geometry",
+    "method": "policies/search-v3/bundles/p07-elbow-geometry/p07-elbow-geometry.method",
+    "sha256": "5929b9cea168f383d77815c575e0368952002fad02a671b72eaac940dd6f063e"
+  },
+  {
+    "policy": "p08-code-agent-repair",
+    "bundle": "policies/search-v3/bundles/p08-code-agent-repair",
+    "method": "policies/search-v3/bundles/p08-code-agent-repair/p08-code-agent-repair.method",
+    "sha256": "93d6fbe1f366416da9924c2a20be1f60d66fe2a14c10584656191d495eac7ac6"
+  },
+  {
+    "policy": "p09-bounded-memory-loop",
+    "bundle": "policies/search-v3/bundles/p09-bounded-memory-loop",
+    "method": "policies/search-v3/bundles/p09-bounded-memory-loop/p09-bounded-memory-loop.method",
+    "sha256": "16b07743592a0bb1c59b4d2fa35d748497eb73448d264644a79e2676be45c720"
+  },
+  {
+    "policy": "p10-direction-retry",
+    "bundle": "policies/search-v3/bundles/p10-direction-retry",
+    "method": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "sha256": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158"
+  },
+  {
+    "policy": "p11-read-call-execute",
+    "bundle": "policies/search-v3/bundles/p11-read-call-execute",
+    "method": "policies/search-v3/bundles/p11-read-call-execute/p11-read-call-execute.method",
+    "sha256": "b2a9ac5677ccd2da97a85beec205bcad8183ceb6364e83dd50de944505db26bc"
+  },
+  {
+    "policy": "b01-direct-code-access",
+    "bundle": "policies/search-v3/bundles/b01-direct-code-access",
+    "method": "policies/search-v3/bundles/b01-direct-code-access/b01-direct-code-access.method",
+    "sha256": "dc9085045019cc60837e68c91b1adb71ab8fad415472396e0f2da0b21b9f9b64"
+  }
+]

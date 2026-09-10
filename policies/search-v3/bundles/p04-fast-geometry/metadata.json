@@ -1,0 +1,11 @@
+{
+  "id": "p04-fast-geometry",
+  "parent": "p01-initial",
+  "hypothesis": "A low-reasoning agent with explicit geometric invariants may use less model time and avoid inferred machine alignment.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:20:18.704156+00:00",
+  "format": "method/3",
+  "policy_sha256": "d9c833047542ccffd27d088bedfac35807f05aae813f7c2be8038599b6dc2230",
+  "gameplay_feedback_seen": false,
+  "files": {}
+}

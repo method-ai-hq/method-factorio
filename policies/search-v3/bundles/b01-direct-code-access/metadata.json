@@ -1,0 +1,11 @@
+{
+  "id": "b01-direct-code-access",
+  "parent": "b00-direct-agent",
+  "hypothesis": "A direct agent with the same permitted actions and generic code access provides the baseline for Methods that use helper code.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:29:00.375831+00:00",
+  "format": "method/3",
+  "policy_sha256": "dc9085045019cc60837e68c91b1adb71ab8fad415472396e0f2da0b21b9f9b64",
+  "gameplay_feedback_seen": false,
+  "files": {}
+}

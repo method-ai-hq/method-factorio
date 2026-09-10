@@ -1,0 +1,13 @@
+{
+  "id": "p07-elbow-geometry",
+  "parent": "p01-initial",
+  "hypothesis": "A right-angle belt route can move the furnace into clear space beside the mining site.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:21:47.282094+00:00",
+  "format": "method/3",
+  "policy_sha256": "5929b9cea168f383d77815c575e0368952002fad02a671b72eaac940dd6f063e",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37"
+  }
+}

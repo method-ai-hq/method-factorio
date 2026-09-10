@@ -1,0 +1,13 @@
+{
+  "id": "p06-long-geometry",
+  "parent": "p01-initial",
+  "hypothesis": "One extra belt moves the furnace away from the drill footprint and may reduce placement collisions.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:21:47.281695+00:00",
+  "format": "method/3",
+  "policy_sha256": "8f044a36f511c0cba47c5231e4797caf439cee677e17688cd2b07c2506782441",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37"
+  }
+}

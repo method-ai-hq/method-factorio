@@ -1,0 +1,12 @@
+{
+  "id": "p01-initial",
+  "parent": null,
+  "hypothesis": "A single agent can use an explicit observe-build-inspect control loop to create automatic iron production.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:19:19.416829+00:00",
+  "format": "method/3",
+  "policy_sha256": "3b8db816992195b121c1a03f058661c3927e38ee75f55287226002c0ee828a8f",
+  "gameplay_feedback_seen": false,
+  "files": {},
+  "prevalidation_correction": "Added required environment type before validation and before gameplay."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "p05-observed-geometry",
+  "parent": "p01-initial",
+  "hypothesis": "Direct code can use observed drill drop and inserter pickup/drop vectors to build a compact chain without model time.",
+  "author": "gpt-6-astra through Codex subscription",
+  "authored_at": "2026-09-10T16:21:47.281183+00:00",
+  "format": "method/3",
+  "policy_sha256": "94cce245c087c31584f6af7c22426152b231a441e9fae83b3ec2b37ae6fc23d8",
+  "gameplay_feedback_seen": false,
+  "files": {
+    "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37"
+  }
+}
