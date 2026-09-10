@@ -1,0 +1,113 @@
+{
+  "version": "headless-search-20260910T174026Z-v1",
+  "contract": "automatic-production/headless-1",
+  "approved_for_scoring": true,
+  "sha256": {
+    "scripts/search_host.py": "c861a4042cad73a6aabd9a0847be53b91bf0c7512908cc46755d8118c5678a02",
+    "scripts/automatic_evaluator.py": "791117c87bf778eaddfcf3b0da18ca87a33038901a4438a7d2e173b6c6f9214b",
+    "scripts/search_recording.py": "0645e54bdef97073f1d161d37f04bdff4962de5112df27dbdcd9e9c0a722b62d",
+    "scripts/search_inspect.py": "43bf772df17701174233f59a3a0d3817c9de3e7c6a93f8c828943a318b0b5b78",
+    "scripts/search_validation_faults.py": "8bc9d3db00d0f39b794fd8ef76ceec70d0e793dc34ef1f7cb6d52e4e2c6668c7",
+    "scripts/search_startup.py": "624da6af3d1e116fae800507149c565df7a562c7d2324b36f08277076bce7c31",
+    "scripts/search_schedule.py": "bcd1bcbdda59bd88a69a0de0b05a534bea713f484e9c6793dcc62bc83a6dd2b8",
+    "scripts/search_trial.py": "d9e3fe4c51e44604ddd0be4ce3db5e253868a050246e77c6115dcfeb7b910193",
+    "scripts/method3_run.py": "69f2893a1f16d0e84c94a493f18a09880e3c62520fc246a411e199a0fe08c1d0",
+    "scripts/method3_game_tool.py": "6f85d5c8f1ba565ae9d9dcd9e503ca09a12999eccd3a04d7dea448d875add244",
+    "scripts/method3_compute.py": "0d6c2ed4dff0a189e4d8deefb6530c400076099e5b5b988d9c7c5f4de3d39ba1",
+    "scripts/method3": "a5dd091b978ede202bd1f79545e48fd660e4997b980f5472ecce2ba3989f174f",
+    "docs/automatic-production-evaluator.md": "9dbe46d62520d2cd4d0baa86af01673cea69267cfaaf040557b355bc42634a38",
+    "docs/headless-policy-search.md": "cf405c852e0812cbda63bffc29513705e38c96e83de48332f192cf898e5412a1",
+    "docs/method3-runtime-pin.json": "dbff94514700f12ff0eac5938be2b6201a5fb92ff5512bbf9100b506a28011df",
+    "runs/method3-runtime/package-lock.json": "78a5c11a055821574fe8e3badf5d3b5050677bb9446832335643ddfda4af8945",
+    "runs/method3-runtime/src/io.js": "9a2f45a270446c3fac1e8d93f81d12d4331b4ba709eeae0775d17056b3105329",
+    "runs/method3-runtime/src/runner.js": "db72fb403335fa9de10f9665186204364979d7b3bf79fdf9f1fd784a8f56b674",
+    "runs/method3-runtime/src/index.js": "6f63d3ce286b4edfdd470f714d62d271538323a87996e79c01a95790961f054e",
+    "runs/method3-runtime/src/schema.js": "243f23ce5017477262bcbb235e8ac740da74ef5a3aceca448cbeea10f4aa7c8b",
+    "runs/method3-runtime/src/migrate.js": "5481aa301786ed75b8e13cfb53c4f845b45335e47a574c7ab45274b41b752814",
+    "runs/method3-runtime/src/cli.js": "d751d5cad03507f143dcb700479d416941ce448d4993978b71adaa5d2900dcb3",
+    "runs/method3-runtime/src/validate.js": "85c17357a3a13c5b51c1d7f327d898c9a3911f66ab48fc1dd8fffe03bb03cf27",
+    "runs/method3-runtime/src/model.js": "9c71b845e61924381127295260ca37b10dfc00312b7da2303fa5ebcb9b09d2dd"
+  },
+  "settings": {
+    "recording_mode": "none",
+    "validated_concurrent_worlds": 2,
+    "startup_recovery": "none",
+    "common_harness_replacements_per_case": 1,
+    "speed": 20,
+    "thinking_paused": false,
+    "fast": true,
+    "trial_seconds": 300,
+    "close_seconds": 30,
+    "actions": 200,
+    "model_requests": 60,
+    "api_spending_cap_usd": null,
+    "paid_api_authorized": true,
+    "setup_episode_limit": 24,
+    "repair_reserve": 8,
+    "setup_deadline_epoch": 1789063526,
+    "job_deadline_epoch": 1789065626,
+    "search_deadline_epoch": 1789064426,
+    "final_complete_target_epoch": 1789065326,
+    "max_policy_versions": 32,
+    "max_scored_trials": 120,
+    "reserved_final_trials": 4,
+    "maximum_new_bytes": 21474836480,
+    "minimum_free_bytes": 10737418240,
+    "kit": {
+      "burner-mining-drill": 1,
+      "stone-furnace": 1,
+      "burner-inserter": 1,
+      "transport-belt": 10,
+      "coal": 150
+    },
+    "terrain": "Operator-cleared grass square -64..64; 9x9 iron patch at frozen coordinates, 1000 ore per tile; natural terrain outside",
+    "ranking": "valid passes, then mean complete time (330 seconds for any failure), then observed model tokens; unknown tokens not zero",
+    "models": {
+      "planner": {
+        "model": "gpt-6-astra",
+        "reasoning": "medium"
+      },
+      "fast": {
+        "model": "gpt-6-astra",
+        "reasoning": "low"
+      }
+    },
+    "max_output_tokens": 4096
+  },
+  "map_commitment": {
+    "frozen_at": "2026-09-10T17:46:31.814253+00:00",
+    "development": [
+      {
+        "id": "dev1",
+        "seed": 63011,
+        "map_x": 16,
+        "map_y": 0
+      },
+      {
+        "id": "dev2",
+        "seed": 63012,
+        "map_x": -18,
+        "map_y": 12
+      },
+      {
+        "id": "dev3",
+        "seed": 63013,
+        "map_x": 24,
+        "map_y": -20
+      }
+    ],
+    "hidden_final_sha256": "5d73c878ca693869db4602f9206460442c45bf16ccac4c23a84f503b78656fca",
+    "eligibility": "Declared clear grass area with accessible 9x9 iron patch. All fixed maps retained regardless of candidate results. No prior pilot seed used for final.",
+    "note": "Maps fixed before scored candidate results. Setup used separate seed62011."
+  },
+  "isolation": "Exact endpoint binding on supplied tools and compute; custom run steps are reviewed trusted local code, without OS isolation. No helper gets API key.",
+  "approved_at": "2026-09-10T17:46:59.604200+00:00",
+  "validation": {
+    "setup_index_sha256": "c2445aaf596b9869002365e08bf5c8390519dd695231d7f9204332cdaea613f5",
+    "completed_setup_episodes": 16,
+    "repair_reserve_remaining": 8,
+    "all_checks_passed": true,
+    "offline_tests": 33,
+    "note": "Final count/rejection repair revalidated with working and malformed-request worlds; required negative checks and Method/API integration passed. The first two worlds precede host accounting repairs; they are not scored."
+  }
+}

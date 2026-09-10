@@ -105,6 +105,42 @@ Recorded demonstrations can link to an original headless trial; they remain
 new executions with separate results. Higher headless capacity and full policy
 integration remain unverified.
 
+## Completed headless comparison, 10 September 2026
+
+The new job completed a matched comparison at two-world capacity. It used
+18 setup episodes, then 15 development trials and four final trials under
+benchmark version 2. Two earlier version 1 attempts remain separate: one
+passed, and a scheduler storage fault stopped the other. The full panel was
+rerun after two live repair checks. The old job remains unchanged.
+
+The direct agent passed two of three development maps. The frozen initial
+Method and all three candidate Methods passed all three maps. The fixed
+ranking selected the existing immutable `p10-direction-retry` Method. No
+policy was rewritten after feedback. The initial and selected Methods each
+passed both unseen final maps. Mean full final time was 51.78 seconds for
+the initial Method and 9.06 seconds for the selected Method. This small sample
+supports a measured time difference under the declared supplied-kit rules.
+It does not establish a rocket launch or a general success rate.
+
+New integration work binds game tools to the assigned endpoint, checks full
+runtime evidence and request limits, records exact commands and source hashes,
+and tolerates temporary files removed during game shutdown. The scored code
+is commit `b25d4303cbe7e29a4c21fbab3e8a237fbe97e341`. A later offline test found
+a separate failure-status/process-exit race. Its repair passed all 40 offline
+tests. No game or API call ran after that repair, so the new scheduler code
+has no live-scoring approval.
+
+The known API estimate is $2.497554 for 161 requests. Usage is known for
+160 responses. One interrupted request, cache-write charges, and subscription
+authoring cost remain unknown. The selected Method used no execution-time
+model calls. No credits were redeemed or weights trained. No screen recording
+was made. Full local traces and terminal saves remain saved; all terminal-save
+checks passed, including a later check for the interrupted attempt.
+
+See the [reviewed report](evidence/headless-policy-search-2026-09-10/README.md)
+for Methods, exact commands, measurements, limitations, and source versions.
+Later recorded demonstrations require a separate attempt and time allowance.
+
 ## Civ 6 experiment design
 
 A separate [Civ 6 design](docs/civ6/EXPERIMENT.md) now specifies two competing

@@ -1,0 +1,16 @@
+{
+  "b01-direct-code-access-dev1": {
+    "previous_trial": "headless-search-20260910T174026Z-b01-direct-code-access-dev1-2074c8",
+    "old_benchmark_sha256": "75e3282e1ce1e45e15b2d878fb1b3aa696cf37d0d467e8d79c3f5153bb7b8b82",
+    "new_benchmark_sha256": "9cfd15d3e5ef838353c185f2e690657035926fd01307cbb8789b87dbc379186d",
+    "replacement_number": 1,
+    "reason": "Full matched rerun after common scheduler storage-check fault"
+  },
+  "p01-initial-dev1": {
+    "previous_trial": "headless-search-20260910T174026Z-p01-initial-dev1-8da74b",
+    "old_benchmark_sha256": "75e3282e1ce1e45e15b2d878fb1b3aa696cf37d0d467e8d79c3f5153bb7b8b82",
+    "new_benchmark_sha256": "9cfd15d3e5ef838353c185f2e690657035926fd01307cbb8789b87dbc379186d",
+    "replacement_number": 1,
+    "reason": "Full matched rerun after common scheduler storage-check fault"
+  }
+}

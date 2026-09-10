@@ -4,7 +4,7 @@ Can Astra invent and improve executable Methods that finish long tasks when the 
 
 Our task is to build a factory and launch a rocket in base Factorio. Astra will design the playing procedure, inspect its results, and test changes. The procedure can use plain-English instructions, agents, model calls, bounded loops, and code. It must choose where reasoning and verification are worth their time and cost.
 
-**Status: the first local control test works.** The same Astra Method produced 20 new iron plates on two fresh maps in native Factorio 2.0.77. Both results passed live checks and inspection after loading the saved games. See the [reviewed results](evidence/control-test-2026-09-10/README.md). Full game control, policy improvement, and a rocket launch are not established.
+**Status: a headless supplied-kit comparison is complete.** The selected Method and the frozen initial Method each passed three development maps and two unseen final maps. The direct agent passed two of three development maps. Mean full final time was 9.06 seconds for the selected Method and 51.78 seconds for the initial Method. See the [reviewed comparison](evidence/headless-policy-search-2026-09-10/README.md), including failures, source versions, and known cost. This is a small production test, not a rocket launch or a fresh-world win.
 
 ## Run the small test
 

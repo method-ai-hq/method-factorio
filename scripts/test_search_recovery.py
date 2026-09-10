@@ -23,6 +23,7 @@ else:
  ready=time.time();write({'phase':'playing'});time.sleep(.18)
  record={'infrastructure_failure':None,'start':start,'ready':ready,'end':time.time()}
 write({'phase':'finished','record':record})
+if fail:time.sleep(.15)  # Failure is visible while cleanup still holds the process.
 '''
 
 class StartupTests(unittest.TestCase):

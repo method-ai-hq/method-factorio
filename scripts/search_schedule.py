@@ -85,7 +85,11 @@ def run_panel(panel, job, scheduling, concurrency, cutoff, deadline, retry_autho
             # frame and is accepting policy actions. No batches of cold starts.
             starting = recording_mode == 'native' and any(read(Path(row['status_file'])).get('phase') not in ('playing','finished')
                            for _,_,row in active.values())
-            if pending and len(active)<capacity and not starting and stop_reason is None:
+            # A worker can publish its failure before its process has exited.
+            # Wait for that process to close and apply recovery before launching.
+            reported_failure = any(read(Path(row['status_file'])).get('record', {}).get('infrastructure_failure')
+                                   for _,_,row in active.values())
+            if pending and len(active)<capacity and not starting and not reported_failure and stop_reason is None:
                 if time.time() >= cutoff or deadline-time.time()<330:
                     stop_reason = 'new_trial_deadline'
                     continue

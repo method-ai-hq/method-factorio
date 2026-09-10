@@ -1,0 +1,38 @@
+{
+  "selected_at": "2026-09-10T17:54:13.716524+00:00",
+  "benchmark_sha256": "9cfd15d3e5ef838353c185f2e690657035926fd01307cbb8789b87dbc379186d",
+  "initial_policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+  "selected_policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+  "selected_policy_sha256": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158",
+  "selected_bundle_sha256": {
+    "p10-direction-retry.method": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158",
+    "geometry_retry.py": "bf2c3f713c9c226bb55629cdef8c95824622dacdfa1d345bf94fc4fd0e5b0ebb",
+    "metadata.json": "abb251edc4aae6e057f5d5e9a229442df1c1fc40f559a436b3689b2089a86fbb",
+    "freeze.json": "ee5d01590a480334dcb1d05d6777f95c9d2fa3d13376ccd54ea65ef51611577a"
+  },
+  "ranked_candidates": [
+    {
+      "policy": "p10-direction-retry",
+      "valid_passes": 3,
+      "mean_ranking_seconds": 8.614752610524496,
+      "model_tokens": 0,
+      "policy_sha256": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158"
+    },
+    {
+      "policy": "p05-observed-geometry",
+      "valid_passes": 3,
+      "mean_ranking_seconds": 8.736838340759277,
+      "model_tokens": 0,
+      "policy_sha256": "94cce245c087c31584f6af7c22426152b231a441e9fae83b3ec2b37ae6fc23d8"
+    },
+    {
+      "policy": "p08-code-agent-repair",
+      "valid_passes": 3,
+      "mean_ranking_seconds": 19.822768608729046,
+      "model_tokens": 42252,
+      "policy_sha256": "93d6fbe1f366416da9924c2a20be1f60d66fe2a14c10584656191d495eac7ac6"
+    }
+  ],
+  "basis": "Three common completed development cases, pass count then mean full time with330-second failures, then model tokens. Existing immutable candidate selected; no post-feedback policy rewrite.",
+  "hidden_maps_not_used_for_selection": true
+}

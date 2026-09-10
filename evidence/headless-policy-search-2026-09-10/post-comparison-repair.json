@@ -1,0 +1,12 @@
+{
+  "observed_after_final_comparison": true,
+  "scored_source_commit": "b25d4303cbe7e29a4c21fbab3e8a237fbe97e341",
+  "cause": "Native recovery test exposed a failure-status/process-exit race. Scheduler could start pending work after a worker published failure but before process.poll reported its exit.",
+  "scored_settings": "Headless mode; no automatic startup recovery. Completed v2 trials had no infrastructure failure.",
+  "fix": "Pause new launches while any active worker has published an infrastructure failure; apply recovery after process exit.",
+  "test": "Fake failing worker holds process open150ms after publishing failure; full40test suite.",
+  "game_or_api_work_after_fix": false,
+  "new_scoring_approval": false,
+  "new_scheduler_sha256": "23ac4ad6940b18e6e69b4bb0cdcb8fd82e49a0d2c9d750af58b8cb08ef9318a2",
+  "recorded_at": "2026-09-10T17:57:38.206460+00:00"
+}

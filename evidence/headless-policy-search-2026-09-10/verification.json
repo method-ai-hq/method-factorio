@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-09-10T17:55:53.933971+00:00",
+  "benchmark_hash_still_valid": true,
+  "matching_trial_settings": {
+    "factorio_version": true,
+    "fle_commit": true,
+    "inventory": true,
+    "seconds_limit": true,
+    "action_limit": true,
+    "fast": true,
+    "speed": true,
+    "thinking_paused": true,
+    "recording_mode": true,
+    "validation_fault": true,
+    "terrain": true
+  },
+  "measured_runtime_settings": {
+    "factorio_version": "Version: 2.0.77 (build 84539, mac-arm64, full)",
+    "fle_commit": "e2a829d22a635a9a111d21bf5523e09e903ae145",
+    "inventory": {
+      "burner-mining-drill": 1,
+      "stone-furnace": 1,
+      "burner-inserter": 1,
+      "transport-belt": 10,
+      "coal": 150
+    },
+    "seconds_limit": 300,
+    "action_limit": 200,
+    "fast": true,
+    "speed": 20,
+    "thinking_paused": false,
+    "recording_mode": "none",
+    "validation_fault": "none",
+    "terrain": "Operator cleared area -64..64, grass-1; 9x9 iron patch; natural terrain outside"
+  },
+  "policy_bundles": {
+    "b01-direct-code-access": {
+      "metadata.json": "7f6cbb411a067f1baeb4a50d707c76341679985cb5ecaa6a5f268e11eda993eb",
+      "b01-direct-code-access.method": "dc9085045019cc60837e68c91b1adb71ab8fad415472396e0f2da0b21b9f9b64",
+      "freeze.json": "9b44036111f7c074c66c0dfcce233510f9f1692416484091099151f944c12010"
+    },
+    "p01-initial": {
+      "metadata.json": "145bcc0409213ca6572dfc70f53d94884a95cc3ff192438c2907c4d9c0a0eb7e",
+      "p01-initial.method": "3b8db816992195b121c1a03f058661c3927e38ee75f55287226002c0ee828a8f",
+      "freeze.json": "7b871ee5c054e5a5d342767844877c8a527df0eb073be90f63126280e36b797c"
+    },
+    "p05-observed-geometry": {
+      "metadata.json": "4e94315f7184173b0e7be450e1942b30522f1974d3c9d1a53342b8cb9b4d0fae",
+      "p05-observed-geometry.method": "94cce245c087c31584f6af7c22426152b231a441e9fae83b3ec2b37ae6fc23d8",
+      "geometry.py": "a7a031f10ff06418b1d341be4d5e4255d8d567b5b9b69135ca66d8cac6272c37",
+      "freeze.json": "63b690c31b5aa6d6f4e1ba35ddd371d4033d9b5b9cffcb5317fb4dfb20232fb9"
+    },
+    "p08-code-agent-repair": {
+      "metadata.json": "8d641051e3cf3fe81fb9ee136aaa58d99f9334928d2f8ff208aff0cf4869db55",
+      "geometry_seed.py": "1b8a2849dde2eb86259c70256b6c3e307d3c749cfcd8d9a12f9e59cd6e770392",
+      "p08-code-agent-repair.method": "93d6fbe1f366416da9924c2a20be1f60d66fe2a14c10584656191d495eac7ac6",
+      "freeze.json": "d6d194a4804fad982ffd0d1a394beece773891e5931d3234c1c25a0bc6036f2c"
+    },
+    "p10-direction-retry": {
+      "p10-direction-retry.method": "9a20c7ab269e6af2bbc2511fe3597148b6cdf2e28c2e4d44f9a8c6f3f952d158",
+      "geometry_retry.py": "bf2c3f713c9c226bb55629cdef8c95824622dacdfa1d345bf94fc4fd0e5b0ebb",
+      "metadata.json": "abb251edc4aae6e057f5d5e9a229442df1c1fc40f559a436b3689b2089a86fbb",
+      "freeze.json": "ee5d01590a480334dcb1d05d6777f95c9d2fa3d13376ccd54ea65ef51611577a"
+    }
+  },
+  "all_terminal_saves_present": true,
+  "all_independent_save_checks_passed": true,
+  "final_selection_precedes_all_final_trials": true
+}

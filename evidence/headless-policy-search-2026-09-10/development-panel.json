@@ -1,0 +1,122 @@
+[
+  {
+    "policy": "policies/search-v3/bundles/b01-direct-code-access/b01-direct-code-access.method",
+    "case": "b01-direct-code-access-dev1",
+    "seed": 63011,
+    "map_x": 16,
+    "map_y": 0,
+    "kind": "baseline"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "case": "p01-initial-dev1",
+    "seed": 63011,
+    "map_x": 16,
+    "map_y": 0,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p05-observed-geometry/p05-observed-geometry.method",
+    "case": "p05-observed-geometry-dev1",
+    "seed": 63011,
+    "map_x": 16,
+    "map_y": 0,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p08-code-agent-repair/p08-code-agent-repair.method",
+    "case": "p08-code-agent-repair-dev1",
+    "seed": 63011,
+    "map_x": 16,
+    "map_y": 0,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "case": "p10-direction-retry-dev1",
+    "seed": 63011,
+    "map_x": 16,
+    "map_y": 0,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/b01-direct-code-access/b01-direct-code-access.method",
+    "case": "b01-direct-code-access-dev2",
+    "seed": 63012,
+    "map_x": -18,
+    "map_y": 12,
+    "kind": "baseline"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "case": "p01-initial-dev2",
+    "seed": 63012,
+    "map_x": -18,
+    "map_y": 12,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p05-observed-geometry/p05-observed-geometry.method",
+    "case": "p05-observed-geometry-dev2",
+    "seed": 63012,
+    "map_x": -18,
+    "map_y": 12,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p08-code-agent-repair/p08-code-agent-repair.method",
+    "case": "p08-code-agent-repair-dev2",
+    "seed": 63012,
+    "map_x": -18,
+    "map_y": 12,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "case": "p10-direction-retry-dev2",
+    "seed": 63012,
+    "map_x": -18,
+    "map_y": 12,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/b01-direct-code-access/b01-direct-code-access.method",
+    "case": "b01-direct-code-access-dev3",
+    "seed": 63013,
+    "map_x": 24,
+    "map_y": -20,
+    "kind": "baseline"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "case": "p01-initial-dev3",
+    "seed": 63013,
+    "map_x": 24,
+    "map_y": -20,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p05-observed-geometry/p05-observed-geometry.method",
+    "case": "p05-observed-geometry-dev3",
+    "seed": 63013,
+    "map_x": 24,
+    "map_y": -20,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p08-code-agent-repair/p08-code-agent-repair.method",
+    "case": "p08-code-agent-repair-dev3",
+    "seed": 63013,
+    "map_x": 24,
+    "map_y": -20,
+    "kind": "development"
+  },
+  {
+    "policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "case": "p10-direction-retry-dev3",
+    "seed": 63013,
+    "map_x": 24,
+    "map_y": -20,
+    "kind": "development"
+  }
+]

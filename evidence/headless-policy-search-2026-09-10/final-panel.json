@@ -1,0 +1,34 @@
+[
+  {
+    "policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "case": "p01-initial-final1",
+    "kind": "final",
+    "seed": 9031847,
+    "map_x": -26,
+    "map_y": -18
+  },
+  {
+    "policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "case": "p10-direction-retry-final1",
+    "kind": "final",
+    "seed": 9031847,
+    "map_x": -26,
+    "map_y": -18
+  },
+  {
+    "policy": "policies/search-v3/bundles/p01-initial/p01-initial.method",
+    "case": "p01-initial-final2",
+    "kind": "final",
+    "seed": 7219631,
+    "map_x": 30,
+    "map_y": 22
+  },
+  {
+    "policy": "policies/search-v3/bundles/p10-direction-retry/p10-direction-retry.method",
+    "case": "p10-direction-retry-final2",
+    "kind": "final",
+    "seed": 7219631,
+    "map_x": 30,
+    "map_y": 22
+  }
+]
