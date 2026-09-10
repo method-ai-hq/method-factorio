@@ -1,0 +1,14 @@
+{
+  "elapsed_seconds": 0.3256595409475267,
+  "result": [
+    [
+      {
+        "engine_sequence": 2,
+        "id": 131073,
+        "key": "28:12",
+        "kind": "removed",
+        "owner": 0
+      }
+    ]
+  ]
+}

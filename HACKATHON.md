@@ -244,3 +244,23 @@ scored reference-script comparison. The 93.1% reduction was in coal loaded,
 not a measured reduction in coal burned. No new game or paid call was needed
 for this final report. The original validator, Methods, and results remain
 unchanged.
+
+## Civ 6 economy setup, 10 September 2026
+
+The [Civ 6 economy setup](docs/civ6/RUN_ECONOMY_TASK.md) now has a real starting
+save, exact state reader, live event monitor, and trace verifier. The installed
+game lacks a Gathering Storm entitlement, so the case is explicitly base-game
+calibration. The original population, science, budget, and 35-turn targets stay
+unchanged. The save contains one population-4 Roman capital, 50 gold, and a
+Warrior, Scout, and three-charge Builder.
+
+All 28 verifier controls passed. A live empty control completed 35 turns in
+36.66 seconds of turn steps, or 86.16 seconds with saving, manual reload, and
+independent inspection. It correctly failed the task. Live founding/removal
+events also passed a separate fixture check. The first empty control stopped
+at an advisor tutorial; its failed partial trace is retained.
+
+No legal winning Method, full playing broker, map-feasibility result, native
+headless mode, or 5x/20x simulation clock is claimed. No playing-model call or
+paid API call was made. The [evidence report](evidence/civ6-economy-setup-2026-09-10/README.md)
+separates observed checks from the remaining calibration work.

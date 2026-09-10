@@ -1,0 +1,130 @@
+{
+  "active_mods": [
+    {
+      "id": "02A8BDDE-67EA-4D38-9540-26E685E3156E",
+      "name": "LOC_AZTEC_MONTEZUMA_MOD_TITLE"
+    }
+  ],
+  "auto_end_turn": 0,
+  "cities": [
+    {
+      "buildings": [
+        {
+          "pillaged": false,
+          "type": "BUILDING_MONUMENT"
+        },
+        {
+          "pillaged": false,
+          "type": "BUILDING_PALACE"
+        }
+      ],
+      "districts": [
+        {
+          "pillaged": false,
+          "type": "DISTRICT_CITY_CENTER",
+          "x": 32,
+          "y": 12
+        }
+      ],
+      "food": 0,
+      "food_surplus": 2,
+      "housing": 6,
+      "id": 65536,
+      "key": "32:12",
+      "owner": 0,
+      "population": 4,
+      "production": 6,
+      "queue_size": 0,
+      "science": 4.796875,
+      "stored_production": [],
+      "x": 32,
+      "y": 12
+    }
+  ],
+  "civic_progress": [],
+  "civics": [],
+  "civilization": "CIVILIZATION_ROME",
+  "cost_multiplier": 50,
+  "culture": 4.19921875,
+  "disaster_intensity": 0,
+  "era": 0,
+  "game_seed": 6100911,
+  "gathering_storm_loaded": false,
+  "gold": 50,
+  "government": 0,
+  "height": 26,
+  "leader": "LEADER_TRAJAN",
+  "map_script": "Pangaea.lua",
+  "map_seed": 6100910,
+  "multiplayer": false,
+  "net_gold": 5,
+  "no_barbarians": true,
+  "no_huts": true,
+  "player": 0,
+  "players": [
+    {
+      "human": true,
+      "id": 0,
+      "major": true
+    },
+    {
+      "human": false,
+      "id": 63,
+      "major": false
+    }
+  ],
+  "policies": [
+    {
+      "policy": -1,
+      "slot": 0
+    },
+    {
+      "policy": -1,
+      "slot": 1
+    }
+  ],
+  "quick_combat": 1,
+  "quick_movement": 1,
+  "research_progress": [],
+  "ruleset": "RULESET_STANDARD",
+  "schema": "civ6-state/1",
+  "science": 4.796875,
+  "speed": -1649545904,
+  "technologies": [
+    "TECH_ANIMAL_HUSBANDRY",
+    "TECH_MINING",
+    "TECH_POTTERY"
+  ],
+  "turn": 1,
+  "tutorial_level": -1,
+  "units": [
+    {
+      "charges": 0,
+      "damage": 0,
+      "id": 131073,
+      "moves": 2,
+      "type": "UNIT_WARRIOR",
+      "x": 31,
+      "y": 12
+    },
+    {
+      "charges": 0,
+      "damage": 0,
+      "id": 196610,
+      "moves": 3,
+      "type": "UNIT_SCOUT",
+      "x": 32,
+      "y": 12
+    },
+    {
+      "charges": 3,
+      "damage": 0,
+      "id": 262147,
+      "moves": 2,
+      "type": "UNIT_BUILDER",
+      "x": 32,
+      "y": 12
+    }
+  ],
+  "width": 44
+}

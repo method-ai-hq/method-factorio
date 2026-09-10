@@ -5,6 +5,12 @@ calibrated or scored. The owner now wants continuous single-player policy
 search. This replaces the earlier proposal to compare two design groups over
 full domination games. It does not start a search or authorize model spending.
 
+Implementation update: the owner selected Option A. A base-game starting save,
+state reader, trace checker, and live empty-turn control now exist. See
+[the setup guide](RUN_ECONOMY_TASK.md) and its linked evidence. Gathering Storm
+was unavailable under the installed entitlement. Full feasibility and hardness
+calibration remain open; the original options below are design history.
+
 ## Recommendation
 
 Start with **a three-city research economy from one established city**.

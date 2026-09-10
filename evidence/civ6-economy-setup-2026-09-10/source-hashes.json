@@ -1,0 +1,32 @@
+{
+  "upstream_commit": "dd2019056371b92ea4854e879ddf05a8cad95e8a",
+  "repository_files": {
+    "scripts/civ6_admin.py": "4f5e719b3ddc2e7eb9488a2e4c375aa6e0d343a61a07663b847af8f19341bdfc",
+    "scripts/civ6_found_start.lua": "ad551569ce083abed603a8af00e8babeab8c73d09b6637e66b50f07f815ceb51",
+    "scripts/civ6_monitor.lua": "0a63a02b14c4bdcd68f81614e508d90788b18e498388b7addab755445ec48a49",
+    "scripts/civ6_new_game.lua": "0dbaa5a9a0df6b5f9bb4a525314a861064c16d5a20dfe5d505ec36935a64abb8",
+    "scripts/civ6_prepare.lua": "590841b5d404af5e77abc1d522520cc8b2c7050b6f31bbb317243aa42b204608",
+    "scripts/civ6_smoke.py": "b7f8d2d63257174203d6356a9725b11e8e0f27d306cf9ea4773e650a5b25b22b",
+    "scripts/civ6_snapshot.lua": "e666dc24609d1fff9f5526c58fa8e21d99aa89e8b5145eb25c693957b6c9d7c2",
+    "scripts/civ6_verify.py": "0192f71f26dacb876ee592db8f0a50487c9ed7ad3d33d1282fc39a055cbb464f",
+    "scripts/test_civ6.py": "f7f29d965bd20941180890c9dfa597268f0dcaa6830077cc500560022febce71",
+    "docs/civ6/RUN_ECONOMY_TASK.md": "cf68dffbfb27ff670ca47e767b600b7bde24b5f1af48f5d3838d102200095d2e"
+  },
+  "installed_mcp_files": {
+    "src/civ_mcp/server.py": "deb14f5e5bfb5e6870ddd8e0deb4476bb3cb19c207734a4ccb7e0f12e6fac934",
+    "src/civ_mcp/connection.py": "c0477646eed1c7499598504b86fc4245d30f883edb5b25de142dd85cd7291996",
+    "src/civ_mcp/tuner_client.py": "cc719596cc4d3d85823d6161fc46b7bd183330d5841bd76dd4ef27f966febaa6"
+  },
+  "local_mcp_patches": [
+    "Dashboard binds 127.0.0.1 on an automatic port.",
+    "PopupWatcher starts only when CIV_MCP_AUTO_POPUPS=1."
+  ],
+  "mcp_check": {
+    "listed_tools": 76,
+    "idle_server_left_tuner_available": true,
+    "operator_read_matched_start": true
+  },
+  "game_version_ui": "1.0.12.54 (376653.17) Metal",
+  "save_writer_version": "1.0.12.54 (951533)",
+  "python_version": "3.12.11"
+}
