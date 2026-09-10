@@ -1,0 +1,19 @@
+{
+  "id": "p20-fuel-reserve-check",
+  "parent": "p19-observed-fuel",
+  "hypothesis": "Keep one extra coal in each machine beyond measured use and verify every insertion count. Expect nine loaded coal and passing windows, with a reserve for small delays.",
+  "feedback_trials": [
+    "loop-p19-observed-fuel-dev1-r1-d44a90",
+    "loop-p19-observed-fuel-dev2-r1-7c094e",
+    "loop-p19-observed-fuel-dev3-r1-21c946"
+  ],
+  "authored_at": "2026-09-10T18:11:00.035650+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

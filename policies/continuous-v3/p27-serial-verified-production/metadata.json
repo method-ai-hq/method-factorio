@@ -1,0 +1,19 @@
+{
+  "id": "p27-serial-verified-production",
+  "parent": "p26-delayed-production-check",
+  "hypothesis": "The batch variants did not establish a time gain. Combine the two-observation production check learned in p26 with the simpler serial observed geometry and exact Method outcome from p21. Keep nine coal and all fixed external checks.",
+  "feedback_trials": [
+    "headless-search-20260910T174026Z-loop-p26-delayed-production-check-dev1-r1-a24708",
+    "headless-search-20260910T174026Z-loop-p26-delayed-production-check-dev2-r1-2b8b24",
+    "headless-search-20260910T174026Z-loop-p26-delayed-production-check-dev3-r1-939bf5"
+  ],
+  "authored_at": "2026-09-10T18:19:12.116614+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

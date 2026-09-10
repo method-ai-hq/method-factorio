@@ -1,0 +1,18 @@
+{
+  "id": "p18-local-reach-repair",
+  "parent": "p16-move-to-reach",
+  "hypothesis": "When a placement explicitly fails for distance, move closer and retry that placement once. Keep the existing route rather than remove its machines and change direction. Compare with p16 reach failures.",
+  "feedback_trials": [
+    "loop-p16-move-to-reach-dev1-r1-d160b9",
+    "loop-p16-move-to-reach-dev3-r1-250cdf"
+  ],
+  "authored_at": "2026-09-10T18:08:40.911967+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

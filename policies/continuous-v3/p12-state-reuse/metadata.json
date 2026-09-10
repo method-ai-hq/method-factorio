@@ -1,0 +1,17 @@
+{
+  "id": "p12-state-reuse",
+  "parent": "p10-direction-retry",
+  "hypothesis": "Use action-returned state and omit two redundant observations and the first unchanged drill rotation. Expect fewer calls with the same production result.",
+  "feedback_trials": [
+    "loop-p10-dev1-replacement-fd88a9"
+  ],
+  "authored_at": "2026-09-10T18:04:12.855145+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

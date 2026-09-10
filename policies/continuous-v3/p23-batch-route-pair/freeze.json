@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:15:26.698544+00:00",
+  "sha256": {
+    "controller.py": "5b545abb8cdd46feed3291dd5c20ca49feeceafed05b6e64f685f91e7eefaf9a",
+    "metadata.json": "04140ca8f4fff0fd6c2032b2f3220e87c22e497b19ae7f201c018ebc82184951",
+    "p23-batch-route-pair.method": "7bf907286d541546142563a6c21fc7a4f4a7868037ce772544c5e65a8bdfab2b"
+  }
+}

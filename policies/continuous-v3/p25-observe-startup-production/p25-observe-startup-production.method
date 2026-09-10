@@ -1,0 +1,59 @@
+{
+  "format": "method/3",
+  "name": "p25-observe-startup-production",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "The geometry-only variants pass but do not confirm production before handoff. Add a bounded 20-observation startup check for one new plate. Measure the added time and keep the external three-window test unchanged.",
+      "in": {
+        "endpoint": "environment.game",
+        "expected": "inputs.expected_ready"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "controller.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        },
+        "ready": {
+          "type": "boolean",
+          "description": "Observed route geometry and fuel setup completed and handoff returned."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "equals": {
+          "actual": "ready",
+          "expected": "expected"
+        }
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "controller.py"
+  ],
+  "inputs": {
+    "expected_ready": {
+      "type": "boolean",
+      "description": "Required construction outcome. This is an internal check, not the external game verdict.",
+      "default": true
+    }
+  }
+}

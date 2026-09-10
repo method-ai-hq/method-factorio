@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:09:04.960576+00:00",
+  "sha256": {
+    "controller.py": "b2d3958ec0c2190c30de9ac091fa1009e856d0427d023ff350f69286ffb19e79",
+    "metadata.json": "cc0b14bcc9ebad7ee2029defe1999fd209864ad4265919323c91788cca4e59cb",
+    "p19-observed-fuel.method": "80b65814f4f375e799645e2fe553a4304a704e5a977a1d31cdc36a259dbc68c7"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "paired development recheck, not unseen final evaluation",
+  "selection": "p20 had the lowest mean time among fully passing new three-map panels completed before this panel was declared. It was selected for this paired recheck.",
+  "panel_declared_before_execution": true,
+  "groups": [
+    {
+      "policy": "p10-direction-retry",
+      "passes": 3,
+      "trials": 3,
+      "mean_full_seconds": 9.824992736180624,
+      "mean_actions": 13,
+      "mean_loaded_coal": 130
+    },
+    {
+      "policy": "p20-fuel-reserve-check",
+      "passes": 3,
+      "trials": 3,
+      "mean_full_seconds": 10.110024372736612,
+      "mean_actions": 10,
+      "mean_loaded_coal": 9
+    }
+  ],
+  "trial_ids": [
+    "headless-search-20260910T174026Z-loop-p10-direction-retry-dev2-r2-a229a8",
+    "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev2-r2-a91275",
+    "headless-search-20260910T174026Z-loop-p10-direction-retry-dev3-r2-e9e288",
+    "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev3-r2-796e57",
+    "headless-search-20260910T174026Z-loop-p10-direction-retry-dev1-r2-248cb6",
+    "headless-search-20260910T174026Z-loop-p20-fuel-reserve-check-dev1-r2-d091a1"
+  ],
+  "speed_gain_established": false,
+  "note": "Both policies passed all three maps. The p20 mean time was higher in the paired recheck. Other Factorio work was active during part of this search, so wall-time comparisons are limited."
+}

@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:05:31.468796+00:00",
+  "sha256": {
+    "controller.py": "34ee820f97f8b99ae5e54f7d68b0eb36dac3c24fab7b1dabcd12604ca79adab9",
+    "metadata.json": "d38e17849c08c6e6293a9cadb96474155bb3f18a00025bdbe0cc12f628aaa7fd",
+    "p14-late-fuel-serial.method": "9afc55aa3bb77d4860bb87044909d10a9e49a51c46cb62fbadbd6ae6f2c18800"
+  }
+}

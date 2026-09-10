@@ -1,0 +1,44 @@
+{
+  "format": "method/3",
+  "name": "p16-move-to-reach",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "The failed placement reports a 10-tile reach. Use the returned player position and move only to eight tiles from the ore, leaving room for tile rounding. Keep the serial late-fuel route.",
+      "in": {
+        "endpoint": "environment.game"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "controller.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "controller.py"
+  ]
+}

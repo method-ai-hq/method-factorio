@@ -1,0 +1,22 @@
+{
+  "started_at": "2026-09-10T18:02:11.615581+00:00",
+  "instruction": "Continue Method v3 policy search with feedback-driven versions until existing limits.",
+  "job_deadline_utc": "2026-09-10T18:40:26Z",
+  "search_deadline_utc": "2026-09-10T18:20:26Z",
+  "prior_trials": 21,
+  "max_scored_trials": 120,
+  "prior_policy_versions": 13,
+  "max_policy_versions": 32,
+  "execution_source": "source-versions/v2",
+  "source_files_match_original_freeze": true,
+  "concurrency": 1,
+  "paid_api_calls": false,
+  "final_maps": "Do not use final maps for development. Earlier final comparison is unchanged.",
+  "status": "search_time_limit_reached",
+  "finished_at": "2026-09-10T18:20:59.003861+00:00",
+  "last_trial_finished_at": 1789064420.929376,
+  "new_method_versions": 16,
+  "attempts": 57,
+  "passes": 52,
+  "failure_count": 5
+}

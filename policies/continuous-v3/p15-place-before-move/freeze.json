@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:06:07.429503+00:00",
+  "sha256": {
+    "controller.py": "df2fa2b89b56629b127eb7274b9b84c89db78c8ae842ec69b49fd8337fda3b6b",
+    "metadata.json": "ac3abd890e6781b0db9cec995ea5cfe45a4d21e2c86e082880132e5d26f40433",
+    "p15-place-before-move.method": "dfe60ae8ccd378b9031f2c47fb6f29e060ac3a0d7adb288a02b1a319fabc2c76"
+  }
+}

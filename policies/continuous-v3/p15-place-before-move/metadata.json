@@ -1,0 +1,17 @@
+{
+  "id": "p15-place-before-move",
+  "parent": "p14-late-fuel-serial",
+  "hypothesis": "Attempt allowed drill placement before explicit movement. On failure, observe first, reuse an existing drill if present, otherwise move and retry once. Expect less movement if placement already handles reach.",
+  "feedback_trials": [
+    "loop-p14-late-fuel-serial-dev1-r1-fab76f"
+  ],
+  "authored_at": "2026-09-10T18:06:07.429503+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

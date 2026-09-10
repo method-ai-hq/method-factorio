@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:18:11.839383+00:00",
+  "sha256": {
+    "controller.py": "9f1edc175cb22a9e348a84d1d122b1c341fa78e79a01c9ca0debe82c49760bd9",
+    "metadata.json": "be1cdac5ba037af48d733cc25a5eb2f6cf2d287c957f43350e602108cfdceb03",
+    "p26-delayed-production-check.method": "6c60acd3ce0911e64f1c68e287c35c653e51c5fd34b62698a5d06ebe276ac00c"
+  }
+}

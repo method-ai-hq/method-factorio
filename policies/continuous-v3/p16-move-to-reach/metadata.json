@@ -1,0 +1,18 @@
+{
+  "id": "p16-move-to-reach",
+  "parent": "p15-place-before-move",
+  "hypothesis": "The failed placement reports a 10-tile reach. Use the returned player position and move only to eight tiles from the ore, leaving room for tile rounding. Keep the serial late-fuel route.",
+  "feedback_trials": [
+    "loop-p15-place-before-move-dev1-r1-0f5535",
+    "loop-p15-place-before-move-dev2-r1-984acc"
+  ],
+  "authored_at": "2026-09-10T18:06:47.612259+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

@@ -161,3 +161,36 @@ economy, an exact state-and-history verifier, and calibration for a 5–10 minut
 trial target. This is design work. No task difficulty, runtime, live verifier,
 or Civ policy improvement has been measured. The earlier full-game competition
 proposal is retained as history.
+
+## Continuous feedback search, 10 September 2026
+
+A continuation created 16 new Method v3 versions from actual development
+results and completed 57 attempts: 52 passed and five failed. All trials
+closed before the existing 18:20:26 UTC search stop. The full job used 78 of
+120 trial slots and 29 of 32 frozen policy slots. No limit or validator changed.
+The executed validator source remained commit
+`b25d4303cbe7e29a4c21fbab3e8a237fbe97e341`.
+
+In a declared paired recheck on the three development maps, starting Method
+p10 and candidate p20 each passed all three maps. P20 used 10 actions and
+loaded nine coal, compared with 13 actions and 130 coal for p10. Mean full
+time was 10.11 seconds for p20 and 9.82 seconds for p10. This result does not
+show a speed improvement. Separate Factorio work was active during part of
+the search, which limits wall-time comparisons.
+
+The later p27 Method checks one new plate before handoff and uses an exact
+internal Method check. It passed three maps with 12 actions and nine coal.
+These new Methods have no unseen-map final result. The earlier final
+comparison remains separate. This is a supplied-kit production test, not a
+rocket launch.
+
+The five failures include three malformed batch-request tests, one runtime
+setup failure, and one game process killed before its terminal save was
+written. Failed records and linked replacements remain saved. One rejected
+Method draft is also retained. Every passing attempt has a matching save
+check. No execution-time model request or paid API call was made; subscription
+authoring cost is unknown. No screen recording was made.
+
+See the [continuous search report](evidence/continuous-policy-search-2026-09-10/README.md)
+and the [new Method index](policies/continuous-v3/README.md) for hypotheses,
+source hashes, exact commands, failures, checks, costs, and limits.

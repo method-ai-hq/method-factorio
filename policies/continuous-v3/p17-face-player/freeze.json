@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:07:33.155863+00:00",
+  "sha256": {
+    "controller.py": "74b660e06c56fd8c742baeba0084dd87ed3d0140f9ac5d0f1830120744c83d6f",
+    "metadata.json": "8ca9a816cef22823ed01e1f00e704b5760104af3bb02b06fa17c1ffade95263d",
+    "p17-face-player.method": "ebab42901f5da7bfc1b0a975e4c415c362d8dfaf13b0c851e1cee80a3f3198df"
+  }
+}

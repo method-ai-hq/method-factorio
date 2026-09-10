@@ -1,0 +1,19 @@
+{
+  "id": "p13-late-fuel-batch",
+  "parent": "p12-state-reuse",
+  "hypothesis": "Build the complete route before fueling. Batch the three fuel inserts and request only the observed 50-item drill capacity. Expect no loose ore during construction and fewer HTTP requests.",
+  "feedback_trials": [
+    "loop-p12-state-reuse-dev1-r1-43c9fb",
+    "loop-p12-state-reuse-dev2-r1-2a7f90",
+    "loop-p12-state-reuse-dev3-r1-008bfc"
+  ],
+  "authored_at": "2026-09-10T18:05:01.635881+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

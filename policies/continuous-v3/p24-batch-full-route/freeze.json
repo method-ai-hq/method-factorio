@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:16:18.007875+00:00",
+  "sha256": {
+    "controller.py": "59b3719ae74017fd020e9f46c89301ff6196015ba9b3b31e33b0f11a817bc7f7",
+    "metadata.json": "8e35470055680426cf6fd75a5cf4d90bd277d7bab4281c3ecef28afe90620e7e",
+    "p24-batch-full-route.method": "5fd027ec470282e9f08c5a156c44a156bf62acad33db034b4bf117cd9749d2a7"
+  }
+}

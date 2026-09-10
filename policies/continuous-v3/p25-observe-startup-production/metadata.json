@@ -1,0 +1,19 @@
+{
+  "id": "p25-observe-startup-production",
+  "parent": "p24-batch-full-route",
+  "hypothesis": "The geometry-only variants pass but do not confirm production before handoff. Add a bounded 20-observation startup check for one new plate. Measure the added time and keep the external three-window test unchanged.",
+  "feedback_trials": [
+    "headless-search-20260910T174026Z-loop-p24-batch-full-route-dev1-r1-eadaae",
+    "headless-search-20260910T174026Z-loop-p24-batch-full-route-dev2-r1-d5a64a",
+    "headless-search-20260910T174026Z-loop-p24-batch-full-route-dev3-r1-6e6447"
+  ],
+  "authored_at": "2026-09-10T18:17:13.533352+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

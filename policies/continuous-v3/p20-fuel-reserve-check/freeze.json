@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:11:00.035650+00:00",
+  "sha256": {
+    "controller.py": "13455598229997c5274071c1e73afed0060759562b502073608531e9ca289581",
+    "metadata.json": "ee9907f978b2244af247e81ef07bd3883f74fe19347de1da204e3c062bbf6f10",
+    "p20-fuel-reserve-check.method": "8f92d01d8b18d66bd72266c67c9b04c189056cab3999c9c1a6a299608c7d0e95"
+  }
+}

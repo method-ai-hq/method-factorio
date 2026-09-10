@@ -1,0 +1,20 @@
+{
+  "id": "p21-checked-handoff",
+  "parent": "p20-fuel-reserve-check",
+  "hypothesis": "Check the observed furnace box contains the inserter drop, retain verified fuel reserve, and return a boolean construction outcome. The Method exact check must reject a failed build or handoff; the fixed external validator still decides the game result.",
+  "feedback_trials": [
+    "loop-p20-fuel-reserve-check-dev1-r1-b7ec72",
+    "loop-p20-fuel-reserve-check-dev2-r1-8c4366",
+    "loop-p13-late-fuel-batch-dev1-r1-d4f58e"
+  ],
+  "authored_at": "2026-09-10T18:12:02.744595+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  },
+  "draft_failure": "The first draft used a root input reference directly in a check. Validation rejected it. Bind the input in the step, then use its local name. The rejected draft is retained in the local job folder."
+}

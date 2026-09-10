@@ -1,0 +1,9 @@
+{
+  "at": "2026-09-10T18:02:47.674547+00:00",
+  "failed_trial": "headless-search-20260910T174026Z-loop-p10-dev1-aee511",
+  "cause": "Frozen source copy lacked the runtime Git metadata. Revision check found project revision and stopped before policy actions.",
+  "repair": "Use unchanged pinned runtime checkout through symlink. Preserve frozen files separately. All original freeze hashes still match.",
+  "validator_changed": false,
+  "replacement_limit": 1,
+  "prior_failure_retained": true
+}

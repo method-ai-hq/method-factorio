@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:17:13.533352+00:00",
+  "sha256": {
+    "controller.py": "74dc5dfdd1d5a591c97a8716cdd6277fcd2e9f1df61c92486397195593d6fed0",
+    "metadata.json": "0b2ff43f6675cc6d7af413e7842625c4f6a4f1430061bc328c688533412bdfd2",
+    "p25-observe-startup-production.method": "fb88dc220b7a80c86fc5d192d8b24b481004b0022649b1ff421b1e1db79c8bb2"
+  }
+}

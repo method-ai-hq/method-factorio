@@ -1,0 +1,59 @@
+{
+  "format": "method/3",
+  "name": "p27-serial-verified-production",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "The batch variants did not establish a time gain. Combine the two-observation production check learned in p26 with the simpler serial observed geometry and exact Method outcome from p21. Keep nine coal and all fixed external checks.",
+      "in": {
+        "endpoint": "environment.game",
+        "expected": "inputs.expected_ready"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "controller.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        },
+        "ready": {
+          "type": "boolean",
+          "description": "Observed route geometry and fuel setup completed and handoff returned."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "equals": {
+          "actual": "ready",
+          "expected": "expected"
+        }
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "controller.py"
+  ],
+  "inputs": {
+    "expected_ready": {
+      "type": "boolean",
+      "description": "Required construction outcome. This is an internal check, not the external game verdict.",
+      "default": true
+    }
+  }
+}

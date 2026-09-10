@@ -1,0 +1,18 @@
+{
+  "id": "p22-correct-batch-envelope",
+  "parent": "p21-checked-handoff",
+  "hypothesis": "The p13 batch used an unsupported action name. The fixed endpoint accepts a root batch list. Use that envelope, read each result and its state, and verify all three fuel inserts. Keep the checked handoff and nine-coal reserve.",
+  "feedback_trials": [
+    "loop-p13-late-fuel-batch-dev1-r1-d4f58e",
+    "loop-p21-checked-handoff-dev1-r1-f4f8a4"
+  ],
+  "authored_at": "2026-09-10T18:14:46.759581+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "p19-observed-fuel",
+  "parent": "p17-face-player",
+  "hypothesis": "Final states on all p17 maps consumed three drill coal, two furnace coal, and one inserter coal. Test those observed quantities instead of 130 loaded coal. This tests material reserve, not a change to the ranking.",
+  "feedback_trials": [
+    "loop-p17-face-player-dev1-r1-1ecfdc",
+    "loop-p17-face-player-dev2-r1-07694b",
+    "loop-p17-face-player-dev3-r1-198e50"
+  ],
+  "authored_at": "2026-09-10T18:09:04.960576+00:00",
+  "author": "gpt-6-astra through Codex subscription",
+  "format": "method/3",
+  "gameplay_feedback_seen": true,
+  "validation": {
+    "returncode": 0,
+    "stdout": "{\"valid\":true,\"order\":[\"build\"],\"note\":\"Runtime profiles and files are checked again before execution.\"}\n",
+    "stderr": ""
+  }
+}

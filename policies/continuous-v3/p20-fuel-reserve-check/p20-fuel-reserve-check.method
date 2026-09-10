@@ -1,0 +1,44 @@
+{
+  "format": "method/3",
+  "name": "p20-fuel-reserve-check",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "Keep one extra coal in each machine beyond measured use and verify every insertion count. Expect nine loaded coal and passing windows, with a reserve for small delays.",
+      "in": {
+        "endpoint": "environment.game"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "controller.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "controller.py"
+  ]
+}

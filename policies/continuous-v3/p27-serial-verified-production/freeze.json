@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-10T18:19:12.116614+00:00",
+  "sha256": {
+    "controller.py": "359411fa46f8eb0db923b59107f58c5fe4729e4e0fcbcb84964152900f976c9d",
+    "metadata.json": "7b9b1acc8b2b670b773422d34f6cc0ee65561690892917a2a5ef4e72729e71bb",
+    "p27-serial-verified-production.method": "196ab4f0f6e2fccd0bc309cc7579eb710704124c4516e6c56df9becee09f86a2"
+  }
+}

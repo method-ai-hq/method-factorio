@@ -1,0 +1,44 @@
+{
+  "format": "method/3",
+  "name": "p13-late-fuel-batch",
+  "goal": "Build a self-running iron production chain within the fixed supplied-kit benchmark.",
+  "environment": {
+    "game": {
+      "type": "service",
+      "description": "Restricted game action endpoint."
+    }
+  },
+  "steps": {
+    "build": {
+      "purpose": "Build the complete route before fueling. Batch the three fuel inserts and request only the observed 50-item drill capacity. Expect no loose ore during construction and fewer HTTP requests.",
+      "in": {
+        "endpoint": "environment.game"
+      },
+      "do": {
+        "kind": "run",
+        "runtime": "python",
+        "entrypoint": "controller.py",
+        "args": []
+      },
+      "out": {
+        "report": {
+          "type": "text",
+          "description": "Observed attempts and final controller result."
+        }
+      },
+      "changes": [
+        "environment.game"
+      ],
+      "check": {
+        "present": "report"
+      },
+      "limits": {
+        "timeout_ms": 200000
+      }
+    }
+  },
+  "result": "report",
+  "files": [
+    "controller.py"
+  ]
+}

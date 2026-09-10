@@ -1,0 +1,8 @@
+{
+  "failed_trial": "headless-search-20260910T174026Z-loop-p21-checked-handoff-dev2-r1-fd7663",
+  "replacement_trial": "headless-search-20260910T174026Z-loop-p21-checked-handoff-dev2-r1-5d20d0",
+  "same_policy_map_and_validator": true,
+  "failure_retained_with_330_second_penalty": true,
+  "replacement_passed": true,
+  "save_check_passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-09-10T18:14:10.814028+00:00",
+  "failed_trial": "headless-search-20260910T174026Z-loop-p21-checked-handoff-dev2-r1-fd7663",
+  "server_exit_code": -9,
+  "terminal_save_exists": false,
+  "runtime_completed": true,
+  "live_measurement_complete": true,
+  "cause": "Game process received SIGKILL. The sender is unknown. No shutdown exception was recorded, and the host ended in 7.19 seconds, before its 15-second forced-kill timeout could expire.",
+  "other_activity": "A separate science-reference Factorio server was observed. It belongs to another task and was not changed. This can affect wall time.",
+  "decision": "Keep the failed attempt. Use one linked diagnostic replacement with unchanged source, policy, map, and limits. Stop new launches again if it fails.",
+  "validator_changed": false,
+  "new_setup_episodes": 0,
+  "limits_unchanged": true
+}

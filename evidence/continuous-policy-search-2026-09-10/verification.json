@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-09-10T18:20:59.003861+00:00",
+  "validator_hashes_unchanged": true,
+  "benchmark_sha256": "9cfd15d3e5ef838353c185f2e690657035926fd01307cbb8789b87dbc379186d",
+  "policies": [
+    {
+      "policy": "p12-state-reuse",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p13-late-fuel-batch",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p14-late-fuel-serial",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p15-place-before-move",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p16-move-to-reach",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p17-face-player",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p18-local-reach-repair",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p19-observed-fuel",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p20-fuel-reserve-check",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p21-checked-handoff",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p22-correct-batch-envelope",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p23-batch-route-pair",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p24-batch-full-route",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p25-observe-startup-production",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p26-delayed-production-check",
+      "source_unchanged": true,
+      "valid": true
+    },
+    {
+      "policy": "p27-serial-verified-production",
+      "source_unchanged": true,
+      "valid": true
+    }
+  ],
+  "continuation_attempts": 57,
+  "continuation_passes": 52,
+  "job_total_attempts": 78,
+  "job_policy_versions": 29,
+  "all_trials_closed_before_search_deadline": true,
+  "remaining_continuation_processes": [],
+  "all_passing_trials_have_matching_save_checks": true
+}
