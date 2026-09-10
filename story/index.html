@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="A record of Method policy search in Factorio: the first tests, failed setup, repeated revisions, unseen factory repairs, and the next tests in Civilization VI.">
 <meta name="theme-color" content="#f8f8f5">
-<title>Astra rewrote its repair procedure — Method</title>
+<title>Continuous policy search for long-horizon tasks: Astra agents design, evaluate, and improve executable Methods for Factorio (and Civilization V)</title>
 <style>
 :root{--paper:#f8f8f5;--white:#fff;--ink:#19221e;--muted:#626d65;--line:#d8ded6;--green:#246346;--pale:#e8eee5;--orange:#a46236;--direct:#969e94;--serif:Charter,'Iowan Old Style','Palatino Linotype',Georgia,serif;--sans:'Avenir Next',Avenir,'Segoe UI',sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:var(--green)}button,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,video:focus-visible{outline:3px solid #40926a;outline-offset:5px}button{touch-action:manipulation}::selection{background:#c8dec8}p{margin:0 0 1.3em}h1,h2,h3{font-weight:500;line-height:1.13;letter-spacing:-.045em;margin:0}h1{font-size:clamp(58px,7.5vw,108px);max-width:1040px}h2{font-size:clamp(35px,4.3vw,57px);margin:12px 0 28px}h3{font-size:25px;margin:0 0 13px;letter-spacing:-.025em}small,.small{font-size:13px;line-height:1.6}strong{font-weight:600}figure{margin:0}figcaption,.note{font-size:13px;color:var(--muted);line-height:1.65;margin-top:15px}sup{font-size:10px}table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left}th{font-weight:500;font-size:12px;color:var(--muted)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{text-align:right;padding-right:0}.skip{position:fixed;top:-60px;left:10px;z-index:99;background:white;padding:10px}.skip:focus{top:10px}
@@ -21,6 +21,8 @@
 .date{font-size:13px;color:var(--muted);margin-bottom:28px}.hero h1{font-size:clamp(54px,6.4vw,91px)}.intro{margin-bottom:40px}.loop-grid h3{font-size:22px;margin-bottom:20px}.loop-grid .flow-step{align-items:center;min-height:53px}.selected-flow{grid-template-columns:1fr 25px 1.2fr 25px 1fr}.version-detail{min-height:155px}.prose>h3{margin-top:30px}.closing{font-size:30px;padding:28px 0 0}.contents{padding-top:76px}.film-grid details{margin-top:24px}.source-list a{margin-bottom:13px}
 @media(max-width:800px){.contents{padding-top:16px}.hero h1{font-size:clamp(46px,7.7vw,66px)}}
 @media(max-width:500px){.hero h1{font-size:46px}.hero h1 br{display:none}.selected-flow{grid-template-columns:1fr}.version-detail{min-height:230px}}
+
+.hero h1{font-size:clamp(34px,4.4vw,63px);line-height:1.12;letter-spacing:-.04em}
 </style>
 </head>
 <body>
@@ -28,7 +30,7 @@
 <header class="top"><a class="brand" href="#top" aria-label="Method — back to top"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Method</a><div class="top-right"><a href="#results">Results</a><a href="#sources">Evidence</a></div></header>
 <div class="hero" id="top">
 <p class="date">10 September 2026</p>
-<h1>Astra rewrote its <br><em>repair procedure.</em></h1>
+<h1>Continuous policy search for long-horizon tasks: Astra agents design, evaluate, and improve executable Methods for Factorio (and Civilization V)</h1>
 <p class="intro">We asked Astra to improve a Factorio repair procedure. Then we tested it on twenty new factories.</p>
 
 <figure>
