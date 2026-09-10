@@ -1,6 +1,6 @@
-# Method field notes
+# Method experiment story
 
-A single-page story of the Factorio experiments and the active Civ VI work.
+A single-page story of the Factorio experiments and the Civ VI pilot setup error.
 It uses plain HTML, CSS, and JavaScript. No build framework or network service
 is required to read it. The source template is `story/index.html`.
 
@@ -32,9 +32,10 @@ the HTML. No private session logs or parent workspace code are read.
   `evidence/repair-search-2026-09-10/final-report.json`.
 - Development values come from the adjacent `development-search.json`.
 - The prose links each stage to its reviewed evidence.
-- Civ VI is a dated development snapshot at 21:05 UTC on 10 September 2026.
-  It includes the completed two-run-per-arm pilot. More maps and combat
-  remain pending.
+- The Civ VI section states that the pilot did not execute through the
+  Method CLI. It tested a written strategy supplied to Codex. Historical
+  numerical results remain in an expandable note and are not presented as
+  a Method runtime benchmark. More maps and combat remain unfinished.
 - Video captions identify later native action replays and edited timing.
 - The summary of Methods draws on the owner-authorized brainstorm discussion
   and the public Method specification. It does not export that discussion.
@@ -50,3 +51,7 @@ chart controls, all twenty result rows, chapter links, horizontal overflow,
 all three embedded video streams, and browser errors. Visual checks cover
 the opening, result charts, and the mobile policy chart. Test captures and
 the local browser check script stay in `runs/method-story/`.
+
+The edited version cuts about one-third of the article text, removes decorative
+labels, places repair clips beside the policy changes, and keeps technical
+verification details in expandable notes.

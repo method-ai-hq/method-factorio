@@ -367,3 +367,9 @@ builder are public; game media remains outside Git. The page keeps the
 20/20 physical repair result for both approaches separate from strict
 request-rule scores, and it states the limits of the measured speed and
 input reductions. No new model or game trial was run to make this page.
+
+The story was shortened by about one-third after four writing audits. It now
+states the Civ VI setup error directly: the pilot passed a written strategy
+to Astra through Codex and did not execute it through the Method CLI. The
+old numerical results remain as a written-strategy comparison in a note.
+The Factorio repair experiment did use the Method v3 runtime.
