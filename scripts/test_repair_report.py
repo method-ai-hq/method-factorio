@@ -79,6 +79,21 @@ class ReportUsageTests(unittest.TestCase):
             self.assertTrue(row["usage_complete"])
             self.assertEqual(row["total_input_tokens"], 100)
 
+    def test_group_full_time_median_uses_successful_attempts_only(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            paths = []
+            for index, (passed, game_time, total_time) in enumerate(((True, 10, 100), (True, 30, 200), (False, 999, 999))):
+                folder = root / str(index)
+                folder.mkdir()
+                result = fixture(passed=passed)
+                result.update(case_id=str(index), game_wall_seconds=game_time, total_wall_seconds=total_time)
+                paths.append(write_run(folder, result))
+            report = group(paths)
+            self.assertEqual(report["median_success_seconds"], 20)
+            self.assertEqual(report["median_success_total_seconds"], 150)
+            self.assertEqual(report["successful_attempts_missing_total_time"], 0)
+
     def test_protocol_failure_keeps_production_separate(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -127,6 +142,26 @@ class PairTests(unittest.TestCase):
         self.assertEqual(result["common_success_direct_median_seconds"], 40)
         self.assertEqual(result["common_success_method_median_seconds"], 15)
         self.assertEqual(result["common_success_median_speed_ratio"], 2.5)
+
+    def test_full_time_metrics_are_separate_from_game_time(self):
+        direct = {"rows": [{**self.row("a", 20), "total_wall_seconds": 120},
+                           {**self.row("b", 60), "total_wall_seconds": 300},
+                           {**self.row("c", 500), "total_wall_seconds": 999}]}
+        method = {"rows": [{**self.row("a", 10), "total_wall_seconds": 40},
+                           {**self.row("b", 20), "total_wall_seconds": 60},
+                           {**self.row("c", 1, False), "total_wall_seconds": 2}]}
+        result = compare(direct, method)
+        self.assertEqual(result["common_success_median_speed_ratio"], 2.5)
+        self.assertEqual(result["common_success_direct_total_median_seconds"], 210)
+        self.assertEqual(result["common_success_method_total_median_seconds"], 50)
+        self.assertEqual(result["common_success_median_total_speed_ratio"], 4)
+        self.assertEqual(result["common_success_total_timed_pairs"], 2)
+
+    def test_missing_full_time_stays_unknown(self):
+        result = compare({"rows": [self.row("a")]}, {"rows": [self.row("a")]})
+        self.assertEqual(result["common_success_pairs_missing_total_time"], 1)
+        self.assertIsNone(result["common_success_direct_total_median_seconds"])
+        self.assertIsNone(result["common_success_median_total_speed_ratio"])
 
     def test_missing_or_zero_time_does_not_create_a_ratio(self):
         result = compare({"rows": [self.row("a", None), self.row("b", 30)]},

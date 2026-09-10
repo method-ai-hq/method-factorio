@@ -19,12 +19,12 @@ The case builder and checker are operator tools. Players do not receive their co
 1. Run a fresh direct Astra Codex instance on each development case. It can reason, write code, inspect the game, make repairs, and correct its own errors within that attempt. It does not receive results from other cases.
 2. Build a Method with the real Method v3 runtime. Its steps can use code and Astra calls. Model calls use the same fixed Codex runner as direct Astra. Save every candidate version.
 3. Test a candidate on development cases. Give the author its action records, model reports, scores, time, and token use. Revise the Method and test again. Keep failed trials. Search for at most four tested candidate versions in this experiment, with up to ten development attempts per version. Stop early only if further versions repeat the same outcome and no useful change remains.
-4. Select the version with the most development passes. Break ties using the lower median successful attempt time, then lower reported token use. Freeze its files before any final player runs.
+4. Select the version with the most development passes. Break ties using the lower median full successful attempt time, including startup, model completion, and save verification, then lower reported token use. Only versions with all ten development results are eligible. Freeze its files before any final player runs.
 5. Run fresh direct Astra and the frozen Method on the same 20 final saves. Do not revise the Method from final results. Each attempt gets the same limits. If final results expose a new problem, a later search must use a new final set.
 
 The initial Method is a single step that calls the direct runner. Searched versions may change their prompts, code, and step structure. They cannot change the game server, checker, model, or per-attempt limits. All Method calls share one trial deadline and one game action budget. A new step does not reset them.
 
-The final report gives pass counts, paired outcomes, time, actions, and available token counts. It reports development work separately from final execution work. A faster result on successful attempts does not compensate for a lower success rate without an explicit tradeoff. Twenty final cases give an initial result, not proof about all Factorio tasks.
+The final report gives pass counts, paired outcomes, time, actions, and available token counts. It shows full elapsed trial time separately from game-host time, which starts after the saved world loads and ends after production measurement. It reports development work separately from final execution work. A faster result on successful attempts does not compensate for a lower success rate without an explicit tradeoff. Twenty final cases give an initial result, not proof about all Factorio tasks.
 
 ## Execution and cost
 

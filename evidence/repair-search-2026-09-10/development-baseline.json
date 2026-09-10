@@ -11,6 +11,12 @@
       "infrastructure": 0
     },
     "median_success_seconds": 79.73673952108948,
+    "median_success_total_seconds": 85.29352162498981,
+    "successful_attempts_missing_total_time": 0,
+    "time_scope": {
+      "median_success_seconds": "Game host activation through completed measurement",
+      "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"
+    },
     "total_game_wall_seconds": 884.7792188782478,
     "agent_sessions": 10,
     "sessions_without_final_usage": 0,

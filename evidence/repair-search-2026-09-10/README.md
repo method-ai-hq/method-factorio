@@ -12,8 +12,9 @@ solve the factory repairs.
 The [baseline record](development-baseline.json) contains case hashes, outcomes,
 time, actions, and reported token use. Each case used a fresh Astra Codex session
 with code tools, the same game tools, a 300-second limit, and a 200-action limit.
-The median time among strict passes was 79.74 seconds, including the native
-production check. Ten sessions reported 3,371,030 input tokens, of which
+The median full time among strict passes was 85.29 seconds. The median time
+from game activation through the production check was 79.74 seconds. Ten
+sessions reported 3,371,030 input tokens, of which
 2,902,272 were cached, and 15,137 output tokens. These are execution totals;
 they do not include setup, authoring, or operator work. Subscription dollar
 cost is unknown.

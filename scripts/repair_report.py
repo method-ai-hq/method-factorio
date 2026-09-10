@@ -90,6 +90,11 @@ def group(paths, kind=None):
             "failure_counts": {key: sum(r["failure"] == key for r in rows) for key in
                                ("request_rule", "time_limit", "production_or_completion", "infrastructure")},
             "median_success_seconds": median([r["game_wall_seconds"] for r in successful if valid_time(r["game_wall_seconds"])]),
+            "median_success_total_seconds": median([r["total_wall_seconds"] for r in successful
+                                                    if valid_time(r["total_wall_seconds"])]),
+            "successful_attempts_missing_total_time": sum(not valid_time(r["total_wall_seconds"]) for r in successful),
+            "time_scope": {"median_success_seconds": "Game host activation through completed measurement",
+                           "median_success_total_seconds": "Full trial, including host startup, player completion, and save verification"},
             "total_game_wall_seconds": (sum(r["game_wall_seconds"] for r in rows)
                                         if all(valid_time(r["game_wall_seconds"]) for r in rows) else None),
             "agent_sessions": sum(r["agent_sessions"] for r in rows),
@@ -119,6 +124,8 @@ def compare(direct, method, *, allow_partial=False):
         outcomes[key] += 1
     common = [(x, y) for x, y in pairs if x["strict_pass"] and y["strict_pass"]]
     timed = [(x, y) for x, y in common if valid_time(x["game_wall_seconds"]) and valid_time(y["game_wall_seconds"])]
+    total_timed = [(x, y) for x, y in common if valid_time(x.get("total_wall_seconds"))
+                   and valid_time(y.get("total_wall_seconds"))]
     n = outcomes["direct_only"] + outcomes["method_only"]
     tail = min(outcomes["direct_only"], outcomes["method_only"])
     p = min(1, 2*sum(math.comb(n, k) for k in range(tail+1))/2**n) if n else 1
@@ -132,7 +139,13 @@ def compare(direct, method, *, allow_partial=False):
             "common_success_pairs_missing_time": len(common) - len(timed),
             "common_success_direct_median_seconds": median([x["game_wall_seconds"] for x, _ in timed]),
             "common_success_method_median_seconds": median([y["game_wall_seconds"] for _, y in timed]),
-            "common_success_median_speed_ratio": median([x["game_wall_seconds"]/y["game_wall_seconds"] for x, y in timed])}
+            "common_success_median_speed_ratio": median([x["game_wall_seconds"]/y["game_wall_seconds"] for x, y in timed]),
+            "common_success_total_timed_pairs": len(total_timed),
+            "common_success_pairs_missing_total_time": len(common) - len(total_timed),
+            "common_success_direct_total_median_seconds": median([x["total_wall_seconds"] for x, _ in total_timed]),
+            "common_success_method_total_median_seconds": median([y["total_wall_seconds"] for _, y in total_timed]),
+            "common_success_median_total_speed_ratio": median([x["total_wall_seconds"]/y["total_wall_seconds"]
+                                                                for x, y in total_timed])}
 
 
 def main():
