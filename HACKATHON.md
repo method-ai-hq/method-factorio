@@ -331,3 +331,19 @@ Method runs used 118 completed shell commands versus 191 for direct Astra,
 while game actions were 213 versus 205. This does not isolate the cause of the
 speed gain. The demo preserves the distinction between full-rule passes and
 actual factory repairs.
+
+## Civ economy Method pilot, 10 September 2026
+
+The [fixed-map pilot](evidence/civ6-method-pilot-2026-09-10/README.md) tested
+three Method versions and then ran four fresh comparisons in alternating
+direct/Method order. Both direct Astra and frozen Method v1 passed 2/2 trials.
+Direct used 33 turns on average; the Method used 32.5. The Method took 7.3%
+more playing time, 14.0% more game requests, and 22.2% more input tokens.
+This is a small tradeoff, not a clear or repeatable overall improvement.
+
+V1 remained best in development: v2 took more turns, and v3 failed the
+five-round hold. All seven traces and separate save checks were validated,
+and all 49 unit controls passed. No infrastructure failure or replacement
+trial occurred. The actor used Astra during execution. No fixed-rule
+ablation or unseen-map evaluation was run. The wider Civ map and combat
+work remains pending.

@@ -61,3 +61,13 @@ valid runs passed the independent save check. One intervening attempt remains
 invalid because its cached production state did not match the reload; it is
 not counted as a gameplay failure. Four economy baselines on two other maps
 and the combat baseline work remain.
+
+## Owner-requested short pilot
+
+The owner then requested a same-map Method comparison within less than one
+hour. That pilot is complete: three development versions and four fresh
+comparison runs. See the [report](../../evidence/civ6-method-pilot-2026-09-10/README.md).
+Both arms passed 2/2 comparison runs. Method v1 averaged 32.5 turns versus
+33 for direct Astra, with higher playing time, requests, and token use.
+The two Method revisions did not beat v1's development result. This pilot
+does not complete the remaining map cases, combat baselines, or ablation.

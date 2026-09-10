@@ -1,0 +1,701 @@
+{
+  "status": "complete_calibration_pilot",
+  "completed_unix": 1789073875.399573,
+  "lock": {
+    "id": "civ6-economy-pilot-20260910",
+    "status": "calibration_pilot",
+    "started_unix": 1789070970.0,
+    "stop_unix": 1789074270.0,
+    "base_profile_sha256": "97c6a26ce15fb648b5cce2bc5bfb2402359b3705b775655de34aaac2b6c358ce",
+    "base_profile": "docs/civ6/profiles/economy-nearby-food-1.json",
+    "search_versions": 3,
+    "search_trials_per_version": 1,
+    "comparison_order": [
+      "direct",
+      "method",
+      "direct",
+      "method"
+    ],
+    "maximum_play_trials": 7,
+    "maximum_authoring_calls": 3,
+    "authoring_seconds_per_call": 90,
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "api_spending_cap_usd": 0,
+    "concurrency": 1,
+    "selection_order": [
+      "task_success",
+      "fewer_completed_turns",
+      "fewer_requests",
+      "shorter_play_seconds"
+    ],
+    "comparison_metrics": [
+      "success_count",
+      "completed_turns",
+      "play_seconds",
+      "requests",
+      "input_tokens",
+      "cached_input_tokens",
+      "output_tokens",
+      "reasoning_output_tokens"
+    ],
+    "scope": "same_map_pilot_no_generalization_claim",
+    "operator_cutoff": "Incomplete; not a gameplay failure or a full-budget comparison",
+    "initial_data": "Two valid direct baseline aggregate results; no previous successful action script supplied to the first author"
+  },
+  "frozen_method": {
+    "version": "v1",
+    "sha256": "ba257ffc8689739939129226e4bd54f1528dc177df276e9953d5d6349434bf6e",
+    "frozen_unix": 1789072394.055441
+  },
+  "trials": [
+    {
+      "run_id": "search-v1",
+      "pilot": {
+        "arm": "method",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": "ba257ffc8689739939129226e4bd54f1528dc177df276e9953d5d6349434bf6e",
+        "phase": "search",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "24930db3dabc2812bb4b212a3286dce03a0bc0b3197b83162d8b300a2892709e"
+      },
+      "result": {
+        "actions": 79,
+        "completed_turns": 31,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "29:14",
+            "32:16"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 5,
+          "gold": 59.34375,
+          "net_gold": 8.59765625,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 5,
+              "key": "29:14",
+              "population": 6
+            },
+            {
+              "food_surplus": 3,
+              "key": "32:16",
+              "population": 4
+            }
+          ],
+          "science": 26.4296875
+        },
+        "verified_pass": false,
+        "wall_seconds": 376.8326561660506
+      },
+      "play_seconds": 351.45731316599995,
+      "requests": 132,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1847296,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 2023005,
+        "output_tokens": 6064,
+        "reasoning_output_tokens": 1601,
+        "thread_id": "01a08cf2-b796-7412-9fa9-5c144926a846",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "73cd61886d694e38f03a4ff9570b5038ef2833028531808f7bca94dc7917b079",
+      "sha256": {
+        "profile.json": "3b401e3f410341f5db7b6e9d4fb234edfadfc3ee211e62d08800e62498f673b2",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "4f7d8448839978cae441e732783bf071c1f22804b95fc55beff9ec6b7705c54e",
+        "trace.jsonl": "e6bb1c6eb26d0c73f1b2d02c40af812fc3f9b47dc39d315f767e78933916c3e1",
+        "source-hashes.json": "e9e690760310d0e4db59effef6372d0e6806de893ba10b46dee437333f30a4d2",
+        "astra/task.md": "24930db3dabc2812bb4b212a3286dce03a0bc0b3197b83162d8b300a2892709e",
+        "astra/execution.json": "c1cb96ca10332bbdc512a1b4e22790ba5bfc6b7b27dd69cc0d9ada154f387dee"
+      },
+      "execution_started_unix": 1789071111.3467278,
+      "execution_wall_limit_seconds": 1200,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "search-v2",
+      "pilot": {
+        "arm": "method",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": "424a515a11357a3b9ca8eb0725736aebe35fd33232d1908a2446a6879706de34",
+        "phase": "search",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "19e4253cdf4c985749da220e2566359a702416cf04a4c85d2218b75f399590db"
+      },
+      "result": {
+        "actions": 73,
+        "completed_turns": 33,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "28:14",
+            "32:16"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 4,
+          "gold": 98.1640625,
+          "net_gold": 5,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 6,
+              "key": "28:14",
+              "population": 6
+            },
+            {
+              "food_surplus": 2,
+              "key": "32:16",
+              "population": 4
+            }
+          ],
+          "science": 22.65625
+        },
+        "verified_pass": false,
+        "wall_seconds": 395.22204808401875
+      },
+      "play_seconds": 366.66072804201394,
+      "requests": 128,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 2253184,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 2360136,
+        "output_tokens": 7552,
+        "reasoning_output_tokens": 2625,
+        "thread_id": "01a08cf9-9a9c-78d1-be18-17cfa7fcbbdf",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "28757db67a4ca5bab6c863e57b37f87272d7f7a3bb85ed07a23875e4ec01a250",
+      "sha256": {
+        "profile.json": "dfceaf972d141142d9eb55adb0bc22657b1bb07c9e83f0a64a2b363ac0233bc4",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "8a233615e05313f24c94a13e64fb8b8d4181f5c6a6c332d94febca9989d30c14",
+        "trace.jsonl": "b38b3a22b38a99d0570fdb5b59e7fe8e0fad613e3a008c53b799819810305c67",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "19e4253cdf4c985749da220e2566359a702416cf04a4c85d2218b75f399590db",
+        "astra/execution.json": "cd894a6f98033706a07b3d3a60b62ca8a94d9be2e800c625faa63a00b3f82fae"
+      },
+      "execution_started_unix": 1789071562.985785,
+      "execution_wall_limit_seconds": 1200,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "search-v3",
+      "pilot": {
+        "arm": "method",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": "93e75f557afe0c712b272840c7d91d24e8696b8957369788337bb30b3d1dfc1f",
+        "phase": "search",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "6a0e8166d4f346b67a5e1babbc985b78160eac8c605948749e92145d8ff08989"
+      },
+      "result": {
+        "actions": 100,
+        "completed_turns": 35,
+        "goal_met": false,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 3,
+        "qualifying_pairs": [],
+        "status": "goal_not_met",
+        "terminal": {
+          "capital_food_surplus": 3,
+          "gold": 21.9140625,
+          "net_gold": 4.453125,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 6,
+              "key": "28:12",
+              "population": 5
+            },
+            {
+              "food_surplus": 2,
+              "key": "32:16",
+              "population": 4
+            }
+          ],
+          "science": 21.88671875
+        },
+        "verified_pass": false,
+        "wall_seconds": 372.12231324997265
+      },
+      "play_seconds": 342.51871208299417,
+      "requests": 165,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 2448128,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 2548520,
+        "output_tokens": 7246,
+        "reasoning_output_tokens": 2840,
+        "thread_id": "01a08d00-9b35-73a1-ab24-fe4f5ac9c07a",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "19fc95f91b6d89cc480eafb575774fca4698ca272bafaf73b5a29d48cd98460b",
+      "sha256": {
+        "profile.json": "e026c1363f88339d690574a4fc0d0d6967693ab19e3d18a1da188a1b1569668c",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "beaea93c2283fa1a64913fca11d2ffca7d8c47a2cc3fbc3167179946de64f439",
+        "trace.jsonl": "766497323a477b329442ff7bddcd82a7e641037a3f82b35344f2a18ea4158011",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "6a0e8166d4f346b67a5e1babbc985b78160eac8c605948749e92145d8ff08989",
+        "astra/execution.json": "924e15e29888a40c358c7534fc6957214f1405c0414f1dd39ebce367ab36ccdf"
+      },
+      "execution_started_unix": 1789072021.834859,
+      "execution_wall_limit_seconds": 1200,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "compare-1-direct",
+      "pilot": {
+        "arm": "direct",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": null,
+        "phase": "comparison",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "b1f535b26f7459a5009dd4e776f10af6b3e37859945b9a360085d74f5572a59d"
+      },
+      "result": {
+        "actions": 68,
+        "completed_turns": 33,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "28:14",
+            "32:16"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 4,
+          "gold": 153.87109375,
+          "net_gold": 4.90234375,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 5,
+              "key": "28:14",
+              "population": 5
+            },
+            {
+              "food_surplus": 4,
+              "key": "32:16",
+              "population": 5
+            }
+          ],
+          "science": 21.7578125
+        },
+        "verified_pass": false,
+        "wall_seconds": 332.0015247919364
+      },
+      "play_seconds": 292.5994235420367,
+      "requests": 120,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1207936,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 1284859,
+        "output_tokens": 6127,
+        "reasoning_output_tokens": 2849,
+        "thread_id": "01a08d06-dc3b-7691-a82c-ec08ea8ffed1",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "4b2988fb9201ae1cc0b9c77a24295acd2245410626b48fa7d9649f3c47fad1fe",
+      "sha256": {
+        "profile.json": "c34421f0111bb7eefda6173af1d968d28912bc0a34d6ee0d38aa3d1247eb10ba",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "bb48bddb018333d186861d7ef14687d029f626d4983173bd3ada636f738e3813",
+        "trace.jsonl": "c697fe9317e06d17208862982a856844c746f8e930362edcc0c1488fe5c8de85",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "b1f535b26f7459a5009dd4e776f10af6b3e37859945b9a360085d74f5572a59d",
+        "astra/execution.json": "d6e79cce4ebbd35080e0e4d656ad357a9e0be7de9b0e051121f4b1b9c1fa7b5a"
+      },
+      "execution_started_unix": 1789072431.644655,
+      "execution_wall_limit_seconds": 1200,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "compare-2-method",
+      "pilot": {
+        "arm": "method",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": "ba257ffc8689739939129226e4bd54f1528dc177df276e9953d5d6349434bf6e",
+        "phase": "comparison",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "0f328b2d0e32c44c89a0590253b33986f571e90d79aa156cda357fa690764bc5"
+      },
+      "result": {
+        "actions": 79,
+        "completed_turns": 33,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "29:14",
+            "32:16"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 3,
+          "gold": 16.98828125,
+          "net_gold": 6,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 5,
+              "key": "29:14",
+              "population": 6
+            },
+            {
+              "food_surplus": 2,
+              "key": "32:16",
+              "population": 4
+            }
+          ],
+          "science": 23.77734375
+        },
+        "verified_pass": false,
+        "wall_seconds": 330.8473423749674
+      },
+      "play_seconds": 308.4703485830687,
+      "requests": 136,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1717376,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 1816898,
+        "output_tokens": 6375,
+        "reasoning_output_tokens": 2177,
+        "thread_id": "01a08d0c-7bba-7483-9ca1-fed213b6da1b",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "45b45ba2a4c894d9cb623ae0e57efd9d18c8cbca34e83b473dddd6e03743a6ec",
+      "sha256": {
+        "profile.json": "59e6119a155c57dbb287dbc2c60953848fad385868b96975ac632daed309f8a4",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "0c5f7d04337808bb1ed0a18171971de00f5dfbbe1b96ef9828bacdb2b0058754",
+        "trace.jsonl": "7d879c6be249fd8d2e4d9d9182bcac97ca091463e3afe03c57c2928e77a531aa",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "0f328b2d0e32c44c89a0590253b33986f571e90d79aa156cda357fa690764bc5",
+        "astra/execution.json": "a7b87a5c40f2835253c9c3b49270b832f9c5d8fd6af8b8aec48d225a83237a8c"
+      },
+      "execution_started_unix": 1789072800.189363,
+      "execution_wall_limit_seconds": 1200,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "compare-3-direct",
+      "pilot": {
+        "arm": "direct",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": null,
+        "phase": "comparison",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "b1f535b26f7459a5009dd4e776f10af6b3e37859945b9a360085d74f5572a59d"
+      },
+      "result": {
+        "actions": 83,
+        "completed_turns": 33,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "28:12",
+            "32:16"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 5,
+          "gold": 165.34765625,
+          "net_gold": 9.3515625,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 7,
+              "key": "28:12",
+              "population": 6
+            },
+            {
+              "food_surplus": 2,
+              "key": "32:16",
+              "population": 4
+            }
+          ],
+          "science": 21.859375
+        },
+        "verified_pass": false,
+        "wall_seconds": 311.1734939580783
+      },
+      "play_seconds": 287.27684737509117,
+      "requests": 137,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1444992,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 1522933,
+        "output_tokens": 5632,
+        "reasoning_output_tokens": 1889,
+        "thread_id": "01a08d12-68b2-7751-942d-813af4c055e3",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "832c6700f3b911c8317c7288da7847e4b4f174795b1b9b3e4c367082b4496781",
+      "sha256": {
+        "profile.json": "c34421f0111bb7eefda6173af1d968d28912bc0a34d6ee0d38aa3d1247eb10ba",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "0ffeb6631a87d4f9f8abfceb48e95b8615586972b15c01d3b363ea5c9123f30e",
+        "trace.jsonl": "e2eedbbe906d4d9e7f0b5c9e7e78307c3a60f50369f67beec996a1d2c6b330b3",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "b1f535b26f7459a5009dd4e776f10af6b3e37859945b9a360085d74f5572a59d",
+        "astra/execution.json": "f728861aee67cb70a64be625ea42b2019383e9f96151228df134f782ce661b72"
+      },
+      "execution_started_unix": 1789073188.4824378,
+      "execution_wall_limit_seconds": 1036.5229351520538,
+      "save_check_matched": true
+    },
+    {
+      "run_id": "compare-4-method",
+      "pilot": {
+        "arm": "method",
+        "lock_sha256": "f90b5eb45a05469676f92daeb832d3d2659d31da13dce8fead38ff5fcbc1694b",
+        "method_sha256": "ba257ffc8689739939129226e4bd54f1528dc177df276e9953d5d6349434bf6e",
+        "phase": "comparison",
+        "stop_unix": 1789074270.0,
+        "task_sha256": "0f328b2d0e32c44c89a0590253b33986f571e90d79aa156cda357fa690764bc5"
+      },
+      "result": {
+        "actions": 102,
+        "completed_turns": 32,
+        "goal_met": true,
+        "limit": "Scored use needs a reviewed action broker and calibration certificate.",
+        "longest_hold_rounds": 5,
+        "qualifying_pairs": [
+          [
+            "28:9",
+            "29:14"
+          ]
+        ],
+        "status": "calibration_goal_met",
+        "terminal": {
+          "capital_food_surplus": 4,
+          "gold": 66.55078125,
+          "net_gold": 11.84375,
+          "new_self_founded_cities": [
+            {
+              "food_surplus": 12,
+              "key": "28:9",
+              "population": 6
+            },
+            {
+              "food_surplus": 5,
+              "key": "29:14",
+              "population": 6
+            }
+          ],
+          "science": 27.71875
+        },
+        "verified_pass": false,
+        "wall_seconds": 334.8383834590204
+      },
+      "play_seconds": 313.5062822920736,
+      "requests": 157,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1531392,
+        "completed_turns": 1,
+        "errors": [],
+        "input_tokens": 1613564,
+        "output_tokens": 6537,
+        "reasoning_output_tokens": 1923,
+        "thread_id": "01a08d17-c6f1-7f13-8450-c7fe1ac0545d",
+        "usage_known": true
+      },
+      "execution_status": "completed",
+      "subscription_cost_usd": null,
+      "api_calls": 0,
+      "comparison_eligible": true,
+      "start_save_sha256": "1be8153bbb8295773be73979cf59426afacacf5627de4c5994082aaf9d9fc659",
+      "terminal_save_sha256": "8237a0b7081a1b499cf3862788eb016fd15ae562dcc1242765a277ee51021177",
+      "sha256": {
+        "profile.json": "59e6119a155c57dbb287dbc2c60953848fad385868b96975ac632daed309f8a4",
+        "start.json": "92db32bc33a19f8f09825ec0ff4df59b60b72aa67f2fd5808a63d583b83985b1",
+        "reload.json": "c989ff7b85f485dd712c14cec9842925dfe02908cdb139024afea9d389fafc09",
+        "trace.jsonl": "1bcf1d51efd04adab4e55f7bdaf413a622e3ec3ce9a15b6c9d7335c0c69bf87b",
+        "source-hashes.json": "245c53425dd27059a072ba5102ef6f3c0d59c8ab3e3683027ad579e828cb1d4c",
+        "astra/task.md": "0f328b2d0e32c44c89a0590253b33986f571e90d79aa156cda357fa690764bc5",
+        "astra/execution.json": "9355ad839f16eee2aced487e53400b79dfd806961a1b2f6bf2bc74b1eb66c5ef"
+      },
+      "execution_started_unix": 1789073540.38021,
+      "execution_wall_limit_seconds": 684.6234061717987,
+      "save_check_matched": true
+    }
+  ],
+  "authors": [
+    {
+      "version": 1,
+      "wall_seconds": 56.86486408300698,
+      "usage": {
+        "completed_turns": 1,
+        "input_tokens": 47129,
+        "cached_input_tokens": 41856,
+        "output_tokens": 1142,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 123,
+        "usage_known": true,
+        "errors": [],
+        "thread_id": "01a08cf1-c816-7803-a68e-6a06ec6db334"
+      },
+      "model": "gpt-6-astra",
+      "api_calls": 0,
+      "subscription_cost_usd": null,
+      "execution_sha256": "49a350a78e138109cb24bf2ecf76995d3169e42864071aa596269bc56411d2ac",
+      "task_sha256": "4c92ee5f224b292cfc76ad3b68c3314d58bb06c7619725ab2cd9625989a8669b",
+      "method_sha256": "ba257ffc8689739939129226e4bd54f1528dc177df276e9953d5d6349434bf6e"
+    },
+    {
+      "version": 2,
+      "wall_seconds": 67.65900758304633,
+      "usage": {
+        "completed_turns": 1,
+        "input_tokens": 124078,
+        "cached_input_tokens": 91648,
+        "output_tokens": 1548,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 50,
+        "usage_known": true,
+        "errors": [],
+        "thread_id": "01a08cf8-78d3-7e93-b3e5-91023d007b5a"
+      },
+      "model": "gpt-6-astra",
+      "api_calls": 0,
+      "subscription_cost_usd": null,
+      "execution_sha256": "583f223f3159e6a2f6dbddb037782a35060eb8d2cf309301e4b9a71ac377086c",
+      "task_sha256": "fb98acfd8e3e2d3b187fdea7cf83725c6241caebb30a31037ae39d309581c740",
+      "method_sha256": "424a515a11357a3b9ca8eb0725736aebe35fd33232d1908a2446a6879706de34"
+    },
+    {
+      "version": 3,
+      "wall_seconds": 55.755974084022455,
+      "usage": {
+        "completed_turns": 1,
+        "input_tokens": 110658,
+        "cached_input_tokens": 86912,
+        "output_tokens": 1569,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 47,
+        "usage_known": true,
+        "errors": [],
+        "thread_id": "01a08cff-a2c6-70d1-8516-0d67970216a3"
+      },
+      "model": "gpt-6-astra",
+      "api_calls": 0,
+      "subscription_cost_usd": null,
+      "execution_sha256": "4e9851889f774da30a72ba857abf0c7b1352a33f7b484f5fdbbdf81fbce801fb",
+      "task_sha256": "f42fca1ed0e56cf5cfe5904252697ceeaaf57a2ee4783125996effebb6430d48",
+      "method_sha256": "93e75f557afe0c712b272840c7d91d24e8696b8957369788337bb30b3d1dfc1f"
+    }
+  ],
+  "search_cost": {
+    "author_agent_runs": 3,
+    "development_game_runs": 3,
+    "author_seconds": 180.27984575007576,
+    "development_play_seconds": 1060.636753291008,
+    "development_total_seconds_including_save_checks": 1144.177017500042,
+    "game_requests": 425,
+    "tokens": {
+      "input_tokens": 7213526,
+      "cached_input_tokens": 6769024,
+      "output_tokens": 25121,
+      "reasoning_output_tokens": 7286
+    },
+    "api_calls": 0,
+    "subscription_cost_usd": null,
+    "supervisor_time_and_tokens": "not measured separately",
+    "excludes": "Earlier setup, earlier direct baselines, and supervisor work"
+  },
+  "comparison": {
+    "direct": {
+      "successes": 2,
+      "trials": 2,
+      "mean_turns_successful": 33,
+      "mean_play_seconds_all": 289.9381354585639,
+      "mean_requests_all": 128.5,
+      "mean_input_tokens": 1403896,
+      "mean_cached_input_tokens": 1326464,
+      "mean_output_tokens": 5879.5,
+      "mean_reasoning_output_tokens": 2369
+    },
+    "method": {
+      "successes": 2,
+      "trials": 2,
+      "mean_turns_successful": 32.5,
+      "mean_play_seconds_all": 310.98831543757115,
+      "mean_requests_all": 146.5,
+      "mean_input_tokens": 1715231,
+      "mean_cached_input_tokens": 1624384,
+      "mean_output_tokens": 6456,
+      "mean_reasoning_output_tokens": 2050
+    }
+  },
+  "validation": {
+    "signed_traces_rechecked": 7,
+    "terminal_save_file_hashes_rechecked": 7,
+    "independent_reload_states_matched": 7,
+    "comparison_prompts_identical_except_method": true,
+    "comparison_runner_sources_identical": true,
+    "fixed_task_profile_unchanged": true
+  },
+  "limits": [
+    "One starting map; two comparison trials per arm",
+    "Formal benchmark release review remains pending",
+    "No fixed-rule ablation was run",
+    "Subscription dollar cost and supervisor cost are unknown"
+  ]
+}
