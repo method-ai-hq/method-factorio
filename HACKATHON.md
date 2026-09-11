@@ -382,3 +382,8 @@ The [public story page](https://method-ai-hq.github.io/method-factorio/)
 serves that complete HTML file through GitHub Pages. The publish workflow
 copies only the reviewed page into the website. It runs when the complete
 page changes on `main`, and it can also be started manually.
+
+The story now uses the owner-approved first-person draft, led by “Using Astra
+to beat Astra.” The original main title, interactive charts, reviewed clips,
+and explicit Civ VI execution correction remain. GitHub Pages publishes the
+complete HTML through the existing `Publish experiment story` workflow.

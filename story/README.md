@@ -75,3 +75,7 @@ the local browser check script stay in `runs/method-story/`.
 The edited version cuts about one-third of the article text, removes decorative
 labels, places repair clips beside the policy changes, and keeps technical
 verification details in expandable notes.
+
+The current article uses the owner-approved argument-led draft. Its main
+headline is preserved, and the opening is “Using Astra to beat Astra.”
+Changes to the complete HTML trigger the existing GitHub Pages workflow.
